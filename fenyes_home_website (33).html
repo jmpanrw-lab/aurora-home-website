@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Aurora Home — Handgefertigte 3D-Deko, kinetische Skulpturen & Premium Wax Melts aus Deutschland. Auf Anfrage bestellbar.">
+<title>Aurora Home — Where Design Meets Soul</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+:root{
+  --bg:#0a0914;--bg2:#12101e;--bg3:#1c1a2e;
+  --gold:#c8906a;--gold2:#e8c5a0;--lilac:#9b7fd4;
+  --white:#f4f0ff;--dim:rgba(244,240,255,.38);
+  --line:rgba(244,240,255,.07);
+  --serif:"Cormorant",Georgia,serif;
+  --sans:"Inter",system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{background:var(--bg);scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--white);font-family:var(--sans);font-weight:300;overflow-x:hidden;}
+img{display:block;max-width:100%;}
+a{text-decoration:none;color:inherit;}
+::-webkit-scrollbar{width:2px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--gold);}
+
+/* NAV */
+nav{position:fixed;inset:0 0 auto 0;z-index:90;display:flex;align-items:center;justify-content:space-between;padding:28px 40px;transition:padding .5s,background .5s;}
+nav.scrolled{padding:16px 40px;background:rgba(10,9,20,.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);}
+.nav-brand{display:flex;align-items:center;gap:0;}
+.nav-links{display:flex;gap:32px;}
+.nav-links a{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);transition:color .2s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-cta{font-size:10px;letter-spacing:.16em;text-transform:uppercase;padding:9px 20px;border:1px solid rgba(201,144,106,.35);color:var(--gold);transition:all .25s;}
+.nav-cta:hover{background:var(--gold);color:var(--bg);}
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;}
+.ham span{display:block;width:22px;height:1px;background:var(--gold);transition:all .3s;}
+.ham.open span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+.ham.open span:nth-child(2){opacity:0;}
+.ham.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+.mob{display:none;position:fixed;inset:0;z-index:80;background:rgba(10,9,20,.97);backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:center;gap:4px;}
+.mob.open{display:flex;}
+.mob a{font-family:var(--serif);font-size:36px;font-weight:300;color:rgba(244,240,255,.55);padding:10px 20px;transition:color .2s;}
+.mob a:hover{color:var(--gold);}
+.mob-soc{display:flex;gap:14px;margin-top:24px;}
+.mob-soc a{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);border:1px solid var(--line);padding:8px 16px;}
+
+/* NAV LOGO SVG */
+.nav-logo-svg{width:44px;height:auto;}
+
+/* HERO */
+.hero{height:100svh;min-height:640px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;text-align:center;padding-bottom:60px;}
+.hero-bg{position:absolute;inset:-5%;background:url("https://d8j0ntlcm91z4.cloudfront.net/user_38xvCKWSztMtCzGzltBTjUTWyVl/hf_20260509_225258_10c87bc4-5fb7-40bf-afae-ed9b73e678f1.png") center 30%/cover no-repeat;will-change:transform;}
+.hero-overlay{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 60%,rgba(10,9,20,.2) 0%,rgba(10,9,20,.5) 40%,rgba(10,9,20,.92) 100%),linear-gradient(to top,rgba(10,9,20,1) 0%,rgba(10,9,20,.3) 50%,rgba(10,9,20,.1) 100%);}
+.hero-content{position:relative;z-index:2;padding:0 24px;max-width:900px;}
+.hero-label{font-size:10px;letter-spacing:.36em;text-transform:uppercase;color:var(--gold);margin-bottom:28px;display:flex;align-items:center;justify-content:center;gap:12px;}
+.hero-label::before,.hero-label::after{content:"";width:28px;height:1px;background:var(--gold);}
+
+/* 3D HERO LOGO */
+.logo-3d-scene{perspective:900px;perspective-origin:50% 40%;display:flex;justify-content:center;margin-bottom:28px;}
+.logo-3d-inner{transform-style:preserve-3d;animation:logo3dFloat 7s ease-in-out infinite;position:relative;}
+@keyframes logo3dFloat{
+  0%{transform:rotateX(12deg) rotateY(-6deg);}
+  25%{transform:rotateX(8deg) rotateY(6deg);}
+  50%{transform:rotateX(14deg) rotateY(2deg);}
+  75%{transform:rotateX(9deg) rotateY(-4deg);}
+  100%{transform:rotateX(12deg) rotateY(-6deg);}
+}
+.logo-3d-main{display:block;position:relative;z-index:2;filter:drop-shadow(0 0 60px rgba(155,127,212,.6)) drop-shadow(0 0 120px rgba(201,144,106,.25)) drop-shadow(0 8px 32px rgba(0,0,0,.6));}
+.logo-3d-depth{position:absolute;top:0;left:0;z-index:1;opacity:.3;transform:translateZ(-8px) translateY(6px);filter:blur(.5px) brightness(.3);}
+.logo-3d-depth2{position:absolute;top:0;left:0;z-index:0;opacity:.18;transform:translateZ(-18px) translateY(12px);filter:blur(1px) brightness(.2);}
+
+.hero-tagline{font-family:var(--serif);font-size:clamp(15px,1.8vw,19px);font-weight:300;font-style:italic;color:rgba(244,240,255,.65);margin:0 auto 28px;max-width:460px;line-height:1.6;text-shadow:0 2px 20px rgba(0,0,0,.8);}
+.hero-plats{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:30px;}
+.hero-plat{font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:7px 15px;border:1px solid var(--line);color:var(--dim);transition:all .2s;display:flex;align-items:center;gap:7px;}
+.hero-plat:hover{border-color:var(--gold);color:var(--gold);}
+.hero-plat-dot{width:4px;height:4px;border-radius:50%;background:#4ade80;}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn-solid{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--bg);background:var(--gold);padding:13px 30px;transition:all .25s;border:1px solid var(--gold);}
+.btn-solid:hover{background:transparent;color:var(--gold);}
+.btn-line{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);border:1px solid var(--line);padding:13px 30px;transition:all .25s;}
+.btn-line:hover{border-color:var(--gold);color:var(--gold);}
+.hero-scroll{position:absolute;right:32px;bottom:48px;z-index:2;writing-mode:vertical-rl;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:rgba(201,144,106,.4);display:flex;align-items:center;gap:10px;}
+.hero-scroll::after{content:"";width:1px;height:44px;background:linear-gradient(to bottom,rgba(201,144,106,.4),transparent);}
+
+/* TRUST BAR */
+.trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:11px 40px;}
+.trust-items{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;}
+.trust-item{display:flex;align-items:center;gap:6px;font-size:10px;color:var(--dim);}
+.trust-item::before{content:"✓";color:#4ade80;}
+
+/* MARQUEE */
+.mq{border-bottom:1px solid var(--line);padding:11px 0;overflow:hidden;background:rgba(244,240,255,.013);}
+.mq-track{display:flex;width:max-content;animation:mq 24s linear infinite;}
+@keyframes mq{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.mq-item{font-family:var(--serif);font-size:13px;font-style:italic;color:var(--dim);padding:0 28px;}
+.mq-sep{color:rgba(201,144,106,.3);}
+
+/* SECTIONS */
+.sec{padding:112px 40px;}
+.sec--dark{background:var(--bg2);}
+.cap{font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);}
+.h2{font-family:var(--serif);font-weight:300;line-height:1.0;color:var(--white);}
+.h2 em{font-style:italic;color:var(--dim);}
+.body{font-size:15px;font-weight:300;color:var(--dim);line-height:1.9;}
+.w-max{max-width:1280px;margin:0 auto;}
+
+/* REVEAL */
+.r{opacity:1;transform:translateY(0);}
+.rl{opacity:1;transform:translateX(0);}
+.rr{opacity:1;transform:translateX(0);}
+.rs{opacity:1;transform:scale(1);}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1280px;margin:0 auto;}
+.about-visual{aspect-ratio:4/5;overflow:hidden;position:relative;}
+.about-visual img{width:100%;height:100%;object-fit:cover;transition:transform .8s;}
+.about-visual:hover img{transform:scale(1.04);}
+.about-fig{position:absolute;bottom:0;left:0;right:0;padding:24px;background:linear-gradient(to top,rgba(10,9,20,.9),transparent);font-family:var(--serif);font-size:11px;font-style:italic;color:rgba(244,240,255,.3);}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:44px;background:var(--line);}
+.stat{background:var(--bg);padding:20px;}
+.stat-n{font-family:var(--serif);font-size:40px;font-weight:300;color:var(--gold);line-height:1;}
+.stat-l{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-top:4px;}
+
+/* PLATFORMS */
+.plat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);margin-top:52px;max-width:1280px;margin-left:auto;margin-right:auto;}
+.plat{background:var(--bg);padding:40px 28px;position:relative;overflow:hidden;display:flex;flex-direction:column;}
+.plat::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.23,1,.32,1);}
+.plat:hover::before{transform:scaleX(1);}
+.plat-icon{font-size:18px;margin-bottom:18px;}
+.plat-n{font-family:var(--serif);font-size:24px;font-weight:300;color:var(--white);margin-bottom:4px;}
+.plat-h{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+.plat-desc{font-size:13px;color:var(--dim);line-height:1.8;flex:1;margin-bottom:20px;}
+.plat-feats{display:flex;flex-direction:column;gap:7px;margin-bottom:20px;}
+.plat-feat{font-size:12px;color:var(--dim);padding-left:14px;position:relative;}
+.plat-feat::before{content:"—";position:absolute;left:0;color:var(--gold);font-size:10px;}
+.plat-cta{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);display:flex;justify-content:space-between;align-items:center;padding-top:14px;border-top:1px solid var(--line);margin-top:auto;}
+.plat-arr{transition:transform .2s;}
+.plat:hover .plat-arr{transform:translateX(6px);}
+
+/* SEASONS */
+.seasons-intro{max-width:1280px;margin:0 auto 52px;}
+.seasons-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);max-width:1280px;margin:0 auto;}
+.ssn{position:relative;aspect-ratio:3/5;overflow:hidden;isolation:isolate;}
+.ssn-bg{position:absolute;inset:0;transition:transform .8s cubic-bezier(.23,1,.32,1);}
+.ssn:hover .ssn-bg{transform:scale(1.05);}
+.ssn-spring .ssn-bg{background:radial-gradient(ellipse at 50% 100%,rgba(220,140,120,.22),rgba(10,9,20,1));}
+.ssn-summer .ssn-bg{background:radial-gradient(ellipse at 50% 100%,rgba(210,165,80,.18),rgba(10,9,20,1));}
+.ssn-autumn .ssn-bg{background:radial-gradient(ellipse at 50% 100%,rgba(190,70,40,.26),rgba(10,9,20,1));}
+.ssn-winter .ssn-bg{background:radial-gradient(ellipse at 50% 100%,rgba(100,130,220,.18),rgba(10,9,20,1));}
+.ssn-body{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:22px 18px;z-index:1;}
+.ssn-no{position:absolute;top:12px;right:14px;font-family:var(--serif);font-size:72px;font-weight:300;color:rgba(244,240,255,.03);line-height:1;}
+.ssn-ico{font-size:18px;margin-bottom:10px;}
+.ssn-name{font-family:var(--serif);font-size:22px;font-weight:300;color:var(--white);}
+.ssn-chr{font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-top:2px;}
+.ssn-div{width:18px;height:1px;background:rgba(201,144,106,.35);margin:9px 0;}
+.ssn-sct{font-family:var(--serif);font-size:12px;font-style:italic;color:var(--gold);}
+.ssn-bdg{display:inline-block;margin-top:12px;font-size:8px;letter-spacing:.12em;text-transform:uppercase;padding:3px 9px;}
+.bdg-a{background:var(--gold);color:var(--bg);}
+.bdg-c{border:1px solid rgba(201,144,106,.3);color:var(--gold);}
+.bdg-s{border:1px solid var(--line);color:rgba(244,240,255,.2);}
+
+/* CATALOG */
+.catalog-hd{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--line);max-width:1280px;margin-left:auto;margin-right:auto;}
+.catalog-name{font-family:var(--serif);font-size:24px;font-weight:300;color:var(--white);}
+.catalog-lic{font-size:9px;font-style:italic;color:rgba(244,240,255,.16);margin-top:2px;}
+.prod-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);max-width:1280px;margin:0 auto 48px;}
+.prod{background:var(--bg);position:relative;overflow:hidden;transition:background .2s;}
+.prod:hover{background:var(--bg3);}
+.prod-img{aspect-ratio:1;overflow:hidden;background:#080715;}
+.prod-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s;}
+.prod:hover .prod-img img{transform:scale(1.08);}
+.prod-body{padding:11px 12px 14px;}
+.prod-cat{font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.prod-name{font-family:var(--serif);font-size:14px;color:var(--white);line-height:1.2;margin-bottom:5px;}
+.prod-price{font-family:var(--serif);font-size:16px;color:var(--gold);}
+.prod-st{display:flex;align-items:center;gap:4px;margin-top:8px;}
+.prod-dot{width:4px;height:4px;border-radius:50%;}
+.prod-stl{font-size:7px;letter-spacing:.1em;text-transform:uppercase;}
+.prod-btn{display:block;width:100%;margin-top:8px;padding:7px;text-align:center;font-size:8px;letter-spacing:.12em;text-transform:uppercase;transition:all .2s;}
+.pb-buy{background:rgba(201,144,106,.12);color:var(--gold);border:1px solid rgba(201,144,106,.2);}
+.pb-buy:hover{background:rgba(201,144,106,.25);}
+.pb-req{background:transparent;color:rgba(244,240,255,.25);border:1px solid var(--line);}
+.pb-req:hover{border-color:rgba(201,144,106,.2);color:var(--gold);}
+.prod-bdg{position:absolute;top:7px;left:7px;font-size:7px;letter-spacing:.09em;text-transform:uppercase;padding:2px 7px;}
+.b-top{background:var(--gold);color:var(--bg);}
+.b-new{background:#4ade80;color:var(--bg);}
+.b-stk{background:rgba(201,144,106,.12);color:var(--gold);border:1px solid rgba(201,144,106,.2);}
+.flor-note{display:flex;align-items:center;gap:12px;padding:12px 16px;margin-bottom:14px;background:rgba(201,144,106,.03);border:1px solid rgba(201,144,106,.09);font-size:13px;color:var(--dim);max-width:1280px;margin-left:auto;margin-right:auto;}
+.flor-note strong{color:var(--white);font-weight:400;}
+
+/* WAX */
+.wax-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1280px;margin:0 auto;}
+.wax-vis{aspect-ratio:1;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 30%,rgba(201,144,106,.06),rgba(10,9,20,.8));border:1px solid var(--line);position:relative;overflow:hidden;}
+.wax-glow{position:absolute;width:140px;height:140px;background:radial-gradient(circle,rgba(201,144,106,.1),transparent 70%);border-radius:50%;animation:wg 3s ease-in-out infinite;}
+@keyframes wg{0%,100%{opacity:.5;transform:scale(1);}50%{opacity:1;transform:scale(1.15);}}
+.scent-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:26px;}
+.scent{border:1px solid var(--line);padding:13px;transition:all .2s;}
+.scent:hover{border-color:rgba(201,144,106,.25);}
+.scent-s{font-size:7px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:3px;}
+.scent-n{font-family:var(--serif);font-size:14px;color:var(--white);font-style:italic;}
+.wax-note{display:flex;gap:12px;padding:15px 17px;margin-top:22px;border:1px solid rgba(201,144,106,.14);background:rgba(201,144,106,.025);}
+.wax-note-t{font-size:12px;color:var(--dim);line-height:1.75;}
+.wax-note-t strong{color:var(--white);font-weight:400;display:block;}
+
+/* ILDIKO */
+.ildiko-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:80px;align-items:center;max-width:1280px;margin:0 auto;}
+.ildiko-photo{aspect-ratio:3/4;overflow:hidden;position:relative;}
+.ildiko-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;}
+.ildiko-photo::after{content:"";position:absolute;bottom:0;left:0;right:0;height:30%;background:linear-gradient(to top,rgba(10,9,20,.85),transparent);}
+.ildiko-tag{position:absolute;bottom:16px;left:16px;z-index:1;}
+.ildiko-nm{font-family:var(--serif);font-size:18px;font-weight:300;color:var(--white);}
+.ildiko-rl{font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:rgba(155,127,212,.8);}
+.quote{font-family:var(--serif);font-size:clamp(20px,2.6vw,30px);font-weight:300;font-style:italic;color:var(--white);line-height:1.5;padding-left:18px;border-left:2px solid var(--gold);margin:22px 0 26px;}
+.il-links{display:flex;flex-direction:column;gap:8px;}
+.il-link{display:flex;align-items:center;gap:12px;padding:12px 15px;border:1px solid var(--line);transition:all .2s;}
+.il-link:hover{border-color:rgba(201,144,106,.18);background:rgba(201,144,106,.025);}
+.il-ico{font-size:15px;width:20px;text-align:center;}
+.il-nm{font-size:13px;color:var(--white);}
+.il-hn{font-size:10px;color:var(--dim);}
+.il-ar{color:rgba(201,144,106,.2);transition:all .2s;margin-left:auto;}
+.il-link:hover .il-ar{color:var(--gold);transform:translateX(4px);}
+
+/* PAYMENT */
+.pay-wrap{max-width:1280px;margin:0 auto;}
+.pay-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);margin-top:44px;}
+.pay-card{background:var(--bg);padding:30px 24px;position:relative;overflow:hidden;}
+.pay-card::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;opacity:0;transition:opacity .3s;}
+.pay-card:hover::before{opacity:1;}
+.pay-pp::before{background:var(--gold);}
+.pay-et::before{background:#f06234;}
+.pay-tt::before{background:#fe2c55;}
+.pay-ico{font-size:18px;margin-bottom:13px;}
+.pay-nm{font-family:var(--serif);font-size:20px;color:var(--white);margin-bottom:6px;}
+.pay-ds{font-size:13px;color:var(--dim);line-height:1.75;margin-bottom:16px;}
+.pay-lnk{display:inline-flex;align-items:center;gap:6px;font-size:9px;letter-spacing:.12em;text-transform:uppercase;padding:8px 15px;transition:all .2s;}
+.l-pp{background:rgba(0,156,222,.08);color:#009cde;border:1px solid rgba(0,156,222,.18);}
+.l-pp:hover{background:rgba(0,156,222,.16);}
+.l-et{background:rgba(240,98,52,.07);color:#f06234;border:1px solid rgba(240,98,52,.16);}
+.l-et:hover{background:rgba(240,98,52,.15);}
+.l-tt{background:rgba(254,44,85,.07);color:#fe2c55;border:1px solid rgba(254,44,85,.16);}
+.l-tt:hover{background:rgba(254,44,85,.15);}
+.pay-express{margin-top:32px;padding:18px 20px;background:rgba(0,156,222,.03);border:1px solid rgba(0,156,222,.09);}
+.pe-title{font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#009cde;margin-bottom:11px;}
+.pe-row{display:flex;flex-wrap:wrap;gap:6px;}
+.pe-lnk{font-size:9px;padding:5px 10px;color:#009cde;background:rgba(0,156,222,.06);border:1px solid rgba(0,156,222,.14);transition:background .2s;}
+.pe-lnk:hover{background:rgba(0,156,222,.14);}
+
+/* FAQ */
+.faq-inner{max-width:700px;margin:44px auto 0;}
+.faq-item{border-bottom:1px solid var(--line);cursor:pointer;}
+.faq-q{padding:18px 0;display:flex;justify-content:space-between;align-items:center;gap:14px;font-size:15px;color:var(--white);transition:color .2s;}
+.faq-item:hover .faq-q{color:var(--gold);}
+.faq-ico{color:var(--gold);font-size:16px;transition:transform .3s;flex-shrink:0;}
+.faq-item.open .faq-ico{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;font-size:13px;color:var(--dim);line-height:1.8;transition:max-height .35s ease,padding .35s ease;}
+.faq-item.open .faq-a{max-height:200px;padding-bottom:18px;}
+
+/* NEWSLETTER */
+.nl-inner{max-width:480px;margin:0 auto;text-align:center;}
+.nl-form{display:flex;margin-top:26px;}
+.nl-input{flex:1;background:rgba(244,240,255,.04);border:1px solid var(--line);border-right:none;color:var(--white);font-family:var(--sans);font-size:13px;font-weight:300;padding:12px 18px;outline:none;transition:border-color .2s;}
+.nl-input:focus{border-color:rgba(201,144,106,.35);}
+.nl-input::placeholder{color:var(--dim);}
+.nl-btn{background:var(--gold);border:none;color:var(--bg);font-family:var(--sans);font-size:9px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;padding:12px 20px;cursor:pointer;transition:background .2s;white-space:nowrap;}
+.nl-btn:hover{background:var(--gold2);}
+.nl-note{font-size:10px;color:rgba(244,240,255,.18);margin-top:10px;}
+
+/* TRUST BAR 2 */
+.trust2{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:11px 40px;background:var(--bg2);}
+
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--line);padding:56px 40px 28px;}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:44px;max-width:1280px;margin:0 auto 44px;}
+.footer-logo-svg{width:40px;height:auto;margin-bottom:10px;}
+.footer-desc{font-size:12px;color:var(--dim);line-height:1.8;max-width:200px;}
+.footer-soc{display:flex;gap:7px;margin-top:16px;}
+.fsoc{width:32px;height:32px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:13px;transition:border-color .2s;}
+.fsoc:hover{border-color:var(--gold);}
+.footer-col-t{font-size:8px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.footer-links a{font-size:12px;color:var(--dim);transition:color .2s;}
+.footer-links a:hover{color:var(--gold);}
+.footer-bottom{border-top:1px solid var(--line);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;max-width:1280px;margin:0 auto;}
+.footer-copy{font-size:10px;color:rgba(244,240,255,.18);}
+.footer-legal{display:flex;gap:18px;}
+.footer-legal a{font-size:10px;color:rgba(244,240,255,.18);transition:color .2s;}
+.footer-legal a:hover{color:var(--gold);}
+
+/* MOBILE */
+@media(max-width:960px){
+  nav{padding:16px 20px;}
+  nav.scrolled{padding:12px 20px;}
+  .nav-links,.nav-cta{display:none;}
+  .ham{display:flex;}
+  .sec{padding:68px 20px;}
+  .trust,.trust2{padding:11px 20px;}
+  .about-grid,.wax-grid,.ildiko-grid{grid-template-columns:1fr;gap:40px;}
+  .seasons-grid,.plat-grid,.pay-grid{grid-template-columns:1fr 1fr;}
+  .prod-grid{grid-template-columns:repeat(3,1fr)!important;}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:28px;}
+  .nl-form{flex-direction:column;}
+  .nl-input{border-right:1px solid var(--line);border-bottom:none;}
+  .trust-items{gap:16px;}
+}
+@media(max-width:600px){
+  .prod-grid{grid-template-columns:1fr 1fr!important;}
+  .seasons-grid{grid-template-columns:1fr 1fr;}
+  .plat-grid,.pay-grid{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr;}
+}
+
+/* ══ AURORA CHATBOT ══ */
+.chat-bubble{
+  position:fixed;bottom:28px;right:28px;z-index:999;
+  width:56px;height:56px;border-radius:50%;
+  background:linear-gradient(135deg,#c8906a,#9b7fd4);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;
+  box-shadow:0 4px 24px rgba(155,127,212,.4), 0 0 0 0 rgba(201,144,106,.3);
+  animation:chatPulse 3s ease-in-out infinite;
+  transition:transform .2s;
+  border:none;
+}
+.chat-bubble:hover{transform:scale(1.08);}
+@keyframes chatPulse{
+  0%,100%{box-shadow:0 4px 24px rgba(155,127,212,.4),0 0 0 0 rgba(201,144,106,.3);}
+  50%{box-shadow:0 4px 32px rgba(155,127,212,.5),0 0 0 10px rgba(201,144,106,0);}
+}
+.chat-bubble svg{width:26px;height:26px;fill:#fff;}
+.chat-badge{
+  position:absolute;top:-3px;right:-3px;
+  width:18px;height:18px;border-radius:50%;
+  background:#4ade80;border:2px solid #0a0914;
+  font-size:9px;color:#000;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+}
+
+.chat-window{
+  position:fixed;bottom:96px;right:28px;z-index:998;
+  width:360px;height:520px;
+  background:#12101e;
+  border:1px solid rgba(201,144,106,.2);
+  border-radius:16px;
+  display:flex;flex-direction:column;
+  box-shadow:0 24px 64px rgba(0,0,0,.6), 0 0 0 1px rgba(155,127,212,.1);
+  transform:scale(.95) translateY(12px);
+  opacity:0;pointer-events:none;
+  transition:all .25s cubic-bezier(.23,1,.32,1);
+}
+.chat-window.open{transform:scale(1) translateY(0);opacity:1;pointer-events:all;}
+
+.chat-head{
+  padding:16px 18px;
+  border-bottom:1px solid rgba(255,255,255,.06);
+  display:flex;align-items:center;gap:12px;
+  background:linear-gradient(135deg,rgba(201,144,106,.08),rgba(155,127,212,.08));
+  border-radius:16px 16px 0 0;
+  flex-shrink:0;
+}
+.chat-avatar{
+  width:38px;height:38px;border-radius:50%;
+  background:linear-gradient(135deg,#c8906a,#9b7fd4);
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;flex-shrink:0;
+}
+.chat-head-info{}
+.chat-head-name{font-size:14px;color:#f4f0ff;font-weight:400;letter-spacing:.02em;}
+.chat-head-status{font-size:11px;color:rgba(244,240,255,.45);display:flex;align-items:center;gap:5px;margin-top:1px;}
+.chat-head-dot{width:6px;height:6px;border-radius:50%;background:#4ade80;animation:chatPulse 2s infinite;}
+.chat-close{margin-left:auto;background:transparent;border:none;color:rgba(244,240,255,.35);cursor:pointer;font-size:18px;padding:4px;transition:color .2s;line-height:1;}
+.chat-close:hover{color:#f4f0ff;}
+
+.chat-messages{
+  flex:1;overflow-y:auto;padding:16px;
+  display:flex;flex-direction:column;gap:10px;
+  scrollbar-width:thin;scrollbar-color:rgba(201,144,106,.2) transparent;
+}
+.chat-messages::-webkit-scrollbar{width:3px;}
+.chat-messages::-webkit-scrollbar-thumb{background:rgba(201,144,106,.2);border-radius:2px;}
+
+.msg{display:flex;flex-direction:column;max-width:85%;}
+.msg-bot{align-self:flex-start;}
+.msg-user{align-self:flex-end;}
+.msg-bubble{
+  padding:10px 14px;border-radius:12px;
+  font-size:13px;line-height:1.6;
+}
+.msg-bot .msg-bubble{
+  background:#1a1828;color:#f4f0ff;
+  border-radius:4px 12px 12px 12px;
+  border:1px solid rgba(255,255,255,.06);
+}
+.msg-user .msg-bubble{
+  background:linear-gradient(135deg,rgba(201,144,106,.25),rgba(155,127,212,.2));
+  color:#f4f0ff;
+  border-radius:12px 4px 12px 12px;
+}
+.msg-time{font-size:10px;color:rgba(244,240,255,.25);margin-top:3px;padding:0 4px;}
+.msg-bot .msg-time{align-self:flex-start;}
+.msg-user .msg-time{align-self:flex-end;}
+
+.chat-typing{
+  display:flex;align-items:center;gap:4px;
+  padding:10px 14px;background:#1a1828;
+  border-radius:4px 12px 12px 12px;
+  border:1px solid rgba(255,255,255,.06);
+  align-self:flex-start;
+}
+.chat-typing span{
+  width:6px;height:6px;border-radius:50%;background:rgba(201,144,106,.5);
+  animation:typingDot 1.2s ease-in-out infinite;
+}
+.chat-typing span:nth-child(2){animation-delay:.2s;}
+.chat-typing span:nth-child(3){animation-delay:.4s;}
+@keyframes typingDot{0%,60%,100%{transform:translateY(0);}30%{transform:translateY(-5px);}}
+
+.chat-suggestions{
+  display:flex;flex-wrap:wrap;gap:6px;
+  padding:0 16px 10px;
+}
+.chat-sug{
+  font-size:11px;padding:5px 10px;
+  background:rgba(201,144,106,.08);
+  border:1px solid rgba(201,144,106,.2);
+  color:#c8906a;border-radius:20px;cursor:pointer;
+  transition:all .2s;white-space:nowrap;
+}
+.chat-sug:hover{background:rgba(201,144,106,.18);}
+
+.chat-input-row{
+  padding:12px 14px;
+  border-top:1px solid rgba(255,255,255,.06);
+  display:flex;gap:8px;align-items:center;
+  flex-shrink:0;
+}
+.chat-input{
+  flex:1;background:#0a0914;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:24px;color:#f4f0ff;
+  font-family:Inter,system-ui,sans-serif;
+  font-size:13px;font-weight:300;
+  padding:10px 16px;outline:none;
+  transition:border-color .2s;
+}
+.chat-input:focus{border-color:rgba(201,144,106,.4);}
+.chat-input::placeholder{color:rgba(244,240,255,.3);}
+.chat-send{
+  width:36px;height:36px;border-radius:50%;
+  background:linear-gradient(135deg,#c8906a,#9b7fd4);
+  border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;transition:transform .2s, opacity .2s;
+}
+.chat-send:hover{transform:scale(1.08);}
+.chat-send:disabled{opacity:.4;}
+.chat-send svg{width:16px;height:16px;fill:#fff;}
+.chat-footer{
+  text-align:center;padding:6px 0 10px;
+  font-size:9px;color:rgba(244,240,255,.2);
+  letter-spacing:.05em;
+}
+
+@media(max-width:600px){
+  .chat-window{width:calc(100vw - 32px);right:16px;bottom:80px;height:480px;}
+  .chat-bubble{bottom:20px;right:16px;}
+}
+
+
+/* ── Season animal images ── */
+.ssn-animal{
+  position:absolute;
+  bottom:80px;
+  left:50%;
+  transform:translateX(-50%);
+  width:65%;
+  max-width:150px;
+  height:auto;
+  object-fit:contain;
+  filter:drop-shadow(0 8px 24px rgba(0,0,0,.6));
+  transition:transform .6s cubic-bezier(.23,1,.32,1);
+  z-index:3;
+  display:block;
+}
+.ssn:hover .ssn-animal{transform:translateX(-50%) scale(1.07) translateY(-6px);}
+
+
+
+
+@media(max-width:960px){
+  .gallery-grid{grid-template-columns:repeat(3,1fr)!important;}
+}
+@media(max-width:600px){
+  .gallery-grid{grid-template-columns:repeat(2,1fr)!important;}
+}
+
+</style>
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div class="mob" id="mob">
+  <a href="#about" onclick="cm()">Story</a>
+  <a href="#platforms" onclick="cm()">Shop</a>
+  <a href="#seasons" onclick="cm()">Kollektion</a>
+  <a href="#catalog" onclick="cm()">Produkte</a>
+  <a href="#ildiko" onclick="cm()">Ildiko</a>
+  <a href="#faq" onclick="cm()">FAQ</a>
+  <div class="mob-soc">
+    <a href="https://tiktok.com/@aurorahome" target="_blank">TikTok</a>
+    <a href="https://etsy.com/shop/aurorahome" target="_blank">Etsy</a>
+    <a href="https://instagram.com/aurorahome" target="_blank">Instagram</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<!-- COMING SOON BANNER -->
+<div style="position:fixed;bottom:0;left:0;right:0;z-index:80;background:rgba(10,9,20,.92);backdrop-filter:blur(16px);border-top:1px solid rgba(201,144,106,.18);padding:10px 20px;display:flex;align-items:center;justify-content:center;gap:20px;">
+  <span style="font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:rgba(201,144,106,.6);">&#10023; Shop öffnet bald</span>
+  <a href="mailto:fenyesdesign@outlook.com?subject=Produktanfrage Aurora Home" style="font-size:9px;letter-spacing:.18em;text-transform:uppercase;padding:7px 18px;background:rgba(201,144,106,.15);border:1px solid rgba(201,144,106,.35);color:var(--gold);text-decoration:none;transition:all .2s;">Jetzt anfragen</a>
+  <span style="font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:rgba(155,127,212,.5);">&#10023; aurora-home.store</span>
+</div>
+<nav id="nav">
+  <a href="#" class="nav-brand">
+    <svg class="nav-logo-svg" viewBox="0 0 100 108" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="nr1" x1="0%" y1="100%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#c8906a"/><stop offset="100%" stop-color="#9b7fd4"/>
+        </linearGradient>
+        <linearGradient id="nr2" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#f0d0b0"/><stop offset="100%" stop-color="#9b7fd4"/>
+        </linearGradient>
+        <radialGradient id="norb" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#fff8e0" stop-opacity=".9"/>
+          <stop offset="100%" stop-color="#c8906a" stop-opacity=".4"/>
+        </radialGradient>
+      </defs>
+      <line x1="4" y1="54" x2="96" y2="54" stroke="rgba(201,144,106,.2)" stroke-width=".8"/>
+      <line x1="50" y1="54" x2="50" y2="6" stroke="url(#nr1)" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="50" y1="54" x2="28" y2="13" stroke="url(#nr1)" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="50" y1="54" x2="72" y2="13" stroke="url(#nr1)" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="50" y1="54" x2="10" y2="32" stroke="url(#nr1)" stroke-width=".9" stroke-linecap="round" opacity=".7"/>
+      <line x1="50" y1="54" x2="90" y2="32" stroke="url(#nr1)" stroke-width=".9" stroke-linecap="round" opacity=".7"/>
+      <line x1="50" y1="54" x2="4" y2="48" stroke="url(#nr1)" stroke-width=".6" stroke-linecap="round" opacity=".4"/>
+      <line x1="50" y1="54" x2="96" y2="48" stroke="url(#nr1)" stroke-width=".6" stroke-linecap="round" opacity=".4"/>
+      <circle cx="50" cy="54" r="9" fill="url(#norb)"/>
+      <circle cx="50" cy="54" r="5" fill="#fff8e8" opacity=".85"/>
+      <circle cx="50" cy="54" r="2.5" fill="#fff" opacity=".7"/>
+      <circle cx="50" cy="6" r="2.5" fill="#c8b0f5" opacity=".9"/>
+      <circle cx="28" cy="13" r="1.8" fill="#c8906a" opacity=".85"/>
+      <circle cx="72" cy="13" r="1.8" fill="#c8906a" opacity=".85"/>
+      <text x="50" y="78" font-family="Georgia,serif" font-size="16" font-weight="400" letter-spacing="4" fill="url(#nr2)" text-anchor="middle" opacity=".95">AURORA</text>
+      <text x="50" y="92" font-family="Georgia,serif" font-size="7" letter-spacing="3" fill="rgba(201,144,106,.45)" text-anchor="middle">HOME</text>
+    </svg>
+  </a>
+  <div class="nav-links">
+    <a href="#about">Story</a>
+    <a href="#platforms">Shop</a>
+    <a href="#seasons">Kollektion</a>
+    <a href="#catalog">Produkte</a>
+    <a href="#ildiko">Ildiko</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px;">
+    <a href="#zahlung" class="nav-cta">Kaufen</a>
+  </div>
+  <div class="ham" id="ham" onclick="tm()"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-label" id="hl">Handgefertigt in Deutschland &middot; Bald verfügbar</div>
+
+    <!-- 3D LOGO -->
+    <div class="logo-3d-scene" id="logo3dScene">
+      <div class="logo-3d-inner" id="logo3dInner">
+        <svg class="logo-3d-depth2" viewBox="0 0 220 250" style="width:clamp(180px,24vw,270px);height:auto;">
+          <line x1="12" y1="135" x2="208" y2="135" stroke="#401808" stroke-width="1.2"/>
+          <line x1="110" y1="135" x2="110" y2="22" stroke="#401808" stroke-width="3.5" stroke-linecap="round"/>
+          <line x1="110" y1="135" x2="78" y2="32" stroke="#401808" stroke-width="2.8" stroke-linecap="round"/>
+          <line x1="110" y1="135" x2="142" y2="32" stroke="#401808" stroke-width="2.8" stroke-linecap="round"/>
+          <line x1="110" y1="135" x2="42" y2="60" stroke="#401808" stroke-width="2" stroke-linecap="round"/>
+          <line x1="110" y1="135" x2="178" y2="60" stroke="#401808" stroke-width="2" stroke-linecap="round"/>
+          <line x1="110" y1="135" x2="14" y2="96" stroke="#401808" stroke-width="1.4" stroke-linecap="round"/>
+          <line x1="110" y1="135" x2="206" y2="96" stroke="#401808" stroke-width="1.4" stroke-linecap="round"/>
+          <circle cx="110" cy="135" r="20" fill="#2a1008"/>
+          <text x="110" y="185" font-family="Georgia,serif" font-size="34" font-weight="400" letter-spacing="11" fill="#301040" text-anchor="middle">AURORA</text>
+          <text x="110" y="204" font-family="Georgia,serif" font-size="12" letter-spacing="7" fill="#201020" text-anchor="middle">HOME</text>
+        </svg>
+        <svg class="logo-3d-depth" viewBox="0 0 220 250" style="width:clamp(180px,24vw,270px);height:auto;">
+          <line x1="12" y1="135" x2="208" y2="135" stroke="#804020" stroke-width="1.2"/>
+          <line x1="110" y1="135" x2="110" y2="22" stroke="#804020" stroke-width="3.5" stroke-linecap="round"/>
+          <line x1="110" y1="135" x2="78" y2="32" stroke="#804020" stroke-width="2.8" stroke-linecap="round"/>
+          <line x1="110" y1="135" x2="142" y2="32" stroke="#804020" stroke-width="2.8" stroke-linecap="round"/>
+          <line x1="110" y1="135" x2="42" y2="60" stroke="#804020" stroke-width="2" stroke-linecap="round"/>
+          <line x1="110" y1="135" x2="178" y2="60" stroke="#804020" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="110" cy="135" r="20" fill="#602010"/>
+          <circle cx="110" cy="135" r="12" fill="#804030"/>
+          <text x="110" y="185" font-family="Georgia,serif" font-size="34" font-weight="400" letter-spacing="11" fill="#604080" text-anchor="middle">AURORA</text>
+          <text x="110" y="204" font-family="Georgia,serif" font-size="12" letter-spacing="7" fill="#403050" text-anchor="middle">HOME</text>
+        </svg>
+        <svg class="logo-3d-main" viewBox="0 0 220 250" style="width:clamp(180px,24vw,270px);height:auto;">
+          <defs>
+            <linearGradient id="mr1" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#c8906a"/><stop offset="50%" stop-color="#d4a878"/><stop offset="100%" stop-color="#9b7fd4"/>
+            </linearGradient>
+            <linearGradient id="mr2" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#f0d0b0"/><stop offset="45%" stop-color="#e8e0f8"/><stop offset="100%" stop-color="#9b7fd4"/>
+            </linearGradient>
+            <radialGradient id="morb" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#fffce0" stop-opacity=".98"/>
+              <stop offset="30%" stop-color="#f8e0b0" stop-opacity=".92"/>
+              <stop offset="65%" stop-color="#c8906a" stop-opacity=".75"/>
+              <stop offset="100%" stop-color="#9b7fd4" stop-opacity=".2"/>
+            </radialGradient>
+            <filter id="mgw">
+              <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="b"/>
+              <feFlood flood-color="#9b7fd4" flood-opacity=".6" result="c"/>
+              <feComposite in="c" in2="b" operator="in" result="s"/>
+              <feMerge><feMergeNode in="s"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="mgw2">
+              <feGaussianBlur in="SourceAlpha" stdDeviation="5" result="b"/>
+              <feFlood flood-color="#c8906a" flood-opacity=".5" result="c"/>
+              <feComposite in="c" in2="b" operator="in" result="s"/>
+              <feMerge><feMergeNode in="s"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="mbase"><feGaussianBlur stdDeviation="9"/></filter>
+          </defs>
+          <ellipse cx="110" cy="135" rx="90" ry="14" fill="rgba(201,144,106,.14)" filter="url(#mbase)"/>
+          <line x1="12" y1="135" x2="208" y2="135" stroke="rgba(201,144,106,.28)" stroke-width="1.1"/>
+          <path d="M20 135 A90 90 0 0 1 200 135" fill="none" stroke="url(#mr1)" stroke-width="1.6" opacity=".5"/>
+          <line x1="110" y1="135" x2="110" y2="20" stroke="url(#mr1)" stroke-width="3.4" stroke-linecap="round" filter="url(#mgw)"/>
+          <line x1="110" y1="135" x2="77" y2="30" stroke="url(#mr1)" stroke-width="2.7" stroke-linecap="round" filter="url(#mgw)"/>
+          <line x1="110" y1="135" x2="143" y2="30" stroke="url(#mr1)" stroke-width="2.7" stroke-linecap="round" filter="url(#mgw)"/>
+          <line x1="110" y1="135" x2="44" y2="56" stroke="url(#mr1)" stroke-width="2" stroke-linecap="round"/>
+          <line x1="110" y1="135" x2="176" y2="56" stroke="url(#mr1)" stroke-width="2" stroke-linecap="round"/>
+          <line x1="110" y1="135" x2="16" y2="90" stroke="url(#mr1)" stroke-width="1.4" stroke-linecap="round" opacity=".78"/>
+          <line x1="110" y1="135" x2="204" y2="90" stroke="url(#mr1)" stroke-width="1.4" stroke-linecap="round" opacity=".78"/>
+          <line x1="110" y1="135" x2="12" y2="118" stroke="url(#mr1)" stroke-width=".9" stroke-linecap="round" opacity=".5"/>
+          <line x1="110" y1="135" x2="208" y2="118" stroke="url(#mr1)" stroke-width=".9" stroke-linecap="round" opacity=".5"/>
+          <circle cx="110" cy="135" r="26" fill="url(#morb)" filter="url(#mgw2)"/>
+          <circle cx="110" cy="135" r="17" fill="#fffce0" opacity=".92"/>
+          <circle cx="110" cy="135" r="10" fill="#ffffff" opacity=".82"/>
+          <circle cx="110" cy="135" r="5" fill="#ffffff" opacity=".95"/>
+          <circle cx="104" cy="129" r="3" fill="#ffffff" opacity=".65"/>
+          <circle cx="110" cy="20" r="4" fill="#c8b0f5" filter="url(#mgw)"/>
+          <circle cx="77" cy="30" r="3" fill="#c8906a" opacity=".92"/>
+          <circle cx="143" cy="30" r="3" fill="#c8906a" opacity=".92"/>
+          <circle cx="44" cy="56" r="2.2" fill="#9b7fd4" opacity=".8"/>
+          <circle cx="176" cy="56" r="2.2" fill="#9b7fd4" opacity=".8"/>
+          <text x="110" y="183" font-family="Georgia,serif" font-size="36" font-weight="400" letter-spacing="12" fill="url(#mr2)" text-anchor="middle" opacity=".98">AURORA</text>
+          <line x1="30" y1="191" x2="190" y2="191" stroke="rgba(201,144,106,.22)" stroke-width=".9"/>
+          <text x="110" y="207" font-family="Georgia,serif" font-size="11" font-weight="300" letter-spacing="7" fill="rgba(201,144,106,.52)" text-anchor="middle">H O M E</text>
+        </svg>
+      </div>
+    </div>
+
+    <p class="hero-tagline" id="htag">Handgefertigt mit Liebe. Auf Anfrage produziert. Persönlich verpackt.</p>
+    <div class="hero-plats" id="hplat">
+      <a href="https://tiktok.com/@aurorahome" target="_blank" class="hero-plat"><div class="hero-plat-dot"></div>TikTok Shop</a>
+      <a href="https://etsy.com/shop/aurorahome" target="_blank" class="hero-plat"><div class="hero-plat-dot"></div>Etsy Shop</a>
+      <a href="https://instagram.com/aurorahome" target="_blank" class="hero-plat"><div class="hero-plat-dot"></div>Instagram</a>
+    </div>
+    <div class="hero-btns" id="hbtns">
+      <a href="#seasons" class="btn-solid">Four Seasons &rarr;</a>
+      <a href="#catalog" class="btn-line">Alle Produkte</a>
+    </div>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- TRUST -->
+<div class="trust">
+  <div class="trust-items">
+    <div class="trust-item">Handgefertigt in Deutschland</div>
+    <div class="trust-item">100% Sojawachs &amp; Parf&uuml;m&ouml;l</div>
+    <div class="trust-item">Auf Anfrage bestellbar</div>
+    <div class="trust-item">Lieferzeit 4–6 Werktage</div>
+    <div class="trust-item">PayPal &amp; Etsy K&auml;uferschutz</div>
+  </div>
+</div>
+
+<!-- MARQUEE -->
+<div class="mq">
+  <div class="mq-track">
+    <span class="mq-item">3D-Druck Tischlampen</span><span class="mq-sep">&nbsp;&middot;&nbsp;</span>
+    <span class="mq-item">Kinetische Wandkunst</span><span class="mq-sep">&nbsp;&middot;&nbsp;</span>
+    <span class="mq-item">Premium Wax Melts</span><span class="mq-sep">&nbsp;&middot;&nbsp;</span>
+    <span class="mq-item">Four Seasons &mdash; limitiert</span><span class="mq-sep">&nbsp;&middot;&nbsp;</span>
+    <span class="mq-item">Aesthetic Room Decor</span><span class="mq-sep">&nbsp;&middot;&nbsp;</span>
+    <span class="mq-item">TikTok Shop &middot; Etsy &middot; Instagram</span><span class="mq-sep">&nbsp;&middot;&nbsp;</span>
+    <span class="mq-item">Handgefertigt in Deutschland</span><span class="mq-sep">&nbsp;&middot;&nbsp;</span>
+    <span class="mq-item">Floramorph Skulpturen</span><span class="mq-sep">&nbsp;&middot;&nbsp;</span>
+    <span class="mq-item">3D-Druck Tischlampen</span><span class="mq-sep">&nbsp;&middot;&nbsp;</span>
+    <span class="mq-item">Kinetische Wandkunst</span><span class="mq-sep">&nbsp;&middot;&nbsp;</span>
+    <span class="mq-item">Premium Wax Melts</span><span class="mq-sep">&nbsp;&middot;&nbsp;</span>
+    <span class="mq-item">Four Seasons &mdash; limitiert</span><span class="mq-sep">&nbsp;&middot;&nbsp;</span>
+    <span class="mq-item">Aesthetic Room Decor</span><span class="mq-sep">&nbsp;&middot;&nbsp;</span>
+    <span class="mq-item">TikTok Shop &middot; Etsy &middot; Instagram</span><span class="mq-sep">&nbsp;&middot;&nbsp;</span>
+    <span class="mq-item">Handgefertigt in Deutschland</span><span class="mq-sep">&nbsp;&middot;&nbsp;</span>
+    <span class="mq-item">Floramorph Skulpturen</span><span class="mq-sep">&nbsp;&middot;&nbsp;</span>
+  </div>
+</div>
+
+<!-- CATALOG -->
+<section class="sec sec--dark" id="catalog">
+  <div class="w-max">
+    <div class="cap r" style="text-align:center;margin-bottom:10px;">Unser Sortiment</div>
+    <h2 class="h2 r" style="font-size:clamp(36px,5vw,58px);text-align:center;margin-bottom:48px;">Ausgewählte<br><em>Produkte</em></h2>
+    <div class="prod-grid rs" style="grid-template-columns:repeat(4,1fr);">
+      <div class="prod"><div class="prod-img"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_38xvCKWSztMtCzGzltBTjUTWyVl/hf_20260508_201451_10c29179-b31d-424e-baae-c73332deb63a.png" alt="Loop Lampe" loading="lazy"></div><div class="prod-body"><div class="prod-cat">Lampe</div><div class="prod-name">Loop Lampe</div><div class="prod-price">34,90 &euro;</div><div class="prod-st"><span class="prod-dot" style="background:var(--gold)"></span><span class="prod-stl" style="color:var(--gold);">Auf Anfrage</span></div><a href="mailto:fenyesdesign@outlook.com?subject=Produktanfrage" class="prod-btn pb-req">Anfragen &#9993;</a></div><span class="prod-bdg" style="background:rgba(201,144,106,.12);color:var(--gold);border:1px solid rgba(201,144,106,.2);">Anfrage</span></div>
+      <div class="prod"><div class="prod-img"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_38xvCKWSztMtCzGzltBTjUTWyVl/hf_20260508_201255_fc3505ff-e5da-40d7-a1e2-06f19c99e5e5.png" alt="Void Lampe" loading="lazy"></div><div class="prod-body"><div class="prod-cat">Lampe</div><div class="prod-name">Void Lampe</div><div class="prod-price">39,90 &euro;</div><div class="prod-st"><span class="prod-dot" style="background:var(--gold)"></span><span class="prod-stl" style="color:var(--gold);">Auf Anfrage</span></div><a href="mailto:fenyesdesign@outlook.com?subject=Produktanfrage" class="prod-btn pb-req">Anfragen &#9993;</a></div><span class="prod-bdg" style="background:rgba(201,144,106,.12);color:var(--gold);border:1px solid rgba(201,144,106,.2);">Anfrage</span></div>
+      <div class="prod"><div class="prod-img"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_38xvCKWSztMtCzGzltBTjUTWyVl/hf_20260508_210003_593a9f54-fd23-4ec5-83c5-553c60ce4344.png" alt="Oopsie Lampe" loading="lazy"></div><div class="prod-body"><div class="prod-cat">Lampe</div><div class="prod-name">Oopsie Lampe</div><div class="prod-price">34,90 &euro;</div><div class="prod-st"><span class="prod-dot" style="background:var(--gold)"></span><span class="prod-stl" style="color:var(--gold);">Auf Anfrage</span></div><a href="mailto:fenyesdesign@outlook.com?subject=Produktanfrage" class="prod-btn pb-req">Anfragen &#9993;</a></div><span class="prod-bdg" style="background:rgba(201,144,106,.12);color:var(--gold);border:1px solid rgba(201,144,106,.2);">Anfrage</span></div>
+      <div class="prod"><div class="prod-img"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_38xvCKWSztMtCzGzltBTjUTWyVl/hf_20260508_205958_b411c347-4dc1-4ce4-a532-a79a38f51e8e.png" alt="Eve Vase" loading="lazy"></div><div class="prod-body"><div class="prod-cat">Vase</div><div class="prod-name">Eve Vase</div><div class="prod-price">21,90 &euro;</div><div class="prod-st"><span class="prod-dot" style="background:var(--gold)"></span><span class="prod-stl" style="color:var(--gold);">Auf Anfrage</span></div><a href="mailto:fenyesdesign@outlook.com?subject=Produktanfrage" class="prod-btn pb-req">Anfragen &#9993;</a></div><span class="prod-bdg" style="background:rgba(201,144,106,.12);color:var(--gold);border:1px solid rgba(201,144,106,.2);">Anfrage</span></div>
+      <div class="prod"><div class="prod-img"><img src="https://thangs.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fproduction-thangs-public%2Fuploads%2Fattachments%2Fd8cf4c7f-3f08-4125-afd5-39d252892624%2FFoto%2520crop%2520text.png&w=640&q=75" alt="Mars Pflanzer" loading="lazy"></div><div class="prod-body"><div class="prod-cat">Pflanzer</div><div class="prod-name">Mars Pflanzer</div><div class="prod-price">29,90 &euro;</div><div class="prod-st"><span class="prod-dot" style="background:var(--gold)"></span><span class="prod-stl" style="color:var(--gold);">Auf Anfrage</span></div><a href="mailto:fenyesdesign@outlook.com?subject=Produktanfrage" class="prod-btn pb-req">Anfragen &#9993;</a></div><span class="prod-bdg" style="background:rgba(201,144,106,.12);color:var(--gold);border:1px solid rgba(201,144,106,.2);">Anfrage</span></div>
+      <div class="prod"><div class="prod-img"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_38xvCKWSztMtCzGzltBTjUTWyVl/hf_20260508_210009_2906a2a2-63d6-4ae8-9ca8-3bceb41d8c7b.png" alt="Tata Cat House" loading="lazy"></div><div class="prod-body"><div class="prod-cat">Deko</div><div class="prod-name">Tata Cat House</div><div class="prod-price">59,90 &euro;</div><div class="prod-st"><span class="prod-dot" style="background:var(--gold)"></span><span class="prod-stl" style="color:var(--gold);">Auf Anfrage</span></div><a href="mailto:fenyesdesign@outlook.com?subject=Produktanfrage" class="prod-btn pb-req">Anfragen &#9993;</a></div><span class="prod-bdg" style="background:rgba(201,144,106,.12);color:var(--gold);border:1px solid rgba(201,144,106,.2);">Anfrage</span></div>
+      <div class="prod"><div class="prod-img"><img src="https://thangs.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fproduction-thangs-public%2Fuploads%2Fenhanced_images%2Fv1%2F802aef01-a995-47ce-8bc0-ba226b0fe0a9%2FUntitled%2520design%2520(4).gif&w=640&q=75" alt="Petalator" loading="lazy"></div><div class="prod-body"><div class="prod-cat">Floramorph</div><div class="prod-name">Petalator</div><div class="prod-price">79,90 &euro;</div><div class="prod-st"><span class="prod-dot" style="background:var(--gold)"></span><span class="prod-stl" style="color:var(--gold);">Auf Anfrage</span></div><a href="mailto:fenyesdesign@outlook.com?subject=Produktanfrage" class="prod-btn pb-req">Anfragen &#9993;</a></div><span class="prod-bdg b-top">Bestseller</span></div>
+      <div class="prod"><div class="prod-img"><img src="https://thangs.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fproduction-thangs-public%2Fuploads%2Fenhanced_images%2Fv1%2F9c38b9a2-0f9f-480d-bbe3-f7e0e7264d8a%2FUntitled%2520design%2520(3).gif&w=640&q=75" alt="Tentacles" loading="lazy"></div><div class="prod-body"><div class="prod-cat">Floramorph</div><div class="prod-name">Tentacles</div><div class="prod-price">79,90 &euro;</div><div class="prod-st"><span class="prod-dot" style="background:var(--gold)"></span><span class="prod-stl" style="color:var(--gold);">Auf Anfrage</span></div><a href="mailto:fenyesdesign@outlook.com?subject=Produktanfrage" class="prod-btn pb-req">Anfragen &#9993;</a></div><span class="prod-bdg" style="background:rgba(201,144,106,.12);color:var(--gold);border:1px solid rgba(201,144,106,.2);">Anfrage</span></div>
+      <div class="prod"><div class="prod-img"><img src="https://thangs.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fproduction-thangs-public%2Fuploads%2Fenhanced_images%2Fv1%2Fb9dd70b7-1943-4209-9239-f6dc6de4b861%2FUntitled%2520design%2520(7).gif&w=640&q=75" alt="Tornado" loading="lazy"></div><div class="prod-body"><div class="prod-cat">Floramorph</div><div class="prod-name">Tornado</div><div class="prod-price">74,90 &euro;</div><div class="prod-st"><span class="prod-dot" style="background:var(--gold)"></span><span class="prod-stl" style="color:var(--gold);">Auf Anfrage</span></div><a href="mailto:fenyesdesign@outlook.com?subject=Produktanfrage" class="prod-btn pb-req">Anfragen &#9993;</a></div><span class="prod-bdg" style="background:rgba(201,144,106,.12);color:var(--gold);border:1px solid rgba(201,144,106,.2);">Anfrage</span></div>
+      <div class="prod"><div class="prod-img"><img src="https://thangs.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fproduction-thangs-public%2Fuploads%2Fattachments%2F284c1c6d-838a-4b50-8c6a-18bebcf049f7%2FFoto%2520crop%2520text.png&w=640&q=75" alt="Aqua Lampe" loading="lazy"></div><div class="prod-body"><div class="prod-cat">Lampe</div><div class="prod-name">Aqua Lampe</div><div class="prod-price">32,90 &euro;</div><div class="prod-st"><span class="prod-dot" style="background:var(--gold)"></span><span class="prod-stl" style="color:var(--gold);">Auf Anfrage · 4-6 Tage</span></div><a href="mailto:fenyesdesign@outlook.com?subject=Anfrage: Aqua Lampe" class="prod-btn pb-req">Anfragen &#9993;</a></div><span class="prod-bdg" style="background:rgba(201,144,106,.12);color:var(--gold);border:1px solid rgba(201,144,106,.2);">Anfrage</span></div>
+      <div class="prod"><div class="prod-img"><img src="https://thangs.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fproduction-thangs-public%2Fuploads%2Fattachments%2F2c170eff-e391-48b9-8739-f3dd28d53493%2FFoto%2520crop%2520text.png&w=640&q=75" alt="Social Battery" loading="lazy"></div><div class="prod-body"><div class="prod-cat">Lampe</div><div class="prod-name">Social Battery</div><div class="prod-price">32,90 &euro;</div><div class="prod-st"><span class="prod-dot" style="background:var(--gold)"></span><span class="prod-stl" style="color:var(--gold);">Auf Anfrage · 4-6 Tage</span></div><a href="mailto:fenyesdesign@outlook.com?subject=Anfrage: Social Battery" class="prod-btn pb-req">Anfragen &#9993;</a></div><span class="prod-bdg b-new">Viral</span></div>
+      <div class="prod"><div class="prod-img"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_38xvCKWSztMtCzGzltBTjUTWyVl/hf_20260508_201221_cd9d2532-d8a7-4df8-b43f-8d04dc0a8064.png" alt="Wick Lampe" loading="lazy"></div><div class="prod-body"><div class="prod-cat">Lampe</div><div class="prod-name">Wick Lampe</div><div class="prod-price">29,90 &euro;</div><div class="prod-st"><span class="prod-dot" style="background:var(--gold)"></span><span class="prod-stl" style="color:var(--gold);">Auf Anfrage · 4-6 Tage</span></div><a href="mailto:fenyesdesign@outlook.com?subject=Anfrage: Wick Lampe" class="prod-btn pb-req">Anfragen &#9993;</a></div><span class="prod-bdg" style="background:rgba(201,144,106,.12);color:var(--gold);border:1px solid rgba(201,144,106,.2);">Anfrage</span></div>
+    </div>
+    <p class="body r" style="text-align:center;margin-top:24px;font-size:13px;">Alle Produkte auch auf <a href="https://etsy.com/shop/aurorahome" target="_blank" style="color:var(--gold);">Etsy</a>, <a href="https://tiktok.com/@aurorahome" target="_blank" style="color:var(--gold);">TikTok Shop</a> &amp; <a href="https://instagram.com/aurorahome" target="_blank" style="color:var(--gold);">Instagram</a></p>
+  </div>
+</section>
+
+
+
+<!-- WAX MELTS -->
+<section class="sec" id="waxmelts">
+  <div class="w-max">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+
+      <!-- LEFT: Text -->
+      <div>
+        <div class="cap r">Handgegossen</div>
+        <h2 class="h2 r" style="font-size:clamp(36px,4.5vw,56px);margin:14px 0 16px;">Premium<br><em>Wax Melts</em></h2>
+        <p class="body r">Echtes Parfümöl statt billiger Essenzen. Sojawachs statt Paraffin. Du merkst den Unterschied beim ersten Einschmelzen — intensiver, runder, länger anhaltend.</p>
+        <p class="body r" style="margin-top:12px;">Handgegossen in Deutschland, von uns zusammen produziert. Jede Duftnote ist auf eine Saison abgestimmt.</p>
+
+        <!-- Scents Grid -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:28px;">
+          <div class="r" style="border:1px solid var(--line);padding:14px;transition:all .2s;" onmouseover="this.style.borderColor='rgba(201,144,106,.3)'" onmouseout="this.style.borderColor='rgba(244,240,255,.07)'">
+            <div style="font-size:7px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;">🌸 Frühling</div>
+            <div style="font-family:var(--serif);font-size:15px;color:var(--white);font-style:italic;">Kirschblüte &amp; Vanille</div>
+          </div>
+          <div class="r" style="border:1px solid var(--line);padding:14px;transition:all .2s;" onmouseover="this.style.borderColor='rgba(201,144,106,.3)'" onmouseout="this.style.borderColor='rgba(244,240,255,.07)'">
+            <div style="font-size:7px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;">☀️ Sommer</div>
+            <div style="font-family:var(--serif);font-size:15px;color:var(--white);font-style:italic;">Sandelholz &amp; Mango</div>
+          </div>
+          <div class="r" style="border:1px solid var(--line);padding:14px;transition:all .2s;" onmouseover="this.style.borderColor='rgba(201,144,106,.3)'" onmouseout="this.style.borderColor='rgba(244,240,255,.07)'">
+            <div style="font-size:7px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;">🍂 Herbst</div>
+            <div style="font-family:var(--serif);font-size:15px;color:var(--white);font-style:italic;">Zimt &amp; Amber</div>
+          </div>
+          <div class="r" style="border:1px solid var(--line);padding:14px;transition:all .2s;" onmouseover="this.style.borderColor='rgba(201,144,106,.3)'" onmouseout="this.style.borderColor='rgba(244,240,255,.07)'">
+            <div style="font-size:7px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;">❄️ Winter</div>
+            <div style="font-family:var(--serif);font-size:15px;color:var(--white);font-style:italic;">Zeder &amp; Moschus</div>
+          </div>
+        </div>
+
+        <!-- USP -->
+        <div class="r" style="display:flex;gap:12px;padding:16px 18px;margin-top:22px;border:1px solid rgba(201,144,106,.16);background:rgba(201,144,106,.03);">
+          <span style="font-size:20px;flex-shrink:0;">✨</span>
+          <div style="font-size:12px;color:var(--dim);line-height:1.75;">
+            <strong style="color:var(--white);font-weight:400;display:block;">100% Sojawachs &amp; echtes Parfümöl</strong>
+            Kein Paraffin, keine synthetischen Essenzen. Langanhaltend, intensiv, sauber verbrennend.
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div style="margin-top:24px;">
+          <a href="mailto:fenyesdesign@outlook.com?subject=Anfrage: Wax Melts" class="btn-solid r" style="display:inline-block;">Wax Melts anfragen &rarr;</a>
+        </div>
+      </div>
+
+      <!-- RIGHT: Visual -->
+      <div class="rr" style="aspect-ratio:1;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 30%,rgba(201,144,106,.08),rgba(10,9,20,.9));border:1px solid var(--line);position:relative;overflow:hidden;">
+
+        <!-- Animated glow -->
+        <div style="position:absolute;width:180px;height:180px;background:radial-gradient(circle,rgba(201,144,106,.14),transparent 70%);border-radius:50%;animation:wg 3s ease-in-out infinite;"></div>
+
+        <!-- Candle illustration -->
+        <div style="position:relative;z-index:2;text-align:center;">
+          <svg width="80" viewBox="0 0 120 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Flame -->
+            <ellipse cx="60" cy="42" rx="10" ry="16" fill="rgba(255,160,60,.12)"/>
+            <path d="M53 52 Q60 38 67 52 Q64 60 60 57 Q56 60 53 52Z" fill="rgba(255,220,100,.6)"/>
+            <path d="M56 54 Q60 44 64 54 Q62 58 60 56 Q58 58 56 54Z" fill="rgba(255,240,180,.8)"/>
+            <!-- Wick -->
+            <line x1="60" y1="57" x2="60" y2="68" stroke="rgba(201,144,106,.7)" stroke-width="1.5"/>
+            <!-- Wax body -->
+            <rect x="30" y="68" width="60" height="110" rx="4" fill="#1a1208" stroke="rgba(201,144,106,.2)" stroke-width="1"/>
+            <!-- Wax top surface -->
+            <ellipse cx="60" cy="68" rx="30" ry="9" fill="#221808" stroke="rgba(201,144,106,.15)" stroke-width="1"/>
+            <!-- Wax melt pool -->
+            <ellipse cx="60" cy="68" rx="18" ry="5" fill="rgba(201,144,106,.1)"/>
+            <!-- Label area -->
+            <rect x="35" y="100" width="50" height="45" rx="2" fill="rgba(201,144,106,.06)" stroke="rgba(201,144,106,.12)" stroke-width=".8"/>
+            <!-- A text -->
+            <text x="60" y="128" font-family="Georgia,serif" font-size="16" font-weight="300" letter-spacing="3" fill="rgba(201,144,106,.5)" text-anchor="middle">AURORA</text>
+          </svg>
+
+          <!-- Scent dots -->
+          <div style="display:flex;gap:8px;justify-content:center;margin-top:16px;">
+            <div style="width:10px;height:10px;border-radius:50%;background:rgba(220,150,130,.6);"></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:rgba(210,165,80,.5);"></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:rgba(190,70,40,.6);"></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:rgba(100,130,220,.5);"></div>
+          </div>
+          <div style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,144,106,.35);margin-top:10px;">4 Saisondüfte</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+>
