@@ -1067,7 +1067,14 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:80px 64px 3
 .hero-3d-wrap{
   position:relative;width:100%;max-width:560px;aspect-ratio:1/1.1;margin:0 auto;
 }
-#heroCanvas{position:absolute;inset:0;width:100%;height:100%;display:block;background:transparent;}
+#heroCanvas{position:absolute;inset:0;width:100%;height:100%;display:block;background:transparent;z-index:2;}
+.hero-3d-fallback{
+  position:absolute;inset:6% 6% 22% 6%;
+  pointer-events:none;z-index:1;
+  filter:drop-shadow(0 0 22px rgba(155,127,212,.35)) drop-shadow(0 0 40px rgba(201,144,106,.18));
+  transition:opacity .6s ease;
+}
+.hero-3d-wrap.three-loaded .hero-3d-fallback{opacity:0;}
 .hero-3d-text{
   position:absolute;left:0;right:0;bottom:14%;
   text-align:center;pointer-events:none;z-index:2;
@@ -1407,7 +1414,35 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:80px 64px 3
       <!-- 3D Aurora Logo (Three.js procedural; loads assets/aurora-logo.glb if present) -->
       <div class="hero-3d-wrap" id="hero3d">
         <canvas id="heroCanvas"></canvas>
-        <div class="hero-3d-loading" id="hero3dLoading">Initialisiere &middot; 3D-Szene</div>
+        <svg class="hero-3d-fallback" id="hero3dFallback" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="fbRay" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#c8906a"/>
+              <stop offset="55%" stop-color="#d8b890"/>
+              <stop offset="100%" stop-color="#9b7fd4"/>
+            </linearGradient>
+            <radialGradient id="fbOrb" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#fffce0" stop-opacity=".98"/>
+              <stop offset="30%" stop-color="#f8e0b0" stop-opacity=".9"/>
+              <stop offset="100%" stop-color="#9b7fd4" stop-opacity=".15"/>
+            </radialGradient>
+          </defs>
+          <line x1="14" y1="140" x2="206" y2="140" stroke="rgba(201,144,106,.32)" stroke-width="1"/>
+          <line x1="110" y1="140" x2="110" y2="22" stroke="url(#fbRay)" stroke-width="3" stroke-linecap="round"/>
+          <line x1="110" y1="140" x2="78" y2="32" stroke="url(#fbRay)" stroke-width="2.4" stroke-linecap="round"/>
+          <line x1="110" y1="140" x2="142" y2="32" stroke="url(#fbRay)" stroke-width="2.4" stroke-linecap="round"/>
+          <line x1="110" y1="140" x2="46" y2="58" stroke="url(#fbRay)" stroke-width="1.8" stroke-linecap="round" opacity=".85"/>
+          <line x1="110" y1="140" x2="174" y2="58" stroke="url(#fbRay)" stroke-width="1.8" stroke-linecap="round" opacity=".85"/>
+          <line x1="110" y1="140" x2="20" y2="94" stroke="url(#fbRay)" stroke-width="1.2" stroke-linecap="round" opacity=".6"/>
+          <line x1="110" y1="140" x2="200" y2="94" stroke="url(#fbRay)" stroke-width="1.2" stroke-linecap="round" opacity=".6"/>
+          <circle cx="110" cy="140" r="26" fill="url(#fbOrb)"/>
+          <circle cx="110" cy="140" r="15" fill="#fffce0" opacity=".92"/>
+          <circle cx="110" cy="140" r="7" fill="#ffffff"/>
+          <circle cx="110" cy="22" r="3.5" fill="#c8b0f5"/>
+          <circle cx="78" cy="32" r="2.6" fill="#c8906a"/>
+          <circle cx="142" cy="32" r="2.6" fill="#c8906a"/>
+        </svg>
+        <div class="hero-3d-loading" id="hero3dLoading" style="display:none">Initialisiere &middot; 3D-Szene</div>
         <div class="hero-3d-text">
           <span class="aurora-word">AURORA</span>
           <span class="aurora-divider"></span>
@@ -1667,7 +1702,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:80px 64px 3
 
     <div class="wax-cta-row reveal">
       <p class="t">Probier-Set: <em>3 Düfte deiner Wahl für 19,90 €</em>. Perfekt zum Kennenlernen.</p>
-      <a href="mailto:fenyesdesign@outlook.com?subject=Wax Melts Probier-Set" class="btn btn-primary">Set anfragen <span class="arr">→</span></a>
+      <a href="/cdn-cgi/l/email-protection#e482818a9d81978081978d838aa48b9190888b8b8fca878b89db9791868e818790d9b3859cc4a981889097c4b4968b868d8196c9b78190" class="btn btn-primary">Set anfragen <span class="arr">→</span></a>
     </div>
   </div>
 </section>
@@ -1707,7 +1742,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:80px 64px 3
         </div>
 
         <div class="resin-actions reveal">
-          <a href="mailto:fenyesdesign@outlook.com?subject=Custom Resin Anfrage" class="btn btn-primary">Anfrage stellen <span class="arr">→</span></a>
+          <a href="/cdn-cgi/l/email-protection#0a6c6f64736f796e6f79636d644a657f7e666565612469656735797f68606f697e37497f797e65672a586f7963642a4b646c786b6d6f" class="btn btn-primary">Anfrage stellen <span class="arr">→</span></a>
           <a href="resin.html" class="btn btn-ghost">Mehr Infos</a>
         </div>
       </div>
@@ -1856,7 +1891,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:80px 64px 3
           <a href="https://etsy.com/shop/aurorahome" aria-label="Etsy">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3h14v6h-9v3h7v6h-7v3h9v0H5z"/></svg>
           </a>
-          <a href="mailto:fenyesdesign@outlook.com" aria-label="E-Mail">
+          <a href="/cdn-cgi/l/email-protection#1e787b70677b6d7a7b6d7779705e716b6a72717175307d7173" aria-label="E-Mail">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
           </a>
         </div>
@@ -1877,7 +1912,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:80px 64px 3
       </div>
       <div class="foot-col">
         <h4>Info</h4>
-        <a href="mailto:fenyesdesign@outlook.com">Kontakt</a>
+        <a href="/cdn-cgi/l/email-protection#3d5b585344584e59584e545a537d52484951525256135e5250">Kontakt</a>
         <a href="#ildiko">Über Ildiko</a>
         <a href="#">Versand &amp; Lieferung</a>
         <a href="#">Impressum</a>
@@ -1917,13 +1952,13 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:80px 64px 3
         <div class="modal-feat">DHL Versand mit Tracking</div>
         <div class="modal-feat">Antwort auf Anfrage in 48 Stunden</div>
       </div>
-      <a id="mBtn" class="modal-btn" href="mailto:fenyesdesign@outlook.com">Per E-Mail anfragen</a>
+      <a id="mBtn" class="modal-btn" href="/cdn-cgi/l/email-protection#4d2b282334283e29283e242a230d22383921222226632e2220">Per E-Mail anfragen</a>
       <p class="modal-fine">Unverbindlich · persönliches Angebot innerhalb 48 h</p>
     </div>
   </div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ============================================================
 // PRODUCT DATA
 // ============================================================
@@ -2309,13 +2344,13 @@ setupReveal();
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </button>
   </div>
-  <div class="aa-foot">Für Bestellungen direkt an <a href="mailto:fenyesdesign@outlook.com">fenyesdesign@outlook.com</a></div>
+  <div class="aa-foot">Für Bestellungen direkt an <a href="/cdn-cgi/l/email-protection#3355565d4a56405756405a545d735c46475f5c5c581d505c5e"><span class="__cf_email__" data-cfemail="81e7e4eff8e4f2e5e4f2e8e6efc1eef4f5edeeeeeaafe2eeec">[email&#160;protected]</span></a></div>
 </aside>
 
 <!-- ============================================================
      HERO 3D — Three.js procedural Aurora logo + parallax
      ============================================================ -->
-<script type="module">
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="module">
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
@@ -2547,9 +2582,10 @@ else {
   }
   animate();
 
-  // Hide loading label after first frame
+  // Hide loading label after first frame, mark wrap as 3D-loaded so SVG fallback fadet weg
   requestAnimationFrame(() => {
     if (loadingEl) loadingEl.classList.add('hidden');
+    wrap.classList.add('three-loaded');
   });
 
   /* ---------- Optional: load custom GLB if user drops one ---------- */
