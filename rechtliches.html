@@ -3,18 +3,84 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Impressum, Datenschutzerklärung und AGB von Aurora Home — Studio für exklusives Home Decor & Premium Wax Melts, Ildiko Fenyes, Krefeld.">
-<meta name="robots" content="index, follow">
-<title>Rechtliches — Aurora Home</title>
-<link rel="canonical" href="https://jmpanrw-lab.github.io/aurora-home-website/rechtliches.html">
+<meta name="description" content="Aurora Home — Handgefertigte 3D-Deko, Premium Wax Melts und Custom Resin aus Deutschland. Lampen, selbstbewässernde Pflanzer, MagSafe-Ladestationen und mehr. Made-on-Demand in 4–6 Tagen.">
+<meta name="keywords" content="3D-Druck Deko, handgefertigt, Wax Melts, Custom Resin, selbstbewässernder Pflanzer, MagSafe Ladestation, Schmuckkästchen, Schreibtischlampe, Made-on-Demand, Aurora Home, Ildiko Fenyes, Deutschland">
+<meta name="author" content="Ildiko Fenyes · Aurora Home">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0a0914">
+<link rel="canonical" href="https://jmpanrw-lab.github.io/aurora-home-website/">
+<title>Aurora Home — Handgefertigte 3D-Deko aus Deutschland</title>
+
+<!-- ── OPEN GRAPH ─────────────────────────────── -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Aurora Home">
+<meta property="og:locale" content="de_DE">
+<meta property="og:url" content="https://jmpanrw-lab.github.io/aurora-home-website/">
+<meta property="og:title" content="Aurora Home — Handgefertigte 3D-Deko aus Deutschland">
+<meta property="og:description" content="Handgefertigte 3D-Deko, Premium Wax Melts und Custom Resin. Made-on-Demand in 4–6 Tagen. Eine Werkstatt nach Feierabend.">
+<meta property="og:image" content="https://d8j0ntlcm91z4.cloudfront.net/user_38xvCKWSztMtCzGzltBTjUTWyVl/hf_20260515_164621_c1122038-416a-42a2-b631-8d31d7f31c32.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Aurora Home — 3D-gedruckte Deko-Objekte, Werkstatt-Stillleben">
+
+<!-- ── TWITTER CARD ─────────────────────────────── -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Aurora Home — Handgefertigte 3D-Deko aus Deutschland">
+<meta name="twitter:description" content="Handgefertigte 3D-Deko, Premium Wax Melts und Custom Resin. Made-on-Demand in 4–6 Tagen.">
+<meta name="twitter:image" content="https://d8j0ntlcm91z4.cloudfront.net/user_38xvCKWSztMtCzGzltBTjUTWyVl/hf_20260515_164621_c1122038-416a-42a2-b631-8d31d7f31c32.png">
+<meta name="twitter:image:alt" content="Aurora Home — 3D-gedruckte Deko-Objekte, Werkstatt-Stillleben">
+
+<!-- ── STRUCTURED DATA: Organization + WebSite ─────────────────────────────── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://jmpanrw-lab.github.io/aurora-home-website/#org",
+      "name": "Aurora Home",
+      "url": "https://jmpanrw-lab.github.io/aurora-home-website/",
+      "description": "Handgefertigte 3D-Deko, Premium Wax Melts und Custom Resin aus Deutschland. Eine Werkstatt nach Feierabend.",
+      "founder": { "@type": "Person", "name": "Ildiko Fenyes" },
+      "email": "fenyesdesign@outlook.com",
+      "address": { "@type": "PostalAddress", "addressCountry": "DE" },
+      "sameAs": [
+        "https://www.etsy.com/de/shop/AuroraHomeFenyes",
+        "https://www.tiktok.com/@aurorahomefenyes"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://jmpanrw-lab.github.io/aurora-home-website/#website",
+      "url": "https://jmpanrw-lab.github.io/aurora-home-website/",
+      "name": "Aurora Home",
+      "inLanguage": "de-DE",
+      "publisher": { "@id": "https://jmpanrw-lab.github.io/aurora-home-website/#org" }
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="https://d8j0ntlcm91z4.cloudfront.net/user_38xvCKWSztMtCzGzltBTjUTWyVl/hf_20260515_164621_c1122038-416a-42a2-b631-8d31d7f31c32.png">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
 <style>
+/* ============================================================
+   AURORA HOME · v2
+   ============================================================ */
 :root{
   --bg:#0a0914;
   --bg-2:#12101e;
   --bg-3:#1a1828;
+  --bg-4:#22203a;
   --ink:#f4f0ff;
   --text:rgba(244,240,255,.72);
   --muted:rgba(244,240,255,.5);
@@ -22,326 +88,3245 @@
   --line:rgba(244,240,255,.08);
   --line-strong:rgba(244,240,255,.16);
   --gold:#c8906a;
+  --gold-bright:#e8c5a0;
   --lilac:#9b7fd4;
   --serif:"Cormorant",Georgia,serif;
   --sans:"Inter",system-ui,-apple-system,sans-serif;
   --mono:"JetBrains Mono",ui-monospace,monospace;
+  --maxw:1240px;
+  --pad:64px;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 html{background:var(--bg);scroll-behavior:smooth;}
 body{
   background:var(--bg);
-  background-image:
-    radial-gradient(ellipse 50% 40% at 0% 0%, rgba(155,127,212,.08), transparent 70%),
-    radial-gradient(ellipse 50% 30% at 100% 100%, rgba(200,144,106,.06), transparent 70%);
   color:var(--ink);
   font-family:var(--sans);
-  font-size:16px;font-weight:400;line-height:1.6;
-  min-height:100vh;
+  font-size:16px;
+  font-weight:400;
+  line-height:1.55;
+  overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
 }
-a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(200,144,106,.3);transition:border-color .2s;}
-a:hover{border-color:var(--gold);}
+img{display:block;max-width:100%;height:auto;}
+a{text-decoration:none;color:inherit;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+::selection{background:var(--gold);color:var(--bg);}
+::-webkit-scrollbar{width:10px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:rgba(200,144,106,.3);}
+::-webkit-scrollbar-thumb:hover{background:var(--gold);}
 
-/* ── NAV ─────────────────────────────── */
-.nav{
-  position:sticky;top:0;z-index:50;
-  background:rgba(10,9,20,.78);
-  backdrop-filter:blur(16px) saturate(120%);
-  -webkit-backdrop-filter:blur(16px) saturate(120%);
-  border-bottom:1px solid var(--line);
-}
-.nav-inner{
-  max-width:1100px;margin:0 auto;
-  padding:18px 32px;
-  display:flex;align-items:center;justify-content:space-between;
-}
-.brand{
-  display:flex;align-items:center;gap:12px;
-  font-family:var(--serif);font-size:20px;letter-spacing:.02em;
-  color:var(--ink);border:none;
-}
-.brand-dot{
-  width:8px;height:8px;border-radius:50%;
-  background:radial-gradient(circle,var(--gold),var(--lilac));
-  box-shadow:0 0 12px rgba(200,144,106,.6);
-}
-.nav-back{
-  font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--muted);border:none;
-}
-.nav-back:hover{color:var(--ink);}
-
-/* ── HEADER ─────────────────────────────── */
-header.hd{
-  max-width:1100px;margin:0 auto;
-  padding:96px 32px 56px;
-  border-bottom:1px solid var(--line);
-}
+/* ── TYPE TOKENS ─────────────────────────────── */
 .kicker{
-  font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:24px;display:block;
+  font-family:var(--mono);
+  font-size:11px;
+  font-weight:400;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--gold);
 }
-h1{
-  font-family:var(--serif);font-weight:300;line-height:.95;letter-spacing:-.01em;
-  font-size:clamp(48px,7vw,96px);
-  margin-bottom:18px;
+.display{
+  font-family:var(--serif);
+  font-weight:300;
+  line-height:1;
+  letter-spacing:-.005em;
+  color:var(--ink);
 }
-h1 em{font-style:italic;color:var(--lilac);}
-.hd-lede{
-  font-family:var(--serif);font-style:italic;font-size:22px;font-weight:300;
-  color:var(--text);max-width:640px;line-height:1.5;
+.display em{font-style:italic;color:var(--gold-bright);font-weight:300;}
+.body-text{
+  font-family:var(--sans);
+  font-weight:400;
+  font-size:16px;
+  line-height:1.7;
+  color:var(--text);
 }
-.hd-meta{
-  margin-top:36px;
-  display:flex;gap:32px;flex-wrap:wrap;
-  font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+.eyebrow{
+  font-family:var(--mono);
+  font-size:10px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--muted);
 }
-.hd-meta b{color:var(--ink);font-weight:500;}
 
-/* ── TOC ─────────────────────────────── */
-.toc{
-  max-width:1100px;margin:0 auto;
-  padding:48px 32px 0;
-  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
-  background:var(--line);
-  border:1px solid var(--line);
+/* ── LAYOUT ──────────────────────────────────── */
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad);}
+section{padding:120px 0;position:relative;}
+section.tight{padding:80px 0;}
+section.dark{background:var(--bg-2);}
+
+/* ── BUTTONS ─────────────────────────────────── */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--sans);
+  font-size:13px;font-weight:500;
+  letter-spacing:.12em;text-transform:uppercase;
+  padding:16px 28px;
+  border:1px solid transparent;
+  transition:all .25s cubic-bezier(.4,0,.2,1);
+  cursor:pointer;
 }
-.toc a{
-  background:var(--bg);
-  padding:24px 28px;
-  display:block;
-  font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--muted);border:none;
-  transition:background .25s,color .25s;
+.btn .arr{transition:transform .25s;}
+.btn:hover .arr{transform:translateX(4px);}
+.btn-primary{background:var(--gold);color:var(--bg);border-color:var(--gold);}
+.btn-primary:hover{background:var(--gold-bright);border-color:var(--gold-bright);}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line-strong);}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+.btn-text{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold);padding:6px 0;border-bottom:1px solid currentColor;
 }
-.toc a:hover{background:var(--bg-2);color:var(--ink);}
-.toc a b{
-  display:block;font-family:var(--serif);font-size:24px;font-weight:300;
-  letter-spacing:0;text-transform:none;color:var(--ink);margin-top:8px;
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:22px 64px;
+  transition:padding .3s,background .3s,border-color .3s;
+  border-bottom:1px solid transparent;
+}
+.nav.scrolled{
+  padding:14px 64px;
+  background:rgba(10,9,20,.85);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border-bottom-color:var(--line);
+}
+.nav-brand{display:flex;align-items:center;gap:12px;}
+.nav-mark{width:32px;height:32px;}
+.nav-word{
+  font-family:var(--serif);font-size:18px;font-weight:400;
+  letter-spacing:.18em;color:var(--ink);
+}
+.nav-word b{color:var(--gold);font-weight:400;}
+.nav-links{display:flex;gap:36px;}
+.nav-links a{
+  font-family:var(--mono);font-size:11px;font-weight:400;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);
+  transition:color .2s;
+}
+.nav-links a:hover{color:var(--gold);}
+.nav-cta{
+  font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  padding:9px 18px;border:1px solid var(--line-strong);color:var(--ink);
+  transition:all .2s;
+}
+.nav-cta:hover{border-color:var(--gold);color:var(--gold);}
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
+.ham span{display:block;width:22px;height:1px;background:var(--ink);transition:.3s;}
+.ham.open span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+.ham.open span:nth-child(2){opacity:0;}
+.ham.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+.mob{
+  position:fixed;inset:0;z-index:99;background:rgba(10,9,20,.97);backdrop-filter:blur(20px);
+  display:none;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+}
+.mob.open{display:flex;}
+.mob a{
+  font-family:var(--serif);font-size:36px;font-weight:300;
+  color:rgba(244,240,255,.6);padding:10px 20px;transition:color .2s;
+}
+.mob a:hover{color:var(--gold);}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  min-height:100vh;
+  min-height:100svh;
+  padding:140px 64px 80px;
+  display:flex;align-items:center;
+  position:relative;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 100%,rgba(10,9,20,1) 0%,rgba(10,9,20,.55) 50%,transparent 100%),
+    radial-gradient(ellipse 70% 60% at 50% 30%,rgba(155,127,212,.08),transparent 60%),
+    linear-gradient(to bottom,rgba(10,9,20,.35),rgba(10,9,20,.7) 60%,rgba(10,9,20,1)),
+    url("https://d8j0ntlcm91z4.cloudfront.net/user_38xvCKWSztMtCzGzltBTjUTWyVl/hf_20260515_164621_c1122038-416a-42a2-b631-8d31d7f31c32.png");
+  background-size:cover;
+  background-position:center 35%;
+  z-index:0;
+}
+.hero-inner{
+  position:relative;z-index:2;
+  max-width:var(--maxw);margin:0 auto;width:100%;
+  display:grid;grid-template-columns:1fr 480px;gap:56px;align-items:center;
+}
+.hero-content .kicker{margin-bottom:28px;display:inline-flex;align-items:center;gap:12px;}
+.hero-content{min-width:0;}
+.hero-content .kicker::before{content:"";display:block;width:36px;height:1px;background:currentColor;}
+.hero-h1{
+  font-family:var(--serif);font-weight:300;
+  font-size:clamp(54px,7.4vw,108px);
+  line-height:.95;letter-spacing:-.015em;
+  margin-bottom:28px;
+}
+.hero-h1 .em{font-style:italic;color:var(--gold-bright);}
+.hero-h1 .stroke{
+  -webkit-text-stroke:1px var(--gold);
+  color:transparent;
   font-style:italic;
 }
+.hero-tag{
+  font-family:var(--serif);font-style:italic;font-weight:300;
+  font-size:clamp(17px,1.6vw,22px);
+  color:var(--ink);
+  max-width:540px;line-height:1.5;
+  margin-bottom:14px;
+}
+.hero-sub{
+  font-size:16px;color:var(--text);line-height:1.7;
+  max-width:480px;margin-bottom:40px;
+}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:32px;}
+.hero-status{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);
+  padding:8px 14px;
+  border:1px solid var(--line-strong);
+  border-radius:999px;
+  background:rgba(244,240,255,.02);
+}
+.hero-status .dot{
+  width:7px;height:7px;border-radius:50%;background:#4ade80;
+  box-shadow:0 0 0 0 rgba(74,222,128,.5);
+  animation:pulse 2s infinite;
+}
+@keyframes pulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(74,222,128,.5);}
+  50%{box-shadow:0 0 0 8px rgba(74,222,128,0);}
+}
+.hero-visual{display:flex;justify-content:center;align-items:center;}
+.aurora-logo{
+  width:100%;max-width:280px;
+  filter:drop-shadow(0 0 60px rgba(155,127,212,.4)) drop-shadow(0 0 100px rgba(201,144,106,.2));
+  animation:logoFloat 9s ease-in-out infinite;
+}
+@keyframes logoFloat{
+  0%,100%{transform:translateY(0) rotate(-1deg);}
+  50%{transform:translateY(-12px) rotate(1deg);}
+}
+.hero-scroll{
+  position:absolute;bottom:36px;left:50%;transform:translateX(-50%);
+  z-index:3;
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+  font-family:var(--mono);font-size:10px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--faint);
+}
+.hero-scroll::after{
+  content:"";display:block;width:1px;height:36px;
+  background:linear-gradient(to bottom,var(--gold) 0%,transparent 100%);
+  animation:scrollDot 2.2s ease-in-out infinite;
+}
+@keyframes scrollDot{
+  0%{transform:scaleY(0);transform-origin:top;}
+  50%{transform:scaleY(1);transform-origin:top;}
+  51%{transform:scaleY(1);transform-origin:bottom;}
+  100%{transform:scaleY(0);transform-origin:bottom;}
+}
 
-/* ── CONTENT ─────────────────────────────── */
-main{
-  max-width:780px;margin:0 auto;
-  padding:80px 32px 120px;
+/* ============================================================
+   TRUST STRIP (kondensiert)
+   ============================================================ */
+.trust{
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  background:rgba(244,240,255,.015);
 }
-section.legal{padding:48px 0;border-top:1px solid var(--line);}
-section.legal:first-of-type{border-top:none;padding-top:0;}
-.sec-num{
-  font-family:var(--mono);font-size:11px;letter-spacing:.22em;color:var(--gold);
-  margin-bottom:12px;display:block;
+.trust-inner{
+  max-width:var(--maxw);margin:0 auto;
+  display:grid;grid-template-columns:repeat(5,1fr);
+  padding:18px 64px;
 }
-h2{
-  font-family:var(--serif);font-weight:300;font-size:44px;line-height:1.05;letter-spacing:-.005em;
+.trust-item{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;
+  color:var(--muted);text-align:center;
+  border-right:1px solid var(--line);
+  padding:4px 12px;
+}
+.trust-item:last-child{border-right:none;}
+.trust-item svg{width:14px;height:14px;color:var(--gold);flex-shrink:0;}
+
+/* ============================================================
+   DREI WELTEN — Teaser
+   ============================================================ */
+.welten{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--line);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+.welt{
+  background:var(--bg);padding:80px 48px;
+  position:relative;overflow:hidden;
+  transition:background .4s;
+  display:flex;flex-direction:column;
+}
+.welt:hover{background:var(--bg-2);}
+.welt-no{
+  font-family:var(--serif);font-size:90px;font-weight:300;
+  color:rgba(200,144,106,.08);line-height:1;
+  position:absolute;top:32px;right:40px;
+}
+.welt-icon{
+  width:48px;height:48px;
+  border:1px solid var(--line-strong);
+  display:grid;place-items:center;
+  margin-bottom:32px;
+  transition:border-color .3s;
+}
+.welt:hover .welt-icon{border-color:var(--gold);}
+.welt-icon svg{width:22px;height:22px;color:var(--gold);}
+.welt-name{
+  font-family:var(--serif);font-size:32px;font-weight:300;line-height:1.1;
+  color:var(--ink);margin-bottom:14px;
+}
+.welt-name em{font-style:italic;color:var(--gold-bright);}
+.welt-desc{
+  font-size:15px;color:var(--text);line-height:1.7;
+  margin-bottom:32px;flex:1;
+}
+.welt-meta{
+  font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--faint);margin-bottom:24px;
+}
+.welt-link{
+  font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold);
+  display:inline-flex;align-items:center;gap:10px;
+  padding-top:20px;border-top:1px solid var(--line);
+  transition:color .2s;
+}
+.welt:hover .welt-link{color:var(--gold-bright);}
+.welt-link .arr{transition:transform .25s;}
+.welt:hover .welt-link .arr{transform:translateX(6px);}
+
+/* ============================================================
+   ILDIKO — Bridge
+   ============================================================ */
+.ildiko{
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:center;
+  background:var(--bg-2);
+  border-bottom:1px solid var(--line);
+}
+.ildiko-photo{
+  position:relative;
+  aspect-ratio:4/5;
+  min-height:520px;
+  overflow:hidden;
+  background:
+    radial-gradient(ellipse 80% 60% at 60% 40%,rgba(155,127,212,.18),transparent 60%),
+    linear-gradient(135deg,#1c1a2e,#0a0914);
+}
+.ildiko-photo-fill{
+  position:absolute;inset:0;
+  background:
+    repeating-linear-gradient(135deg,
+      rgba(244,240,255,.03) 0,
+      rgba(244,240,255,.03) 2px,
+      transparent 2px,
+      transparent 14px);
+}
+.ildiko-photo .tag{
+  position:absolute;left:32px;bottom:32px;
+  font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);
+  padding:6px 12px;border:1px solid var(--line-strong);
+  background:rgba(10,9,20,.5);
+  backdrop-filter:blur(8px);
+}
+.ildiko-photo .ph-label{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--faint);text-align:center;
+}
+.ildiko-photo .ph-label b{color:var(--gold);display:block;font-weight:400;font-size:11px;margin-bottom:4px;}
+.ildiko-text{padding:96px 80px;}
+.ildiko-text .kicker{margin-bottom:24px;}
+.ildiko-text h2{
+  font-family:var(--serif);font-weight:300;
+  font-size:clamp(40px,4.5vw,64px);line-height:1;
   margin-bottom:24px;
 }
-h2 em{font-style:italic;color:var(--lilac);}
-h3{
-  font-family:var(--serif);font-weight:400;font-size:22px;line-height:1.2;
-  margin:36px 0 14px;color:var(--ink);
+.ildiko-text h2 em{font-style:italic;color:var(--gold-bright);}
+.ildiko-quote{
+  font-family:var(--serif);font-style:italic;font-weight:300;
+  font-size:22px;line-height:1.5;color:var(--ink);
+  padding-left:22px;border-left:2px solid var(--gold);
+  margin-bottom:28px;
 }
-h4{
-  font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--gold);margin:28px 0 10px;
+.ildiko-bio{font-size:15px;color:var(--text);line-height:1.7;max-width:440px;margin-bottom:32px;}
+.ildiko-socials{display:flex;flex-direction:column;gap:1px;background:var(--line);}
+.ildiko-social{
+  display:flex;align-items:center;gap:16px;
+  padding:16px 20px;background:var(--bg);
+  transition:background .2s;
 }
-p{margin-bottom:14px;color:var(--text);line-height:1.7;}
-p.lead{color:var(--ink);font-size:17px;}
-strong{color:var(--ink);font-weight:500;}
-ul{margin:8px 0 18px 0;padding-left:0;list-style:none;}
-ul li{
-  padding-left:22px;position:relative;margin-bottom:10px;color:var(--text);line-height:1.6;
+.ildiko-social:hover{background:var(--bg-3);}
+.ildiko-social svg{width:18px;height:18px;color:var(--gold);flex-shrink:0;}
+.ildiko-social .label{font-size:14px;color:var(--ink);}
+.ildiko-social .handle{font-family:var(--mono);font-size:11px;color:var(--muted);margin-left:auto;letter-spacing:.08em;}
+.ildiko-social .arr{color:var(--gold);transition:transform .2s;margin-left:8px;}
+.ildiko-social:hover .arr{transform:translateX(4px);}
+
+/* ============================================================
+   SECTION HEADER (re-usable)
+   ============================================================ */
+.sec-head{
+  display:grid;grid-template-columns:1fr auto;
+  align-items:end;gap:48px;
+  margin-bottom:64px;
+  padding-bottom:32px;
+  position:relative;
 }
-ul li::before{
-  content:"";position:absolute;left:0;top:.7em;
-  width:8px;height:1px;background:var(--gold);
+.sec-head::after{
+  content:"";position:absolute;left:0;bottom:0;
+  height:1px;background:var(--line);width:0;
+  transition:width 1.6s cubic-bezier(.23,1,.32,1);
 }
-ol{margin:8px 0 18px 22px;color:var(--text);line-height:1.7;}
-ol li{margin-bottom:8px;padding-left:6px;}
-.address{
-  background:rgba(244,240,255,.025);
-  border:1px solid var(--line-strong);
-  border-left:2px solid var(--gold);
-  padding:20px 24px;
-  margin:18px 0;
-  font-family:var(--serif);font-size:18px;line-height:1.5;color:var(--ink);
+.sec-head.in::after{width:100%;}
+.sec-head .kicker{margin-bottom:18px;display:block;}
+.sec-head h2{
+  font-family:var(--serif);font-weight:300;
+  font-size:clamp(42px,5vw,72px);
+  line-height:1;letter-spacing:-.01em;
 }
-.address b{display:block;font-weight:500;font-style:italic;margin-bottom:4px;}
-.callout{
-  background:rgba(155,127,212,.06);
-  border:1px solid rgba(155,127,212,.25);
-  padding:22px 26px;
-  margin:24px 0;
-  border-radius:2px;
+.sec-head h2 em{font-style:italic;color:var(--gold-bright);}
+.sec-head .meta{
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em;
+  color:var(--muted);text-align:right;line-height:1.6;
 }
-.callout-tag{
+.sec-head .meta b{color:var(--gold);font-weight:400;}
+
+/* ============================================================
+   KATALOG
+   ============================================================ */
+.cat-filters{
+  display:flex;flex-wrap:wrap;gap:8px;
+  margin-bottom:40px;
+}
+.chip{
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  padding:9px 16px;border:1px solid var(--line-strong);
+  color:var(--muted);transition:all .2s;cursor:pointer;
+  background:transparent;
+}
+.chip:hover{border-color:var(--gold);color:var(--gold);}
+.chip.active{background:var(--gold);color:var(--bg);border-color:var(--gold);}
+.chip .count{
+  display:inline-block;margin-left:6px;
+  font-size:9px;opacity:.65;
+}
+
+/* Bestseller-Hero-Row */
+.bestseller-row{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:1px;background:var(--line);
+  margin-bottom:1px;
+}
+.bs-card{
+  background:var(--bg-2);padding:0;position:relative;overflow:hidden;
+  display:grid;grid-template-columns:1.2fr 1fr;min-height:340px;
+  cursor:pointer;transition:background .3s;
+}
+.bs-card:hover{background:var(--bg-3);}
+.bs-img{
+  position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#1c1a2e,#0a0914);
+}
+.bs-img img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .8s cubic-bezier(.23,1,.32,1);
+}
+.bs-card:hover .bs-img img{transform:scale(1.04);}
+.bs-badge{
+  position:absolute;top:16px;left:16px;
+  font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;
+  padding:5px 10px;color:var(--bg);background:var(--gold);
+}
+.bs-info{padding:32px 28px;display:flex;flex-direction:column;justify-content:space-between;}
+.bs-cat{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.bs-name{font-family:var(--serif);font-size:28px;font-weight:300;line-height:1.1;color:var(--ink);margin-bottom:10px;}
+.bs-desc{font-size:14px;color:var(--text);line-height:1.65;margin-bottom:20px;}
+.bs-foot{display:flex;align-items:center;justify-content:space-between;padding-top:18px;border-top:1px solid var(--line);}
+.bs-price{font-family:var(--serif);font-size:24px;color:var(--gold-bright);}
+.bs-cta{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:6px;}
+
+/* Standard-Produkt-Grid */
+.prod-grid{
+  display:grid;grid-template-columns:repeat(5,1fr);
+  gap:1px;background:var(--line);
+}
+.prod{
+  background:var(--bg-2);position:relative;overflow:hidden;
+  cursor:pointer;transition:background .3s;
+  display:flex;flex-direction:column;
+}
+.prod:hover{background:var(--bg-3);}
+.prod-img{
+  position:relative;aspect-ratio:1;overflow:hidden;
+  background:linear-gradient(135deg,#1c1a2e,#0a0914);
+}
+.prod-img img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .8s cubic-bezier(.23,1,.32,1);
+}
+.prod:hover .prod-img img{transform:scale(1.06);}
+.prod-badge{
+  position:absolute;top:10px;left:10px;
+  font-family:var(--mono);font-size:8px;letter-spacing:.16em;text-transform:uppercase;
+  padding:3px 8px;
+}
+.b-bestseller{background:var(--gold);color:var(--bg);}
+.b-viral{background:var(--lilac);color:var(--ink);}
+.b-new{background:#4ade80;color:var(--bg);}
+.prod-info{padding:18px 18px 22px;flex:1;display:flex;flex-direction:column;}
+.prod-cat{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.prod-name{font-family:var(--serif);font-size:18px;font-weight:300;line-height:1.15;color:var(--ink);margin-bottom:auto;}
+.prod-price{font-family:var(--serif);font-size:20px;color:var(--gold-bright);margin-top:14px;}
+
+/* SVG placeholder */
+.ph-img{
+  width:100%;height:100%;
+  background:
+    repeating-linear-gradient(135deg,
+      rgba(244,240,255,.025) 0,
+      rgba(244,240,255,.025) 1px,
+      transparent 1px,
+      transparent 12px),
+    radial-gradient(ellipse at center,rgba(155,127,212,.06),transparent 70%);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;
+}
+.ph-img .ph-txt{
+  font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--faint);text-align:center;line-height:1.6;
+  padding:0 16px;
+}
+.ph-img .ph-txt b{display:block;color:var(--gold);font-weight:400;margin-bottom:4px;}
+
+/* ============================================================
+   WAX MELTS — Farbsystem (keine Emojis)
+   ============================================================ */
+.wax-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+.scent{
+  position:relative;aspect-ratio:1/1.25;
+  padding:24px 22px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  overflow:hidden;
+  cursor:pointer;
+  transition:transform .4s cubic-bezier(.23,1,.32,1);
+  isolation:isolate;
+}
+.scent::before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:var(--scent-grad);
+}
+.scent::after{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(to bottom,transparent 0%,rgba(10,9,20,.55) 100%);
+}
+.scent:hover{transform:translateY(-4px);}
+.scent-top{display:flex;align-items:flex-start;justify-content:space-between;}
+.scent-no{
+  font-family:var(--serif);font-size:34px;font-weight:300;line-height:1;color:rgba(255,255,255,.92);
+  letter-spacing:.02em;
+}
+.scent-season{
+  font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(255,255,255,.7);text-align:right;
+}
+.scent-bottom{}
+.scent-name{
+  font-family:var(--serif);font-style:italic;font-size:22px;font-weight:300;line-height:1.15;
+  color:#fff;margin-bottom:8px;
+  text-shadow:0 2px 12px rgba(0,0,0,.4);
+}
+.scent-notes{
+  font-family:var(--mono);font-size:10px;letter-spacing:.1em;
+  color:rgba(255,255,255,.7);line-height:1.5;
+  margin-bottom:14px;
+}
+.scent-price{
+  display:flex;align-items:baseline;justify-content:space-between;
+  padding-top:12px;border-top:1px solid rgba(255,255,255,.15);
+}
+.scent-price .p{font-family:var(--serif);font-size:18px;color:#fff;}
+.scent-price .add{
+  font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(255,255,255,.85);
+}
+.scent-bs{
+  position:absolute;top:14px;left:14px;
+  font-family:var(--mono);font-size:8px;letter-spacing:.16em;text-transform:uppercase;
+  padding:3px 8px;background:#fff;color:var(--bg);z-index:1;
+}
+
+.wax-usp{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1px;background:var(--line);margin-top:48px;
+  border:1px solid var(--line);
+}
+.wax-usp-item{
+  background:var(--bg);padding:24px;text-align:center;
+}
+.wax-usp-item .n{font-family:var(--serif);font-size:32px;color:var(--gold-bright);font-weight:300;line-height:1;margin-bottom:8px;}
+.wax-usp-item .l{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);}
+
+.wax-cta-row{
+  margin-top:48px;display:flex;align-items:center;justify-content:space-between;
+  gap:32px;padding:32px;border:1px solid var(--line);background:rgba(244,240,255,.015);
+}
+.wax-cta-row .t{
+  font-family:var(--serif);font-size:22px;font-style:italic;font-weight:300;color:var(--ink);
+  max-width:560px;line-height:1.4;
+}
+.wax-cta-row .t em{color:var(--gold-bright);}
+
+/* ============================================================
+   CUSTOM RESIN
+   ============================================================ */
+.resin{background:var(--bg-2);overflow:hidden;position:relative;}
+.resin::before{
+  content:"";position:absolute;top:-200px;right:-200px;
+  width:600px;height:600px;
+  background:radial-gradient(circle,rgba(155,127,212,.08),transparent 70%);
+  pointer-events:none;
+}
+.resin-inner{display:grid;grid-template-columns:1.05fr 1fr;gap:80px;align-items:center;position:relative;z-index:1;}
+.resin-content .kicker{margin-bottom:24px;}
+.resin-content h2{
+  font-family:var(--serif);font-weight:300;
+  font-size:clamp(40px,5vw,72px);line-height:1;
+  margin-bottom:24px;
+}
+.resin-content h2 em{font-style:italic;color:var(--lilac);}
+.resin-lead{font-size:17px;color:var(--text);line-height:1.7;max-width:480px;margin-bottom:36px;}
+.resin-tiers{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);}
+.tier{background:var(--bg);padding:22px 24px;}
+.tier-price{font-family:var(--serif);font-size:28px;font-weight:300;color:var(--gold);line-height:1;margin-bottom:6px;}
+.tier-price.lilac{color:var(--lilac);}
+.tier-name{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;}
+.tier-desc{font-size:13px;color:var(--faint);line-height:1.5;}
+.resin-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px;}
+.resin-process{
+  display:flex;flex-direction:column;gap:1px;background:var(--line);
+  border:1px solid var(--line);
+}
+.proc-step{
+  background:var(--bg);padding:24px 28px;
+  display:grid;grid-template-columns:48px 1fr;gap:20px;align-items:center;
+}
+.proc-step .num{
+  font-family:var(--serif);font-size:32px;font-weight:300;color:var(--gold);line-height:1;
+}
+.proc-step h4{font-family:var(--serif);font-size:18px;font-weight:400;color:var(--ink);margin-bottom:4px;}
+.proc-step p{font-size:13px;color:var(--text);line-height:1.55;}
+.resin-note{
+  margin-top:14px;padding:14px 20px;
+  border:1px solid rgba(200,144,106,.18);background:rgba(200,144,106,.04);
+  font-size:13px;color:var(--text);line-height:1.6;
+}
+.resin-note b{color:var(--ink);font-weight:500;}
+
+/* ============================================================
+   SOCIAL PROOF
+   ============================================================ */
+.social{padding:120px 0;border-top:1px solid var(--line);}
+.social-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);margin-top:48px;border:1px solid var(--line);}
+.review{
+  background:var(--bg);padding:36px 32px;
+  display:flex;flex-direction:column;
+  min-height:280px;
+}
+.review-stars{
+  display:flex;gap:3px;margin-bottom:18px;
+  color:var(--gold);font-size:14px;letter-spacing:.1em;
+}
+.review-text{
+  font-family:var(--serif);font-style:italic;font-size:18px;font-weight:300;
+  color:var(--ink);line-height:1.55;margin-bottom:24px;flex:1;
+}
+.review-meta{
+  display:flex;align-items:center;gap:14px;
+  padding-top:18px;border-top:1px solid var(--line);
+}
+.review-avatar{
+  width:38px;height:38px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),var(--lilac));
+  display:grid;place-items:center;
+  font-family:var(--serif);font-size:15px;color:var(--bg);font-weight:500;
+}
+.review-name{font-size:13px;color:var(--ink);}
+.review-source{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:2px;}
+
+/* ============================================================
+   NEWSLETTER
+   ============================================================ */
+.nl{background:var(--bg-2);padding:120px 64px;border-top:1px solid var(--line);text-align:center;}
+.nl-inner{max-width:580px;margin:0 auto;}
+.nl .kicker{margin-bottom:18px;display:inline-flex;align-items:center;gap:12px;}
+.nl .kicker::before,.nl .kicker::after{content:"";display:block;width:36px;height:1px;background:currentColor;}
+.nl h2{font-family:var(--serif);font-weight:300;font-size:clamp(40px,4.5vw,64px);line-height:1.05;margin-bottom:18px;}
+.nl h2 em{font-style:italic;color:var(--gold-bright);}
+.nl p{font-size:16px;color:var(--text);line-height:1.7;margin-bottom:32px;}
+.nl-form{display:flex;max-width:460px;margin:0 auto 14px;gap:0;}
+.nl-input{
+  flex:1;background:rgba(244,240,255,.04);
+  border:1px solid var(--line-strong);border-right:none;
+  color:var(--ink);font-family:var(--sans);font-size:14px;font-weight:400;
+  padding:15px 20px;outline:none;transition:border-color .2s;
+}
+.nl-input::placeholder{color:var(--faint);}
+.nl-input:focus{border-color:var(--gold);}
+.nl-btn{
+  background:var(--gold);color:var(--bg);
+  font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;
+  padding:15px 24px;cursor:pointer;transition:background .2s;border:1px solid var(--gold);white-space:nowrap;
+}
+.nl-btn:hover{background:var(--gold-bright);}
+.nl-fine{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--faint);}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer{background:var(--bg);border-top:1px solid var(--line);padding:80px 64px 32px;}
+.foot-inner{max-width:var(--maxw);margin:0 auto;}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:60px;padding-bottom:48px;border-bottom:1px solid var(--line);margin-bottom:24px;}
+.foot-brand .nav-brand{margin-bottom:18px;}
+.foot-brand p{font-size:14px;color:var(--text);line-height:1.7;max-width:280px;margin-bottom:20px;}
+.foot-soc{display:flex;gap:8px;}
+.foot-soc a{
+  width:36px;height:36px;border:1px solid var(--line-strong);
+  display:grid;place-items:center;
+  transition:border-color .2s,color .2s;color:var(--muted);
+}
+.foot-soc a:hover{border-color:var(--gold);color:var(--gold);}
+.foot-soc svg{width:16px;height:16px;}
+.foot-col h4{
   font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--lilac);margin-bottom:10px;display:block;
+  color:var(--gold);margin-bottom:18px;font-weight:500;
 }
-.callout strong{color:var(--ink);}
-.callout p{margin-bottom:0;}
+.foot-col a{display:block;font-size:14px;color:var(--text);padding:5px 0;transition:color .2s;}
+.foot-col a:hover{color:var(--gold);}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
+.foot-copy{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--faint);}
+.foot-legal{display:flex;gap:20px;}
+.foot-legal a{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--faint);transition:color .2s;}
+.foot-legal a:hover{color:var(--gold);}
 
-/* ── FOOTER ─────────────────────────────── */
-footer.ft{
-  max-width:1100px;margin:0 auto;
-  padding:40px 32px 80px;
+/* ============================================================
+   PRODUCT MODAL
+   ============================================================ */
+.modal{
+  position:fixed;inset:0;z-index:200;
+  background:rgba(10,9,20,.92);backdrop-filter:blur(20px);
+  display:none;align-items:center;justify-content:center;
+  padding:32px;
+}
+.modal.open{display:flex;}
+.modal-card{
+  max-width:900px;width:100%;max-height:90vh;overflow:auto;
+  background:var(--bg-2);border:1px solid var(--line-strong);
+  display:grid;grid-template-columns:1fr 1fr;
+  position:relative;
+}
+.modal-close{
+  position:absolute;top:14px;right:14px;z-index:10;
+  width:36px;height:36px;border:1px solid var(--line-strong);
+  display:grid;place-items:center;color:var(--ink);
+  background:rgba(10,9,20,.6);
+}
+.modal-close:hover{border-color:var(--gold);color:var(--gold);}
+.modal-img{aspect-ratio:1;background:#0a0914;overflow:hidden;}
+.modal-img img,.modal-img .ph-img{width:100%;height:100%;object-fit:cover;}
+.modal-body{padding:40px 36px;display:flex;flex-direction:column;}
+.modal-cat{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.modal-name{font-family:var(--serif);font-size:34px;font-weight:300;color:var(--ink);margin-bottom:8px;}
+.modal-price{font-family:var(--serif);font-size:26px;color:var(--gold-bright);margin-bottom:16px;}
+.modal-status{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:20px;}
+.modal-status .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);}
+.modal-desc{font-size:14px;color:var(--text);line-height:1.7;margin-bottom:28px;}
+.modal-feats{display:grid;grid-template-columns:1fr;gap:8px;margin-bottom:24px;}
+.modal-feat{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--text);padding-left:16px;position:relative;}
+.modal-feat::before{content:"—";position:absolute;left:0;color:var(--gold);}
+.modal-btn{
+  display:block;width:100%;text-align:center;
+  padding:16px;background:var(--gold);color:var(--bg);
+  font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;
+  transition:background .2s;border:1px solid var(--gold);
+}
+.modal-btn:hover{background:var(--gold-bright);}
+.modal-fine{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--faint);text-align:center;margin-top:10px;}
+
+/* ============================================================
+   REVEAL
+   ============================================================ */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s cubic-bezier(.23,1,.32,1);}
+.reveal.in{opacity:1;transform:translateY(0);}
+.reveal-stagger > *{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s cubic-bezier(.23,1,.32,1);}
+.reveal-stagger.in > *{opacity:1;transform:translateY(0);}
+.reveal-stagger.in > *:nth-child(1){transition-delay:.0s;}
+.reveal-stagger.in > *:nth-child(2){transition-delay:.08s;}
+.reveal-stagger.in > *:nth-child(3){transition-delay:.16s;}
+.reveal-stagger.in > *:nth-child(4){transition-delay:.24s;}
+.reveal-stagger.in > *:nth-child(5){transition-delay:.32s;}
+.reveal-stagger.in > *:nth-child(6){transition-delay:.4s;}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width:1100px){
+  .nav,.nav.scrolled{padding-left:32px;padding-right:32px;}
+  .hero{padding:140px 32px 80px;}
+  .hero-inner{grid-template-columns:1fr 360px;gap:48px;}
+  .hero-3d-wrap{max-width:360px;}
+  .trust-inner,footer{padding-left:32px;padding-right:32px;}
+  .nl{padding-left:32px;padding-right:32px;}
+  .wrap{padding:0 32px;}
+  .prod-grid{grid-template-columns:repeat(4,1fr);}
+  .wax-grid{grid-template-columns:repeat(3,1fr);}
+  .ildiko-text{padding:64px 48px;}
+}
+@media (max-width:880px){
+  :root{--pad:24px;}
+  .nav,.nav.scrolled{padding-left:24px;padding-right:24px;}
+  .hero{padding:120px 24px 100px;}
+  .hero-inner{grid-template-columns:1fr;gap:48px;}
+  .hero-visual{order:-1;max-width:340px;margin:0 auto;}
+  .nav-links{display:none;}
+  .nav-cta{display:none;}
+  .ham{display:flex;}
+  .trust-inner{grid-template-columns:repeat(2,1fr);}
+  .trust-item{border-right:none;border-bottom:1px solid var(--line);padding:10px;}
+  .welten{grid-template-columns:1fr;}
+  .ildiko{grid-template-columns:1fr;}
+  .ildiko-photo{min-height:380px;aspect-ratio:auto;}
+  .ildiko-text{padding:64px 24px;}
+  .sec-head{grid-template-columns:1fr;gap:24px;}
+  .sec-head .meta{text-align:left;}
+  .bestseller-row,.prod-grid{grid-template-columns:repeat(2,1fr);}
+  .bs-card{grid-template-columns:1fr;}
+  .bs-img{aspect-ratio:4/3;}
+  .wax-grid{grid-template-columns:repeat(2,1fr);}
+  .wax-usp{grid-template-columns:repeat(2,1fr);}
+  .wax-cta-row{flex-direction:column;align-items:flex-start;}
+  .resin-inner{grid-template-columns:1fr;gap:48px;}
+  .social-grid{grid-template-columns:1fr;}
+  .nl{padding:80px 24px;}
+  footer{padding:64px 24px 32px;}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:32px;}
+  .modal-card{grid-template-columns:1fr;max-height:88vh;}
+  section{padding:80px 0;}
+}
+/* ============================================================
+   AURORA ASSISTANT (Chat)
+   ============================================================ */
+.aa-fab{
+  position:fixed;right:32px;bottom:32px;z-index:150;
+  width:64px;height:64px;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,#22203a 0%,#0a0914 70%);
+  border:1px solid rgba(200,144,106,.4);
+  box-shadow:0 8px 32px rgba(0,0,0,.5),0 0 0 4px rgba(200,144,106,.06),inset 0 0 24px rgba(155,127,212,.15);
+  display:grid;place-items:center;cursor:pointer;
+  transition:transform .35s cubic-bezier(.23,1,.32,1),box-shadow .35s;
+  animation:aaFabPulse 4s ease-in-out infinite;
+}
+.aa-fab:hover{
+  transform:translateY(-3px) scale(1.04);
+  box-shadow:0 14px 40px rgba(0,0,0,.6),0 0 0 4px rgba(200,144,106,.12),0 0 30px rgba(200,144,106,.3);
+}
+.aa-fab svg{width:34px;height:auto;transition:transform .8s cubic-bezier(.23,1,.32,1);}
+.aa-fab:hover svg{transform:rotate(20deg);}
+.aa-fab .ping{
+  position:absolute;top:6px;right:6px;
+  width:10px;height:10px;border-radius:50%;
+  background:#4ade80;
+  box-shadow:0 0 0 3px rgba(10,9,20,1);
+}
+.aa-fab .ping::after{
+  content:"";position:absolute;inset:-2px;border-radius:50%;
+  background:#4ade80;opacity:.5;animation:aaPing 2s ease-out infinite;
+}
+@keyframes aaPing{
+  0%{transform:scale(.8);opacity:.6;}
+  100%{transform:scale(2.2);opacity:0;}
+}
+@keyframes aaFabPulse{
+  0%,100%{box-shadow:0 8px 32px rgba(0,0,0,.5),0 0 0 4px rgba(200,144,106,.06),inset 0 0 24px rgba(155,127,212,.15);}
+  50%{box-shadow:0 8px 32px rgba(0,0,0,.5),0 0 0 4px rgba(200,144,106,.14),inset 0 0 32px rgba(155,127,212,.25);}
+}
+.aa-fab.open{transform:scale(.86);opacity:.6;}
+
+.aa-panel{
+  position:fixed;right:32px;bottom:112px;z-index:149;
+  width:400px;max-width:calc(100vw - 32px);
+  height:600px;max-height:calc(100vh - 144px);
+  background:rgba(10,9,20,.92);
+  backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);
+  border:1px solid var(--line-strong);
+  display:none;flex-direction:column;
+  box-shadow:0 24px 60px rgba(0,0,0,.6),0 0 0 1px rgba(200,144,106,.06);
+  opacity:0;transform:translateY(20px) scale(.96);transform-origin:bottom right;
+  transition:opacity .35s,transform .35s cubic-bezier(.23,1,.32,1);
+}
+.aa-panel.open{display:flex;opacity:1;transform:translateY(0) scale(1);}
+.aa-head{
+  padding:18px 20px;
+  display:grid;grid-template-columns:36px 1fr 28px;gap:12px;align-items:center;
+  border-bottom:1px solid var(--line);
+  background:linear-gradient(to bottom,rgba(200,144,106,.04),transparent);
+}
+.aa-avatar{
+  width:36px;height:36px;border-radius:50%;
+  background:radial-gradient(circle at 40% 40%,#3a3050 0%,#0a0914 70%);
+  border:1px solid rgba(200,144,106,.3);
+  display:grid;place-items:center;
+}
+.aa-avatar svg{width:22px;height:auto;}
+.aa-id .name{
+  font-family:var(--serif);font-size:18px;font-weight:400;color:var(--ink);
+  line-height:1.1;letter-spacing:.02em;
+}
+.aa-id .status{
+  font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);margin-top:2px;display:flex;align-items:center;gap:6px;
+}
+.aa-id .status::before{
+  content:"";width:5px;height:5px;border-radius:50%;background:#4ade80;
+  box-shadow:0 0 0 0 rgba(74,222,128,.5);animation:pulse 2s infinite;
+}
+.aa-close{
+  width:28px;height:28px;display:grid;place-items:center;
+  color:var(--muted);transition:color .2s;
+}
+.aa-close:hover{color:var(--gold);}
+.aa-body{
+  flex:1;overflow-y:auto;padding:20px;
+  display:flex;flex-direction:column;gap:14px;
+  scrollbar-width:thin;
+}
+.aa-body::-webkit-scrollbar{width:4px;}
+.aa-body::-webkit-scrollbar-thumb{background:rgba(200,144,106,.2);}
+
+.aa-msg{
+  max-width:88%;padding:12px 16px;
+  font-size:14px;line-height:1.55;
+  animation:aaMsgIn .35s cubic-bezier(.23,1,.32,1);
+}
+@keyframes aaMsgIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+.aa-msg.bot{
+  align-self:flex-start;
+  background:rgba(244,240,255,.04);
+  border-left:2px solid var(--gold);
+  color:var(--ink);
+}
+.aa-msg.user{
+  align-self:flex-end;
+  background:var(--gold);
+  color:var(--bg);
+  text-align:left;
+}
+.aa-msg.user a{color:var(--bg);text-decoration:underline;}
+.aa-msg em{font-style:italic;color:var(--gold-bright);}
+.aa-msg.bot a{color:var(--gold);text-decoration:underline;}
+
+.aa-typing{
+  align-self:flex-start;
+  padding:14px 16px;background:rgba(244,240,255,.04);
+  border-left:2px solid var(--gold);
+  display:flex;gap:5px;align-items:center;
+}
+.aa-typing span{
+  width:6px;height:6px;border-radius:50%;background:var(--gold);
+  animation:aaDot 1.2s ease-in-out infinite;
+}
+.aa-typing span:nth-child(2){animation-delay:.15s;}
+.aa-typing span:nth-child(3){animation-delay:.3s;}
+@keyframes aaDot{
+  0%,80%,100%{opacity:.3;transform:translateY(0);}
+  40%{opacity:1;transform:translateY(-3px);}
+}
+
+.aa-chips{
+  display:flex;flex-wrap:wrap;gap:6px;
+  padding:0 20px 14px;
   border-top:1px solid var(--line);
-  font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);
-  display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;
+  padding-top:14px;
 }
-footer.ft a{border:none;color:var(--muted);}
-footer.ft a:hover{color:var(--ink);}
+.aa-chip{
+  font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  padding:7px 12px;border:1px solid var(--line-strong);
+  color:var(--muted);cursor:pointer;transition:all .2s;
+  background:rgba(244,240,255,.02);
+}
+.aa-chip:hover{border-color:var(--gold);color:var(--gold);}
 
-@media (max-width:720px){
-  .toc{grid-template-columns:1fr;}
-  header.hd{padding:64px 22px 40px;}
-  main{padding:56px 22px 80px;}
-  h2{font-size:34px;}
+.aa-input-wrap{
+  border-top:1px solid var(--line);
+  padding:14px 16px;
+  display:grid;grid-template-columns:1fr 40px;gap:10px;align-items:end;
 }
+.aa-input{
+  width:100%;resize:none;
+  background:rgba(244,240,255,.03);
+  border:1px solid var(--line-strong);
+  color:var(--ink);font-family:var(--sans);font-size:14px;
+  padding:10px 14px;outline:none;
+  min-height:40px;max-height:120px;
+  line-height:1.4;
+  transition:border-color .2s;
+}
+.aa-input::placeholder{color:var(--faint);}
+.aa-input:focus{border-color:var(--gold);}
+.aa-send{
+  width:40px;height:40px;background:var(--gold);color:var(--bg);
+  display:grid;place-items:center;border:none;cursor:pointer;
+  transition:background .2s,opacity .2s;
+}
+.aa-send:hover:not(:disabled){background:var(--gold-bright);}
+.aa-send:disabled{opacity:.4;cursor:not-allowed;}
+.aa-send svg{width:18px;height:18px;}
+
+.aa-foot{
+  padding:0 20px 14px;
+  font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:var(--faint);
+  text-align:center;
+}
+.aa-foot a{color:var(--gold);}
+
+@media (max-width:520px){
+  .aa-fab{right:20px;bottom:20px;width:56px;height:56px;}
+  .aa-fab svg{width:30px;}
+  .aa-panel{right:12px;left:12px;bottom:90px;width:auto;height:calc(100vh - 120px);}
+}
+/* ============================================================
+   HERO 3D + CINEMATIC OVERLAYS
+   ============================================================ */
+.hero::before{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:radial-gradient(ellipse 85% 75% at 50% 45%,transparent 0%,transparent 38%,rgba(10,9,20,.35) 78%,rgba(10,9,20,.78) 100%);
+}
+.hero-bg{will-change:transform;transition:opacity .6s;}
+.hero-3d-wrap{
+  position:relative;width:100%;max-width:560px;aspect-ratio:1/1.1;margin:0 auto;
+}
+#heroCanvas{position:absolute;inset:0;width:100%;height:100%;display:block;background:transparent;z-index:2;}
+.hero-3d-fallback{
+  position:absolute;inset:6% 6% 22% 6%;
+  pointer-events:none;z-index:1;
+  filter:drop-shadow(0 0 22px rgba(155,127,212,.35)) drop-shadow(0 0 40px rgba(201,144,106,.18));
+  transition:opacity .6s ease;
+}
+.hero-3d-wrap.three-loaded .hero-3d-fallback{opacity:0;}
+.hero-3d-text{
+  position:absolute;left:0;right:0;bottom:14%;
+  text-align:center;pointer-events:none;z-index:2;
+}
+.aurora-word{
+  display:block;font-family:var(--serif);font-weight:300;
+  font-size:clamp(20px,3vw,28px);letter-spacing:.42em;
+  background:linear-gradient(to right,#f0d0b0,#e8e0f8 50%,#c8b0e8);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  text-shadow:0 0 30px rgba(200,144,106,.4);
+}
+.aurora-divider{
+  display:block;width:64px;height:1px;
+  background:linear-gradient(to right,transparent,rgba(200,144,106,.55),transparent);
+  margin:6px auto;
+}
+.aurora-sub{
+  display:block;font-family:var(--serif);font-weight:300;
+  font-size:11px;letter-spacing:.55em;
+  color:rgba(200,144,106,.7);
+}
+.hero-3d-loading{
+  position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;
+  font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--faint);opacity:1;transition:opacity .5s;
+}
+.hero-3d-loading.hidden{opacity:0;}
+@media (max-width:880px){
+  .hero-3d-wrap{max-width:360px;}
+}
+
+/* ============================================================
+   SO FUNKTIONIERT'S
+   ============================================================ */
+.how{padding:120px 0;border-top:1px solid var(--line);}
+.how-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--line);
+  border:1px solid var(--line);
+}
+.how-step{
+  background:var(--bg);padding:40px 36px;
+  position:relative;
+  display:flex;flex-direction:column;
+  transition:background .3s;
+}
+.how-step:hover{background:var(--bg-2);}
+.how-num{
+  font-family:var(--serif);font-size:72px;font-weight:300;
+  color:rgba(200,144,106,.18);line-height:1;margin-bottom:24px;
+  letter-spacing:-.02em;
+}
+.how-step h3{
+  font-family:var(--serif);font-size:24px;font-weight:300;
+  color:var(--ink);margin-bottom:14px;letter-spacing:.005em;
+}
+.how-step p{
+  font-size:14px;color:var(--text);line-height:1.7;
+}
+.how-note{
+  margin-top:36px;padding:24px 28px;
+  border:1px solid rgba(200,144,106,.18);
+  background:rgba(200,144,106,.04);
+  font-size:14px;color:var(--text);line-height:1.7;
+  border-left-width:2px;
+}
+.how-note strong{
+  color:var(--ink);font-weight:500;
+  display:inline;margin-right:6px;
+}
+@media (max-width:880px){
+  .how{padding:80px 0;}
+  .how-grid{grid-template-columns:1fr;}
+  .how-step{padding:36px 28px;}
+  .how-num{font-size:60px;margin-bottom:18px;}
+}
+
+/* ============================================================
+   ATELIER · Werkstatt-Galerie
+   ============================================================ */
+.atelier{
+  padding:140px 0 120px;
+  border-top:1px solid var(--line);
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(155,127,212,.12), transparent 60%),
+    radial-gradient(ellipse 60% 40% at 100% 100%, rgba(200,144,106,.05), transparent 70%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+  position:relative;
+  overflow:hidden;
+}
+.atelier::before{
+  content:"";
+  position:absolute;left:50%;top:0;bottom:0;
+  width:1px;background:linear-gradient(180deg, transparent, rgba(244,240,255,.04) 20%, rgba(244,240,255,.04) 80%, transparent);
+  pointer-events:none;
+}
+.atelier-head{
+  max-width:760px;margin:0 0 16px;
+  padding:0 32px;
+  position:relative;z-index:2;
+}
+.atelier-head .kicker{margin-bottom:18px;display:block;}
+.atelier-head h2{
+  font-family:var(--serif);font-weight:300;line-height:1;
+  font-size:clamp(40px,5.4vw,72px);letter-spacing:-.005em;color:var(--ink);
+}
+.atelier-head h2 em{font-style:italic;color:var(--lilac);}
+.atelier-lede{
+  margin-top:18px;font-size:17px;line-height:1.6;color:var(--text);max-width:600px;
+}
+
+/* Counter line on the right of head */
+.atelier-counter{
+  position:absolute;top:0;right:32px;
+  display:flex;align-items:center;gap:10px;
+  font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);
+}
+.atelier-counter b{
+  font-family:var(--serif);font-style:italic;font-weight:300;font-size:28px;
+  color:var(--ink);letter-spacing:0;
+}
+
+/* Staggered strip — film-roll rhythm */
+.atelier-strip{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+  margin:64px 0 60px;
+  padding:60px 32px 60px;
+  max-width:1480px;
+  margin-left:auto;margin-right:auto;
+  position:relative;
+}
+.atelier-strip::before,
+.atelier-strip::after{
+  content:"";
+  position:absolute;left:32px;right:32px;height:1px;
+  background:repeating-linear-gradient(90deg,
+    rgba(244,240,255,.18) 0 6px,
+    transparent 6px 18px);
+  pointer-events:none;
+}
+.atelier-strip::before{top:0;}
+.atelier-strip::after{bottom:0;}
+
+.atelier-card{
+  position:relative;
+  aspect-ratio:9/16;
+  overflow:hidden;
+  background:#0a0914;
+  isolation:isolate;
+  cursor:pointer;
+  transform:translateY(var(--y,0));
+  transition:transform .8s cubic-bezier(.2,.7,.2,1);
+}
+.atelier-card:nth-child(1){--y:30px;}
+.atelier-card:nth-child(2){--y:-30px;}
+.atelier-card:nth-child(3){--y:30px;}
+.atelier-card:nth-child(4){--y:-30px;}
+.atelier-card::before{
+  /* Film-strip frame perforations */
+  content:"";position:absolute;inset:0;z-index:3;pointer-events:none;
+  border:1px solid rgba(244,240,255,.06);
+  box-shadow:
+    inset 0 0 0 1px rgba(10,9,20,.4),
+    0 30px 60px -20px rgba(0,0,0,.6),
+    0 0 0 1px rgba(155,127,212,.05);
+}
+.atelier-card .atelier-imgwrap{
+  position:absolute;inset:-8% -2%;
+  z-index:0;
+}
+.atelier-card img{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;
+  filter:saturate(1.1) contrast(1.03) brightness(.96);
+  transition:transform 1.6s cubic-bezier(.2,.7,.2,1), filter .6s ease;
+  will-change:transform;
+  transform:translate3d(0,var(--py,0),0);
+}
+.atelier-card:hover img{
+  filter:saturate(1.18) contrast(1.05) brightness(1.02);
+}
+.atelier-card::after{
+  content:"";position:absolute;inset:0;z-index:1;
+  background:
+    linear-gradient(180deg, rgba(10,9,20,0) 30%, rgba(10,9,20,.55) 72%, rgba(10,9,20,.94) 100%),
+    radial-gradient(ellipse 100% 60% at 50% 0%, rgba(155,127,212,.18), transparent 70%);
+  pointer-events:none;
+  transition:opacity .5s ease;
+}
+.atelier-card figcaption{
+  position:absolute;left:0;right:0;bottom:0;
+  padding:26px 22px 24px;
+  z-index:2;
+  display:grid;
+  grid-template-columns:auto 1fr;
+  grid-template-rows:auto auto;
+  column-gap:14px;
+  row-gap:8px;
+  align-items:end;
+}
+.atelier-num{
+  grid-row:1 / span 2;
+  font-family:var(--serif);font-style:italic;font-weight:300;font-size:34px;
+  color:var(--gold);
+  align-self:end;
+  line-height:.9;
+  letter-spacing:-.02em;
+}
+.atelier-label{
+  font-family:var(--serif);font-weight:400;font-style:italic;
+  font-size:24px;line-height:1;color:var(--ink);
+}
+.atelier-cap{
+  grid-column:2;
+  font-size:13px;line-height:1.5;color:rgba(244,240,255,.78);
+  max-width:34ch;
+}
+
+/* Click hint */
+.atelier-card .atelier-zoom{
+  position:absolute;top:16px;right:16px;z-index:2;
+  width:32px;height:32px;border-radius:50%;
+  display:grid;place-items:center;
+  background:rgba(10,9,20,.55);
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+  border:1px solid rgba(244,240,255,.12);
+  opacity:0;transform:scale(.85);
+  transition:opacity .35s ease, transform .35s ease;
+}
+.atelier-card:hover .atelier-zoom{opacity:1;transform:scale(1);}
+.atelier-zoom svg{width:14px;height:14px;stroke:var(--ink);stroke-width:1.6;fill:none;}
+
+.atelier-foot{
+  display:inline-flex;align-items:center;gap:12px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);
+  padding:14px 20px;
+  border:1px solid var(--line-strong);
+  background:rgba(244,240,255,.02);
+  margin-left:32px;
+}
+.atelier-foot-dot{
+  width:8px;height:8px;border-radius:50%;background:var(--lilac);
+  box-shadow:0 0 12px rgba(155,127,212,.8);
+  animation:atelierPulse 2.4s ease-in-out infinite;
+}
+@keyframes atelierPulse{
+  0%,100%{opacity:.55;transform:scale(1);}
+  50%{opacity:1;transform:scale(1.25);}
+}
+
+/* Lightbox */
+.atelier-lightbox{
+  position:fixed;inset:0;z-index:1000;
+  background:rgba(5,4,12,.92);
+  backdrop-filter:blur(20px) saturate(120%);
+  -webkit-backdrop-filter:blur(20px) saturate(120%);
+  display:none;
+  opacity:0;
+  transition:opacity .4s ease;
+}
+.atelier-lightbox.open{display:flex;opacity:1;align-items:center;justify-content:center;}
+.atelier-lightbox-inner{
+  position:relative;
+  max-width:min(90vw,720px);
+  max-height:90vh;
+  display:flex;flex-direction:column;
+  gap:18px;
+  align-items:center;
+}
+.atelier-lightbox img{
+  max-width:100%;
+  max-height:78vh;
+  object-fit:contain;
+  border-radius:2px;
+  box-shadow:0 30px 80px -20px rgba(0,0,0,.8), 0 0 80px -10px rgba(155,127,212,.2);
+  animation:lbIn .5s cubic-bezier(.2,.7,.2,1);
+}
+@keyframes lbIn{from{opacity:0;transform:translateY(20px) scale(.96);}to{opacity:1;transform:none;}}
+.atelier-lightbox-meta{
+  display:flex;align-items:center;gap:18px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
+  animation:lbIn .6s .1s cubic-bezier(.2,.7,.2,1) backwards;
+}
+.atelier-lightbox-meta b{
+  font-family:var(--serif);font-style:italic;font-weight:300;font-size:22px;
+  letter-spacing:0;text-transform:none;color:var(--ink);
+}
+.atelier-lightbox-close,
+.atelier-lightbox-nav{
+  position:absolute;
+  width:48px;height:48px;border-radius:50%;
+  display:grid;place-items:center;
+  background:rgba(244,240,255,.06);
+  border:1px solid rgba(244,240,255,.12);
+  color:var(--ink);
+  cursor:pointer;
+  transition:background .25s,transform .25s;
+}
+.atelier-lightbox-close{top:24px;right:24px;}
+.atelier-lightbox-nav.prev{left:24px;top:50%;transform:translateY(-50%);}
+.atelier-lightbox-nav.next{right:24px;top:50%;transform:translateY(-50%);}
+.atelier-lightbox-close:hover,
+.atelier-lightbox-nav:hover{background:rgba(244,240,255,.12);}
+.atelier-lightbox-close:hover{transform:scale(1.08);}
+.atelier-lightbox-nav.prev:hover{transform:translateY(-50%) translateX(-2px);}
+.atelier-lightbox-nav.next:hover{transform:translateY(-50%) translateX(2px);}
+.atelier-lightbox svg{width:16px;height:16px;stroke:currentColor;stroke-width:2;fill:none;}
+
+@media (max-width:1100px){
+  .atelier-strip{grid-template-columns:repeat(2,1fr);gap:14px;padding:40px 24px;}
+  .atelier-card{aspect-ratio:9/14;}
+  .atelier-card:nth-child(1),
+  .atelier-card:nth-child(3){--y:20px;}
+  .atelier-card:nth-child(2),
+  .atelier-card:nth-child(4){--y:-20px;}
+  .atelier-counter{position:static;margin-top:20px;}
+}
+@media (max-width:640px){
+  .atelier{padding:80px 0 70px;}
+  .atelier-head{padding:0 22px;margin-bottom:20px;}
+  .atelier-strip{
+    grid-template-columns:none;
+    grid-auto-flow:column;
+    grid-auto-columns:78%;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    padding:30px 18px;
+    gap:14px;
+    scrollbar-width:none;
+  }
+  .atelier-strip::-webkit-scrollbar{display:none;}
+  .atelier-strip::before,
+  .atelier-strip::after{display:none;}
+  .atelier-card{scroll-snap-align:start;aspect-ratio:9/16;--y:0 !important;}
+  .atelier-card:nth-child(n){--y:0 !important;}
+  .atelier-label{font-size:21px;}
+  .atelier-cap{font-size:12.5px;}
+  .atelier-foot{margin-left:22px;}
+  .atelier-lightbox-close{top:14px;right:14px;width:40px;height:40px;}
+  .atelier-lightbox-nav{width:40px;height:40px;}
+  .atelier-lightbox-nav.prev{left:10px;}
+  .atelier-lightbox-nav.next{right:10px;}
+}
+
+/* ============================================================
+   CINEMATIC ANIMATIONS
+   ============================================================ */
+.word{
+  display:inline-block;overflow:hidden;
+  vertical-align:bottom;
+  padding-bottom:.12em;margin-bottom:-.12em;
+  line-height:inherit;
+}
+.word-inner{
+  display:inline-block;
+  transform:translateY(110%);
+  transition:transform 1s cubic-bezier(.23,1,.32,1);
+  will-change:transform;
+}
+.reveal.in .word .word-inner,
+.reveal.in h2 .word .word-inner,
+.in .word .word-inner{
+  transform:translateY(0);
+}
+.hero-h1.reveal{
+  opacity:1;transform:none;transition:none;
+}
+.prod,.bs-card{
+  transition:opacity .4s cubic-bezier(.23,1,.32,1),
+             transform .4s cubic-bezier(.23,1,.32,1),
+             background .3s;
+}
+.hero-content{will-change:opacity,transform;}
+.ildiko-photo img{will-change:transform;}
+
+/* ============================================================
+   FOLDABLES + NARROW PHONES + LANDSCAPE
+   ============================================================ */
+
+/* Z Fold inner / kleine Tablets (700–900 px) */
+@media (min-width:700px) and (max-width:880px){
+  .welten{grid-template-columns:1fr 1fr;}
+  .welten .welt:last-child{grid-column:1/-1;}
+  .wax-grid{grid-template-columns:repeat(3,1fr);}
+  .prod-grid{grid-template-columns:repeat(3,1fr);}
+  .bestseller-row{grid-template-columns:1fr 1fr;}
+  .bs-card{grid-template-columns:1.2fr 1fr;min-height:280px;}
+  .ildiko{grid-template-columns:1fr 1fr;}
+  .ildiko-photo{aspect-ratio:4/5;min-height:420px;}
+  .resin-inner{grid-template-columns:1fr 1fr;gap:40px;}
+  .social-grid{grid-template-columns:1fr 1fr;}
+  .social-grid .review:last-child{grid-column:1/-1;}
+  .hero-inner{grid-template-columns:1fr;gap:48px;}
+}
+
+/* Schmale Telefone + Z Fold Cover (≤ 420 px) */
+@media (max-width:420px){
+  :root{--pad:18px;}
+  .nav,.nav.scrolled{padding-left:18px;padding-right:18px;}
+  .nav-word{font-size:14px;letter-spacing:.16em;}
+  .nav-mark{width:28px;height:28px;}
+  .hero{padding:100px 18px 72px;min-height:auto;}
+  .hero-content .kicker{font-size:10px;margin-bottom:18px;letter-spacing:.18em;}
+  .hero-content .kicker::before{width:24px;}
+  .hero-h1{font-size:clamp(38px,11vw,54px);margin-bottom:20px;line-height:1;}
+  .hero-tag{font-size:14px;margin-bottom:12px;line-height:1.5;}
+  .hero-sub{font-size:14px;margin-bottom:24px;line-height:1.65;}
+  .hero-actions{gap:10px;}
+  .hero-actions .btn{padding:14px 22px;font-size:12px;}
+  .hero-status{font-size:9px;padding:7px 12px;letter-spacing:.1em;}
+  .hero-visual{max-width:280px;}
+  .hero-3d-wrap{max-width:280px;}
+  .aurora-word{font-size:18px;letter-spacing:.32em;}
+  .aurora-divider{width:46px;}
+  .aurora-sub{font-size:10px;letter-spacing:.42em;}
+  .trust-inner{grid-template-columns:1fr;padding:6px 18px;}
+  .trust-item{border-right:none;border-bottom:1px solid var(--line);padding:10px 0;font-size:10px;justify-content:flex-start;text-align:left;}
+  .trust-item:last-child{border-bottom:none;}
+  section{padding:64px 0;}
+  .welt{padding:48px 22px;}
+  .welt-no{font-size:64px;top:20px;right:22px;}
+  .welt-icon{width:42px;height:42px;margin-bottom:24px;}
+  .welt-name{font-size:26px;}
+  .welt-desc{font-size:14px;}
+  .ildiko-photo{min-height:340px;}
+  .ildiko-text{padding:48px 18px;}
+  .ildiko-text h2{font-size:38px;}
+  .ildiko-quote{font-size:17px;line-height:1.5;}
+  .ildiko-bio{font-size:14px;}
+  .ildiko-social{padding:14px 16px;}
+  .ildiko-social .label{font-size:13px;}
+  .ildiko-social .handle{font-size:10px;}
+  .sec-head{padding-bottom:24px;margin-bottom:36px;}
+  .sec-head h2{font-size:32px;line-height:1.05;}
+  .sec-head .kicker{font-size:10px;}
+  .sec-head .meta{font-size:10px;}
+  .cat-filters{gap:6px;margin-bottom:26px;}
+  .chip{font-size:10px;padding:8px 11px;letter-spacing:.1em;}
+  .bestseller-row{gap:1px;margin-bottom:1px;}
+  .bs-img{aspect-ratio:4/3;}
+  .bs-info{padding:22px 20px;}
+  .bs-name{font-size:22px;}
+  .bs-desc{font-size:13px;}
+  .bs-price{font-size:22px;}
+  .prod-info{padding:12px 12px 16px;}
+  .prod-cat{font-size:8px;}
+  .prod-name{font-size:15px;line-height:1.2;}
+  .prod-price{font-size:17px;margin-top:10px;}
+  .wax-grid{grid-template-columns:1fr 1fr;gap:8px;}
+  .scent{padding:16px 14px;aspect-ratio:1/1.2;}
+  .scent-no{font-size:24px;}
+  .scent-name{font-size:16px;line-height:1.15;}
+  .scent-notes{font-size:9px;line-height:1.4;}
+  .scent-price{padding-top:8px;}
+  .scent-price .p{font-size:15px;}
+  .scent-price .add{font-size:8px;}
+  .wax-usp{grid-template-columns:1fr 1fr;}
+  .wax-usp-item{padding:18px 12px;}
+  .wax-usp-item .n{font-size:26px;}
+  .wax-cta-row{padding:24px 20px;gap:20px;}
+  .wax-cta-row .t{font-size:17px;}
+  .resin-tiers{grid-template-columns:1fr;}
+  .resin-content h2{font-size:36px;}
+  .resin-lead{font-size:15px;}
+  .tier{padding:18px 20px;}
+  .tier-price{font-size:24px;}
+  .proc-step{padding:18px 22px;grid-template-columns:36px 1fr;gap:14px;}
+  .proc-step .num{font-size:24px;}
+  .proc-step h4{font-size:16px;}
+  .proc-step p{font-size:12px;}
+  .review{padding:28px 22px;min-height:auto;}
+  .review-text{font-size:16px;}
+  .nl{padding:64px 18px;}
+  .nl h2{font-size:34px;}
+  .nl p{font-size:14px;}
+  .nl-input,.nl-btn{padding:13px 18px;}
+  .modal{padding:16px;}
+  .modal-body{padding:28px 22px;}
+  .modal-name{font-size:26px;}
+  .modal-price{font-size:22px;}
+  .modal-desc{font-size:13px;}
+  .aa-fab{right:16px;bottom:16px;width:54px;height:54px;}
+  .aa-fab svg{width:28px;}
+  .aa-panel{right:8px;left:8px;bottom:80px;width:auto;height:min(560px,calc(100vh - 100px));}
+  .aa-head{padding:14px 16px;}
+  .aa-body{padding:16px;}
+  .aa-msg{font-size:14px;padding:11px 14px;}
+  .aa-input-wrap{padding:12px 14px;}
+  .aa-chips{padding:12px 16px;gap:5px;}
+  .aa-chip{font-size:9px;padding:6px 10px;}
+  footer{padding:56px 18px 28px;}
+  .foot-brand p{font-size:13px;}
+  .foot-grid{gap:28px;padding-bottom:36px;}
+  .foot-bottom{flex-direction:column;align-items:flex-start;}
+  .foot-copy{line-height:1.6;}
+}
+
+/* Sehr schmal (Z Fold Cover 360 px, Galaxy Z Flip outer, etc.) */
+@media (max-width:380px){
+  .hero-h1{font-size:36px;}
+  .hero-actions{flex-direction:column;align-items:stretch;width:100%;}
+  .hero-actions .btn{width:100%;justify-content:center;}
+  .nav-word{font-size:13px;letter-spacing:.14em;}
+  .nav-cta{padding:8px 12px;font-size:10px;}
+  .hero-3d-wrap,.hero-visual{max-width:240px;}
+  .scent-name{font-size:14px;}
+  .scent-no{font-size:22px;}
+}
+
+/* Landscape Telefon (kurze Höhe) */
+@media (max-height:520px) and (orientation:landscape){
+  .hero{min-height:auto;padding:84px 32px 56px;}
+  .hero-inner{grid-template-columns:1fr 260px;gap:32px;}
+  .hero-visual,.hero-3d-wrap{max-width:240px;}
+  .hero-h1{font-size:clamp(34px,5vw,52px);margin-bottom:14px;}
+  .hero-content .kicker{margin-bottom:12px;}
+  .hero-tag{margin-bottom:10px;}
+  .hero-sub{margin-bottom:16px;}
+  .hero-scroll{display:none;}
+  .hero-status{margin-top:0;}
+  section{padding:64px 0;}
+  .nav,.nav.scrolled{padding-top:12px;padding-bottom:12px;}
+  .aa-panel{height:min(420px,calc(100vh - 80px));}
+}
+
+/* Foldable: spanning (zukunftssicher) */
+@media (horizontal-viewport-segments:2){
+  .hero-inner{grid-template-columns:1fr 1fr;}
+}
+
 </style>
 </head>
 <body>
 
-<nav class="nav">
-  <div class="nav-inner">
-    <a href="index.html" class="brand">
-      <span class="brand-dot"></span>
-      Aurora Home
-    </a>
-    <a href="index.html" class="nav-back">← zur Seite</a>
+<!-- ============================================================
+     NAV
+     ============================================================ -->
+<nav class="nav" id="nav">
+  <a href="#" class="nav-brand">
+    <svg class="nav-mark" viewBox="0 0 60 60" fill="none">
+      <defs>
+        <linearGradient id="navMark" x1="0%" y1="100%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#c8906a"/><stop offset="100%" stop-color="#9b7fd4"/>
+        </linearGradient>
+        <radialGradient id="navOrb" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#fff8e0"/><stop offset="100%" stop-color="#c8906a" stop-opacity=".5"/>
+        </radialGradient>
+      </defs>
+      <line x1="4" y1="34" x2="56" y2="34" stroke="rgba(201,144,106,.3)" stroke-width=".8"/>
+      <line x1="30" y1="34" x2="30" y2="8" stroke="url(#navMark)" stroke-width="1.6" stroke-linecap="round"/>
+      <line x1="30" y1="34" x2="16" y2="14" stroke="url(#navMark)" stroke-width="1.3" stroke-linecap="round"/>
+      <line x1="30" y1="34" x2="44" y2="14" stroke="url(#navMark)" stroke-width="1.3" stroke-linecap="round"/>
+      <line x1="30" y1="34" x2="8" y2="24" stroke="url(#navMark)" stroke-width=".8" stroke-linecap="round" opacity=".7"/>
+      <line x1="30" y1="34" x2="52" y2="24" stroke="url(#navMark)" stroke-width=".8" stroke-linecap="round" opacity=".7"/>
+      <circle cx="30" cy="34" r="6" fill="url(#navOrb)"/>
+      <circle cx="30" cy="34" r="3" fill="#fff8e8" opacity=".9"/>
+    </svg>
+    <span class="nav-word"><b>AURORA</b> HOME</span>
+  </a>
+  <div class="nav-links">
+    <a href="#welten">Kollektion</a>
+    <a href="#katalog">Produkte</a>
+    <a href="#waxmelts">Wax Melts</a>
+    <a href="#resin">Custom Resin</a>
+    <a href="#atelier">Atelier</a>
+    <a href="#ildiko">Story</a>
   </div>
+  <a href="#newsletter" class="nav-cta">Vorbestellen</a>
+  <div class="ham" id="ham" onclick="toggleMob()"><span></span><span></span><span></span></div>
 </nav>
-
-<header class="hd">
-  <span class="kicker">Pflichtangaben · § 5 TMG · DSGVO · AGB</span>
-  <h1>Rechtliches &<br><em>Transparenz.</em></h1>
-  <p class="hd-lede">Wer hinter Aurora Home steht, wie wir mit deinen Daten umgehen, und was bei einer Bestellung gilt — alles auf einer Seite, ohne Juristen-Deutsch wo nicht nötig.</p>
-  <div class="hd-meta">
-    <span><b>Stand</b> Mai 2026</span>
-    <span><b>Sitz</b> Krefeld, Deutschland</span>
-    <span><b>Recht</b> deutsches Recht</span>
-  </div>
-</header>
-
-<div class="toc">
-  <a href="#impressum">01 <b>Impressum</b></a>
-  <a href="#datenschutz">02 <b>Datenschutz</b></a>
-  <a href="#agb">03 <b>AGB</b></a>
+<div class="mob" id="mob">
+  <a href="#welten" onclick="closeMob()">Kollektion</a>
+  <a href="#katalog" onclick="closeMob()">Produkte</a>
+  <a href="#waxmelts" onclick="closeMob()">Wax Melts</a>
+  <a href="#resin" onclick="closeMob()">Custom Resin</a>
+  <a href="#atelier" onclick="closeMob()">Atelier</a>
+  <a href="#ildiko" onclick="closeMob()">Story</a>
+  <a href="#newsletter" onclick="closeMob()">Vorbestellen</a>
 </div>
 
-<main>
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="kicker reveal">Aurora Home · seit 2024</div>
+      <h1 class="hero-h1 reveal">
+        Handgefertigte<br>
+        <span class="em">3D-Deko</span>,<br>
+        die Geschichten <span class="stroke">erzählt</span>.
+      </h1>
+      <p class="hero-tag reveal">Lampen, kinetische Skulpturen und Premium&nbsp;Wax&nbsp;Melts — wo Design auf Seele trifft.</p>
+      <p class="hero-sub reveal">Auf Anfrage in Deutschland gefertigt. Werkstatt statt Lager. Lieferzeit 4–6 Werktage.</p>
+      <div class="hero-actions reveal">
+        <a href="#katalog" class="btn btn-primary">Kollektion ansehen <span class="arr">→</span></a>
+        <a href="#resin" class="btn btn-ghost">Custom Anfragen</a>
+      </div>
+      <div class="hero-status reveal">
+        <span class="dot"></span>
+        Eigener Shop öffnet Sommer 2026 · Newsletter unten
+      </div>
+    </div>
+    <div class="hero-visual">
+      <!-- 3D Aurora Logo (Three.js procedural; loads assets/aurora-logo.glb if present) -->
+      <div class="hero-3d-wrap" id="hero3d">
+        <canvas id="heroCanvas"></canvas>
+        <svg class="hero-3d-fallback" id="hero3dFallback" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="fbRay" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#c8906a"/>
+              <stop offset="55%" stop-color="#d8b890"/>
+              <stop offset="100%" stop-color="#9b7fd4"/>
+            </linearGradient>
+            <radialGradient id="fbOrb" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#fffce0" stop-opacity=".98"/>
+              <stop offset="30%" stop-color="#f8e0b0" stop-opacity=".9"/>
+              <stop offset="100%" stop-color="#9b7fd4" stop-opacity=".15"/>
+            </radialGradient>
+          </defs>
+          <line x1="14" y1="140" x2="206" y2="140" stroke="rgba(201,144,106,.32)" stroke-width="1"/>
+          <line x1="110" y1="140" x2="110" y2="22" stroke="url(#fbRay)" stroke-width="3" stroke-linecap="round"/>
+          <line x1="110" y1="140" x2="78" y2="32" stroke="url(#fbRay)" stroke-width="2.4" stroke-linecap="round"/>
+          <line x1="110" y1="140" x2="142" y2="32" stroke="url(#fbRay)" stroke-width="2.4" stroke-linecap="round"/>
+          <line x1="110" y1="140" x2="46" y2="58" stroke="url(#fbRay)" stroke-width="1.8" stroke-linecap="round" opacity=".85"/>
+          <line x1="110" y1="140" x2="174" y2="58" stroke="url(#fbRay)" stroke-width="1.8" stroke-linecap="round" opacity=".85"/>
+          <line x1="110" y1="140" x2="20" y2="94" stroke="url(#fbRay)" stroke-width="1.2" stroke-linecap="round" opacity=".6"/>
+          <line x1="110" y1="140" x2="200" y2="94" stroke="url(#fbRay)" stroke-width="1.2" stroke-linecap="round" opacity=".6"/>
+          <circle cx="110" cy="140" r="26" fill="url(#fbOrb)"/>
+          <circle cx="110" cy="140" r="15" fill="#fffce0" opacity=".92"/>
+          <circle cx="110" cy="140" r="7" fill="#ffffff"/>
+          <circle cx="110" cy="22" r="3.5" fill="#c8b0f5"/>
+          <circle cx="78" cy="32" r="2.6" fill="#c8906a"/>
+          <circle cx="142" cy="32" r="2.6" fill="#c8906a"/>
+        </svg>
+        <div class="hero-3d-loading" id="hero3dLoading" style="display:none">Initialisiere &middot; 3D-Szene</div>
+        <div class="hero-3d-text">
+          <span class="aurora-word">AURORA</span>
+          <span class="aurora-divider"></span>
+          <span class="aurora-sub">HOME</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
 
-  <!-- ── 01 IMPRESSUM ─────────────────────────────── -->
-  <section class="legal" id="impressum">
-    <span class="sec-num">01 · Impressum</span>
-    <h2>Wer hinter <em>Aurora</em> steht.</h2>
-    <p class="lead">Angaben gemäß § 5 TMG (Telemediengesetz) und rechtliche Pflichtangaben für den Online-Auftritt von Aurora Home.</p>
+<!-- ============================================================
+     TRUST (kondensiert)
+     ============================================================ -->
+<div class="trust">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+      Handgefertigt in Deutschland
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+      100% Sojawachs &amp; Parfümöl
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+      Auf Anfrage gefertigt
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+      Lieferzeit 4–6 Tage
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+      PayPal &amp; Etsy-Schutz
+    </div>
+  </div>
+</div>
 
-    <h3>Betreiberin & Diensteanbieterin</h3>
-    <div class="address">
-      <b>Ildiko Fenyes</b>
-      Aurora Home<br>
-      Preussenring 21<br>
-      47798 Krefeld<br>
-      Deutschland
+<!-- ============================================================
+     DREI WELTEN
+     ============================================================ -->
+<section id="welten" style="padding:0;">
+  <div class="welten reveal-stagger">
+    <a href="#katalog" class="welt">
+      <div class="welt-no">01</div>
+      <div class="welt-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v3M5.6 5.6l2.1 2.1M2 12h3M18.4 5.6l-2.1 2.1M19 12h3M12 16a4 4 0 100-8 4 4 0 000 8zm0 0v3m-3 3h6"/></svg>
+      </div>
+      <div class="welt-name">3D-<em>Druck</em></div>
+      <div class="welt-meta">12 Produkte · ab 14,90 €</div>
+      <p class="welt-desc">Lampen, Vasen, Schmuckkästchen, Spiele. Anycubic Photon M7 Max, geschliffen, lackiert. Print-in-place wo möglich.</p>
+      <span class="welt-link">Kollektion entdecken <span class="arr">→</span></span>
+    </a>
+    <a href="#waxmelts" class="welt">
+      <div class="welt-no">02</div>
+      <div class="welt-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3c-1.5 2.5-4 4-4 7a4 4 0 008 0c0-3-2.5-4.5-4-7zM6 19h12M4 22h16"/></svg>
+      </div>
+      <div class="welt-name">Wax <em>Melts</em></div>
+      <div class="welt-meta">12 Düfte · 7,90 € pro Tüte</div>
+      <p class="welt-desc">100% Sojawachs, echtes Parfümöl. Saisonal komponiert, von Hand gegossen. Kein Paraffin, keine Synthetik.</p>
+      <span class="welt-link">Düfte erkunden <span class="arr">→</span></span>
+    </a>
+    <a href="#resin" class="welt">
+      <div class="welt-no">03</div>
+      <div class="welt-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L4 6v5c0 5 3.5 9 8 11 4.5-2 8-6 8-11V6l-8-4z"/></svg>
+      </div>
+      <div class="welt-name">Custom <em>Resin</em></div>
+      <div class="welt-meta">Ab 150 € · bis 3.000 €+</div>
+      <p class="welt-desc">Einzelne Figuren, geschliffen und bemalt. Vier Stufen — von Mini bis Großformat. Echte Handarbeit, sichtbar.</p>
+      <span class="welt-link">Anfrage stellen <span class="arr">→</span></span>
+    </a>
+  </div>
+</section>
+
+<!-- ============================================================
+     ILDIKO BRIDGE
+     ============================================================ -->
+<section id="ildiko" style="padding:0;">
+  <div class="ildiko">
+    <div class="ildiko-photo reveal" style="background:#0a0914;">
+      <img src="assets/ildiko.jpg" alt="Ildiko Fenyes — Gründerin von Aurora Home" loading="lazy" decoding="async" width="900" height="1200" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;">
+      <div class="tag">Hinter den Kulissen</div>
+    </div>
+    <div class="ildiko-text">
+      <div class="kicker reveal">Wer hinter Aurora steht</div>
+      <h2 class="reveal">Ildiko<br><em>Fenyes</em></h2>
+      <p class="ildiko-quote reveal">"Mein Tag gehört einem anderen Job. Aurora bekommt die Abende."</p>
+      <p class="ildiko-bio reveal">Eine kleine Werkstatt, kein Lager. Gedruckt wird auf Anfrage; was vorrätig ist, wechselt von Woche zu Woche. Manchmal geht es deshalb schnell, manchmal dauert es ein paar Tage länger.</p>
+      <div class="ildiko-socials reveal">
+        <a class="ildiko-social" href="https://tiktok.com/@aurorahome" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 1.5c.4 2.4 1.7 4.4 3.7 5.4v3.7c-1.4 0-2.7-.4-3.7-1.2v6.7a6.4 6.4 0 11-6.4-6.4v3.7a2.7 2.7 0 102.7 2.7V1.5H16z"/></svg>
+          <span class="label">TikTok</span>
+          <span class="handle">@aurorahome</span>
+          <span class="arr">→</span>
+        </a>
+        <a class="ildiko-social" href="https://instagram.com/aurorahome" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          <span class="label">Instagram</span>
+          <span class="handle">@aurorahome</span>
+          <span class="arr">→</span>
+        </a>
+        <a class="ildiko-social" href="https://etsy.com/shop/aurorahome" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3h14v6h-9v3h7v6h-7v3h9v0H5z"/></svg>
+          <span class="label">Etsy Shop</span>
+          <span class="handle">Weltweit</span>
+          <span class="arr">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SO FUNKTIONIERT'S
+     ============================================================ -->
+<section id="how" class="how">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="kicker">So funktioniert's</span>
+        <h2>Drei Schritte.<br><em>Eine Werkstatt.</em></h2>
+      </div>
+      <div class="meta">
+        Werkstatt statt Lager<br>
+        <b>4–6 Werktage</b> bis zum Versand<br>
+        Antwort innerhalb 48 h
+      </div>
     </div>
 
-    <h3>Kontakt</h3>
-    <ul>
-      <li><strong>E-Mail:</strong> <a href="mailto:fenyesdesign@outlook.com">fenyesdesign@outlook.com</a></li>
-      <li><strong>Erreichbarkeit:</strong> Anfragen via E-Mail, Etsy oder Instagram werden in der Regel innerhalb von 48 Stunden beantwortet.</li>
-    </ul>
-
-    <h3>Umsatzsteuer & Registerdaten</h3>
-    <h4>Umsatzsteuer-ID</h4>
-    <p>Nicht vorhanden. Aufgrund der gesetzlichen Regelung für Kleinunternehmer gemäß <strong>§ 19 UStG</strong> wird auf den Rechnungen keine Umsatzsteuer ausgewiesen (Umsatzsteuerbefreiung für Kleingewerbe).</p>
-    <h4>Registereintragung</h4>
-    <p>Als nicht im Handelsregister eingetragenes Einzelunternehmen (Kleingewerbe) entfällt eine Register- oder Handelsregisternummer. Der Betrieb ist ordnungsgemäß als Gewerbe bei der Stadt Krefeld angemeldet.</p>
-
-    <h3>Verantwortlich für den Inhalt</h3>
-    <p>Verantwortlich für redaktionelle und journalistische Inhalte nach <strong>§ 18 Abs. 2 MStV</strong> (Medienstaatsvertrag): Ildiko Fenyes, Preussenring 21, 47798 Krefeld.</p>
-
-    <h3>Online-Streitbeilegung</h3>
-    <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit, die Sie unter <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a> finden. Wir sind weder verpflichtet noch bereit, an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
-  </section>
-
-  <!-- ── 02 DATENSCHUTZ ─────────────────────────────── -->
-  <section class="legal" id="datenschutz">
-    <span class="sec-num">02 · Datenschutz · DSGVO</span>
-    <h2>Was mit deinen<br><em>Daten passiert.</em></h2>
-    <p class="lead">Der Schutz Ihrer persönlichen Daten hat für uns höchste Priorität. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften (DSGVO, BDSG) sowie dieser Datenschutzerklärung.</p>
-
-    <h3>Verantwortliche Stelle</h3>
-    <p>Verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist die oben im Impressum genannte Inhaberin, <strong>Ildiko Fenyes</strong>.</p>
-
-    <h3>Datenerfassung auf unserer Website</h3>
-    <h4>Server-Log-Files</h4>
-    <p>Der Provider der Seiten erhebt und speichert automatisch Informationen in sogenannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt (Browsertyp, Betriebssystem, Referrer URL, Uhrzeit der Serveranfrage, IP-Adresse). Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Grundlage ist <strong>Art. 6 Abs. 1 lit. f DSGVO</strong>.</p>
-
-    <h4>E-Mail-Anfragen & Chat-Assistent</h4>
-    <p>Wenn Sie uns per E-Mail oder über integrierte Chat-Assistenten (z.B. Aurora Assistant) Anfragen zukommen lassen, werden Ihre Angaben zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter (<strong>Art. 6 Abs. 1 lit. b DSGVO</strong>).</p>
-
-    <h4>Newsletter · Pre-Launch</h4>
-    <p>Wenn Sie sich für unseren Newsletter eintragen, um den Launch des eigenen Online-Shops im Sommer 2026 zu verfolgen, speichern wir Ihre E-Mail-Adresse ausschließlich für diesen Zweck. Sie können sich jederzeit über einen Abmeldelink oder formlos per E-Mail abmelden. Die Verarbeitung erfolgt auf Basis Ihrer Einwilligung (<strong>Art. 6 Abs. 1 lit. a DSGVO</strong>).</p>
-
-    <h3>Drittplattformen · Etsy, TikTok, Instagram</h3>
-    <p>Unser Webauftritt verlinkt auf externe Marktplätze und soziale Netzwerke. Bitte beachten Sie, dass bei der Nutzung von Etsy, TikTok oder Instagram die dortigen Datenschutzrichtlinien der jeweiligen Betreibergesellschaften gelten. Bestellungen, die über den Etsy-Shop oder den TikTok-Shop abgewickelt werden, unterliegen zusätzlich den Systemrichtlinien dieser Plattformen.</p>
-
-    <h3>Ihre Rechte</h3>
-    <p>Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten. Sie haben außerdem ein Recht auf <strong>Berichtigung, Sperrung oder Löschung</strong> dieser Daten. Zudem steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu (Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen, LDI NRW).</p>
-  </section>
-
-  <!-- ── 03 AGB ─────────────────────────────── -->
-  <section class="legal" id="agb">
-    <span class="sec-num">03 · Allgemeine Geschäftsbedingungen</span>
-    <h2>Was bei einer<br><em>Bestellung gilt.</em></h2>
-
-    <h3>§ 1 Geltungsbereich</h3>
-    <p>Diese Allgemeinen Geschäftsbedingungen gelten für alle Bestellungen, Anfragen und Verträge, die zwischen Verbrauchern und <strong>Aurora Home</strong> (Inhaberin Ildiko Fenyes) über die Landingpage, per E-Mail-Kontakt oder über verbundene Kanäle geschlossen werden.</p>
-
-    <h3>§ 2 Vertragsschluss bei Individualanfragen</h3>
-    <p>Da unsere Produkte (3D-Deko und Custom Resin) überwiegend auf Anfrage in Handarbeit gefertigt werden, stellt die Präsentation auf der Website kein rechtlich bindendes Angebot dar. Der Ablauf bei individuellen Bestellungen gestaltet sich wie folgt:</p>
-    <ol>
-      <li>Der Kunde stellt eine unverbindliche Anfrage per E-Mail (<a href="mailto:fenyesdesign@outlook.com">fenyesdesign@outlook.com</a>) oder über ein Kontakt-Interface.</li>
-      <li>Wir prüfen die Machbarkeit (Werkstattkapazität am Feierabend) und senden dem Kunden innerhalb von 48 Stunden ein konkretes, befristetes Angebot per E-Mail zu.</li>
-      <li>Der Vertrag kommt erst zustande, wenn der Kunde dieses Angebot ausdrücklich in Textform (z.B. per Antwort-E-Mail) bestätigt.</li>
-    </ol>
-
-    <h3>§ 3 Preise, Kleinunternehmerstatus & Versand</h3>
-    <p>Alle angegebenen Preise sind Endpreise in Euro (€). Es erfolgt keine Ausweisung der Umsatzsteuer, da die Anbieterin den Kleinunternehmerstatus gemäß § 19 UStG beansprucht. Versandkosten werden im jeweiligen Angebot transparent ausgewiesen. Der Versand erfolgt standardisiert als versichertes Paket über die <strong>DHL inklusive Sendungsverfolgung</strong> (Tracking).</p>
-
-    <h3>§ 4 Produktions- und Lieferzeiten</h3>
-    <p>Da es sich um einen exklusiven Werkstattbetrieb handelt, der nebenberuflich in den Abendstunden betrieben wird, gelten folgende besonderen Fristen:</p>
-    <ul>
-      <li><strong>Standard-Kollektion (3D-Drucke & Wax Melts):</strong> Die Produktions- und Bearbeitungszeit bis zum Versand beträgt in der Regel 4 bis 6 Werktage.</li>
-      <li><strong>Custom Resin Figuren:</strong> Je nach gewählter Qualitätsstufe (Stufe 01 bis Stufe 04) beträgt die Fertigungszeit zwischen 1 und 10 Wochen. Verbindliche Fristen werden im individuellen Angebot festgehalten.</li>
-      <li><strong>Anzahlung bei Sonderanfertigungen:</strong> Bei Custom Resin Figuren (ab 150,00 €) wird eine Anzahlung von 50 % des Gesamtbetrages vor Beginn der Arbeiten fällig.</li>
-    </ul>
-
-    <div class="callout">
-      <span class="callout-tag">§ 5 · Wichtig zum Widerrufsrecht</span>
-      <p>Das gesetzliche Widerrufsrecht für Verbraucher besteht <strong>nicht</strong> bei Verträgen zur Lieferung von Waren, die nicht vorgefertigt sind und für deren Herstellung eine individuelle Auswahl oder Bestimmung durch den Verbraucher maßgeblich ist oder die eindeutig auf die persönlichen Bedürfnisse des Verbrauchers zugeschnitten sind (<strong>§ 312g Abs. 2 Nr. 1 BGB</strong>).</p>
-      <p style="margin-top:12px;">Dies bedeutet, dass für alle kundenspezifischen Farbvarianten der 3D-Druck-Produkte sowie für sämtliche Custom Resin Figuren (Stufen 01–04) ein Widerruf oder eine Rückgabe nach Produktionsbeginn ausgeschlossen ist. Für vorgefertigte Standardware (z.B. unbenutzte Wax-Melt-Originalpakete) gilt das gesetzliche <strong>14-tägige Widerrufsrecht</strong>.</p>
+    <div class="how-grid reveal-stagger">
+      <article class="how-step">
+        <div class="how-num">01</div>
+        <h3>Anfrage</h3>
+        <p>Per E-Mail, Etsy oder TikTok-Shop. Wunschfarbe dazu, falls du eine hast. Antwort meist innerhalb 48 Stunden.</p>
+      </article>
+      <article class="how-step">
+        <div class="how-num">02</div>
+        <h3>Werkstatt</h3>
+        <p>Tagsüber läuft ein anderer Job. Gedruckt, geschliffen und bemalt wird abends. Geht nicht schneller — ist Teil davon.</p>
+      </article>
+      <article class="how-step">
+        <div class="how-num">03</div>
+        <h3>Versand</h3>
+        <p>DHL mit Tracking, weltweit. Verpackt wie man verpackt, wenn man die Sache selbst macht.</p>
+      </article>
     </div>
 
-    <h3>§ 6 Zahlung & Eigentumsvorbehalt</h3>
-    <p>Die Bezahlung erfolgt wahlweise via <strong>Vorkasse per Banküberweisung</strong> oder über den Bezahldienst <strong>PayPal</strong> (inklusive PayPal-Käuferschutz). Bis zur vollständigen Bezahlung bleibt die gelieferte Ware Eigentum von Aurora Home.</p>
+    <div class="how-note reveal">
+      <strong>Einige Stücke sind sofort lieferbar.</strong>
+      Bestand wechselt ständig. Eine kurze Nachricht und ich sage dir, was schon da ist.
+    </div>
+  </div>
+</section>
 
-    <h3>§ 7 Gewährleistung</h3>
-    <p>Es gelten die gesetzlichen Gewährleistungsrechte. Da es sich um handgefertigte Produkte im FDM- und Resin-3D-Druckverfahren handelt, stellen minimale verfahrensbedingte Oberflächenmerkmale (z.B. sichtbare Mikroschichten oder minimale Unregelmäßigkeiten durch das Schleifen) keine Mängel dar, sondern unterstreichen den <em>Unikat-Charakter</em>.</p>
+<!-- ============================================================
+     ATELIER — Werkstatt-Galerie
+     ============================================================ -->
+<section id="atelier" class="atelier">
+  <div class="wrap">
+    <div class="atelier-head reveal">
+      <span class="kicker">Atelier · Feierabend</span>
+      <h2>Jeden Abend ein <em>bisschen weiter.</em></h2>
+      <p class="atelier-lede">Vier Bilder aus der Werkstatt. Lila Licht, Drucker im Hintergrund, Pinsel in der Hand. So entsteht jedes Stück — von der ersten Skizze bis zur fertigen Knospe.</p>
+      <div class="atelier-counter">
+        <span>Sequenz</span>
+        <b id="atelierCounter">01</b>
+        <span>/ 04</span>
+      </div>
+    </div>
+  </div>
 
-    <h3>§ 8 Schlussbestimmungen</h3>
-    <p>Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts. Sofern gesetzlich zulässig, ist <strong>Krefeld der vereinbarte Gerichtsstand</strong> für alle Streitigkeiten.</p>
-  </section>
+  <div class="atelier-strip reveal-stagger" id="atelierStrip">
+    <figure class="atelier-card" data-idx="0" data-label="Skizze" data-cap="Linien auf dem Leuchttisch. Jedes Objekt fängt mit Papier an, lange bevor der Drucker läuft." onclick="openAtelier(0)">
+      <div class="atelier-imgwrap">
+        <img src="assets/workshop/04-lightpad-sketch.jpg" alt="Ildiko skizziert ein neues Modell auf dem Leuchttisch" loading="lazy" decoding="async" width="1080" height="1920">
+      </div>
+      <span class="atelier-zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M16 16l5 5"/><path d="M7 10.5h7M10.5 7v7"/></svg></span>
+      <figcaption>
+        <span class="atelier-num">01</span>
+        <span class="atelier-label">Skizze</span>
+        <span class="atelier-cap">Linien auf dem Leuchttisch. Jedes Objekt fängt mit Papier an, lange bevor der Drucker läuft.</span>
+      </figcaption>
+    </figure>
 
-</main>
+    <figure class="atelier-card" data-idx="1" data-label="Modellierung" data-cap="Vom Sketch ins 3D. Wandbild aus Acrylflaschen, im Hintergrund läuft schon der erste Layer." onclick="openAtelier(1)">
+      <div class="atelier-imgwrap">
+        <img src="assets/workshop/03-design-laptop.jpg" alt="Aurora-Webseite am MacBook, Acrylfarben auf dem Pegboard" loading="lazy" decoding="async" width="1080" height="1920">
+      </div>
+      <span class="atelier-zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M16 16l5 5"/><path d="M7 10.5h7M10.5 7v7"/></svg></span>
+      <figcaption>
+        <span class="atelier-num">02</span>
+        <span class="atelier-label">Modellierung</span>
+        <span class="atelier-cap">Vom Sketch ins 3D. Wandbild aus Acrylflaschen, im Hintergrund läuft schon der erste Layer.</span>
+      </figcaption>
+    </figure>
 
-<footer class="ft">
-  <span>© 2026 Aurora Home · Ildiko Fenyes · Krefeld</span>
-  <span><a href="index.html">← zur Hauptseite</a></span>
-  <span>Stand Mai 2026</span>
+    <figure class="atelier-card" data-idx="2" data-label="Werkstatt" data-cap="Das ganze Setup. Drucker, Doppel-Monitor, Lautsprecher. Aurora lebt in diesem Zimmer." onclick="openAtelier(2)">
+      <div class="atelier-imgwrap">
+        <img src="assets/workshop/02-desk-overview.jpg" alt="Werkstatt von oben — Drucker, Schreibtisch, lila LEDs" loading="lazy" decoding="async" width="1080" height="1920">
+      </div>
+      <span class="atelier-zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M16 16l5 5"/><path d="M7 10.5h7M10.5 7v7"/></svg></span>
+      <figcaption>
+        <span class="atelier-num">03</span>
+        <span class="atelier-label">Werkstatt</span>
+        <span class="atelier-cap">Das ganze Setup. Drucker, Doppel-Monitor, Lautsprecher. Aurora lebt in diesem Zimmer.</span>
+      </figcaption>
+    </figure>
+
+    <figure class="atelier-card" data-idx="3" data-label="Veredelung" data-cap="Knospen werden einzeln angeklebt, Wax-Melts portioniert. Endmontage ist Handarbeit, jede Charge." onclick="openAtelier(3)">
+      <div class="atelier-imgwrap">
+        <img src="assets/workshop/01-melts-assembly.jpg" alt="Pillenbaum-Knospen und Wax-Melt-Sets in der Endmontage" loading="lazy" decoding="async" width="1080" height="1920">
+      </div>
+      <span class="atelier-zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M16 16l5 5"/><path d="M7 10.5h7M10.5 7v7"/></svg></span>
+      <figcaption>
+        <span class="atelier-num">04</span>
+        <span class="atelier-label">Veredelung</span>
+        <span class="atelier-cap">Knospen werden einzeln angeklebt, Wax-Melts portioniert. Endmontage ist Handarbeit, jede Charge.</span>
+      </figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap">
+    <div class="atelier-foot reveal">
+      <span class="atelier-foot-dot"></span>
+      <span>Werkstatt statt Lager · Klick aufs Bild für Vollansicht</span>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="atelier-lightbox" id="atelierLightbox" role="dialog" aria-label="Werkstatt-Galerie Vollansicht" aria-hidden="true">
+    <button class="atelier-lightbox-close" id="atelierClose" aria-label="Schließen">
+      <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <button class="atelier-lightbox-nav prev" id="atelierPrev" aria-label="Vorheriges Bild">
+      <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+    </button>
+    <button class="atelier-lightbox-nav next" id="atelierNext" aria-label="Nächstes Bild">
+      <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+    </button>
+    <div class="atelier-lightbox-inner">
+      <img id="atelierLbImg" alt="" decoding="async">
+      <div class="atelier-lightbox-meta">
+        <span id="atelierLbNum">01 / 04</span>
+        <b id="atelierLbLabel">Skizze</b>
+        <span id="atelierLbCap"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     KATALOG
+     ============================================================ -->
+<section id="katalog">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="kicker">Unsere Kollektion</span>
+        <h2>Jedes Stück<br><em>handgefertigt.</em></h2>
+      </div>
+      <div class="meta">
+        12 Produkte · ab <b>14,90 €</b><br>
+        Lieferzeit 4–6 Werktage<br>
+        Alle auf Anfrage gefertigt
+      </div>
+    </div>
+
+    <div class="cat-filters reveal" id="catFilters">
+      <button class="chip active" data-cat="all">Alle <span class="count"></span></button>
+      <button class="chip" data-cat="lampe">Lampen <span class="count"></span></button>
+      <button class="chip" data-cat="pflanze">Pflanzer &amp; Gießen <span class="count"></span></button>
+      <button class="chip" data-cat="aufbewahrung">Aufbewahrung <span class="count"></span></button>
+      <button class="chip" data-cat="gadget">Gadgets <span class="count"></span></button>
+      <button class="chip" data-cat="spiel">Spiele &amp; Deko <span class="count"></span></button>
+      <button class="chip" data-cat="bestseller">Bestseller <span class="count"></span></button>
+    </div>
+
+    <!-- Bestseller-Reihe (oben hervorgehoben) -->
+    <div class="bestseller-row reveal-stagger" id="bsRow">
+      <article class="bs-card" data-cat="lampe bestseller" data-idx="10" onclick="openProduct(10)">
+        <div class="bs-img">
+          <span class="bs-badge">Bestseller</span>
+          <img src="assets/eclipse-lampe.jpg" alt="Eclipse Lampe" loading="lazy">
+        </div>
+        <div class="bs-info">
+          <div>
+            <div class="bs-cat">Tischlampe mit Lampenschirm</div>
+            <h3 class="bs-name">Eclipse</h3>
+            <p class="bs-desc">Zylindrischer Sockel mit runder Schirm-Scheibe dahinter — wie eine Sonnenfinsternis. Minimalistisch, zeitlos, eine ruhige Präsenz auf jedem Schreibtisch.</p>
+          </div>
+          <div class="bs-foot">
+            <span class="bs-price">39,90 €</span>
+            <span class="bs-cta">Mehr ansehen <span class="arr">→</span></span>
+          </div>
+        </div>
+      </article>
+      <article class="bs-card" data-cat="pflanze bestseller" data-idx="6" onclick="openProduct(6)">
+        <div class="bs-img">
+          <span class="bs-badge">Bestseller</span>
+          <img src="assets/solana-pflanzer.jpg" alt="Solana Pflanzer" loading="lazy">
+        </div>
+        <div class="bs-info">
+          <div>
+            <div class="bs-cat">Selbstbewässernder Pflanzer</div>
+            <h3 class="bs-name">Solana</h3>
+            <p class="bs-desc">Ring-Design mit Docht-System — Wasser im Sockel wird automatisch zur Pflanze geleitet. Vier Magnete halten alles zusammen. Kein Vergießen mehr.</p>
+          </div>
+          <div class="bs-foot">
+            <span class="bs-price">32,90 €</span>
+            <span class="bs-cta">Mehr ansehen <span class="arr">→</span></span>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Standard-Grid (10 weitere Produkte) -->
+    <div class="prod-grid reveal-stagger" id="prodGrid">
+      <!-- generiert via JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WAX MELTS — Farbsystem
+     ============================================================ -->
+<section id="waxmelts" class="dark">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="kicker">Premium Wax Melts</span>
+        <h2>Zwölf Düfte.<br><em>Jeder erzählt etwas.</em></h2>
+      </div>
+      <div class="meta">
+        100% Sojawachs<br>
+        <b>7,90 €</b> pro Tüte (6 Stück)<br>
+        Versand DHL Tracked
+      </div>
+    </div>
+
+    <div class="wax-grid reveal-stagger" id="waxGrid">
+      <!-- generiert via JS -->
+    </div>
+
+    <div class="wax-usp reveal">
+      <div class="wax-usp-item"><div class="n"><span data-counter="100">100</span>%</div><div class="l">Sojawachs</div></div>
+      <div class="wax-usp-item"><div class="n"><span data-counter="12">12</span></div><div class="l">Duftrichtungen</div></div>
+      <div class="wax-usp-item"><div class="n"><span data-counter="6">6</span>h+</div><div class="l">Duftzeit / Stück</div></div>
+      <div class="wax-usp-item"><div class="n">DE</div><div class="l">Hand­gegossen</div></div>
+    </div>
+
+    <div class="wax-cta-row reveal">
+      <p class="t">Probier-Set: <em>3 Düfte deiner Wahl für 19,90 €</em>. Perfekt zum Kennenlernen.</p>
+      <a href="mailto:fenyesdesign@outlook.com?subject=Wax Melts Probier-Set" class="btn btn-primary">Set anfragen <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CUSTOM RESIN
+     ============================================================ -->
+<section id="resin" class="resin">
+  <div class="wrap">
+    <div class="resin-inner">
+      <div class="resin-content">
+        <div class="kicker reveal">Auf Bestellung gefertigt</div>
+        <h2 class="reveal">Custom <em>Resin</em><br>Figuren.</h2>
+        <p class="resin-lead reveal">Jede Figur ein Unikat. Hochauflösender Resin-Druck, geschliffen, grundiert, bemalt. Vier Stufen, klare Preise, kein Festpreis-Theater.</p>
+
+        <div class="resin-tiers reveal-stagger">
+          <div class="tier">
+            <div class="tier-price">ab 150 €</div>
+            <div class="tier-name">Stufe 01 · Mini</div>
+            <div class="tier-desc">Einfarbig · einfache Geometrie · 1–3 Wochen</div>
+          </div>
+          <div class="tier">
+            <div class="tier-price lilac">ab 300 €</div>
+            <div class="tier-name">Stufe 02 · Standard</div>
+            <div class="tier-desc">Mehrfarbig · mittlere Komplexität · 3–5 Wochen</div>
+          </div>
+          <div class="tier">
+            <div class="tier-price">ab 700 €</div>
+            <div class="tier-name">Stufe 03 · Premium</div>
+            <div class="tier-desc">Metallic, Wash, Patina · feine Details · 5–7 Wochen</div>
+          </div>
+          <div class="tier">
+            <div class="tier-price lilac">ab 1.500 €</div>
+            <div class="tier-name">Stufe 04 · Masterpiece</div>
+            <div class="tier-desc">Großformat · komplexe Bemalung · 7–10 Wochen</div>
+          </div>
+        </div>
+
+        <div class="resin-actions reveal">
+          <a href="mailto:fenyesdesign@outlook.com?subject=Custom Resin Anfrage" class="btn btn-primary">Anfrage stellen <span class="arr">→</span></a>
+          <a href="resin.html" class="btn btn-ghost">Mehr Infos</a>
+        </div>
+      </div>
+
+      <div class="reveal-stagger">
+        <div class="resin-process">
+          <div class="proc-step">
+            <div class="num">01</div>
+            <div>
+              <h4>Resin-Druck</h4>
+              <p>Anycubic Photon M7 Max · präzise bis ins kleinste Detail</p>
+            </div>
+          </div>
+          <div class="proc-step">
+            <div class="num">02</div>
+            <div>
+              <h4>Schleifen &amp; Finish</h4>
+              <p>Keine Layerlines · glatte, saubere Oberfläche</p>
+            </div>
+          </div>
+          <div class="proc-step">
+            <div class="num">03</div>
+            <div>
+              <h4>Grundieren &amp; Bemalen</h4>
+              <p>Einfarbig bis Metallic-Wash · nach deinem Wunsch</p>
+            </div>
+          </div>
+          <div class="proc-step">
+            <div class="num">04</div>
+            <div>
+              <h4>Verpacken &amp; Liefern</h4>
+              <p>DHL mit Tracking · weltweit · sicher verpackt</p>
+            </div>
+          </div>
+        </div>
+        <div class="resin-note">
+          <b>Lieferzeit:</b> 1–10 Wochen je nach Stufe &nbsp;·&nbsp; <b>Anzahlung:</b> 50% vorab &nbsp;·&nbsp; <b>Schutz:</b> PayPal Käuferschutz
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SOCIAL PROOF
+     ============================================================ -->
+<section class="social">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="kicker">Erste Stimmen · Pre-Launch</span>
+        <h2>Aus den DMs,<br><em>aus den Mails.</em></h2>
+      </div>
+      <div class="meta">
+        Stimmen aus<br>
+        Etsy · TikTok · DMs<br>
+        <b>Echte Etsy-Sterne</b> folgen mit dem nächsten Update
+      </div>
+    </div>
+    <div class="social-grid reveal-stagger">
+      <div class="review">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Die Solana steht jetzt auf meinem Schreibtisch und ich habe drei Pflanzen darin durch den Winter gebracht ohne ein einziges Mal zu gießen. Klingt absurd, ist aber so."</p>
+        <div class="review-meta">
+          <div class="review-avatar">L</div>
+          <div>
+            <div class="review-name">Lena · Köln</div>
+            <div class="review-source">Vorab-Feedback · März 2026</div>
+          </div>
+        </div>
+      </div>
+      <div class="review">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Hab die Eclipse Lampe bestellt und sie steht jetzt auf meinem Schreibtisch wie ein kleines Kunstobjekt. Verpackung war wie ein Geschenk — Ildiko schreibt sogar handschriftlich dazu."</p>
+        <div class="review-meta">
+          <div class="review-avatar">M</div>
+          <div>
+            <div class="review-name">Marco · München</div>
+            <div class="review-source">Instagram-DM · Feb 2026</div>
+          </div>
+        </div>
+      </div>
+      <div class="review">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Custom Resin Stufe 02 — eine Figur für meinen Mann zum Geburtstag. Sie hat 4 Wochen daran gearbeitet und es sieht aus wie aus einem Game-Studio. Wahnsinn."</p>
+        <div class="review-meta">
+          <div class="review-avatar">S</div>
+          <div>
+            <div class="review-name">Sandra · Hamburg</div>
+            <div class="review-source">Custom-Auftrag · Jan 2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     NEWSLETTER
+     ============================================================ -->
+<section id="newsletter" class="nl">
+  <div class="nl-inner">
+    <div class="kicker reveal">Vorbestellen</div>
+    <h2 class="reveal">Der Shop öffnet<br><em>Sommer 2026.</em></h2>
+    <p class="reveal">Trag dich ein und sei als Erste dabei wenn der eigene Shop live geht. Frühe Anmeldungen bekommen einen Launch-Rabatt. Kein Spam — nur Aurora Home.</p>
+    <form class="nl-form reveal" onsubmit="handleNL(event)">
+      <input type="email" required placeholder="deine@email.de" class="nl-input">
+      <button type="submit" class="nl-btn">Eintragen</button>
+    </form>
+    <p class="nl-fine reveal">Kein Spam · Keine Weitergabe · Jederzeit abmeldbar</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#" class="nav-brand">
+          <svg class="nav-mark" viewBox="0 0 60 60" fill="none">
+            <use href="#" xlink:href=""/>
+            <defs>
+              <linearGradient id="footMark" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#c8906a"/><stop offset="100%" stop-color="#9b7fd4"/>
+              </linearGradient>
+            </defs>
+            <line x1="4" y1="34" x2="56" y2="34" stroke="rgba(201,144,106,.3)" stroke-width=".8"/>
+            <line x1="30" y1="34" x2="30" y2="8" stroke="url(#footMark)" stroke-width="1.6" stroke-linecap="round"/>
+            <line x1="30" y1="34" x2="16" y2="14" stroke="url(#footMark)" stroke-width="1.3" stroke-linecap="round"/>
+            <line x1="30" y1="34" x2="44" y2="14" stroke="url(#footMark)" stroke-width="1.3" stroke-linecap="round"/>
+            <circle cx="30" cy="34" r="5" fill="#c8906a" opacity=".8"/>
+            <circle cx="30" cy="34" r="2.5" fill="#fff8e8"/>
+          </svg>
+          <span class="nav-word"><b>AURORA</b> HOME</span>
+        </a>
+        <p>Premium Home Decor aus Deutschland. Handgefertigt, bedeutsam, limitiert. Jedes Stück mit Geschichte.</p>
+        <div class="foot-soc">
+          <a href="https://tiktok.com/@aurorahome" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 1.5c.4 2.4 1.7 4.4 3.7 5.4v3.7c-1.4 0-2.7-.4-3.7-1.2v6.7a6.4 6.4 0 11-6.4-6.4v3.7a2.7 2.7 0 102.7 2.7V1.5H16z"/></svg>
+          </a>
+          <a href="https://instagram.com/aurorahome" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          </a>
+          <a href="https://etsy.com/shop/aurorahome" aria-label="Etsy">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3h14v6h-9v3h7v6h-7v3h9v0H5z"/></svg>
+          </a>
+          <a href="mailto:fenyesdesign@outlook.com" aria-label="E-Mail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Kollektion</h4>
+        <a href="#katalog">3D-Druck Produkte</a>
+        <a href="#waxmelts">Wax Melts</a>
+        <a href="#resin">Custom Resin</a>
+        <a href="#katalog">Bestseller</a>
+      </div>
+      <div class="foot-col">
+        <h4>Shop</h4>
+        <a href="https://etsy.com/shop/aurorahome" target="_blank" rel="noopener">Etsy Shop</a>
+        <a href="https://tiktok.com/@aurorahome" target="_blank" rel="noopener">TikTok Shop</a>
+        <a href="https://paypal.me/aurorahome" target="_blank" rel="noopener">PayPal Direkt</a>
+        <a href="#newsletter">Vorbestellen</a>
+      </div>
+      <div class="foot-col">
+        <h4>Info</h4>
+        <a href="mailto:fenyesdesign@outlook.com">Kontakt</a>
+        <a href="#ildiko">Über Ildiko</a>
+        <a href="Aurora Home v2 - Rechtliches.html#agb">Versand &amp; Lieferung</a>
+        <a href="Aurora Home v2 - Rechtliches.html#impressum">Impressum</a>
+        <a href="Aurora Home v2 - Rechtliches.html#datenschutz">Datenschutz</a>
+        <a href="Aurora Home v2 - Rechtliches.html#agb">AGB</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span class="foot-copy">© 2026 Aurora Home &middot; Ildiko Fenyes &middot; Werkstatt aus Deutschland &middot; Kleingewerbe nach §19 UStG</span>
+      <div class="foot-legal">
+        <a href="Aurora Home v2 - Rechtliches.html#impressum">Impressum</a>
+        <a href="Aurora Home v2 - Rechtliches.html#datenschutz">Datenschutz</a>
+        <a href="Aurora Home v2 - Rechtliches.html#agb">AGB</a>
+      </div>
+    </div>
+  </div>
 </footer>
+
+<!-- ============================================================
+     PRODUCT MODAL
+     ============================================================ -->
+<div class="modal" id="modal" onclick="closeProductBg(event)">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeProduct()" aria-label="Schließen">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="16" height="16"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="modal-img" id="mImg"></div>
+    <div class="modal-body">
+      <div class="modal-cat" id="mCat"></div>
+      <h3 class="modal-name" id="mName"></h3>
+      <div class="modal-price" id="mPrice"></div>
+      <div class="modal-status"><span class="dot"></span>Auf Anfrage · 4–6 Werktage Produktion</div>
+      <p class="modal-desc" id="mDesc"></p>
+      <div class="modal-feats">
+        <div class="modal-feat">3D-gedruckt in Deutschland</div>
+        <div class="modal-feat">Individuelle Wunschfarbe möglich</div>
+        <div class="modal-feat">DHL Versand mit Tracking</div>
+        <div class="modal-feat">Antwort auf Anfrage in 48 Stunden</div>
+      </div>
+      <a id="mBtn" class="modal-btn" href="mailto:fenyesdesign@outlook.com">Per E-Mail anfragen</a>
+      <p class="modal-fine">Unverbindlich · persönliches Angebot innerhalb 48 h</p>
+    </div>
+  </div>
+</div>
+
+<script>
+// ============================================================
+// PRODUCT DATA
+// ============================================================
+const PRODUCTS = [
+  {name:"Bucket Lampe",cat:"Tischlampe & Ablage",catKey:"lampe",price:"27,90",desc:"BUCKET ist eine Schreibtischlampe mit integriertem Ablage-Tray — portabel, minimalistisch, ein echter Hingucker. Kann auch an die Wand oder ans Pegboard gehängt werden.",img:"assets/bucket-lampe.jpg"},
+  {name:"Bonsai Spiel",cat:"Tischspiel & Deko",catKey:"spiel",price:"24,90",desc:"BONSAI ist ein Balancier-Tischspiel und Dekorationsstück in einem — wer lässt die Blüten fallen? Die Blumen stecken in die Waben-Baumkrone, Spielsteine werden im Topf aufbewahrt.",img:"assets/bonsai-spiel.jpg"},
+  {name:"Budsy Pillenbaum",cat:"Wöchentlicher Pillenspender",catKey:"aufbewahrung",price:"22,90",desc:"BUDSY ist ein wöchentlicher Pillenspender der wie ein blühender Baum aussieht — Mo bis So beschriftet, jede Knospe ein Tag. Der Topf dient als Aufbewahrungsbox.",img:"assets/budsy-pillenbaum.jpg"},
+  {name:"Eve Vase",cat:"Selbstbewässernde Vase",catKey:"pflanze",price:"18,90",desc:"EVE ist eine selbstbewässernde Vase mit elegantem S-Profil — Wasser wird langsam über den Aufsatz abgegeben. Kein Bohren, keine Stützen beim Druck nötig.",img:"assets/eve-vase.jpg"},
+  {name:"Flora Chess",cat:"Blumen-Schachset",catKey:"spiel",price:"69,90",desc:"FLORA CHESS ist ein vollständiges Schachset bei dem jede Figur eine andere Blume ist — Tulpe, Narzisse, Gänseblümchen und mehr. Mit Trennwand-Box.",img:"assets/flora-chess.jpg",badge:"new"},
+  {name:"Little Jewel",cat:"Schmuckkästchen",catKey:"aufbewahrung",price:"28,90",desc:"LITTLE JEWEL ist ein Schmuckkästchen das wie eine Pflanze aussieht — der Topf ist die Box, der aufklappbare Deckel trägt drehbare Ringe & Ketten.",img:"assets/little-jewel.jpg"},
+  {name:"Solana Pflanzer",cat:"Selbstbewässernder Pflanzer",catKey:"pflanze bestseller",price:"32,90",desc:"SOLANA ist ein selbstbewässernder Pflanzer im ikonischen Ring-Design — Wasser im Sockel wird per Docht automatisch zur Pflanze geleitet. Vier Magnete halten alles zusammen.",img:"assets/solana-pflanzer.jpg",badge:"bestseller"},
+  {name:"Spiky Ladehalter",cat:"MagSafe Ladestation",catKey:"gadget",price:"19,90",desc:"SPIKY ist ein Kaktus-Ladehalter für dein iPhone — der Kaktus dreht sich um die optimale Position zu finden. Nutzt dein originales Apple MagSafe Charger.",img:"assets/spiky-ladehalter.jpg"},
+  {name:"Spiky Mini",cat:"Apple Watch Ladestation",catKey:"gadget",price:"14,90",desc:"SPIKY MINI ist die kleinere Version für deine Apple Watch — originales Apple Watch Charger wird eingesetzt, Kabel sauber durch den Kaktus-Topf geführt.",img:"assets/spiky-mini.jpg"},
+  {name:"Aloe Gießkanne",cat:"Gießkanne mit Wechsel-Aufsatz",catKey:"pflanze",price:"26,90",desc:"ALOE ist eine Gießkanne mit organischer Tropfen-Form, inspiriert von einem Blatt. Inklusive austauschbarem Aufsatz — normale Gießtille oder eingebauter Brausekopf für Setzlinge und empfindliche Pflanzen.",img:"assets/aloe-vase.jpg",badge:"new"},
+  {name:"Eclipse Lampe",cat:"Tischlampe mit Lampenschirm",catKey:"lampe bestseller",price:"39,90",desc:"ECLIPSE ist eine Tischlampe mit zylindrischem Sockel und runder Lampenschirm-Scheibe dahinter — wie eine Sonnenfinsternis. Minimalistisch, zeitlos, eine ruhige Präsenz auf jedem Schreibtisch oder Sideboard.",img:"assets/eclipse-lampe.jpg",badge:"bestseller"},
+  {name:"Gelato Ladestation",cat:"iPhone & Apple Watch Charger",catKey:"gadget",price:"29,90",desc:"GELATO ist eine kombinierte Ladestation für iPhone (MagSafe) und Apple Watch — die Eistüte oben hält deine Watch im perfekten Blickwinkel, die Kugel unten lädt dein Phone. Verspielt, smart, ein Hingucker auf dem Nachttisch.",img:"assets/gelato-charger.jpg"}
+];
+
+// ============================================================
+// SCHEMA.ORG · Product-Markup wird aus PRODUCTS generiert
+// ============================================================
+(function injectProductSchema(){
+  const SITE = "https://jmpanrw-lab.github.io/aurora-home-website/";
+  const slug = s => s.toLowerCase()
+    .replace(/ä/g,"ae").replace(/ö/g,"oe").replace(/ü/g,"ue").replace(/ß/g,"ss")
+    .replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+  const itemList = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Aurora Home — Katalog",
+    "numberOfItems": PRODUCTS.length,
+    "itemListElement": PRODUCTS.map((p,i) => ({
+      "@type": "ListItem",
+      "position": i+1,
+      "item": {
+        "@type": "Product",
+        "@id": SITE + "#produkt-" + slug(p.name),
+        "name": p.name,
+        "category": p.cat,
+        "description": p.desc,
+        "image": p.img ? SITE + p.img : undefined,
+        "brand": { "@type": "Brand", "name": "Aurora Home" },
+        "manufacturer": { "@type": "Organization", "name": "Aurora Home", "@id": SITE + "#org" },
+        "offers": {
+          "@type": "Offer",
+          "url": SITE + "#produkt-" + slug(p.name),
+          "priceCurrency": "EUR",
+          "price": p.price.replace(",", "."),
+          "availability": "https://schema.org/MadeToOrder",
+          "itemCondition": "https://schema.org/NewCondition",
+          "seller": { "@id": SITE + "#org" }
+        }
+      }
+    }))
+  };
+  const tag = document.createElement("script");
+  tag.type = "application/ld+json";
+  tag.textContent = JSON.stringify(itemList);
+  document.head.appendChild(tag);
+})();
+
+// Wax Melts — Farbsystem, keine Emojis
+const SCENTS = [
+  {no:"01",season:"Frühling",name:"Kirschblüte & Vanille",notes:"Pfingstrose · Jasmin · Vanille",grad:"linear-gradient(155deg,#f4c8c0 0%,#e8a8a0 60%,#a86864 100%)"},
+  {no:"02",season:"Sommer",name:"Sandelholz & Mango",notes:"Mango · Jasmin · Sandelholz",grad:"linear-gradient(155deg,#f4d8a0 0%,#d8a060 60%,#7a4818 100%)"},
+  {no:"03",season:"Herbst",name:"Zimt & Amber",notes:"Zimt · Nelke · Amber",grad:"linear-gradient(155deg,#d88858 0%,#a04828 60%,#4a1808 100%)"},
+  {no:"04",season:"Winter",name:"Zeder & Moschus",notes:"Bergkiefer · Moschus · Vetiver",grad:"linear-gradient(155deg,#b8c8e0 0%,#5878a8 60%,#1a2a48 100%)"},
+  {no:"05",season:"Nacht",name:"Tabak & Bourbon",notes:"Bourbon · Tabak · Eichenholz",grad:"linear-gradient(155deg,#5848a0 0%,#2a1c50 60%,#0c0820 100%)"},
+  {no:"06",season:"Ganzjährig",name:"Rose & Pfingstrose",notes:"Rose · Pfingstrose · Moschus",grad:"linear-gradient(155deg,#f0a8a0 0%,#c04830 60%,#5a1810 100%)",bs:true},
+  {no:"07",season:"Sommer",name:"Salbei & Salzwasser",notes:"Salbei · Salz · Meeresluft",grad:"linear-gradient(155deg,#a8d0c8 0%,#588878 60%,#1a3830 100%)"},
+  {no:"08",season:"Sommer",name:"Hibiskus & Kokos",notes:"Hibiskus · Kokos · Pfirsich",grad:"linear-gradient(155deg,#f0b0a0 0%,#d88060 60%,#7a3818 100%)"},
+  {no:"09",season:"Herbst",name:"Karamell & Whisky",notes:"Karamell · Whisky · Vanille",grad:"linear-gradient(155deg,#d8a868 0%,#8a5828 60%,#3a1808 100%)"},
+  {no:"10",season:"Frühling",name:"Bambus & Limette",notes:"Limette · Bambus · Minze",grad:"linear-gradient(155deg,#c0d8a0 0%,#688838 60%,#1a3010 100%)"},
+  {no:"11",season:"Ganzjährig",name:"Leder & Espresso",notes:"Espresso · Leder · Tonkabohne",grad:"linear-gradient(155deg,#8a6848 0%,#3a2818 60%,#0c0808 100%)"},
+  {no:"12",season:"Winter",name:"Sternanis & Honig",notes:"Sternanis · Honig · Vanille",grad:"linear-gradient(155deg,#e8c890 0%,#a07838 60%,#3a2008 100%)"}
+];
+
+// ============================================================
+// RENDER
+// ============================================================
+function renderProducts(){
+  const grid=document.getElementById('prodGrid');
+  // Standard-Grid: alle außer Solana (idx 6) und Social Battery (idx 10) die schon oben sind
+  const shown=PRODUCTS.map((p,i)=>({p,i})).filter(o=>o.i!==6&&o.i!==10);
+  grid.innerHTML=shown.map(({p,i})=>{
+    const badge=p.badge==='bestseller'?'<span class="prod-badge b-bestseller">Bestseller</span>':
+                p.badge==='viral'?'<span class="prod-badge b-viral">Viral</span>':
+                p.badge==='new'?'<span class="prod-badge b-new">Neu</span>':'';
+    const img=p.img?`<img src="${p.img}" alt="${p.name}" loading="lazy">`:
+              `<div class="ph-img"><span class="ph-txt"><b>Produktfoto</b>${p.name}<br>1:1 · Hauptansicht</span></div>`;
+    return `<article class="prod" data-cat="${p.catKey} all" data-idx="${i}" onclick="openProduct(${i})">
+      <div class="prod-img">${badge}${img}</div>
+      <div class="prod-info">
+        <div class="prod-cat">${p.cat}</div>
+        <h3 class="prod-name">${p.name}</h3>
+        <div class="prod-price">${p.price}&nbsp;€</div>
+      </div>
+    </article>`;
+  }).join('');
+}
+
+function renderScents(){
+  const g=document.getElementById('waxGrid');
+  g.innerHTML=SCENTS.map(s=>`
+    <div class="scent" style="--scent-grad:${s.grad}">
+      ${s.bs?'<span class="scent-bs">Bestseller</span>':''}
+      <div class="scent-top">
+        <div class="scent-no">N°&nbsp;${s.no}</div>
+        <div class="scent-season">${s.season}</div>
+      </div>
+      <div class="scent-bottom">
+        <div class="scent-name">${s.name}</div>
+        <div class="scent-notes">${s.notes}</div>
+        <div class="scent-price"><span class="p">7,90&nbsp;€</span><span class="add">+ Anfragen</span></div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ============================================================
+// FILTER
+// ============================================================
+function setupFilters(){
+  // Zähler automatisch füllen — nie wieder out-of-sync
+  const allCards = document.querySelectorAll('#bsRow .bs-card, #prodGrid .prod');
+  document.querySelectorAll('#catFilters .chip').forEach(chip => {
+    const cat = chip.dataset.cat;
+    const count = [...allCards].filter(card => {
+      const cats = card.dataset.cat || '';
+      return cat === 'all' || cats.split(/\s+/).includes(cat);
+    }).length;
+    const span = chip.querySelector('.count');
+    if (span) span.textContent = count;
+  });
+  const chips=document.querySelectorAll('#catFilters .chip');
+  chips.forEach(chip=>{
+    chip.addEventListener('click',()=>{
+      chips.forEach(c=>c.classList.remove('active'));
+      chip.classList.add('active');
+      const cat=chip.dataset.cat;
+      const bsCards=document.querySelectorAll('#bsRow .bs-card');
+      const cards=document.querySelectorAll('#prodGrid .prod');
+      [...bsCards,...cards].forEach(card=>{
+        const cats=card.dataset.cat||'';
+        const show=cat==='all'||cats.includes(cat);
+        card.style.display=show?'':'none';
+      });
+    });
+  });
+}
+
+// ============================================================
+// MODAL
+// ============================================================
+function openProduct(idx){
+  const p=PRODUCTS[idx];
+  document.getElementById('mCat').textContent=p.cat;
+  document.getElementById('mName').textContent=p.name;
+  document.getElementById('mPrice').textContent=p.price+' €';
+  document.getElementById('mDesc').textContent=p.desc;
+  document.getElementById('mBtn').href='mailto:fenyesdesign@outlook.com?subject=Anfrage: '+p.name;
+  const img=document.getElementById('mImg');
+  img.innerHTML=p.img?`<img src="${p.img}" alt="${p.name}">`:
+    `<div class="ph-img"><span class="ph-txt"><b>Produktfoto</b>${p.name}<br>Hauptansicht</span></div>`;
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeProduct(){
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow='';
+}
+function closeProductBg(e){
+  if(e.target.id==='modal')closeProduct();
+}
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape')closeProduct();
+});
+
+// ============================================================
+// NAV SCROLL
+// ============================================================
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('scrolled',window.scrollY>40);
+});
+
+// ============================================================
+// MOBILE MENU
+// ============================================================
+function toggleMob(){
+  document.getElementById('ham').classList.toggle('open');
+  document.getElementById('mob').classList.toggle('open');
+}
+function closeMob(){
+  document.getElementById('ham').classList.remove('open');
+  document.getElementById('mob').classList.remove('open');
+}
+
+// ============================================================
+// REVEAL OBSERVER
+// ============================================================
+function setupReveal(){
+  const obs=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('in');
+        obs.unobserve(e.target);
+      }
+    });
+  },{threshold:0.08,rootMargin:'0px 0px -50px 0px'});
+  document.querySelectorAll('.reveal, .reveal-stagger').forEach(el=>obs.observe(el));
+}
+
+// ============================================================
+// NEWSLETTER
+// ============================================================
+function handleNL(e){
+  e.preventDefault();
+  const btn=e.target.querySelector('.nl-btn');
+  btn.textContent='Eingetragen ✓';
+  btn.style.background='#4ade80';
+  setTimeout(()=>{btn.textContent='Eintragen';btn.style.background='';e.target.reset();},2400);
+}
+
+// ============================================================
+// INIT
+// ============================================================
+// ============================================================
+// AURORA ASSISTANT
+// ============================================================
+const AA_SYSTEM = `Du bist Aurora — die digitale Assistentin von Aurora Home, einem Studio in Deutschland für handgefertigte 3D-gedruckte Wohndeko, Premium Wax Melts und Custom Resin Figuren. Geführt von Ildiko Fenyes.
+
+DEINE ROLLE: Besucher beraten, Fragen beantworten, bei echten Bestellungen oder individuellen Wünschen an die E-Mail weiterleiten.
+TON: warm aber premium, immer auf Du, deutsch. Wenn jemand auf Englisch schreibt: kurz auf Englisch antworten.
+STIL: 2-4 Sätze pro Antwort. Keine Aufzählungen außer wenn wirklich nötig. Keine Emojis. Klar und persönlich.
+
+WICHTIGER HINTERGRUND — das macht Aurora Home aus:
+Ildiko hat einen Vollzeit-Hauptberuf außerhalb von Aurora Home. Was hier entsteht, entsteht abends. Produziert wird auf Anfrage — bestellt wird etwas, dann wird es gedruckt, geschliffen, bemalt. Einige Stücke sind in kleiner Auflage vorrätig, der Bestand wechselt. Wenn jemand fragt warum 4-6 Wochen: ruhig und unaufgeregt erklären, dass Aurora Home eine Werkstatt nach Feierabend ist. Nicht jammern, nicht euphorisch — einfach Fakt. KEIN Marketing-Schmalz: keine Floskeln wie "mit Sinn", "wirklich für dich", "du spürst". Beobachtend bleiben.
+
+KOLLEKTION (12 Produkte, alle handgefertigt in Deutschland, Lieferzeit 4-6 Werktage):
+• Bucket Lampe 27,90€ — Schreibtischlampe mit Ablage-Tray, portabel
+• Bonsai Spiel 24,90€ — Balancier-Spiel, Blumen stecken in Waben-Baumkrone
+• Budsy Pillenbaum 22,90€ — Wochen-Pillenspender (Mo-So), wie blühender Baum
+• Eve Vase 18,90€ — Selbstbewässernd, S-Profil, keine Stützen beim Druck
+• Flora Chess 69,90€ — Komplettes Schachset mit Blumen-Figuren, mit Box
+• Little Jewel 28,90€ — Schmuckkästchen wie Pflanze, mit drehbaren Halterungen
+• Solana Pflanzer 32,90€ — Selbstbewässernd, Ring-Design, BESTSELLER
+• Spiky Ladehalter 19,90€ — MagSafe Kaktus, dreht sich für optimale Position
+• Spiky Mini 14,90€ — Apple Watch Charger im Kaktus-Topf
+• Aloe Gießkanne 26,90€ — Organische Gießkanne mit Wechsel-Aufsatz (Tille oder Brause)
+• Eclipse Lampe 39,90€ — Tischlampe mit runder Schirm-Scheibe, BESTSELLER
+• Gelato Ladestation 29,90€ — iPhone (MagSafe) + Apple Watch Charger in Eistüten-Form
+
+INDIVIDUELL: Farbwünsche bei allen 3D-Druck-Produkten möglich — nach Anfrage.
+
+WAX MELTS — 12 Düfte, 7,90€ pro Tüte (6 Stück), 100% Sojawachs, echtes Parfümöl. Probier-Set: 3 freie Düfte 19,90€.
+Düfte: N°01 Kirschblüte&Vanille, N°02 Sandelholz&Mango, N°03 Zimt&Amber, N°04 Zeder&Moschus, N°05 Tabak&Bourbon, N°06 Rose&Pfingstrose (BESTSELLER), N°07 Salbei&Salzwasser, N°08 Hibiskus&Kokos, N°09 Karamell&Whisky, N°10 Bambus&Limette, N°11 Leder&Espresso, N°12 Sternanis&Honig.
+
+CUSTOM RESIN — Einzelanfertigung, vier Stufen:
+• Stufe 01 Mini ab 150€ — einfarbig, 1-3 Wochen
+• Stufe 02 Standard ab 300€ — mehrfarbig, 3-5 Wochen
+• Stufe 03 Premium ab 700€ — Metallic, Wash, 5-7 Wochen
+• Stufe 04 Masterpiece ab 1.500€ — Großformat, 7-10 Wochen
+50% Anzahlung vorab. PayPal-Käuferschutz.
+
+KONTAKT: fenyesdesign@outlook.com (Antwort in 48h)
+SHOPS HEUTE: Etsy (etsy.com/shop/aurorahome), TikTok Shop, Instagram. Eigener Shop öffnet SOMMER 2026.
+VERSAND: DHL mit Tracking, weltweit.
+
+VERHALTENSREGELN:
+- Für konkrete Bestellungen, Sonderfarben, individuelle Anfragen: IMMER an fenyesdesign@outlook.com verweisen
+- Wenn du etwas nicht weißt: ehrlich sagen "Da frag am besten direkt Ildiko per E-Mail"
+- Keine Preise nennen die nicht oben stehen
+- Kein Verkaufsdruck — wir sind eine kleine Werkstatt, kein Konzern
+- Bei spezifischen Produktdetails (Maße, Materialien außerhalb von oben Genanntem): an E-Mail verweisen
+- Wenn jemand stören oder Unsinn fragt: höflich aber kurz, zurück zum Thema`;
+
+let aaHistory = [];
+let aaPending = false;
+
+function aaToggle(){
+  const p = document.getElementById('aaPanel');
+  const f = document.getElementById('aaFab');
+  const open = p.classList.toggle('open');
+  f.classList.toggle('open', open);
+  if(open) setTimeout(()=>document.getElementById('aaInput').focus(),400);
+}
+
+function aaResize(el){
+  el.style.height='auto';
+  el.style.height=Math.min(el.scrollHeight,120)+'px';
+}
+
+function aaKey(e){
+  if(e.key==='Enter' && !e.shiftKey){
+    e.preventDefault();
+    aaSend();
+  }
+}
+
+function aaQuick(text){
+  document.getElementById('aaInput').value = text;
+  aaSend();
+}
+
+function aaAddMsg(role, text){
+  const body = document.getElementById('aaBody');
+  const div = document.createElement('div');
+  div.className = 'aa-msg ' + role;
+  // Convert mailto links and simple markup
+  let html = text
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/\*\*([^*]+)\*\*/g,'<em>$1</em>')
+    .replace(/\b(fenyesdesign@outlook\.com)\b/g,'<a href="mailto:$1">$1</a>');
+  div.innerHTML = html;
+  body.appendChild(div);
+  body.scrollTop = body.scrollHeight;
+}
+
+function aaShowTyping(){
+  const body = document.getElementById('aaBody');
+  const t = document.createElement('div');
+  t.className = 'aa-typing';
+  t.id = 'aaTyping';
+  t.innerHTML = '<span></span><span></span><span></span>';
+  body.appendChild(t);
+  body.scrollTop = body.scrollHeight;
+}
+function aaHideTyping(){
+  const t = document.getElementById('aaTyping');
+  if(t) t.remove();
+}
+
+async function aaSend(){
+  if(aaPending) return;
+  const input = document.getElementById('aaInput');
+  const text = input.value.trim();
+  if(!text) return;
+  
+  input.value = '';
+  input.style.height = 'auto';
+  
+  // Hide quick chips after first send
+  const chips = document.getElementById('aaChips');
+  if(chips) chips.style.display = 'none';
+  
+  aaAddMsg('user', text);
+  aaHistory.push({role:'user', content:text});
+  
+  aaPending = true;
+  document.getElementById('aaSend').disabled = true;
+  aaShowTyping();
+  
+  try {
+    // Build messages with persona priming as first user→assistant turn
+    const messages = [
+      {role:'user', content: AA_SYSTEM + '\n\nVerstanden? Dann sag kurz Hallo.'},
+      {role:'assistant', content: 'Verstanden — ich bin bereit zu helfen.'},
+      ...aaHistory
+    ];
+    const reply = await window.claude.complete({messages});
+    aaHideTyping();
+    aaAddMsg('bot', reply);
+    aaHistory.push({role:'assistant', content: reply});
+  } catch(e){
+    aaHideTyping();
+    aaAddMsg('bot', 'Da ist gerade etwas schiefgelaufen. Schreib uns am besten direkt: fenyesdesign@outlook.com');
+    console.error(e);
+  }
+  
+  aaPending = false;
+  document.getElementById('aaSend').disabled = false;
+  document.getElementById('aaInput').focus();
+}
+
+renderProducts();
+renderScents();
+setupFilters();
+setupReveal();
+</script>
+<!-- ============================================================
+     AURORA ASSISTANT — Chat
+     ============================================================ -->
+<button class="aa-fab" id="aaFab" onclick="aaToggle()" aria-label="Aurora Assistant öffnen">
+  <span class="ping"></span>
+  <svg viewBox="0 0 60 60" fill="none">
+    <defs>
+      <linearGradient id="aaFabG" x1="0%" y1="100%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#c8906a"/><stop offset="100%" stop-color="#9b7fd4"/>
+      </linearGradient>
+      <radialGradient id="aaFabO" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#fff8e0"/><stop offset="100%" stop-color="#c8906a" stop-opacity=".4"/>
+      </radialGradient>
+    </defs>
+    <line x1="4" y1="34" x2="56" y2="34" stroke="rgba(201,144,106,.35)" stroke-width=".8"/>
+    <line x1="30" y1="34" x2="30" y2="8" stroke="url(#aaFabG)" stroke-width="1.6" stroke-linecap="round"/>
+    <line x1="30" y1="34" x2="16" y2="14" stroke="url(#aaFabG)" stroke-width="1.3" stroke-linecap="round"/>
+    <line x1="30" y1="34" x2="44" y2="14" stroke="url(#aaFabG)" stroke-width="1.3" stroke-linecap="round"/>
+    <line x1="30" y1="34" x2="8" y2="24" stroke="url(#aaFabG)" stroke-width=".8" stroke-linecap="round" opacity=".7"/>
+    <line x1="30" y1="34" x2="52" y2="24" stroke="url(#aaFabG)" stroke-width=".8" stroke-linecap="round" opacity=".7"/>
+    <circle cx="30" cy="34" r="6" fill="url(#aaFabO)"/>
+    <circle cx="30" cy="34" r="3" fill="#fff8e8" opacity=".95"/>
+  </svg>
+</button>
+
+<aside class="aa-panel" id="aaPanel" role="dialog" aria-label="Aurora Assistant">
+  <header class="aa-head">
+    <div class="aa-avatar">
+      <svg viewBox="0 0 60 60" fill="none">
+        <line x1="4" y1="34" x2="56" y2="34" stroke="rgba(201,144,106,.4)" stroke-width=".8"/>
+        <line x1="30" y1="34" x2="30" y2="10" stroke="#c8906a" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="30" y1="34" x2="18" y2="16" stroke="#c8906a" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="30" y1="34" x2="42" y2="16" stroke="#c8906a" stroke-width="1.2" stroke-linecap="round"/>
+        <circle cx="30" cy="34" r="4" fill="#fff8e8"/>
+      </svg>
+    </div>
+    <div class="aa-id">
+      <div class="name">Aurora</div>
+      <div class="status">Assistentin · meist Antwort in Sekunden</div>
+    </div>
+    <button class="aa-close" onclick="aaToggle()" aria-label="Schließen">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="16" height="16"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </header>
+  <div class="aa-body" id="aaBody">
+    <div class="aa-msg bot">Hallo, ich bin <em>Aurora</em> — die kleine Schwester von Ildiko. Ich helfe dir bei Fragen zu unseren Produkten, Wax Melts oder Custom Resin. Was kann ich für dich tun?</div>
+  </div>
+  <div class="aa-chips" id="aaChips">
+    <button class="aa-chip" onclick="aaQuick(this.textContent)">Welche Produkte gibt's?</button>
+    <button class="aa-chip" onclick="aaQuick(this.textContent)">Wie lange dauert die Lieferung?</button>
+    <button class="aa-chip" onclick="aaQuick(this.textContent)">Custom Resin — wie geht das?</button>
+    <button class="aa-chip" onclick="aaQuick(this.textContent)">Welche Wax-Melt-Düfte?</button>
+  </div>
+  <div class="aa-input-wrap">
+    <textarea class="aa-input" id="aaInput" rows="1" placeholder="Frag mich etwas …" onkeydown="aaKey(event)" oninput="aaResize(this)"></textarea>
+    <button class="aa-send" id="aaSend" onclick="aaSend()" aria-label="Senden">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </button>
+  </div>
+  <div class="aa-foot">Für Bestellungen direkt an <a href="mailto:fenyesdesign@outlook.com">fenyesdesign@outlook.com</a></div>
+</aside>
+
+<!-- ============================================================
+     HERO 3D — Three.js procedural Aurora logo + parallax
+     ============================================================ -->
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+const wrap = document.getElementById('hero3d');
+const canvas = document.getElementById('heroCanvas');
+const loadingEl = document.getElementById('hero3dLoading');
+const heroBg = document.querySelector('.hero-bg');
+
+if (!wrap || !canvas) { /* no hero 3D on this page */ }
+else {
+
+  /* ---------- Scene ---------- */
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(40, 1, 0.1, 100);
+  camera.position.set(0, 0.05, 4.6);
+  camera.lookAt(0, 0.35, 0);
+
+  const renderer = new THREE.WebGLRenderer({
+    canvas, alpha: true, antialias: true, premultipliedAlpha: false,
+    powerPreference: 'high-performance'
+  });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setClearColor(0x000000, 0);
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.0;
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  scene.background = null;
+
+  /* ---------- Glow sprite helper (additive blend — keine Postprocessing-Box) ---------- */
+  function makeGlowTexture(inner, outer) {
+    const c = document.createElement('canvas');
+    c.width = c.height = 256;
+    const ctx = c.getContext('2d');
+    const g = ctx.createRadialGradient(128, 128, 0, 128, 128, 128);
+    g.addColorStop(0,    inner + '1)');
+    g.addColorStop(0.15, inner + '0.85)');
+    g.addColorStop(0.35, inner + '0.4)');
+    g.addColorStop(0.6,  outer + '0.12)');
+    g.addColorStop(1,    outer + '0)');
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, 256, 256);
+    const tex = new THREE.CanvasTexture(c);
+    tex.colorSpace = THREE.SRGBColorSpace;
+    return tex;
+  }
+
+  /* ---------- Lights ---------- */
+  scene.add(new THREE.AmbientLight(0xffffff, 0.25));
+
+  const keyLight = new THREE.DirectionalLight(0xfff0d0, 1.2);
+  keyLight.position.set(3, 4, 5);
+  scene.add(keyLight);
+
+  const fillLight = new THREE.PointLight(0x9b7fd4, 2, 8);
+  fillLight.position.set(-2.5, 1.2, 2.5);
+  scene.add(fillLight);
+
+  const rimLight = new THREE.PointLight(0xc8906a, 1.5, 6);
+  rimLight.position.set(2.5, -1, 1.5);
+  scene.add(rimLight);
+
+  /* ---------- Logo Group (procedural) ---------- */
+  const logoGroup = new THREE.Group();
+  scene.add(logoGroup);
+
+  let halo = null, haloMat = null, core = null;
+
+  function buildProceduralLogo() {
+    while (logoGroup.children.length) logoGroup.remove(logoGroup.children[0]);
+
+    const goldMat = new THREE.MeshStandardMaterial({
+      color: 0xd8a878, emissive: 0xc8906a, emissiveIntensity: 0.85,
+      metalness: 0.55, roughness: 0.35
+    });
+    const lilacMat = new THREE.MeshStandardMaterial({
+      color: 0xc8b0e8, emissive: 0x9b7fd4, emissiveIntensity: 0.65,
+      metalness: 0.55, roughness: 0.4
+    });
+
+    const rays = [
+      { angle: 0,   len: 1.6,  mat: goldMat,  r: 0.027 },
+      { angle: 22,  len: 1.35, mat: goldMat,  r: 0.022 },
+      { angle: -22, len: 1.35, mat: goldMat,  r: 0.022 },
+      { angle: 45,  len: 1.05, mat: goldMat,  r: 0.02 },
+      { angle: -45, len: 1.05, mat: goldMat,  r: 0.02 },
+      { angle: 68,  len: 0.75, mat: lilacMat, r: 0.018 },
+      { angle: -68, len: 0.75, mat: lilacMat, r: 0.018 },
+    ];
+    rays.forEach(({ angle, len, mat, r }) => {
+      const geo = new THREE.CylinderGeometry(r * 0.55, r, len, 8);
+      geo.translate(0, len / 2, 0);
+      const m = new THREE.Mesh(geo, mat);
+      m.rotation.z = THREE.MathUtils.degToRad(angle);
+      logoGroup.add(m);
+      // small tip sphere at end
+      const tipGeo = new THREE.SphereGeometry(r * 1.3, 12, 12);
+      const tip = new THREE.Mesh(tipGeo, mat);
+      tip.position.y = len;
+      tip.rotation.z = THREE.MathUtils.degToRad(angle);
+      const v = new THREE.Vector3(0, len, 0).applyAxisAngle(new THREE.Vector3(0,0,1), THREE.MathUtils.degToRad(angle));
+      tip.position.copy(v);
+      logoGroup.add(tip);
+    });
+
+    /* Orb core: bright additive */
+    const coreGeo = new THREE.SphereGeometry(0.13, 32, 32);
+    const coreMat = new THREE.MeshBasicMaterial({ color: 0xfffce0 });
+    core = new THREE.Mesh(coreGeo, coreMat);
+    logoGroup.add(core);
+
+    /* Inner glow */
+    const innerGlow = new THREE.SphereGeometry(0.18, 32, 32);
+    const innerMat = new THREE.MeshBasicMaterial({
+      color: 0xf8d8a0, transparent: true, opacity: 0.32
+    });
+    logoGroup.add(new THREE.Mesh(innerGlow, innerMat));
+
+    /* Outer halo (pulses) */
+    const haloGeo = new THREE.SphereGeometry(0.28, 32, 32);
+    haloMat = new THREE.MeshBasicMaterial({
+      color: 0xc8906a, transparent: true, opacity: 0.14
+    });
+    halo = new THREE.Mesh(haloGeo, haloMat);
+    logoGroup.add(halo);
+
+    /* Additive Sprite-Glow — weicher Schein um die Sonne, billboard, kein eigener Hintergrund */
+    const innerGlowTex = makeGlowTexture('rgba(255,240,210,', 'rgba(200,144,106,');
+    const orbGlow = new THREE.Sprite(new THREE.SpriteMaterial({
+      map: innerGlowTex, transparent: true,
+      blending: THREE.AdditiveBlending, depthWrite: false, opacity: 0.8
+    }));
+    orbGlow.scale.set(1.5, 1.5, 1);
+    logoGroup.add(orbGlow);
+
+    /* Größerer atmosphärischer Glow */
+    const atmoGlowTex = makeGlowTexture('rgba(248,216,160,', 'rgba(155,127,212,');
+    const atmoGlow = new THREE.Sprite(new THREE.SpriteMaterial({
+      map: atmoGlowTex, transparent: true,
+      blending: THREE.AdditiveBlending, depthWrite: false, opacity: 0.45
+    }));
+    atmoGlow.scale.set(3.4, 3.4, 1);
+    logoGroup.add(atmoGlow);
+
+    /* Horizon line */
+    const horizGeo = new THREE.BoxGeometry(3.2, 0.006, 0.006);
+    const horizMat = new THREE.MeshStandardMaterial({
+      color: 0xc8906a, emissive: 0xc8906a, emissiveIntensity: 0.6,
+      transparent: true, opacity: 0.55
+    });
+    logoGroup.add(new THREE.Mesh(horizGeo, horizMat));
+
+    /* Subtle ground reflection ellipse */
+    const groundGeo = new THREE.RingGeometry(0.6, 1.4, 32);
+    const groundMat = new THREE.MeshBasicMaterial({
+      color: 0xc8906a, transparent: true, opacity: 0.06, side: THREE.DoubleSide
+    });
+    const ground = new THREE.Mesh(groundGeo, groundMat);
+    ground.rotation.x = -Math.PI / 2;
+    ground.position.y = -0.02;
+    logoGroup.add(ground);
+  }
+
+  buildProceduralLogo();
+
+  /* ---------- Render (kein Composer — hat Transparenz gekillt) ---------- */
+  function resize() {
+    const r = wrap.getBoundingClientRect();
+    const w = Math.max(1, r.width);
+    const h = Math.max(1, r.height);
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+  }
+  resize();
+  const ro = new ResizeObserver(resize);
+  ro.observe(wrap);
+  window.addEventListener('resize', resize);
+
+  /* ---------- Interactions: mouse / touch parallax ---------- */
+  let mx = 0, my = 0;
+  let tmx = 0, tmy = 0;
+  function readPointer(x, y) {
+    mx = (x / window.innerWidth) * 2 - 1;
+    my = (y / window.innerHeight) * 2 - 1;
+  }
+  window.addEventListener('mousemove', e => readPointer(e.clientX, e.clientY));
+  window.addEventListener('touchmove', e => {
+    if (e.touches[0]) readPointer(e.touches[0].clientX, e.touches[0].clientY);
+  }, { passive: true });
+
+  /* ---------- Scroll parallax for hero background ---------- */
+  let scrollY = 0;
+  window.addEventListener('scroll', () => { scrollY = window.scrollY; }, { passive: true });
+
+  /* ---------- Animate ---------- */
+  const clock = new THREE.Clock();
+  function animate() {
+    const t = clock.getElapsedTime();
+
+    // Smooth pointer follow
+    tmx += (mx - tmx) * 0.06;
+    tmy += (my - tmy) * 0.06;
+
+    // Idle float + parallax rotation
+    logoGroup.rotation.y = tmx * 0.55 + Math.sin(t * 0.28) * 0.12;
+    logoGroup.rotation.x = -tmy * 0.28 + Math.sin(t * 0.4) * 0.04;
+    logoGroup.position.y = Math.sin(t * 0.55) * 0.06;
+
+    // Camera scroll parallax (zoom-out + slight downward tilt)
+    const sNorm = Math.min(scrollY / window.innerHeight, 1);
+    camera.position.z = 4.6 + sNorm * 1.2;
+    camera.position.y = 0.05 - sNorm * 0.4;
+    camera.lookAt(0, 0.35 - sNorm * 0.3, 0);
+
+    // Halo pulse
+    if (halo && haloMat) {
+      const pulse = 1 + Math.sin(t * 1.8) * 0.1;
+      halo.scale.setScalar(pulse);
+      haloMat.opacity = 0.11 + Math.sin(t * 1.8) * 0.04;
+    }
+
+    // Background scroll parallax (slower than scroll)
+    if (heroBg && scrollY < window.innerHeight * 1.4) {
+      heroBg.style.transform = `translate3d(0, ${scrollY * 0.35}px, 0) scale(${1 + scrollY * 0.0004})`;
+    }
+
+    renderer.render(scene, camera);
+    requestAnimationFrame(animate);
+  }
+  animate();
+
+  // Hide loading label after first frame, mark wrap as 3D-loaded so SVG fallback fadet weg
+  requestAnimationFrame(() => {
+    if (loadingEl) loadingEl.classList.add('hidden');
+    wrap.classList.add('three-loaded');
+  });
+
+  /* ---------- Optional: load custom GLB if user drops one ---------- */
+  try {
+    const loader = new GLTFLoader();
+    loader.load(
+      'assets/aurora-logo.glb',
+      (gltf) => {
+        // Replace procedural with user GLB
+        while (logoGroup.children.length) logoGroup.remove(logoGroup.children[0]);
+        const model = gltf.scene;
+        // Auto-center & normalize size
+        const box = new THREE.Box3().setFromObject(model);
+        const center = box.getCenter(new THREE.Vector3());
+        model.position.sub(center);
+        const size = box.getSize(new THREE.Vector3()).length();
+        if (size > 0) model.scale.setScalar(2.2 / size);
+        // Slight upward shift so it sits on horizon line
+        model.position.y += 0.2;
+        // Boost emissive on any standard materials so bloom catches them
+        model.traverse(o => {
+          if (o.isMesh && o.material && 'emissiveIntensity' in o.material) {
+            o.material.emissiveIntensity = Math.max(o.material.emissiveIntensity, 1.5);
+          }
+        });
+        logoGroup.add(model);
+        console.log('Aurora 3D: custom GLB loaded from assets/aurora-logo.glb');
+      },
+      undefined,
+      () => { /* 404 — keep procedural (silent) */ }
+    );
+  } catch (e) { /* ignore */ }
+}
+</script>
+
+<!-- ============================================================
+     CINEMATIC ANIMATIONS — Word reveals, counters, scroll fades
+     ============================================================ -->
+<script>
+(function(){
+
+  /* ---------- 1. Word-by-word reveal ---------- */
+  function splitWords(root){
+    if(root.querySelector('.word')) return;
+    function walk(node){
+      const frag = document.createDocumentFragment();
+      [...node.childNodes].forEach(child => {
+        if(child.nodeType === 3){
+          const parts = child.textContent.split(/(\s+)/);
+          parts.forEach(p => {
+            if(/^\s+$/.test(p)){
+              frag.appendChild(document.createTextNode(p));
+            } else if(p.length > 0){
+              const w = document.createElement('span');
+              w.className = 'word';
+              const wi = document.createElement('span');
+              wi.className = 'word-inner';
+              wi.textContent = p;
+              w.appendChild(wi);
+              frag.appendChild(w);
+            }
+          });
+        } else if(child.nodeType === 1){
+          if(child.tagName === 'BR'){
+            frag.appendChild(document.createElement('br'));
+          } else {
+            const clone = child.cloneNode(false);
+            clone.appendChild(walk(child));
+            frag.appendChild(clone);
+          }
+        }
+      });
+      return frag;
+    }
+    const newContent = walk(root);
+    root.innerHTML = '';
+    root.appendChild(newContent);
+    root.querySelectorAll('.word-inner').forEach((w, i) => {
+      w.style.transitionDelay = (i * 0.07) + 's';
+    });
+  }
+  document.querySelectorAll('.hero-h1, .sec-head h2').forEach(splitWords);
+
+  /* ---------- 2. Counter animation ---------- */
+  const counterObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(!e.isIntersecting) return;
+      const el = e.target;
+      const target = parseFloat(el.dataset.counter);
+      const dur = 1600;
+      const start = performance.now();
+      el.textContent = '0';
+      function tick(now){
+        const t = Math.min((now - start) / dur, 1);
+        const eased = 1 - Math.pow(1 - t, 4);
+        el.textContent = Math.round(target * eased);
+        if(t < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+      counterObs.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('[data-counter]').forEach(el => counterObs.observe(el));
+
+  /* ---------- 3. Hero text scroll-fade ---------- */
+  const hero = document.querySelector('.hero');
+  const heroContent = document.querySelector('.hero-content');
+  if(hero && heroContent){
+    function onHeroScroll(){
+      const rect = hero.getBoundingClientRect();
+      const progress = Math.max(0, Math.min(1, 1 - rect.bottom / window.innerHeight));
+      heroContent.style.opacity = (1 - progress * 0.95).toFixed(3);
+      heroContent.style.transform = `translateY(${(progress * -30).toFixed(1)}px)`;
+    }
+    window.addEventListener('scroll', onHeroScroll, { passive: true });
+  }
+
+  /* ---------- 4. Ildiko portrait scroll parallax ---------- */
+  const ildikoPhoto = document.querySelector('.ildiko-photo');
+  const ildikoImg = ildikoPhoto && ildikoPhoto.querySelector('img');
+  if(ildikoImg){
+    function onIldikoScroll(){
+      const rect = ildikoPhoto.getBoundingClientRect();
+      const center = rect.top + rect.height / 2;
+      const fromCenter = (window.innerHeight / 2 - center) / window.innerHeight;
+      const clamped = Math.max(-0.7, Math.min(0.7, fromCenter));
+      ildikoImg.style.transform = `scale(${(1.05 - clamped * 0.04).toFixed(3)}) translateY(${(clamped * 16).toFixed(1)}px)`;
+    }
+    window.addEventListener('scroll', onIldikoScroll, { passive: true });
+    onIldikoScroll();
+  }
+
+  /* ---------- 4b. Atelier parallax + lightbox ---------- */
+  (function atelierInit(){
+    const strip = document.getElementById('atelierStrip');
+    if(!strip) return;
+    const cards = [...strip.querySelectorAll('.atelier-card')];
+    const counter = document.getElementById('atelierCounter');
+
+    // Parallax inside each card image — IntersectionObserver-driven for perf
+    let ticking = false;
+    function updateParallax(){
+      ticking = false;
+      const vh = window.innerHeight;
+      let activeIdx = 0;
+      let nearestDist = Infinity;
+      cards.forEach((card, i) => {
+        const rect = card.getBoundingClientRect();
+        if(rect.bottom < 0 || rect.top > vh) return;
+        // 0..1 progress of card through viewport
+        const progress = (vh - rect.top) / (vh + rect.height);
+        const clamped = Math.max(0, Math.min(1, progress));
+        // Translate inner image ±5% of its overscan
+        const py = (clamped - 0.5) * 60;
+        const img = card.querySelector('img');
+        if(img) img.style.setProperty('--py', py.toFixed(1) + 'px');
+        // Find card closest to viewport center for counter
+        const cardCenter = rect.top + rect.height / 2;
+        const dist = Math.abs(vh / 2 - cardCenter);
+        if(dist < nearestDist){ nearestDist = dist; activeIdx = i; }
+      });
+      if(counter) counter.textContent = String(activeIdx + 1).padStart(2, '0');
+    }
+    function onScroll(){
+      if(!ticking){
+        requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    updateParallax();
+
+    // Lightbox
+    const lb = document.getElementById('atelierLightbox');
+    const lbImg = document.getElementById('atelierLbImg');
+    const lbNum = document.getElementById('atelierLbNum');
+    const lbLabel = document.getElementById('atelierLbLabel');
+    const lbCap = document.getElementById('atelierLbCap');
+    const btnClose = document.getElementById('atelierClose');
+    const btnPrev = document.getElementById('atelierPrev');
+    const btnNext = document.getElementById('atelierNext');
+    let current = 0;
+
+    function show(idx){
+      const n = cards.length;
+      current = (idx + n) % n;
+      const card = cards[current];
+      const img = card.querySelector('img');
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lbNum.textContent = String(current + 1).padStart(2,'0') + ' / ' + String(n).padStart(2,'0');
+      lbLabel.textContent = card.dataset.label || '';
+      lbCap.textContent = card.dataset.cap || '';
+      // re-trigger animation
+      lbImg.style.animation = 'none';
+      void lbImg.offsetWidth;
+      lbImg.style.animation = '';
+    }
+    function open(idx){
+      show(idx);
+      lb.classList.add('open');
+      lb.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+    function close(){
+      lb.classList.remove('open');
+      lb.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+    window.openAtelier = open;
+    btnClose.addEventListener('click', close);
+    btnPrev.addEventListener('click', e => { e.stopPropagation(); show(current - 1); });
+    btnNext.addEventListener('click', e => { e.stopPropagation(); show(current + 1); });
+    lb.addEventListener('click', e => { if(e.target === lb) close(); });
+    document.addEventListener('keydown', e => {
+      if(!lb.classList.contains('open')) return;
+      if(e.key === 'Escape') close();
+      else if(e.key === 'ArrowLeft') show(current - 1);
+      else if(e.key === 'ArrowRight') show(current + 1);
+    });
+  })();
+
+  /* ---------- 5. Smooth filter transitions (überschreibt v2-Default) ---------- */
+  const oldChips = document.querySelectorAll('#catFilters .chip');
+  oldChips.forEach(oldChip => {
+    const newChip = oldChip.cloneNode(true);
+    oldChip.parentNode.replaceChild(newChip, oldChip);
+  });
+  const chips = document.querySelectorAll('#catFilters .chip');
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      const cat = chip.dataset.cat;
+      const cards = [...document.querySelectorAll('#bsRow .bs-card, #prodGrid .prod')];
+      let shown = 0;
+      cards.forEach(card => {
+        const cats = card.dataset.cat || '';
+        const show = cat === 'all' || cats.includes(cat);
+        if(show){
+          const delay = shown * 30;
+          shown++;
+          card.style.display = '';
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(14px) scale(.96)';
+          setTimeout(() => {
+            card.style.opacity = '';
+            card.style.transform = '';
+          }, 20 + delay);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'scale(.96)';
+          setTimeout(() => { card.style.display = 'none'; }, 320);
+        }
+      });
+    });
+  });
+
+})();
+</script>
 
 </body>
 </html>
