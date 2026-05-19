@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Hauptseite und Assets dürfen indexiert werden
+Disallow: /uploads/
+
+Sitemap: https://jmpanrw-lab.github.io/aurora-home-website/sitemap.xml

@@ -3,8 +3,63 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Aurora Home — Handgefertigte 3D-Deko, kinetische Skulpturen und Premium Wax Melts aus Deutschland.">
+<meta name="description" content="Aurora Home — Handgefertigte 3D-Deko, Premium Wax Melts und Custom Resin aus Deutschland. Lampen, selbstbewässernde Pflanzer, MagSafe-Ladestationen und mehr. Made-on-Demand in 4–6 Tagen.">
+<meta name="keywords" content="3D-Druck Deko, handgefertigt, Wax Melts, Custom Resin, selbstbewässernder Pflanzer, MagSafe Ladestation, Schmuckkästchen, Schreibtischlampe, Made-on-Demand, Aurora Home, Ildiko Fenyes, Deutschland">
+<meta name="author" content="Ildiko Fenyes · Aurora Home">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0a0914">
+<link rel="canonical" href="https://jmpanrw-lab.github.io/aurora-home-website/">
 <title>Aurora Home — Handgefertigte 3D-Deko aus Deutschland</title>
+
+<!-- ── OPEN GRAPH ─────────────────────────────── -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Aurora Home">
+<meta property="og:locale" content="de_DE">
+<meta property="og:url" content="https://jmpanrw-lab.github.io/aurora-home-website/">
+<meta property="og:title" content="Aurora Home — Handgefertigte 3D-Deko aus Deutschland">
+<meta property="og:description" content="Handgefertigte 3D-Deko, Premium Wax Melts und Custom Resin. Made-on-Demand in 4–6 Tagen. Eine Werkstatt nach Feierabend.">
+<meta property="og:image" content="https://d8j0ntlcm91z4.cloudfront.net/user_38xvCKWSztMtCzGzltBTjUTWyVl/hf_20260515_164621_c1122038-416a-42a2-b631-8d31d7f31c32.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Aurora Home — 3D-gedruckte Deko-Objekte, Werkstatt-Stillleben">
+
+<!-- ── TWITTER CARD ─────────────────────────────── -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Aurora Home — Handgefertigte 3D-Deko aus Deutschland">
+<meta name="twitter:description" content="Handgefertigte 3D-Deko, Premium Wax Melts und Custom Resin. Made-on-Demand in 4–6 Tagen.">
+<meta name="twitter:image" content="https://d8j0ntlcm91z4.cloudfront.net/user_38xvCKWSztMtCzGzltBTjUTWyVl/hf_20260515_164621_c1122038-416a-42a2-b631-8d31d7f31c32.png">
+<meta name="twitter:image:alt" content="Aurora Home — 3D-gedruckte Deko-Objekte, Werkstatt-Stillleben">
+
+<!-- ── STRUCTURED DATA: Organization + WebSite ─────────────────────────────── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://jmpanrw-lab.github.io/aurora-home-website/#org",
+      "name": "Aurora Home",
+      "url": "https://jmpanrw-lab.github.io/aurora-home-website/",
+      "description": "Handgefertigte 3D-Deko, Premium Wax Melts und Custom Resin aus Deutschland. Eine Werkstatt nach Feierabend.",
+      "founder": { "@type": "Person", "name": "Ildiko Fenyes" },
+      "email": "fenyesdesign@outlook.com",
+      "address": { "@type": "PostalAddress", "addressCountry": "DE" },
+      "sameAs": [
+        "https://www.etsy.com/de/shop/AuroraHomeFenyes",
+        "https://www.tiktok.com/@aurorahomefenyes"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://jmpanrw-lab.github.io/aurora-home-website/#website",
+      "url": "https://jmpanrw-lab.github.io/aurora-home-website/",
+      "name": "Aurora Home",
+      "inLanguage": "de-DE",
+      "publisher": { "@id": "https://jmpanrw-lab.github.io/aurora-home-website/#org" }
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
@@ -1153,6 +1208,279 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:80px 64px 3
 }
 
 /* ============================================================
+   ATELIER · Werkstatt-Galerie
+   ============================================================ */
+.atelier{
+  padding:140px 0 120px;
+  border-top:1px solid var(--line);
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(155,127,212,.12), transparent 60%),
+    radial-gradient(ellipse 60% 40% at 100% 100%, rgba(200,144,106,.05), transparent 70%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+  position:relative;
+  overflow:hidden;
+}
+.atelier::before{
+  content:"";
+  position:absolute;left:50%;top:0;bottom:0;
+  width:1px;background:linear-gradient(180deg, transparent, rgba(244,240,255,.04) 20%, rgba(244,240,255,.04) 80%, transparent);
+  pointer-events:none;
+}
+.atelier-head{
+  max-width:760px;margin:0 0 16px;
+  padding:0 32px;
+  position:relative;z-index:2;
+}
+.atelier-head .kicker{margin-bottom:18px;display:block;}
+.atelier-head h2{
+  font-family:var(--serif);font-weight:300;line-height:1;
+  font-size:clamp(40px,5.4vw,72px);letter-spacing:-.005em;color:var(--ink);
+}
+.atelier-head h2 em{font-style:italic;color:var(--lilac);}
+.atelier-lede{
+  margin-top:18px;font-size:17px;line-height:1.6;color:var(--text);max-width:600px;
+}
+
+/* Counter line on the right of head */
+.atelier-counter{
+  position:absolute;top:0;right:32px;
+  display:flex;align-items:center;gap:10px;
+  font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);
+}
+.atelier-counter b{
+  font-family:var(--serif);font-style:italic;font-weight:300;font-size:28px;
+  color:var(--ink);letter-spacing:0;
+}
+
+/* Staggered strip — film-roll rhythm */
+.atelier-strip{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+  margin:64px 0 60px;
+  padding:60px 32px 60px;
+  max-width:1480px;
+  margin-left:auto;margin-right:auto;
+  position:relative;
+}
+.atelier-strip::before,
+.atelier-strip::after{
+  content:"";
+  position:absolute;left:32px;right:32px;height:1px;
+  background:repeating-linear-gradient(90deg,
+    rgba(244,240,255,.18) 0 6px,
+    transparent 6px 18px);
+  pointer-events:none;
+}
+.atelier-strip::before{top:0;}
+.atelier-strip::after{bottom:0;}
+
+.atelier-card{
+  position:relative;
+  aspect-ratio:9/16;
+  overflow:hidden;
+  background:#0a0914;
+  isolation:isolate;
+  cursor:pointer;
+  transform:translateY(var(--y,0));
+  transition:transform .8s cubic-bezier(.2,.7,.2,1);
+}
+.atelier-card:nth-child(1){--y:30px;}
+.atelier-card:nth-child(2){--y:-30px;}
+.atelier-card:nth-child(3){--y:30px;}
+.atelier-card:nth-child(4){--y:-30px;}
+.atelier-card::before{
+  /* Film-strip frame perforations */
+  content:"";position:absolute;inset:0;z-index:3;pointer-events:none;
+  border:1px solid rgba(244,240,255,.06);
+  box-shadow:
+    inset 0 0 0 1px rgba(10,9,20,.4),
+    0 30px 60px -20px rgba(0,0,0,.6),
+    0 0 0 1px rgba(155,127,212,.05);
+}
+.atelier-card .atelier-imgwrap{
+  position:absolute;inset:-8% -2%;
+  z-index:0;
+}
+.atelier-card img{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;
+  filter:saturate(1.1) contrast(1.03) brightness(.96);
+  transition:transform 1.6s cubic-bezier(.2,.7,.2,1), filter .6s ease;
+  will-change:transform;
+  transform:translate3d(0,var(--py,0),0);
+}
+.atelier-card:hover img{
+  filter:saturate(1.18) contrast(1.05) brightness(1.02);
+}
+.atelier-card::after{
+  content:"";position:absolute;inset:0;z-index:1;
+  background:
+    linear-gradient(180deg, rgba(10,9,20,0) 30%, rgba(10,9,20,.55) 72%, rgba(10,9,20,.94) 100%),
+    radial-gradient(ellipse 100% 60% at 50% 0%, rgba(155,127,212,.18), transparent 70%);
+  pointer-events:none;
+  transition:opacity .5s ease;
+}
+.atelier-card figcaption{
+  position:absolute;left:0;right:0;bottom:0;
+  padding:26px 22px 24px;
+  z-index:2;
+  display:grid;
+  grid-template-columns:auto 1fr;
+  grid-template-rows:auto auto;
+  column-gap:14px;
+  row-gap:8px;
+  align-items:end;
+}
+.atelier-num{
+  grid-row:1 / span 2;
+  font-family:var(--serif);font-style:italic;font-weight:300;font-size:34px;
+  color:var(--gold);
+  align-self:end;
+  line-height:.9;
+  letter-spacing:-.02em;
+}
+.atelier-label{
+  font-family:var(--serif);font-weight:400;font-style:italic;
+  font-size:24px;line-height:1;color:var(--ink);
+}
+.atelier-cap{
+  grid-column:2;
+  font-size:13px;line-height:1.5;color:rgba(244,240,255,.78);
+  max-width:34ch;
+}
+
+/* Click hint */
+.atelier-card .atelier-zoom{
+  position:absolute;top:16px;right:16px;z-index:2;
+  width:32px;height:32px;border-radius:50%;
+  display:grid;place-items:center;
+  background:rgba(10,9,20,.55);
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+  border:1px solid rgba(244,240,255,.12);
+  opacity:0;transform:scale(.85);
+  transition:opacity .35s ease, transform .35s ease;
+}
+.atelier-card:hover .atelier-zoom{opacity:1;transform:scale(1);}
+.atelier-zoom svg{width:14px;height:14px;stroke:var(--ink);stroke-width:1.6;fill:none;}
+
+.atelier-foot{
+  display:inline-flex;align-items:center;gap:12px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);
+  padding:14px 20px;
+  border:1px solid var(--line-strong);
+  background:rgba(244,240,255,.02);
+  margin-left:32px;
+}
+.atelier-foot-dot{
+  width:8px;height:8px;border-radius:50%;background:var(--lilac);
+  box-shadow:0 0 12px rgba(155,127,212,.8);
+  animation:atelierPulse 2.4s ease-in-out infinite;
+}
+@keyframes atelierPulse{
+  0%,100%{opacity:.55;transform:scale(1);}
+  50%{opacity:1;transform:scale(1.25);}
+}
+
+/* Lightbox */
+.atelier-lightbox{
+  position:fixed;inset:0;z-index:1000;
+  background:rgba(5,4,12,.92);
+  backdrop-filter:blur(20px) saturate(120%);
+  -webkit-backdrop-filter:blur(20px) saturate(120%);
+  display:none;
+  opacity:0;
+  transition:opacity .4s ease;
+}
+.atelier-lightbox.open{display:flex;opacity:1;align-items:center;justify-content:center;}
+.atelier-lightbox-inner{
+  position:relative;
+  max-width:min(90vw,720px);
+  max-height:90vh;
+  display:flex;flex-direction:column;
+  gap:18px;
+  align-items:center;
+}
+.atelier-lightbox img{
+  max-width:100%;
+  max-height:78vh;
+  object-fit:contain;
+  border-radius:2px;
+  box-shadow:0 30px 80px -20px rgba(0,0,0,.8), 0 0 80px -10px rgba(155,127,212,.2);
+  animation:lbIn .5s cubic-bezier(.2,.7,.2,1);
+}
+@keyframes lbIn{from{opacity:0;transform:translateY(20px) scale(.96);}to{opacity:1;transform:none;}}
+.atelier-lightbox-meta{
+  display:flex;align-items:center;gap:18px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
+  animation:lbIn .6s .1s cubic-bezier(.2,.7,.2,1) backwards;
+}
+.atelier-lightbox-meta b{
+  font-family:var(--serif);font-style:italic;font-weight:300;font-size:22px;
+  letter-spacing:0;text-transform:none;color:var(--ink);
+}
+.atelier-lightbox-close,
+.atelier-lightbox-nav{
+  position:absolute;
+  width:48px;height:48px;border-radius:50%;
+  display:grid;place-items:center;
+  background:rgba(244,240,255,.06);
+  border:1px solid rgba(244,240,255,.12);
+  color:var(--ink);
+  cursor:pointer;
+  transition:background .25s,transform .25s;
+}
+.atelier-lightbox-close{top:24px;right:24px;}
+.atelier-lightbox-nav.prev{left:24px;top:50%;transform:translateY(-50%);}
+.atelier-lightbox-nav.next{right:24px;top:50%;transform:translateY(-50%);}
+.atelier-lightbox-close:hover,
+.atelier-lightbox-nav:hover{background:rgba(244,240,255,.12);}
+.atelier-lightbox-close:hover{transform:scale(1.08);}
+.atelier-lightbox-nav.prev:hover{transform:translateY(-50%) translateX(-2px);}
+.atelier-lightbox-nav.next:hover{transform:translateY(-50%) translateX(2px);}
+.atelier-lightbox svg{width:16px;height:16px;stroke:currentColor;stroke-width:2;fill:none;}
+
+@media (max-width:1100px){
+  .atelier-strip{grid-template-columns:repeat(2,1fr);gap:14px;padding:40px 24px;}
+  .atelier-card{aspect-ratio:9/14;}
+  .atelier-card:nth-child(1),
+  .atelier-card:nth-child(3){--y:20px;}
+  .atelier-card:nth-child(2),
+  .atelier-card:nth-child(4){--y:-20px;}
+  .atelier-counter{position:static;margin-top:20px;}
+}
+@media (max-width:640px){
+  .atelier{padding:80px 0 70px;}
+  .atelier-head{padding:0 22px;margin-bottom:20px;}
+  .atelier-strip{
+    grid-template-columns:none;
+    grid-auto-flow:column;
+    grid-auto-columns:78%;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    padding:30px 18px;
+    gap:14px;
+    scrollbar-width:none;
+  }
+  .atelier-strip::-webkit-scrollbar{display:none;}
+  .atelier-strip::before,
+  .atelier-strip::after{display:none;}
+  .atelier-card{scroll-snap-align:start;aspect-ratio:9/16;--y:0 !important;}
+  .atelier-card:nth-child(n){--y:0 !important;}
+  .atelier-label{font-size:21px;}
+  .atelier-cap{font-size:12.5px;}
+  .atelier-foot{margin-left:22px;}
+  .atelier-lightbox-close{top:14px;right:14px;width:40px;height:40px;}
+  .atelier-lightbox-nav{width:40px;height:40px;}
+  .atelier-lightbox-nav.prev{left:10px;}
+  .atelier-lightbox-nav.next{right:10px;}
+}
+
+/* ============================================================
    CINEMATIC ANIMATIONS
    ============================================================ */
 .word{
@@ -1372,6 +1700,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:80px 64px 3
     <a href="#katalog">Produkte</a>
     <a href="#waxmelts">Wax Melts</a>
     <a href="#resin">Custom Resin</a>
+    <a href="#atelier">Atelier</a>
     <a href="#ildiko">Story</a>
   </div>
   <a href="#newsletter" class="nav-cta">Vorbestellen</a>
@@ -1382,6 +1711,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:80px 64px 3
   <a href="#katalog" onclick="closeMob()">Produkte</a>
   <a href="#waxmelts" onclick="closeMob()">Wax Melts</a>
   <a href="#resin" onclick="closeMob()">Custom Resin</a>
+  <a href="#atelier" onclick="closeMob()">Atelier</a>
   <a href="#ildiko" onclick="closeMob()">Story</a>
   <a href="#newsletter" onclick="closeMob()">Vorbestellen</a>
 </div>
@@ -1526,7 +1856,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:80px 64px 3
 <section id="ildiko" style="padding:0;">
   <div class="ildiko">
     <div class="ildiko-photo reveal" style="background:#0a0914;">
-      <img src="assets/ildiko.jpg" alt="Ildiko Fenyes" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;">
+      <img src="assets/ildiko.jpg" alt="Ildiko Fenyes — Gründerin von Aurora Home" loading="lazy" decoding="async" width="900" height="1200" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;">
       <div class="tag">Hinter den Kulissen</div>
     </div>
     <div class="ildiko-text">
@@ -1601,6 +1931,102 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:80px 64px 3
 </section>
 
 <!-- ============================================================
+     ATELIER — Werkstatt-Galerie
+     ============================================================ -->
+<section id="atelier" class="atelier">
+  <div class="wrap">
+    <div class="atelier-head reveal">
+      <span class="kicker">Atelier · Feierabend</span>
+      <h2>Jeden Abend ein <em>bisschen weiter.</em></h2>
+      <p class="atelier-lede">Vier Bilder aus der Werkstatt. Lila Licht, Drucker im Hintergrund, Pinsel in der Hand. So entsteht jedes Stück — von der ersten Skizze bis zur fertigen Knospe.</p>
+      <div class="atelier-counter">
+        <span>Sequenz</span>
+        <b id="atelierCounter">01</b>
+        <span>/ 04</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="atelier-strip reveal-stagger" id="atelierStrip">
+    <figure class="atelier-card" data-idx="0" data-label="Skizze" data-cap="Linien auf dem Leuchttisch. Jedes Objekt fängt mit Papier an, lange bevor der Drucker läuft." onclick="openAtelier(0)">
+      <div class="atelier-imgwrap">
+        <img src="assets/workshop/04-lightpad-sketch.jpg" alt="Ildiko skizziert ein neues Modell auf dem Leuchttisch" loading="lazy" decoding="async" width="1080" height="1920">
+      </div>
+      <span class="atelier-zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M16 16l5 5"/><path d="M7 10.5h7M10.5 7v7"/></svg></span>
+      <figcaption>
+        <span class="atelier-num">01</span>
+        <span class="atelier-label">Skizze</span>
+        <span class="atelier-cap">Linien auf dem Leuchttisch. Jedes Objekt fängt mit Papier an, lange bevor der Drucker läuft.</span>
+      </figcaption>
+    </figure>
+
+    <figure class="atelier-card" data-idx="1" data-label="Modellierung" data-cap="Vom Sketch ins 3D. Wandbild aus Acrylflaschen, im Hintergrund läuft schon der erste Layer." onclick="openAtelier(1)">
+      <div class="atelier-imgwrap">
+        <img src="assets/workshop/03-design-laptop.jpg" alt="Aurora-Webseite am MacBook, Acrylfarben auf dem Pegboard" loading="lazy" decoding="async" width="1080" height="1920">
+      </div>
+      <span class="atelier-zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M16 16l5 5"/><path d="M7 10.5h7M10.5 7v7"/></svg></span>
+      <figcaption>
+        <span class="atelier-num">02</span>
+        <span class="atelier-label">Modellierung</span>
+        <span class="atelier-cap">Vom Sketch ins 3D. Wandbild aus Acrylflaschen, im Hintergrund läuft schon der erste Layer.</span>
+      </figcaption>
+    </figure>
+
+    <figure class="atelier-card" data-idx="2" data-label="Werkstatt" data-cap="Das ganze Setup. Drucker, Doppel-Monitor, Lautsprecher. Aurora lebt in diesem Zimmer." onclick="openAtelier(2)">
+      <div class="atelier-imgwrap">
+        <img src="assets/workshop/02-desk-overview.jpg" alt="Werkstatt von oben — Drucker, Schreibtisch, lila LEDs" loading="lazy" decoding="async" width="1080" height="1920">
+      </div>
+      <span class="atelier-zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M16 16l5 5"/><path d="M7 10.5h7M10.5 7v7"/></svg></span>
+      <figcaption>
+        <span class="atelier-num">03</span>
+        <span class="atelier-label">Werkstatt</span>
+        <span class="atelier-cap">Das ganze Setup. Drucker, Doppel-Monitor, Lautsprecher. Aurora lebt in diesem Zimmer.</span>
+      </figcaption>
+    </figure>
+
+    <figure class="atelier-card" data-idx="3" data-label="Veredelung" data-cap="Knospen werden einzeln angeklebt, Wax-Melts portioniert. Endmontage ist Handarbeit, jede Charge." onclick="openAtelier(3)">
+      <div class="atelier-imgwrap">
+        <img src="assets/workshop/01-melts-assembly.jpg" alt="Pillenbaum-Knospen und Wax-Melt-Sets in der Endmontage" loading="lazy" decoding="async" width="1080" height="1920">
+      </div>
+      <span class="atelier-zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M16 16l5 5"/><path d="M7 10.5h7M10.5 7v7"/></svg></span>
+      <figcaption>
+        <span class="atelier-num">04</span>
+        <span class="atelier-label">Veredelung</span>
+        <span class="atelier-cap">Knospen werden einzeln angeklebt, Wax-Melts portioniert. Endmontage ist Handarbeit, jede Charge.</span>
+      </figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap">
+    <div class="atelier-foot reveal">
+      <span class="atelier-foot-dot"></span>
+      <span>Werkstatt statt Lager · Klick aufs Bild für Vollansicht</span>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="atelier-lightbox" id="atelierLightbox" role="dialog" aria-label="Werkstatt-Galerie Vollansicht" aria-hidden="true">
+    <button class="atelier-lightbox-close" id="atelierClose" aria-label="Schließen">
+      <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+    </button>
+    <button class="atelier-lightbox-nav prev" id="atelierPrev" aria-label="Vorheriges Bild">
+      <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+    </button>
+    <button class="atelier-lightbox-nav next" id="atelierNext" aria-label="Nächstes Bild">
+      <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+    </button>
+    <div class="atelier-lightbox-inner">
+      <img id="atelierLbImg" alt="" decoding="async">
+      <div class="atelier-lightbox-meta">
+        <span id="atelierLbNum">01 / 04</span>
+        <b id="atelierLbLabel">Skizze</b>
+        <span id="atelierLbCap"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
      KATALOG
      ============================================================ -->
 <section id="katalog">
@@ -1618,30 +2044,30 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:80px 64px 3
     </div>
 
     <div class="cat-filters reveal" id="catFilters">
-      <button class="chip active" data-cat="all">Alle <span class="count">12</span></button>
-      <button class="chip" data-cat="lampe">Lampen <span class="count">4</span></button>
-      <button class="chip" data-cat="pflanze">Pflanzer &amp; Vasen <span class="count">2</span></button>
-      <button class="chip" data-cat="aufbewahrung">Aufbewahrung <span class="count">2</span></button>
-      <button class="chip" data-cat="gadget">Gadgets <span class="count">2</span></button>
-      <button class="chip" data-cat="spiel">Spiele &amp; Deko <span class="count">2</span></button>
-      <button class="chip" data-cat="bestseller">⭐ Bestseller</button>
+      <button class="chip active" data-cat="all">Alle <span class="count"></span></button>
+      <button class="chip" data-cat="lampe">Lampen <span class="count"></span></button>
+      <button class="chip" data-cat="pflanze">Pflanzer &amp; Gießen <span class="count"></span></button>
+      <button class="chip" data-cat="aufbewahrung">Aufbewahrung <span class="count"></span></button>
+      <button class="chip" data-cat="gadget">Gadgets <span class="count"></span></button>
+      <button class="chip" data-cat="spiel">Spiele &amp; Deko <span class="count"></span></button>
+      <button class="chip" data-cat="bestseller">Bestseller <span class="count"></span></button>
     </div>
 
     <!-- Bestseller-Reihe (oben hervorgehoben) -->
     <div class="bestseller-row reveal-stagger" id="bsRow">
       <article class="bs-card" data-cat="lampe bestseller" data-idx="10" onclick="openProduct(10)">
         <div class="bs-img">
-          <span class="bs-badge">Viral · TikTok</span>
-          <img src="https://thangs.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fproduction-thangs-public%2Fuploads%2Fattachments%2F2c170eff-e391-48b9-8739-f3dd28d53493%2FFoto%2520crop%2520text.png&w=1200&q=90" alt="Social Battery Lampe" loading="lazy">
+          <span class="bs-badge">Bestseller</span>
+          <img src="assets/eclipse-lampe.jpg" alt="Eclipse Lampe" loading="lazy">
         </div>
         <div class="bs-info">
           <div>
-            <div class="bs-cat">Wand- &amp; Tischlampe</div>
-            <h3 class="bs-name">Social Battery</h3>
-            <p class="bs-desc">Zeigt per Lampe, wie viel Energie du noch hast. TikTok-viral, ehrlich, witzig — und trotzdem ein ernsthaft schönes Lichtobjekt.</p>
+            <div class="bs-cat">Tischlampe mit Lampenschirm</div>
+            <h3 class="bs-name">Eclipse</h3>
+            <p class="bs-desc">Zylindrischer Sockel mit runder Schirm-Scheibe dahinter — wie eine Sonnenfinsternis. Minimalistisch, zeitlos, eine ruhige Präsenz auf jedem Schreibtisch.</p>
           </div>
           <div class="bs-foot">
-            <span class="bs-price">26,90 €</span>
+            <span class="bs-price">39,90 €</span>
             <span class="bs-cta">Mehr ansehen <span class="arr">→</span></span>
           </div>
         </div>
@@ -1702,7 +2128,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:80px 64px 3
 
     <div class="wax-cta-row reveal">
       <p class="t">Probier-Set: <em>3 Düfte deiner Wahl für 19,90 €</em>. Perfekt zum Kennenlernen.</p>
-      <a href="/cdn-cgi/l/email-protection#e482818a9d81978081978d838aa48b9190888b8b8fca878b89db9791868e818790d9b3859cc4a981889097c4b4968b868d8196c9b78190" class="btn btn-primary">Set anfragen <span class="arr">→</span></a>
+      <a href="mailto:fenyesdesign@outlook.com?subject=Wax Melts Probier-Set" class="btn btn-primary">Set anfragen <span class="arr">→</span></a>
     </div>
   </div>
 </section>
@@ -1742,7 +2168,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:80px 64px 3
         </div>
 
         <div class="resin-actions reveal">
-          <a href="/cdn-cgi/l/email-protection#0a6c6f64736f796e6f79636d644a657f7e666565612469656735797f68606f697e37497f797e65672a586f7963642a4b646c786b6d6f" class="btn btn-primary">Anfrage stellen <span class="arr">→</span></a>
+          <a href="mailto:fenyesdesign@outlook.com?subject=Custom Resin Anfrage" class="btn btn-primary">Anfrage stellen <span class="arr">→</span></a>
           <a href="resin.html" class="btn btn-ghost">Mehr Infos</a>
         </div>
       </div>
@@ -1793,13 +2219,13 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:80px 64px 3
   <div class="wrap">
     <div class="sec-head reveal">
       <div>
-        <span class="kicker">Was Kundinnen sagen</span>
-        <h2>Echte Worte,<br><em>echte Bestellungen.</em></h2>
+        <span class="kicker">Erste Stimmen · Pre-Launch</span>
+        <h2>Aus den DMs,<br><em>aus den Mails.</em></h2>
       </div>
       <div class="meta">
-        Sammlung aus<br>
+        Stimmen aus<br>
         Etsy · TikTok · DMs<br>
-        <b>4,9 / 5</b> über 80+ Bewertungen
+        <b>Echte Etsy-Sterne</b> folgen mit dem nächsten Update
       </div>
     </div>
     <div class="social-grid reveal-stagger">
@@ -1809,19 +2235,19 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:80px 64px 3
         <div class="review-meta">
           <div class="review-avatar">L</div>
           <div>
-            <div class="review-name">Lena K.</div>
-            <div class="review-source">Etsy · März 2026</div>
+            <div class="review-name">Lena · Köln</div>
+            <div class="review-source">Vorab-Feedback · März 2026</div>
           </div>
         </div>
       </div>
       <div class="review">
         <div class="review-stars">★★★★★</div>
-        <p class="review-text">"Habe die Social Battery aus TikTok bestellt und sie ist schöner als auf den Videos. Verpackung war wie ein kleines Geschenk — Ildiko schreibt sogar handschriftlich dazu."</p>
+        <p class="review-text">"Hab die Eclipse Lampe bestellt und sie steht jetzt auf meinem Schreibtisch wie ein kleines Kunstobjekt. Verpackung war wie ein Geschenk — Ildiko schreibt sogar handschriftlich dazu."</p>
         <div class="review-meta">
           <div class="review-avatar">M</div>
           <div>
-            <div class="review-name">Marco P.</div>
-            <div class="review-source">Instagram DM · Feb 2026</div>
+            <div class="review-name">Marco · München</div>
+            <div class="review-source">Instagram-DM · Feb 2026</div>
           </div>
         </div>
       </div>
@@ -1831,8 +2257,8 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:80px 64px 3
         <div class="review-meta">
           <div class="review-avatar">S</div>
           <div>
-            <div class="review-name">Sandra B.</div>
-            <div class="review-source">Etsy · Jan 2026</div>
+            <div class="review-name">Sandra · Hamburg</div>
+            <div class="review-source">Custom-Auftrag · Jan 2026</div>
           </div>
         </div>
       </div>
@@ -1891,7 +2317,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:80px 64px 3
           <a href="https://etsy.com/shop/aurorahome" aria-label="Etsy">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3h14v6h-9v3h7v6h-7v3h9v0H5z"/></svg>
           </a>
-          <a href="/cdn-cgi/l/email-protection#1e787b70677b6d7a7b6d7779705e716b6a72717175307d7173" aria-label="E-Mail">
+          <a href="mailto:fenyesdesign@outlook.com" aria-label="E-Mail">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
           </a>
         </div>
@@ -1912,20 +2338,20 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:80px 64px 3
       </div>
       <div class="foot-col">
         <h4>Info</h4>
-        <a href="/cdn-cgi/l/email-protection#3d5b585344584e59584e545a537d52484951525256135e5250">Kontakt</a>
+        <a href="mailto:fenyesdesign@outlook.com">Kontakt</a>
         <a href="#ildiko">Über Ildiko</a>
-        <a href="#">Versand &amp; Lieferung</a>
-        <a href="#">Impressum</a>
-        <a href="#">Datenschutz</a>
-        <a href="#">AGB</a>
+        <a href="Aurora Home v2 - Rechtliches.html#agb">Versand &amp; Lieferung</a>
+        <a href="Aurora Home v2 - Rechtliches.html#impressum">Impressum</a>
+        <a href="Aurora Home v2 - Rechtliches.html#datenschutz">Datenschutz</a>
+        <a href="Aurora Home v2 - Rechtliches.html#agb">AGB</a>
       </div>
     </div>
     <div class="foot-bottom">
       <span class="foot-copy">© 2026 Aurora Home &middot; Ildiko Fenyes &middot; Werkstatt aus Deutschland &middot; Kleingewerbe nach §19 UStG</span>
       <div class="foot-legal">
-        <a href="#">Impressum</a>
-        <a href="#">Datenschutz</a>
-        <a href="#">AGB</a>
+        <a href="Aurora Home v2 - Rechtliches.html#impressum">Impressum</a>
+        <a href="Aurora Home v2 - Rechtliches.html#datenschutz">Datenschutz</a>
+        <a href="Aurora Home v2 - Rechtliches.html#agb">AGB</a>
       </div>
     </div>
   </div>
@@ -1952,13 +2378,13 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:80px 64px 3
         <div class="modal-feat">DHL Versand mit Tracking</div>
         <div class="modal-feat">Antwort auf Anfrage in 48 Stunden</div>
       </div>
-      <a id="mBtn" class="modal-btn" href="/cdn-cgi/l/email-protection#4d2b282334283e29283e242a230d22383921222226632e2220">Per E-Mail anfragen</a>
+      <a id="mBtn" class="modal-btn" href="mailto:fenyesdesign@outlook.com">Per E-Mail anfragen</a>
       <p class="modal-fine">Unverbindlich · persönliches Angebot innerhalb 48 h</p>
     </div>
   </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 // ============================================================
 // PRODUCT DATA
 // ============================================================
@@ -1972,10 +2398,53 @@ const PRODUCTS = [
   {name:"Solana Pflanzer",cat:"Selbstbewässernder Pflanzer",catKey:"pflanze bestseller",price:"32,90",desc:"SOLANA ist ein selbstbewässernder Pflanzer im ikonischen Ring-Design — Wasser im Sockel wird per Docht automatisch zur Pflanze geleitet. Vier Magnete halten alles zusammen.",img:"assets/solana-pflanzer.jpg",badge:"bestseller"},
   {name:"Spiky Ladehalter",cat:"MagSafe Ladestation",catKey:"gadget",price:"19,90",desc:"SPIKY ist ein Kaktus-Ladehalter für dein iPhone — der Kaktus dreht sich um die optimale Position zu finden. Nutzt dein originales Apple MagSafe Charger.",img:"assets/spiky-ladehalter.jpg"},
   {name:"Spiky Mini",cat:"Apple Watch Ladestation",catKey:"gadget",price:"14,90",desc:"SPIKY MINI ist die kleinere Version für deine Apple Watch — originales Apple Watch Charger wird eingesetzt, Kabel sauber durch den Kaktus-Topf geführt.",img:"assets/spiky-mini.jpg"},
-  {name:"Aqua Lampe",cat:"Tischlampe",catKey:"lampe",price:"26,90",desc:"AQUA ist eine organisch fließende Tischlampe — weiche Formen wie Wasser das stockt. Ruhig, elegant, ein echter Eye-Catcher.",img:"https://thangs.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fproduction-thangs-public%2Fuploads%2Fattachments%2F284c1c6d-838a-4b50-8c6a-18bebcf049f7%2FFoto%2520crop%2520text.png&w=1200&q=90"},
-  {name:"Social Battery",cat:"Wand- & Tischlampe",catKey:"lampe bestseller",price:"26,90",desc:"SOCIAL BATTERY zeigt per Lampe wie viel Energie du noch hast. TikTok-viral, ehrlich, witzig — und trotzdem ein ernsthaft schönes Lichtobjekt.",img:"https://thangs.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fproduction-thangs-public%2Fuploads%2Fattachments%2F2c170eff-e391-48b9-8739-f3dd28d53493%2FFoto%2520crop%2520text.png&w=1200&q=90",badge:"viral"},
-  {name:"Wick Lampe",cat:"Lampe & Teelichthalter",catKey:"lampe",price:"23,90",desc:"WICK vereint elektrisches Licht und Kerzenschein in einem Objekt. Strom für den Alltag, Kerze für den Abend — dual-light für doppelte Atmosphäre.",img:"https://d8j0ntlcm91z4.cloudfront.net/user_38xvCKWSztMtCzGzltBTjUTWyVl/hf_20260508_201221_cd9d2532-d8a7-4df8-b43f-8d04dc0a8064.png"}
+  {name:"Aloe Gießkanne",cat:"Gießkanne mit Wechsel-Aufsatz",catKey:"pflanze",price:"26,90",desc:"ALOE ist eine Gießkanne mit organischer Tropfen-Form, inspiriert von einem Blatt. Inklusive austauschbarem Aufsatz — normale Gießtille oder eingebauter Brausekopf für Setzlinge und empfindliche Pflanzen.",img:"assets/aloe-vase.jpg",badge:"new"},
+  {name:"Eclipse Lampe",cat:"Tischlampe mit Lampenschirm",catKey:"lampe bestseller",price:"39,90",desc:"ECLIPSE ist eine Tischlampe mit zylindrischem Sockel und runder Lampenschirm-Scheibe dahinter — wie eine Sonnenfinsternis. Minimalistisch, zeitlos, eine ruhige Präsenz auf jedem Schreibtisch oder Sideboard.",img:"assets/eclipse-lampe.jpg",badge:"bestseller"},
+  {name:"Gelato Ladestation",cat:"iPhone & Apple Watch Charger",catKey:"gadget",price:"29,90",desc:"GELATO ist eine kombinierte Ladestation für iPhone (MagSafe) und Apple Watch — die Eistüte oben hält deine Watch im perfekten Blickwinkel, die Kugel unten lädt dein Phone. Verspielt, smart, ein Hingucker auf dem Nachttisch.",img:"assets/gelato-charger.jpg"}
 ];
+
+// ============================================================
+// SCHEMA.ORG · Product-Markup wird aus PRODUCTS generiert
+// ============================================================
+(function injectProductSchema(){
+  const SITE = "https://jmpanrw-lab.github.io/aurora-home-website/";
+  const slug = s => s.toLowerCase()
+    .replace(/ä/g,"ae").replace(/ö/g,"oe").replace(/ü/g,"ue").replace(/ß/g,"ss")
+    .replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+  const itemList = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Aurora Home — Katalog",
+    "numberOfItems": PRODUCTS.length,
+    "itemListElement": PRODUCTS.map((p,i) => ({
+      "@type": "ListItem",
+      "position": i+1,
+      "item": {
+        "@type": "Product",
+        "@id": SITE + "#produkt-" + slug(p.name),
+        "name": p.name,
+        "category": p.cat,
+        "description": p.desc,
+        "image": p.img ? SITE + p.img : undefined,
+        "brand": { "@type": "Brand", "name": "Aurora Home" },
+        "manufacturer": { "@type": "Organization", "name": "Aurora Home", "@id": SITE + "#org" },
+        "offers": {
+          "@type": "Offer",
+          "url": SITE + "#produkt-" + slug(p.name),
+          "priceCurrency": "EUR",
+          "price": p.price.replace(",", "."),
+          "availability": "https://schema.org/MadeToOrder",
+          "itemCondition": "https://schema.org/NewCondition",
+          "seller": { "@id": SITE + "#org" }
+        }
+      }
+    }))
+  };
+  const tag = document.createElement("script");
+  tag.type = "application/ld+json";
+  tag.textContent = JSON.stringify(itemList);
+  document.head.appendChild(tag);
+})();
 
 // Wax Melts — Farbsystem, keine Emojis
 const SCENTS = [
@@ -2039,6 +2508,17 @@ function renderScents(){
 // FILTER
 // ============================================================
 function setupFilters(){
+  // Zähler automatisch füllen — nie wieder out-of-sync
+  const allCards = document.querySelectorAll('#bsRow .bs-card, #prodGrid .prod');
+  document.querySelectorAll('#catFilters .chip').forEach(chip => {
+    const cat = chip.dataset.cat;
+    const count = [...allCards].filter(card => {
+      const cats = card.dataset.cat || '';
+      return cat === 'all' || cats.split(/\s+/).includes(cat);
+    }).length;
+    const span = chip.querySelector('.count');
+    if (span) span.textContent = count;
+  });
   const chips=document.querySelectorAll('#catFilters .chip');
   chips.forEach(chip=>{
     chip.addEventListener('click',()=>{
@@ -2154,9 +2634,9 @@ KOLLEKTION (12 Produkte, alle handgefertigt in Deutschland, Lieferzeit 4-6 Werkt
 • Solana Pflanzer 32,90€ — Selbstbewässernd, Ring-Design, BESTSELLER
 • Spiky Ladehalter 19,90€ — MagSafe Kaktus, dreht sich für optimale Position
 • Spiky Mini 14,90€ — Apple Watch Charger im Kaktus-Topf
-• Aqua Lampe 26,90€ — Organische, fließende Tischlampe
-• Social Battery 26,90€ — Stimmungslampe (Wand/Tisch), TikTok-viral
-• Wick Lampe 23,90€ — Tischlampe + Teelichthalter in einem
+• Aloe Gießkanne 26,90€ — Organische Gießkanne mit Wechsel-Aufsatz (Tille oder Brause)
+• Eclipse Lampe 39,90€ — Tischlampe mit runder Schirm-Scheibe, BESTSELLER
+• Gelato Ladestation 29,90€ — iPhone (MagSafe) + Apple Watch Charger in Eistüten-Form
 
 INDIVIDUELL: Farbwünsche bei allen 3D-Druck-Produkten möglich — nach Anfrage.
 
@@ -2344,13 +2824,13 @@ setupReveal();
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </button>
   </div>
-  <div class="aa-foot">Für Bestellungen direkt an <a href="/cdn-cgi/l/email-protection#3355565d4a56405756405a545d735c46475f5c5c581d505c5e"><span class="__cf_email__" data-cfemail="81e7e4eff8e4f2e5e4f2e8e6efc1eef4f5edeeeeeaafe2eeec">[email&#160;protected]</span></a></div>
+  <div class="aa-foot">Für Bestellungen direkt an <a href="mailto:fenyesdesign@outlook.com">fenyesdesign@outlook.com</a></div>
 </aside>
 
 <!-- ============================================================
      HERO 3D — Three.js procedural Aurora logo + parallax
      ============================================================ -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="module">
+<script type="module">
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
@@ -2717,6 +3197,97 @@ else {
     window.addEventListener('scroll', onIldikoScroll, { passive: true });
     onIldikoScroll();
   }
+
+  /* ---------- 4b. Atelier parallax + lightbox ---------- */
+  (function atelierInit(){
+    const strip = document.getElementById('atelierStrip');
+    if(!strip) return;
+    const cards = [...strip.querySelectorAll('.atelier-card')];
+    const counter = document.getElementById('atelierCounter');
+
+    // Parallax inside each card image — IntersectionObserver-driven for perf
+    let ticking = false;
+    function updateParallax(){
+      ticking = false;
+      const vh = window.innerHeight;
+      let activeIdx = 0;
+      let nearestDist = Infinity;
+      cards.forEach((card, i) => {
+        const rect = card.getBoundingClientRect();
+        if(rect.bottom < 0 || rect.top > vh) return;
+        // 0..1 progress of card through viewport
+        const progress = (vh - rect.top) / (vh + rect.height);
+        const clamped = Math.max(0, Math.min(1, progress));
+        // Translate inner image ±5% of its overscan
+        const py = (clamped - 0.5) * 60;
+        const img = card.querySelector('img');
+        if(img) img.style.setProperty('--py', py.toFixed(1) + 'px');
+        // Find card closest to viewport center for counter
+        const cardCenter = rect.top + rect.height / 2;
+        const dist = Math.abs(vh / 2 - cardCenter);
+        if(dist < nearestDist){ nearestDist = dist; activeIdx = i; }
+      });
+      if(counter) counter.textContent = String(activeIdx + 1).padStart(2, '0');
+    }
+    function onScroll(){
+      if(!ticking){
+        requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    updateParallax();
+
+    // Lightbox
+    const lb = document.getElementById('atelierLightbox');
+    const lbImg = document.getElementById('atelierLbImg');
+    const lbNum = document.getElementById('atelierLbNum');
+    const lbLabel = document.getElementById('atelierLbLabel');
+    const lbCap = document.getElementById('atelierLbCap');
+    const btnClose = document.getElementById('atelierClose');
+    const btnPrev = document.getElementById('atelierPrev');
+    const btnNext = document.getElementById('atelierNext');
+    let current = 0;
+
+    function show(idx){
+      const n = cards.length;
+      current = (idx + n) % n;
+      const card = cards[current];
+      const img = card.querySelector('img');
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lbNum.textContent = String(current + 1).padStart(2,'0') + ' / ' + String(n).padStart(2,'0');
+      lbLabel.textContent = card.dataset.label || '';
+      lbCap.textContent = card.dataset.cap || '';
+      // re-trigger animation
+      lbImg.style.animation = 'none';
+      void lbImg.offsetWidth;
+      lbImg.style.animation = '';
+    }
+    function open(idx){
+      show(idx);
+      lb.classList.add('open');
+      lb.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+    function close(){
+      lb.classList.remove('open');
+      lb.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+    window.openAtelier = open;
+    btnClose.addEventListener('click', close);
+    btnPrev.addEventListener('click', e => { e.stopPropagation(); show(current - 1); });
+    btnNext.addEventListener('click', e => { e.stopPropagation(); show(current + 1); });
+    lb.addEventListener('click', e => { if(e.target === lb) close(); });
+    document.addEventListener('keydown', e => {
+      if(!lb.classList.contains('open')) return;
+      if(e.key === 'Escape') close();
+      else if(e.key === 'ArrowLeft') show(current - 1);
+      else if(e.key === 'ArrowRight') show(current + 1);
+    });
+  })();
 
   /* ---------- 5. Smooth filter transitions (überschreibt v2-Default) ---------- */
   const oldChips = document.querySelectorAll('#catFilters .chip');

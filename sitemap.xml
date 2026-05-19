@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://jmpanrw-lab.github.io/aurora-home-website/</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://d8j0ntlcm91z4.cloudfront.net/user_38xvCKWSztMtCzGzltBTjUTWyVl/hf_20260515_164621_c1122038-416a-42a2-b631-8d31d7f31c32.png</image:loc>
+      <image:title>Aurora Home — Handgefertigte 3D-Deko</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://jmpanrw-lab.github.io/aurora-home-website/#produkte</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://jmpanrw-lab.github.io/aurora-home-website/#wax</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jmpanrw-lab.github.io/aurora-home-website/#resin</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jmpanrw-lab.github.io/aurora-home-website/#atelier</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jmpanrw-lab.github.io/aurora-home-website/#ildiko</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://jmpanrw-lab.github.io/aurora-home-website/rechtliches.html</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+</urlset>
