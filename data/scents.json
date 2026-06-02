@@ -1,0 +1,14 @@
+[
+  { "no": "01", "season": "Frühling",    "name": "Kirschblüte & Vanille",  "notes": "Pfingstrose · Jasmin · Vanille",       "grad": "linear-gradient(155deg,#f4c8c0 0%,#e8a8a0 60%,#a86864 100%)" },
+  { "no": "02", "season": "Sommer",      "name": "Sandelholz & Mango",     "notes": "Mango · Jasmin · Sandelholz",          "grad": "linear-gradient(155deg,#f4d8a0 0%,#d8a060 60%,#7a4818 100%)" },
+  { "no": "03", "season": "Herbst",      "name": "Zimt & Amber",           "notes": "Zimt · Nelke · Amber",                 "grad": "linear-gradient(155deg,#d88858 0%,#a04828 60%,#4a1808 100%)" },
+  { "no": "04", "season": "Winter",      "name": "Zeder & Moschus",        "notes": "Bergkiefer · Moschus · Vetiver",        "grad": "linear-gradient(155deg,#b8c8e0 0%,#5878a8 60%,#1a2a48 100%)" },
+  { "no": "05", "season": "Nacht",       "name": "Tabak & Bourbon",        "notes": "Bourbon · Tabak · Eichenholz",          "grad": "linear-gradient(155deg,#5848a0 0%,#2a1c50 60%,#0c0820 100%)" },
+  { "no": "06", "season": "Ganzjährig",  "name": "Rose & Pfingstrose",     "notes": "Rose · Pfingstrose · Moschus",          "grad": "linear-gradient(155deg,#f0a8a0 0%,#c04830 60%,#5a1810 100%)", "bs": true },
+  { "no": "07", "season": "Sommer",      "name": "Salbei & Salzwasser",    "notes": "Salbei · Salz · Meeresluft",            "grad": "linear-gradient(155deg,#a8d0c8 0%,#588878 60%,#1a3830 100%)" },
+  { "no": "08", "season": "Sommer",      "name": "Hibiskus & Kokos",       "notes": "Hibiskus · Kokos · Pfirsich",           "grad": "linear-gradient(155deg,#f0b0a0 0%,#d88060 60%,#7a3818 100%)" },
+  { "no": "09", "season": "Herbst",      "name": "Karamell & Whisky",      "notes": "Karamell · Whisky · Vanille",           "grad": "linear-gradient(155deg,#d8a868 0%,#8a5828 60%,#3a1808 100%)" },
+  { "no": "10", "season": "Frühling",    "name": "Bambus & Limette",       "notes": "Limette · Bambus · Minze",              "grad": "linear-gradient(155deg,#c0d8a0 0%,#688838 60%,#1a3010 100%)" },
+  { "no": "11", "season": "Ganzjährig",  "name": "Leder & Espresso",       "notes": "Espresso · Leder · Tonkabohne",         "grad": "linear-gradient(155deg,#8a6848 0%,#3a2818 60%,#0c0808 100%)" },
+  { "no": "12", "season": "Winter",      "name": "Sternanis & Honig",      "notes": "Sternanis · Honig · Vanille",           "grad": "linear-gradient(155deg,#e8c890 0%,#a07838 60%,#3a2008 100%)" }
+]

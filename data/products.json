@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Bucket Lampe",
+    "cat": "Tischlampe & Ablage",
+    "catKey": "lampe",
+    "price": "27,90",
+    "desc": "BUCKET ist eine Schreibtischlampe mit integriertem Ablage-Tray — portabel, minimalistisch, ein echter Hingucker. Kann auch an die Wand oder ans Pegboard gehängt werden.",
+    "img": "assets/bucket-lampe.jpg"
+  },
+  {
+    "name": "Bonsai Spiel",
+    "cat": "Tischspiel & Deko",
+    "catKey": "spiel",
+    "price": "24,90",
+    "desc": "BONSAI ist ein Balancier-Tischspiel und Dekorationsstück in einem — wer lässt die Blüten fallen? Die Blumen stecken in die Waben-Baumkrone, Spielsteine werden im Topf aufbewahrt.",
+    "img": "assets/bonsai-spiel.jpg"
+  },
+  {
+    "name": "Budsy Pillenbaum",
+    "cat": "Wöchentlicher Pillenspender",
+    "catKey": "aufbewahrung",
+    "price": "22,90",
+    "desc": "BUDSY ist ein wöchentlicher Pillenspender der wie ein blühender Baum aussieht — Mo bis So beschriftet, jede Knospe ein Tag. Der Topf dient als Aufbewahrungsbox.",
+    "img": "assets/budsy-pillenbaum.jpg"
+  },
+  {
+    "name": "Eve Vase",
+    "cat": "Selbstbewässernde Vase",
+    "catKey": "pflanze",
+    "price": "18,90",
+    "desc": "EVE ist eine selbstbewässernde Vase mit elegantem S-Profil — Wasser wird langsam über den Aufsatz abgegeben. Kein Bohren, keine Stützen beim Druck nötig.",
+    "img": "assets/eve-vase.jpg"
+  },
+  {
+    "name": "Flora Chess",
+    "cat": "Blumen-Schachset",
+    "catKey": "spiel",
+    "price": "69,90",
+    "desc": "FLORA CHESS ist ein vollständiges Schachset bei dem jede Figur eine andere Blume ist — Tulpe, Narzisse, Gänseblümchen und mehr. Mit Trennwand-Box.",
+    "img": "assets/flora-chess.jpg",
+    "badge": "new"
+  },
+  {
+    "name": "Little Jewel",
+    "cat": "Schmuckkästchen",
+    "catKey": "aufbewahrung",
+    "price": "28,90",
+    "desc": "LITTLE JEWEL ist ein Schmuckkästchen das wie eine Pflanze aussieht — der Topf ist die Box, der aufklappbare Deckel trägt drehbare Ringe & Ketten.",
+    "img": "assets/little-jewel.jpg"
+  },
+  {
+    "name": "Solana Pflanzer",
+    "cat": "Selbstbewässernder Pflanzer",
+    "catKey": "pflanze bestseller",
+    "price": "32,90",
+    "desc": "SOLANA ist ein selbstbewässernder Pflanzer im ikonischen Ring-Design — Wasser im Sockel wird per Docht automatisch zur Pflanze geleitet. Vier Magnete halten alles zusammen.",
+    "img": "assets/solana-pflanzer.jpg",
+    "badge": "bestseller"
+  },
+  {
+    "name": "Spiky Ladehalter",
+    "cat": "MagSafe Ladestation",
+    "catKey": "gadget",
+    "price": "19,90",
+    "desc": "SPIKY ist ein Kaktus-Ladehalter für dein iPhone — der Kaktus dreht sich um die optimale Position zu finden. Nutzt dein originales Apple MagSafe Charger.",
+    "img": "assets/spiky-ladehalter.jpg"
+  },
+  {
+    "name": "Spiky Mini",
+    "cat": "Apple Watch Ladestation",
+    "catKey": "gadget",
+    "price": "14,90",
+    "desc": "SPIKY MINI ist die kleinere Version für deine Apple Watch — originales Apple Watch Charger wird eingesetzt, Kabel sauber durch den Kaktus-Topf geführt.",
+    "img": "assets/spiky-mini.jpg"
+  },
+  {
+    "name": "Aloe Gießkanne",
+    "cat": "Gießkanne mit Wechsel-Aufsatz",
+    "catKey": "pflanze",
+    "price": "26,90",
+    "desc": "ALOE ist eine Gießkanne mit organischer Tropfen-Form, inspiriert von einem Blatt. Inklusive austauschbarem Aufsatz — normale Gießtille oder eingebauter Brausekopf für Setzlinge und empfindliche Pflanzen.",
+    "img": "assets/aloe-vase.jpg",
+    "badge": "new"
+  },
+  {
+    "name": "Eclipse Lampe",
+    "cat": "Tischlampe mit Lampenschirm",
+    "catKey": "lampe bestseller",
+    "price": "39,90",
+    "desc": "ECLIPSE ist eine Tischlampe mit zylindrischem Sockel und runder Lampenschirm-Scheibe dahinter — wie eine Sonnenfinsternis. Minimalistisch, zeitlos, eine ruhige Präsenz auf jedem Schreibtisch oder Sideboard.",
+    "img": "assets/eclipse-lampe.jpg",
+    "badge": "bestseller"
+  },
+  {
+    "name": "Gelato Ladestation",
+    "cat": "iPhone & Apple Watch Charger",
+    "catKey": "gadget",
+    "price": "29,90",
+    "desc": "GELATO ist eine kombinierte Ladestation für iPhone (MagSafe) und Apple Watch — die Eistüte oben hält deine Watch im perfekten Blickwinkel, die Kugel unten lädt dein Phone. Verspielt, smart, ein Hingucker auf dem Nachttisch.",
+    "img": "assets/gelato-charger.jpg"
+  }
+]
