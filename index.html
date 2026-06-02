@@ -4667,11 +4667,11 @@ window.modalAddToCart = function(){
 
   // ── Badge ─────────────────────────────────────────────────
   function updateBadge(){
-    const badge = document.getElementById('cartBadge');
-    if(!badge) return;
     const total = cart.reduce((s,i) => s + i.qty, 0);
-    badge.textContent = total;
-    badge.classList.toggle('visible', total > 0);
+    const badge = document.getElementById('cartBadge');
+    if(badge){ badge.textContent = total; badge.classList.toggle('visible', total > 0); }
+    const mb = document.getElementById('mBadge');
+    if(mb){ mb.textContent = total; mb.classList.toggle('visible', total > 0); }
   }
 
   // ── Render Cart Drawer ────────────────────────────────────
@@ -4900,16 +4900,6 @@ window.modalAddToCart = function(){
   };
 
   // Init
-  updateBadge();
-
-  // Sync mobile badge
-  const _origUpdateBadge = updateBadge;
-  function updateBadge(){
-    _origUpdateBadge && _origUpdateBadge();
-    const total = cart.reduce((s,i) => s + i.qty, 0);
-    const mb = document.getElementById('mBadge');
-    if(mb){ mb.textContent = total; mb.classList.toggle('visible', total > 0); }
-  }
   updateBadge();
 
   // Mobile CTA: nach Scroll in Katalog ausblenden wenn Cart offen, etc.
