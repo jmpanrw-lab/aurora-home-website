@@ -179,5 +179,24 @@
       "assets/gelato-5.jpg",
       "assets/gelato-6.jpg"
     ]
+  },
+  {
+    "name": "Nori Katzenhaus",
+    "cat": "Katzenhaus & Couchtisch",
+    "catKey": "deko",
+    "price": "89,90",
+    "desc": "NORI ist gleichzeitig gemütliches Katzenhaus und stilvoller Couchtisch — eine runde Öffnung für deine Katze, eine flache Tischfläche oben für deine Tasse. Minimalistisches Design, das sich in jeden Raum einfügt.",
+    "img": "assets/nori-1.jpg",
+    "images": [
+      "assets/nori-1.jpg",
+      "assets/nori-2.jpg",
+      "assets/nori-3.jpg",
+      "assets/nori-4.jpg",
+      "assets/nori-5.jpg",
+      "assets/nori-6.jpg",
+      "assets/nori-7.jpg",
+      "assets/nori-8.jpg"
+    ],
+    "badge": "new"
   }
 ]
