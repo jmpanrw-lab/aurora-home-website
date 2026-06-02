@@ -2411,6 +2411,94 @@ section:not(.hero){
   .nl-btn{padding:16px;font-size:12px;min-height:52px;}
 }
 
+/* ── Resin Anfrage Modal ─────────────────────────── */
+.resin-modal{
+  position:fixed;inset:0;z-index:400;
+  background:rgba(10,9,20,.94);backdrop-filter:blur(24px);
+  display:none;align-items:center;justify-content:center;
+  padding:32px;
+}
+.resin-modal.open{display:flex;}
+.resin-modal-card{
+  max-width:560px;width:100%;
+  background:var(--bg-2);border:1px solid var(--line-strong);
+  padding:40px;position:relative;
+  box-shadow:0 32px 80px rgba(0,0,0,.6),0 0 0 1px rgba(155,127,212,.06);
+}
+.resin-modal-close{
+  position:absolute;top:14px;right:14px;
+  width:32px;height:32px;border:1px solid var(--line-strong);
+  display:grid;place-items:center;color:var(--muted);cursor:pointer;
+  background:none;transition:border-color .2s,color .2s;
+}
+.resin-modal-close:hover{border-color:var(--gold);color:var(--gold);}
+.resin-modal-close svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;}
+.resin-modal-kicker{
+  font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--lilac);margin-bottom:14px;display:block;
+}
+.resin-modal-title{
+  font-family:var(--serif);font-size:clamp(28px,4vw,40px);font-weight:300;
+  color:var(--ink);line-height:1;margin-bottom:8px;
+}
+.resin-modal-title em{font-style:italic;color:var(--lilac);}
+.resin-modal-sub{
+  font-size:14px;color:var(--text);line-height:1.6;margin-bottom:28px;
+}
+.resin-modal-form{display:flex;flex-direction:column;gap:14px;}
+.resin-modal-form .form-input,
+.resin-modal-form .form-select,
+.resin-modal-form .form-textarea{
+  background:rgba(244,240,255,.04);
+  border:1px solid var(--line-strong);
+  color:var(--ink);font-family:var(--sans);font-size:14px;
+  padding:12px 16px;outline:none;width:100%;
+  transition:border-color .2s;
+}
+.resin-modal-form .form-input:focus,
+.resin-modal-form .form-select:focus,
+.resin-modal-form .form-textarea:focus{border-color:var(--lilac);}
+.resin-modal-form .form-input::placeholder,
+.resin-modal-form .form-textarea::placeholder{color:var(--faint);}
+.resin-modal-form .form-textarea{min-height:100px;resize:vertical;line-height:1.5;}
+.resin-modal-form .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.resin-modal-form .form-select{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239b7fd4' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;
+  padding-right:40px;cursor:pointer;appearance:none;-webkit-appearance:none;
+}
+.resin-modal-form .form-select option{background:var(--bg-2);}
+.resin-submit{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  padding:16px;background:var(--lilac);color:#fff;
+  font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;
+  border:none;cursor:pointer;width:100%;
+  transition:background .2s,transform .15s;margin-top:4px;
+}
+.resin-submit:hover{background:#b090e4;transform:translateY(-1px);}
+.resin-submit:disabled{opacity:.5;cursor:not-allowed;transform:none;}
+.resin-submit svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;}
+.resin-fine{
+  font-family:var(--mono);font-size:10px;letter-spacing:.1em;
+  color:var(--faint);text-align:center;margin-top:10px;
+}
+.resin-success{
+  display:none;flex-direction:column;align-items:center;
+  text-align:center;padding:24px 0;gap:14px;
+}
+.resin-success.show{display:flex;}
+.resin-success svg{width:40px;height:40px;stroke:#4ade80;fill:none;stroke-width:1.5;}
+.resin-success h3{
+  font-family:var(--serif);font-size:28px;font-weight:300;color:var(--ink);
+}
+.resin-success h3 em{font-style:italic;color:var(--lilac);}
+.resin-success p{font-size:14px;color:var(--text);line-height:1.7;max-width:380px;}
+@media(max-width:520px){
+  .resin-modal{padding:16px;}
+  .resin-modal-card{padding:28px 20px;}
+  .resin-modal-form .form-row{grid-template-columns:1fr;}
+}
+
 </style>
 </head>
 <body>
@@ -2432,7 +2520,60 @@ section:not(.hero){
   <svg viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg>
 </button>
 
+<!-- ── Custom Resin Anfrage Modal ────────────────── -->
+<div class="resin-modal" id="resinModal">
+  <div class="resin-modal-card">
+    <button class="resin-modal-close" onclick="closeResinForm()" aria-label="Schließen">
+      <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+
+    <!-- Formular -->
+    <div id="resinFormWrap">
+      <span class="resin-modal-kicker">Custom Resin · Einzelanfertigung</span>
+      <h2 class="resin-modal-title">Deine <em>Anfrage</em></h2>
+      <p class="resin-modal-sub">Beschreib mir kurz was du dir vorstellst — ich melde mich innerhalb von 48 Stunden mit einem persönlichen Angebot.</p>
+
+      <form class="resin-modal-form" id="resinForm" name="resin-anfrage" netlify netlify-honeypot="bot-trap2">
+        <input type="hidden" name="form-name" value="resin-anfrage">
+        <input name="bot-trap2" style="display:none">
+        <div class="form-row">
+          <input class="form-input" name="vorname" type="text" required placeholder="Vorname *" autocomplete="given-name">
+          <input class="form-input" name="nachname" type="text" required placeholder="Nachname *" autocomplete="family-name">
+        </div>
+        <input class="form-input" name="email" type="email" required placeholder="E-Mail *" autocomplete="email">
+        <select class="form-select" name="stufe" required>
+          <option value="" disabled selected>Welche Stufe interessiert dich? *</option>
+          <option value="Stufe 01 — Mini (ab 150 €, 1–3 Wochen)">Stufe 01 — Mini · ab 150 € · 1–3 Wochen</option>
+          <option value="Stufe 02 — Standard (ab 300 €, 3–5 Wochen)">Stufe 02 — Standard · ab 300 € · 3–5 Wochen</option>
+          <option value="Stufe 03 — Premium (ab 700 €, 5–7 Wochen)">Stufe 03 — Premium · ab 700 € · 5–7 Wochen</option>
+          <option value="Stufe 04 — Masterpiece (ab 1.500 €, 7–10 Wochen)">Stufe 04 — Masterpiece · ab 1.500 € · 7–10 Wochen</option>
+          <option value="Noch unsicher">Noch unsicher — bitte beraten</option>
+        </select>
+        <textarea class="form-textarea" name="beschreibung" required placeholder="Was soll entstehen? Figur, Motiv, Größe, Farben, Referenzbilder per E-Mail können nachgereicht werden … *"></textarea>
+        <button type="submit" class="resin-submit" id="resinSubmitBtn">
+          Anfrage absenden
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <p class="resin-fine">Unverbindlich · 50% Anzahlung erst nach Auftragsbestätigung</p>
+      </form>
+    </div>
+
+    <!-- Erfolg -->
+    <div class="resin-success" id="resinSuccess">
+      <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+      <h3>Danke für deine <em>Anfrage!</em></h3>
+      <p>Ildiko meldet sich innerhalb von 48 Stunden mit einem persönlichen Angebot per E-Mail. Schau auch in deinen Spam-Ordner.</p>
+      <button onclick="closeResinForm()" class="btn btn-ghost" style="margin-top:8px">Schließen</button>
+    </div>
+  </div>
+</div>
+
 <!-- Netlify Forms Registrierung (unsichtbar, nötig für Netlify Build) -->
+<form name="resin-anfrage" netlify netlify-honeypot="bot-trap2" style="display:none">
+  <input type="hidden" name="form-name" value="resin-anfrage">
+  <input name="bot-trap2"><input name="vorname"><input name="nachname">
+  <input name="email"><input name="stufe"><textarea name="beschreibung"></textarea>
+</form>
 <form name="bestellung" netlify netlify-honeypot="bot-trap" style="display:none">
   <input type="hidden" name="form-name" value="bestellung">
   <input name="bot-trap"><input name="vorname"><input name="nachname">
@@ -3124,8 +3265,7 @@ section:not(.hero){
         </div>
 
         <div class="resin-actions reveal">
-          <a href="mailto:fenyesdesign@outlook.com?subject=Custom Resin Anfrage" class="btn btn-primary">Anfrage stellen <span class="arr">→</span></a>
-          <a href="resin.html" class="btn btn-ghost">Mehr Infos</a>
+          <button onclick="openResinForm()" class="btn btn-primary">Anfrage stellen <span class="arr">→</span></button>
         </div>
       </div>
 
@@ -4077,6 +4217,46 @@ renderProducts();
 renderScents();
 setupFilters();
 setupReveal();
+
+// ── Resin Anfrage Modal ───────────────────────────
+window.openResinForm = function(){
+  document.getElementById('resinModal').classList.add('open');
+  document.getElementById('resinFormWrap').style.display = '';
+  document.getElementById('resinSuccess').classList.remove('show');
+  document.body.style.overflow = 'hidden';
+};
+window.closeResinForm = function(){
+  document.getElementById('resinModal').classList.remove('open');
+  document.body.style.overflow = '';
+};
+
+document.getElementById('resinForm')?.addEventListener('submit', async function(e){
+  e.preventDefault();
+  const btn = document.getElementById('resinSubmitBtn');
+  btn.disabled = true;
+  btn.textContent = 'Wird gesendet …';
+  try {
+    const data = new FormData(this);
+    const res = await fetch('/', {
+      method:'POST',
+      headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body: new URLSearchParams(data).toString()
+    });
+    if(res.ok || res.redirected){
+      document.getElementById('resinFormWrap').style.display = 'none';
+      document.getElementById('resinSuccess').classList.add('show');
+    } else { throw new Error('status '+res.status); }
+  } catch(err){
+    // Fallback: mailto
+    const d = Object.fromEntries(new FormData(this));
+    const body = encodeURIComponent(
+      `Custom Resin Anfrage\n\nName: ${d.vorname} ${d.nachname}\nE-Mail: ${d.email}\nStufe: ${d.stufe}\n\nBeschreibung:\n${d.beschreibung}`
+    );
+    window.location.href = `mailto:fenyesdesign@outlook.com?subject=Custom Resin Anfrage&body=${body}`;
+    document.getElementById('resinFormWrap').style.display = 'none';
+    document.getElementById('resinSuccess').classList.add('show');
+  }
+});
 </script>
 <!-- ============================================================
      AURORA ASSISTANT — Chat
