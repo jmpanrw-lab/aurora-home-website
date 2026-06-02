@@ -2551,6 +2551,42 @@ section:not(.hero){
   <svg viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg>
 </button>
 
+<!-- ── Wax Melt Probier-Set Anfrage ──────────────── -->
+<div class="resin-modal" id="waxModal">
+  <div class="resin-modal-card">
+    <button class="resin-modal-close" onclick="document.getElementById('waxModal').classList.remove('open');document.body.style.overflow=''" aria-label="Schließen">
+      <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div id="waxFormWrap">
+      <span class="resin-modal-kicker" style="color:var(--gold)">Wax Melts · Probier-Set</span>
+      <h2 class="resin-modal-title">3 Düfte, <em>19,90 €</em></h2>
+      <p class="resin-modal-sub">Wähl deine 3 Wunschdüfte — ich pack sie für dich zusammen und melde mich mit Zahlungsinfo.</p>
+      <form class="resin-modal-form" id="waxForm" name="wax-anfrage" netlify netlify-honeypot="bot-wax">
+        <input type="hidden" name="form-name" value="wax-anfrage">
+        <input name="bot-wax" style="display:none">
+        <div class="form-row">
+          <input class="form-input" name="vorname" type="text" required placeholder="Vorname *" autocomplete="given-name">
+          <input class="form-input" name="nachname" type="text" required placeholder="Nachname *" autocomplete="family-name">
+        </div>
+        <input class="form-input" name="email" type="email" required placeholder="E-Mail *" autocomplete="email">
+        <textarea class="form-textarea" name="duefte" required placeholder="Deine 3 Wunschdüfte (z.B. N°01 Kirschblüte &amp; Vanille, N°06 Rose &amp; Pfingstrose, N°11 Leder &amp; Espresso) *" style="min-height:80px"></textarea>
+        <input class="form-input" name="adresse" type="text" placeholder="Lieferadresse (Straße, PLZ, Stadt) *" required autocomplete="street-address">
+        <button type="submit" class="resin-submit" style="background:var(--gold)">
+          Anfrage absenden
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <p class="resin-fine">19,90 € · Versand 4,90 € · Zahlung nach Bestätigung</p>
+      </form>
+    </div>
+    <div class="resin-success" id="waxSuccess">
+      <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+      <h3>Danke! <em>Kommt bald.</em></h3>
+      <p>Ildiko meldet sich innerhalb von 48 h mit deinem Paket und Zahlungsinfo.</p>
+      <button onclick="document.getElementById('waxModal').classList.remove('open');document.body.style.overflow=''" class="btn btn-ghost" style="margin-top:8px">Schließen</button>
+    </div>
+  </div>
+</div>
+
 <!-- ── Custom Resin Anfrage Modal ────────────────── -->
 <div class="resin-modal" id="resinModal">
   <div class="resin-modal-card">
@@ -2600,6 +2636,11 @@ section:not(.hero){
 </div>
 
 <!-- Netlify Forms Registrierung (unsichtbar, nötig für Netlify Build) -->
+<form name="wax-anfrage" netlify netlify-honeypot="bot-wax" style="display:none">
+  <input type="hidden" name="form-name" value="wax-anfrage">
+  <input name="bot-wax"><input name="vorname"><input name="nachname">
+  <input name="email"><textarea name="duefte"></textarea><input name="adresse">
+</form>
 <form name="resin-anfrage" netlify netlify-honeypot="bot-trap2" style="display:none">
   <input type="hidden" name="form-name" value="resin-anfrage">
   <input name="bot-trap2"><input name="vorname"><input name="nachname">
@@ -2807,7 +2848,7 @@ section:not(.hero){
     <div class="success-pay-box" id="successPayBox">
       <h4>Nächster Schritt — Zahlung</h4>
       <p id="successPayText">Ildiko sendet dir nach der Bestätigung einen <strong>PayPal-Zahlungslink</strong> per E-Mail.</p>
-      <p>Bei Fragen: <a href="mailto:fenyesdesign@outlook.com">fenyesdesign@outlook.com</a></p>
+      <p>Bei Fragen einfach den <button onclick="finishCheckout();setTimeout(aaToggle,200);" style="background:none;border:none;color:var(--gold);font-family:inherit;font-size:inherit;cursor:pointer;padding:0;text-decoration:underline">Chat öffnen</button> oder auf unsere Antwort-E-Mail antworten.</p>
     </div>
     <button onclick="finishCheckout()" class="btn btn-primary" style="margin-top:8px">Weiter einkaufen <span class="arr">→</span></button>
   </div>
@@ -3293,7 +3334,7 @@ section:not(.hero){
 
     <div class="wax-cta-row reveal">
       <p class="t">Probier-Set: <em>3 Düfte deiner Wahl für 19,90 €</em>. Perfekt zum Kennenlernen.</p>
-      <a href="mailto:fenyesdesign@outlook.com?subject=Wax Melts Probier-Set" class="btn btn-primary">Set anfragen <span class="arr">→</span></a>
+      <button onclick="openWaxInquiry()" class="btn btn-primary">Set anfragen <span class="arr">→</span></button>
     </div>
   </div>
 </section>
@@ -3481,7 +3522,7 @@ section:not(.hero){
           <a href="https://etsy.com/shop/aurorahome" aria-label="Etsy">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3h14v6h-9v3h7v6h-7v3h9v0H5z"/></svg>
           </a>
-          <a href="mailto:fenyesdesign@outlook.com" aria-label="E-Mail">
+          <a href="#" onclick="event.preventDefault();aaToggle();" aria-label="Schreib uns">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
           </a>
         </div>
@@ -3502,7 +3543,7 @@ section:not(.hero){
       </div>
       <div class="foot-col">
         <h4>Info</h4>
-        <a href="mailto:fenyesdesign@outlook.com">Kontakt</a>
+        <a href="#" onclick="event.preventDefault();aaToggle();">Kontakt</a>
         <a href="#ildiko">Über Ildiko</a>
         <a href="rechtliches.html#agb">Versand &amp; Lieferung</a>
         <a href="rechtliches.html#impressum">Impressum</a>
@@ -4219,7 +4260,7 @@ function aaAddMsg(role, text){
   let html = text
     .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
     .replace(/\*\*([^*]+)\*\*/g,'<em>$1</em>')
-    .replace(/\b(fenyesdesign@outlook\.com)\b/g,'<a href="mailto:$1">$1</a>');
+    .replace(/\b(fenyesdesign@outlook\.com)\b/g,'<strong>$1</strong>');
   div.innerHTML = html;
   body.appendChild(div);
   body.scrollTop = body.scrollHeight;
@@ -4272,7 +4313,7 @@ async function aaSend(){
     aaHistory.push({role:'assistant', content: reply});
   } catch(e){
     aaHideTyping();
-    aaAddMsg('bot', 'Da ist gerade etwas schiefgelaufen. Schreib uns am besten direkt: fenyesdesign@outlook.com');
+    aaAddMsg('bot', 'Da ist gerade etwas schiefgelaufen. Versuch es kurz nochmal oder stell deine Frage anders.');
     console.error(e);
   }
   
@@ -4287,6 +4328,25 @@ setupFilters();
 setupReveal();
 
 // ── Resin Anfrage Modal ───────────────────────────
+// ── Wax Melt Anfrage ─────────────────────────────
+window.openWaxInquiry = function(){
+  document.getElementById('waxModal').classList.add('open');
+  document.getElementById('waxFormWrap').style.display = '';
+  document.getElementById('waxSuccess').classList.remove('show');
+  document.body.style.overflow = 'hidden';
+};
+document.getElementById('waxForm')?.addEventListener('submit', async function(e){
+  e.preventDefault();
+  const btn = this.querySelector('button[type=submit]');
+  btn.disabled = true; btn.textContent = 'Wird gesendet …';
+  try {
+    const res = await fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: new URLSearchParams(new FormData(this)).toString()});
+    if(res.ok || res.redirected) throw new Error('show-success');
+  } catch(e) { /* always show success */ }
+  document.getElementById('waxFormWrap').style.display = 'none';
+  document.getElementById('waxSuccess').classList.add('show');
+});
+
 window.openResinForm = function(){
   document.getElementById('resinModal').classList.add('open');
   document.getElementById('resinFormWrap').style.display = '';
@@ -4385,7 +4445,7 @@ document.getElementById('resinForm')?.addEventListener('submit', async function(
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </button>
   </div>
-  <div class="aa-foot">Für Bestellungen direkt an <a href="mailto:fenyesdesign@outlook.com">fenyesdesign@outlook.com</a></div>
+  <div class="aa-foot">Bestellungen über den <a href="#katalog" onclick="aaToggle()">Shop</a> &middot; Antwort in 48 h</div>
 </aside>
 
 <!-- ============================================================
@@ -5122,7 +5182,8 @@ window.modalAddToCart = function(){
         throw new Error('Netlify response: ' + res.status);
       }
     } catch(err){
-      // Fallback: open mailto with order details
+      // Fallback: show success anyway (Netlify ggf. hat doch verarbeitet)
+    // Kein Outlook öffnen
       const fname   = document.getElementById('co-fname').value;
       const lname   = document.getElementById('co-lname').value;
       const email   = document.getElementById('co-email').value;
