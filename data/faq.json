@@ -1,0 +1,177 @@
+[
+  {
+    "id": 1,
+    "category": "bestellung",
+    "keywords": ["bestellen", "kaufen", "anfragen", "wie bestelle", "bestellung", "order", "buy"],
+    "question": "Wie kann ich bestellen?",
+    "answer": "Leg das Produkt einfach in den Warenkorb und füll das Bestellformular aus — du erhältst innerhalb von 48 Stunden eine Bestätigung von Ildiko per E-Mail. Da alles auf Anfrage gefertigt wird, ist deine Bestellung unverbindlich bis zur Auftragsbestätigung."
+  },
+  {
+    "id": 2,
+    "category": "lieferzeit",
+    "keywords": ["lieferzeit", "wann", "wie lange", "dauert", "lieferung", "shipping time", "delivery", "werktage"],
+    "question": "Wie lange dauert die Lieferung?",
+    "answer": "Für die Standard-Kollektion (3D-Druck & Wax Melts) benötigen wir 4–6 Werktage für Produktion und Versand. Aurora Home ist eine Werkstatt nach Feierabend — jedes Stück entsteht auf Anfrage, das geht nicht schneller, ist aber Teil des Konzepts."
+  },
+  {
+    "id": 3,
+    "category": "versand",
+    "keywords": ["versand", "versandkosten", "porto", "shipping", "kosten", "gratis", "kostenlos", "free"],
+    "question": "Was kostet der Versand?",
+    "answer": "Innerhalb Deutschlands kostet der Versand 4,90 € — ab einem Bestellwert von 60 € ist er kostenlos. In die EU versenden wir für 9,90 €, weltweit für 14,90 €. Alles per DHL mit Sendungsverfolgung."
+  },
+  {
+    "id": 4,
+    "category": "versand",
+    "keywords": ["dhl", "tracking", "sendungsverfolgung", "paket", "verfolgen"],
+    "question": "Gibt es Sendungsverfolgung?",
+    "answer": "Ja, jedes Paket wird per DHL mit Sendungsverfolgung verschickt. Die Tracking-Nummer bekommst du nach dem Versand per E-Mail."
+  },
+  {
+    "id": 5,
+    "category": "zahlung",
+    "keywords": ["zahlung", "bezahlen", "paypal", "überweisung", "payment", "pay", "zahlen", "preis"],
+    "question": "Wie kann ich zahlen?",
+    "answer": "Du kannst per PayPal (mit Käuferschutz) oder per Banküberweisung (SEPA) bezahlen. Die Zahlung erfolgt erst nach Auftragsbestätigung — Ildiko schickt dir dann den Zahlungslink oder die Bankdaten per E-Mail."
+  },
+  {
+    "id": 6,
+    "category": "zahlung",
+    "keywords": ["käuferschutz", "sicher", "safe", "secure", "schutz", "garantie"],
+    "question": "Ist die Zahlung sicher?",
+    "answer": "Ja — bei PayPal ist der Käuferschutz automatisch inklusive. Die Banküberweisung ist eine direkte SEPA-Zahlung ohne Zwischenhändler. Zahlung erfolgt immer erst nach Auftragsbestätigung, nie vorab ohne Rückmeldung."
+  },
+  {
+    "id": 7,
+    "category": "produkte",
+    "keywords": ["material", "filament", "pla", "resin", "woraus", "hergestellt", "material", "kunststoff"],
+    "question": "Aus welchem Material sind die Produkte?",
+    "answer": "Die 3D-Druck-Produkte werden aus hochwertigem PLA-Filament gedruckt, anschließend geschliffen und lackiert. Resin-Figuren entstehen im Photopolymer-Druckverfahren und werden aufwendig von Hand bemalt. Alle Materialien sind für den Innenbereich geeignet."
+  },
+  {
+    "id": 8,
+    "category": "produkte",
+    "keywords": ["farbe", "wunschfarbe", "farben", "color", "colour", "farbwunsch", "individuell"],
+    "question": "Kann ich eine Wunschfarbe angeben?",
+    "answer": "Ja, bei allen 3D-Druck-Produkten ist eine individuelle Wunschfarbe möglich. Trag sie einfach beim Bestellformular im Feld 'Wunschfarbe' ein oder schreib es in die Nachricht. Ildiko meldet sich dann mit den verfügbaren Optionen."
+  },
+  {
+    "id": 9,
+    "category": "produkte",
+    "keywords": ["unikat", "einzigartig", "handmade", "handgefertigt", "einzel", "unikate"],
+    "question": "Sind das wirklich handgefertigte Einzelstücke?",
+    "answer": "Ja. Jedes Stück wird nach Bestelleingang gedruckt, geschliffen, grundiert und lackiert — von Ildiko persönlich. Keine Massenware, kein Lager. Minimale Oberflächenmerkmale (sichtbare Schichten, leichte Schleifspuren) sind Teil des Charakters und kein Mangel."
+  },
+  {
+    "id": 10,
+    "category": "waxmelts",
+    "keywords": ["wax", "wachs", "melt", "duft", "düfte", "kerze", "soja", "sojawachs", "parfüm"],
+    "question": "Was sind Wax Melts?",
+    "answer": "Wax Melts sind parfümierte Wachsschmelzen für Aromalampen — kein offenes Feuer nötig. Unsere bestehen aus 100% Sojawachs mit echtem Parfümöl, gegossen in Deutschland. Ein Stück duftet ca. 6 Stunden. Es gibt 12 saisonale Düfte à 7,90 € pro Tüte (6 Stück)."
+  },
+  {
+    "id": 11,
+    "category": "waxmelts",
+    "keywords": ["probier", "probieren", "set", "starter", "bundle", "paket", "3 düfte"],
+    "question": "Gibt es ein Probier-Set?",
+    "answer": "Ja! Das Probier-Set enthält 3 Düfte deiner Wahl für 19,90 €. Klick auf 'Set anfragen' im Wax-Melts-Bereich oder sag mir hier welche 3 Düfte du möchtest, dann geh ich zum Bestellformular."
+  },
+  {
+    "id": 12,
+    "category": "resin",
+    "keywords": ["resin", "figur", "custom", "individual", "bemalen", "bemalte", "figuren", "stufe"],
+    "question": "Was ist Custom Resin?",
+    "answer": "Custom Resin sind individuell gefertigte, hochauflösende Figuren — gedruckt, geschliffen, grundiert und von Hand bemalt. Es gibt vier Stufen: Mini (ab 150 €), Standard (ab 300 €), Premium (ab 700 €) und Masterpiece (ab 1.500 €). 50% Anzahlung vor Produktionsbeginn."
+  },
+  {
+    "id": 13,
+    "category": "resin",
+    "keywords": ["wie lange resin", "resin lieferzeit", "wann fertig resin", "wochen", "custom dauer"],
+    "question": "Wie lange dauert eine Custom Resin Figur?",
+    "answer": "Das hängt von der Stufe ab: Mini 1–3 Wochen, Standard 3–5 Wochen, Premium 5–7 Wochen, Masterpiece 7–10 Wochen. Die genaue Lieferfrist steht im individuellen Angebot das Ildiko dir schickt."
+  },
+  {
+    "id": 14,
+    "category": "widerruf",
+    "keywords": ["widerruf", "rückgabe", "zurückgeben", "umtausch", "retour", "rücksendung", "return"],
+    "question": "Kann ich zurückgeben oder widerrufen?",
+    "answer": "Bei individuell gefertigten Produkten (alle 3D-Druck-Farbvarianten und Custom Resin) besteht nach Produktionsbeginn kein Widerrufsrecht gemäß § 312g BGB. Für unbenutzte Wax Melts gilt das gesetzliche 14-tägige Widerrufsrecht. Details findest du in den AGB."
+  },
+  {
+    "id": 15,
+    "category": "kontakt",
+    "keywords": ["kontakt", "contact", "erreichen", "erreichbar", "anfrage", "frage", "hilfe", "support"],
+    "question": "Wie kann ich euch erreichen?",
+    "answer": "Am schnellsten über das Bestellformular im Shop oder direkt hier im Chat. Ildiko antwortet in der Regel innerhalb von 48 Stunden — sie führt Aurora Home nach Feierabend, also bitte ein bisschen Geduld."
+  },
+  {
+    "id": 16,
+    "category": "kontakt",
+    "keywords": ["48 stunden", "antwort", "wann antwort", "response time", "schnell", "wann meldest"],
+    "question": "Wann bekomme ich eine Antwort?",
+    "answer": "Innerhalb von 48 Stunden — Aurora Home ist ein Ein-Personen-Studio das nach Feierabend betrieben wird. Ildiko schaut täglich rein und antwortet so schnell wie möglich."
+  },
+  {
+    "id": 17,
+    "category": "produkte",
+    "keywords": ["eclipse", "lampe", "tischlampe", "schreibtischlampe", "licht", "lamp"],
+    "question": "Erzähl mir mehr über die Eclipse Lampe",
+    "answer": "Die Eclipse ist unsere meistverkaufte Tischlampe — ein zylindrischer Sockel mit einer runden Schirm-Scheibe dahinter, wie eine Sonnenfinsternis. Minimalistisch, zeitlos, 54,90 €. Wunschfarbe möglich. Lieferzeit 4–6 Werktage."
+  },
+  {
+    "id": 18,
+    "category": "produkte",
+    "keywords": ["solana", "pflanzer", "selbstbewässer", "pflanze", "topf", "magnet"],
+    "question": "Wie funktioniert der Solana Pflanzer?",
+    "answer": "Der Solana hat ein Docht-System: Wasser im Sockel wird automatisch zur Pflanze geleitet — du musst nur alle paar Tage den Sockel auffüllen. Vier Magnete halten Sockel und Topf zusammen. 44,90 €, unser Bestseller."
+  },
+  {
+    "id": 19,
+    "category": "produkte",
+    "keywords": ["nori", "katze", "katzenhaus", "couchtisch", "cat", "haustier"],
+    "question": "Was ist der Nori?",
+    "answer": "Nori ist gleichzeitig Katzenhaus und Couchtisch — eine zylindrische Form mit Eingang für deine Katze und flacher Tischfläche oben für deine Kaffeetasse. Minimalistisches Design das beides vereint. 89,90 €."
+  },
+  {
+    "id": 20,
+    "category": "produkte",
+    "keywords": ["spiky", "magsafe", "iphone", "ladestation", "ladeholder", "kaktus", "charger"],
+    "question": "Wie funktioniert der Spiky Ladehalter?",
+    "answer": "Spiky ist ein drehbarer Kaktus-Ladehalter für dein Apple MagSafe Charger — der Kaktus dreht sich damit du die optimale Ladeposition findest. Dein originales MagSafe Charger wird eingesetzt (nicht inklusive). 24,90 €."
+  },
+  {
+    "id": 21,
+    "category": "allgemein",
+    "keywords": ["wer", "ildiko", "über", "about", "betreiber", "gründer", "werkstatt", "story"],
+    "question": "Wer steckt hinter Aurora Home?",
+    "answer": "Aurora Home ist Ildikas Werkstatt nach Feierabend — in Krefeld, Deutschland. Tagsüber hat sie einen anderen Job, abends entstehen die Stücke. Jedes Produkt ist Handarbeit: gedruckt, geschliffen, bemalt. Kein Lager, alles auf Anfrage."
+  },
+  {
+    "id": 22,
+    "category": "allgemein",
+    "keywords": ["etsy", "tiktok", "instagram", "shop", "wo kaufen", "online shop"],
+    "question": "Wo kann ich noch kaufen?",
+    "answer": "Neben diesem Shop gibt es uns auch auf Etsy und im TikTok Shop. Ein eigener Shop öffnet Sommer 2026. Hier auf der Website läuft der direkteste Weg — Bestellformular ausfüllen, Ildiko meldet sich."
+  },
+  {
+    "id": 23,
+    "category": "allgemein",
+    "keywords": ["hallo", "hi", "hey", "guten tag", "moin", "servus", "hello", "howdy"],
+    "question": "Begrüßung",
+    "answer": "Hallo! Schön dass du da bist. Ich bin Aurora, Ildikas digitale Assistentin. Wie kann ich dir helfen — suchst du etwas Bestimmtes oder hast du Fragen zu einem Produkt?"
+  },
+  {
+    "id": 24,
+    "category": "allgemein",
+    "keywords": ["danke", "dankeschön", "thanks", "thank you", "merci"],
+    "question": "Danke",
+    "answer": "Sehr gerne! Falls du noch Fragen hast oder etwas bestellen möchtest — ich bin hier."
+  },
+  {
+    "id": 25,
+    "category": "allgemein",
+    "keywords": ["tschüss", "bye", "ciao", "auf wiedersehen", "goodbye"],
+    "question": "Verabschiedung",
+    "answer": "Bis bald! Schau gerne wieder vorbei — Ildiko fügt regelmäßig neue Designs hinzu."
+  }
+]
