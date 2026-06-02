@@ -11,7 +11,8 @@
       "assets/bucket-2.jpg",
       "assets/bucket-3.jpg",
       "assets/bucket-4.jpg"
-    ]
+    ],
+    "delivery": "made-to-order"
   },
   {
     "name": "Bonsai Spiel",
@@ -25,7 +26,9 @@
       "assets/bonsai-2.jpg",
       "assets/bonsai-3.jpg",
       "assets/bonsai-4.jpg"
-    ]
+    ],
+    "stock": 2,
+    "delivery": "sofort"
   },
   {
     "name": "Budsy Pillenbaum",
@@ -39,7 +42,8 @@
       "assets/budsy-2.jpg",
       "assets/budsy-3.jpg",
       "assets/budsy-4.jpg"
-    ]
+    ],
+    "delivery": "made-to-order"
   },
   {
     "name": "Eve Vase",
@@ -54,7 +58,8 @@
       "assets/eve-3.jpg",
       "assets/eve-4.jpg",
       "assets/eve-5.jpg"
-    ]
+    ],
+    "delivery": "made-to-order"
   },
   {
     "name": "Flora Chess",
@@ -70,7 +75,8 @@
       "assets/flora-4.jpg",
       "assets/flora-5.jpg"
     ],
-    "badge": "new"
+    "badge": "new",
+    "delivery": "made-to-order"
   },
   {
     "name": "Little Jewel",
@@ -86,7 +92,8 @@
       "assets/jewel-4.jpg",
       "assets/jewel-5.jpg",
       "assets/jewel-6.jpg"
-    ]
+    ],
+    "delivery": "made-to-order"
   },
   {
     "name": "Solana Pflanzer",
@@ -101,7 +108,9 @@
       "assets/solana-3.jpg",
       "assets/solana-4.jpg"
     ],
-    "badge": "bestseller"
+    "badge": "bestseller",
+    "stock": 2,
+    "delivery": "sofort"
   },
   {
     "name": "Spiky Ladehalter",
@@ -115,7 +124,9 @@
       "assets/spiky-2.jpg",
       "assets/spiky-3.jpg",
       "assets/spiky-4.jpg"
-    ]
+    ],
+    "stock": 3,
+    "delivery": "sofort"
   },
   {
     "name": "Spiky Mini",
@@ -129,7 +140,8 @@
       "assets/spiky-mini-2.jpg",
       "assets/spiky-mini-3.jpg",
       "assets/spiky-mini-4.jpg"
-    ]
+    ],
+    "delivery": "made-to-order"
   },
   {
     "name": "Aloe Gießkanne",
@@ -146,7 +158,8 @@
       "assets/aloe-5.jpg",
       "assets/aloe-6.jpg"
     ],
-    "badge": "new"
+    "badge": "new",
+    "delivery": "made-to-order"
   },
   {
     "name": "Eclipse Lampe",
@@ -162,7 +175,9 @@
       "assets/eclipse-4.jpg",
       "assets/eclipse-5.jpg"
     ],
-    "badge": "bestseller"
+    "badge": "bestseller",
+    "stock": 3,
+    "delivery": "sofort"
   },
   {
     "name": "Gelato Ladestation",
@@ -178,7 +193,9 @@
       "assets/gelato-4.jpg",
       "assets/gelato-5.jpg",
       "assets/gelato-6.jpg"
-    ]
+    ],
+    "stock": 2,
+    "delivery": "sofort"
   },
   {
     "name": "Nori Katzenhaus",
@@ -197,6 +214,7 @@
       "assets/nori-7.jpg",
       "assets/nori-8.jpg"
     ],
-    "badge": "new"
+    "badge": "new",
+    "delivery": "made-to-order"
   }
 ]
