@@ -3134,8 +3134,8 @@ section:not(.hero){
         <div class="modal-feat">DHL Versand mit Tracking · 4,90 € DE</div>
         <div class="modal-feat">Antwort auf Anfrage in 48 Stunden</div>
       </div>
-      <a id="mBtn" class="modal-btn" href="mailto:fenyesdesign@outlook.com">Per E-Mail anfragen</a>
-      <p class="modal-fine">Unverbindlich · persönliches Angebot innerhalb 48 h</p>
+      <button id="mBtn" class="modal-btn" onclick="modalAddToCart()">In den Warenkorb <svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;vertical-align:middle;margin-left:6px"><path d="M12 5v14M5 12h14"/></svg></button>
+      <p class="modal-fine">Handgefertigt auf Anfrage · Lieferzeit 4–6 Werktage</p>
     </div>
   </div>
 </div>
@@ -3576,7 +3576,7 @@ function openProduct(idx){
   document.getElementById('mName').textContent  = p.name;
   document.getElementById('mPrice').textContent = p.price + ' €';
   document.getElementById('mDesc').textContent  = p.desc;
-  document.getElementById('mBtn').href = 'mailto:fenyesdesign@outlook.com?subject=Anfrage: ' + p.name;
+  document.getElementById('mBtn').dataset.idx = idx;
 
   // Build image list: prefer p.images[], fallback to p.img
   _mImages  = Array.isArray(p.images) && p.images.length ? p.images : (p.img ? [p.img] : []);
@@ -4411,6 +4411,14 @@ else {
 </script>
 
 <script>
+window.modalAddToCart = function(){
+  const btn = document.getElementById('mBtn');
+  const idx = parseInt(btn.dataset.idx);
+  window.addToCart(idx, null);
+  closeProduct();
+  setTimeout(() => window.openCart(), 200);
+};
+
 /* ============================================================
    WARENKORB · CHECKOUT — Logik
    ============================================================ */
