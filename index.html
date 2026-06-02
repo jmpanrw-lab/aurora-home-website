@@ -588,6 +588,8 @@ section.dark{background:var(--bg-2);}
 .b-bestseller{background:var(--gold);color:var(--bg);}
 .b-viral{background:var(--lilac);color:var(--ink);}
 .b-new{background:#4ade80;color:var(--bg);}
+.b-stock{background:rgba(74,222,128,.15);color:#4ade80;border:1px solid rgba(74,222,128,.4);}
+.b-made{background:rgba(244,240,255,.06);color:var(--muted);}
 .prod-info{padding:18px 18px 22px;flex:1;display:flex;flex-direction:column;}
 .prod-cat{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
 .prod-name{font-family:var(--serif);font-size:18px;font-weight:300;line-height:1.15;color:var(--ink);margin-bottom:auto;}
@@ -3586,7 +3588,7 @@ section:not(.hero){
       <div class="modal-cat" id="mCat"></div>
       <h3 class="modal-name" id="mName"></h3>
       <div class="modal-price" id="mPrice"></div>
-      <div class="modal-status"><span class="dot"></span>Auf Anfrage · 4–6 Werktage Produktion</div>
+      <div class="modal-status" id="mDelivery"><span class="dot"></span>Auf Anfrage · 4–6 Werktage Produktion</div>
       <p class="modal-desc" id="mDesc"></p>
       <div class="modal-feats">
         <div class="modal-feat">3D-gedruckt in Deutschland</div>
@@ -3947,9 +3949,13 @@ function renderProducts(){
   // Standard-Grid: alle außer Solana (idx 6) und Social Battery (idx 10) die schon oben sind
   const shown=PRODUCTS.map((p,i)=>({p,i})).filter(o=>o.i!==6&&o.i!==10);
   grid.innerHTML=shown.map(({p,i})=>{
-    const badge=p.badge==='bestseller'?'<span class="prod-badge b-bestseller">Bestseller</span>':
-                p.badge==='viral'?'<span class="prod-badge b-viral">Viral</span>':
-                p.badge==='new'?'<span class="prod-badge b-new">Neu</span>':'';
+    const stockBadge = p.stock > 0
+      ? '<span class="prod-badge b-stock">⚡ Sofort lieferbar</span>'
+      : (p.delivery === 'made-to-order' ? '' : '');
+    const badge = p.badge==='bestseller' ? '<span class="prod-badge b-bestseller">Bestseller</span>'
+                : p.badge==='viral'      ? '<span class="prod-badge b-viral">Viral</span>'
+                : p.badge==='new'        ? '<span class="prod-badge b-new">Neu</span>'
+                : stockBadge;
     const img=p.img?`<img src="${p.img}" alt="${p.name}" loading="lazy">`:
               `<div class="ph-img"><span class="ph-txt"><b>Produktfoto</b>${p.name}<br>1:1 · Hauptansicht</span></div>`;
     return `<article class="prod" data-cat="${p.catKey} all" data-idx="${i}" onclick="openProduct(${i})">
@@ -4095,6 +4101,15 @@ function openProduct(idx){
     count.style.display = 'none';
   }
 
+  // Lieferzeit im Modal anpassen
+  const deliveryEl = document.getElementById('mDelivery');
+  if(deliveryEl){
+    if(p.stock > 0){
+      deliveryEl.innerHTML = '<span style="color:#4ade80">⚡ Sofort lieferbar</span> · Versand in 1–2 Werktagen';
+    } else {
+      deliveryEl.innerHTML = 'Auf Anfrage · 4–6 Werktage Produktion';
+    }
+  }
   document.getElementById('modal').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
