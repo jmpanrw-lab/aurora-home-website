@@ -837,7 +837,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:80px 64px 3
 }
 .modal.open{display:flex;}
 .modal-card{
-  max-width:900px;width:100%;max-height:90vh;overflow:auto;
+  max-width:960px;width:100%;max-height:92vh;overflow:auto;
   background:var(--bg-2);border:1px solid var(--line-strong);
   display:grid;grid-template-columns:1fr 1fr;
   position:relative;
@@ -849,9 +849,68 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:80px 64px 3
   background:rgba(10,9,20,.6);
 }
 .modal-close:hover{border-color:var(--gold);color:var(--gold);}
-.modal-img{aspect-ratio:1;background:#0a0914;overflow:hidden;}
-.modal-img img,.modal-img .ph-img{width:100%;height:100%;object-fit:cover;}
-.modal-body{padding:40px 36px;display:flex;flex-direction:column;}
+
+/* Gallery left column */
+.modal-gallery{
+  display:flex;flex-direction:column;
+  background:#0a0914;position:relative;
+}
+.modal-img-main{
+  flex:1;position:relative;overflow:hidden;
+  aspect-ratio:1;min-height:0;
+}
+.modal-img-main img{
+  width:100%;height:100%;object-fit:cover;
+  transition:opacity .3s ease;
+}
+.modal-img-main .ph-img{width:100%;height:100%;}
+
+/* Gallery nav arrows */
+.modal-nav{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:36px;height:36px;border-radius:50%;
+  background:rgba(10,9,20,.7);border:1px solid var(--line-strong);
+  display:grid;place-items:center;color:var(--ink);
+  cursor:pointer;z-index:3;
+  transition:background .2s,border-color .2s,opacity .2s;
+  opacity:0;
+}
+.modal-gallery:hover .modal-nav{opacity:1;}
+.modal-nav:hover{background:rgba(200,144,106,.15);border-color:var(--gold);color:var(--gold);}
+.modal-nav.prev{left:10px;}
+.modal-nav.next{right:10px;}
+.modal-nav svg{width:14px;height:14px;stroke:currentColor;stroke-width:2;fill:none;}
+.modal-nav.hidden{display:none;}
+
+/* Image counter badge */
+.modal-img-count{
+  position:absolute;bottom:10px;right:10px;z-index:3;
+  font-family:var(--mono);font-size:9px;letter-spacing:.14em;
+  color:var(--muted);padding:4px 9px;
+  background:rgba(10,9,20,.7);border:1px solid var(--line);
+}
+
+/* Thumbnail strip */
+.modal-thumbs{
+  display:flex;gap:3px;padding:3px;
+  background:rgba(0,0,0,.4);
+  border-top:1px solid var(--line);
+  overflow-x:auto;scrollbar-width:none;
+}
+.modal-thumbs::-webkit-scrollbar{display:none;}
+.modal-thumbs.hidden{display:none;}
+.modal-thumb{
+  flex-shrink:0;width:52px;height:52px;
+  overflow:hidden;cursor:pointer;
+  border:2px solid transparent;
+  transition:border-color .2s,opacity .2s;
+  opacity:.55;
+}
+.modal-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
+.modal-thumb.active{border-color:var(--gold);opacity:1;}
+.modal-thumb:hover{opacity:.85;}
+
+.modal-body{padding:40px 36px;display:flex;flex-direction:column;overflow-y:auto;}
 .modal-cat{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
 .modal-name{font-family:var(--serif);font-size:34px;font-weight:300;color:var(--ink);margin-bottom:8px;}
 .modal-price{font-family:var(--serif);font-size:26px;color:var(--gold-bright);margin-bottom:16px;}
@@ -927,7 +986,11 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:80px 64px 3
   .nl{padding:80px 24px;}
   footer{padding:64px 24px 32px;}
   .foot-grid{grid-template-columns:1fr 1fr;gap:32px;}
-  .modal-card{grid-template-columns:1fr;max-height:88vh;}
+  .modal-card{grid-template-columns:1fr;max-height:92vh;}
+  .modal-img-main{aspect-ratio:4/3;}
+  .modal-nav{opacity:1;}
+  .modal-thumbs{padding:4px;gap:4px;}
+  .modal-thumb{width:44px;height:44px;}
   section{padding:80px 0;}
 }
 /* ============================================================
@@ -2544,7 +2607,18 @@ section:not(.hero){
     <button class="modal-close" onclick="closeProduct()" aria-label="Schließen">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="16" height="16"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
-    <div class="modal-img" id="mImg"></div>
+    <!-- Gallery -->
+    <div class="modal-gallery" id="mGallery">
+      <div class="modal-img-main" id="mImgMain"></div>
+      <button class="modal-nav prev" id="mNavPrev" aria-label="Vorheriges Bild">
+        <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+      </button>
+      <button class="modal-nav next" id="mNavNext" aria-label="Nächstes Bild">
+        <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+      <div class="modal-img-count" id="mImgCount" style="display:none"></div>
+      <div class="modal-thumbs hidden" id="mThumbs"></div>
+    </div>
     <div class="modal-body">
       <div class="modal-cat" id="mCat"></div>
       <h3 class="modal-name" id="mName"></h3>
@@ -2568,18 +2642,109 @@ section:not(.hero){
 // PRODUCT DATA
 // ============================================================
 const PRODUCTS = [
-  {name:"Bucket Lampe",cat:"Tischlampe & Ablage",catKey:"lampe",price:"27,90",desc:"BUCKET ist eine Schreibtischlampe mit integriertem Ablage-Tray — portabel, minimalistisch, ein echter Hingucker. Kann auch an die Wand oder ans Pegboard gehängt werden.",img:"assets/bucket-lampe.jpg"},
-  {name:"Bonsai Spiel",cat:"Tischspiel & Deko",catKey:"spiel",price:"24,90",desc:"BONSAI ist ein Balancier-Tischspiel und Dekorationsstück in einem — wer lässt die Blüten fallen? Die Blumen stecken in die Waben-Baumkrone, Spielsteine werden im Topf aufbewahrt.",img:"assets/bonsai-spiel.jpg"},
-  {name:"Budsy Pillenbaum",cat:"Wöchentlicher Pillenspender",catKey:"aufbewahrung",price:"22,90",desc:"BUDSY ist ein wöchentlicher Pillenspender der wie ein blühender Baum aussieht — Mo bis So beschriftet, jede Knospe ein Tag. Der Topf dient als Aufbewahrungsbox.",img:"assets/budsy-pillenbaum.jpg"},
-  {name:"Eve Vase",cat:"Selbstbewässernde Vase",catKey:"pflanze",price:"18,90",desc:"EVE ist eine selbstbewässernde Vase mit elegantem S-Profil — Wasser wird langsam über den Aufsatz abgegeben. Kein Bohren, keine Stützen beim Druck nötig.",img:"assets/eve-vase.jpg"},
-  {name:"Flora Chess",cat:"Blumen-Schachset",catKey:"spiel",price:"69,90",desc:"FLORA CHESS ist ein vollständiges Schachset bei dem jede Figur eine andere Blume ist — Tulpe, Narzisse, Gänseblümchen und mehr. Mit Trennwand-Box.",img:"assets/flora-chess.jpg",badge:"new"},
-  {name:"Little Jewel",cat:"Schmuckkästchen",catKey:"aufbewahrung",price:"28,90",desc:"LITTLE JEWEL ist ein Schmuckkästchen das wie eine Pflanze aussieht — der Topf ist die Box, der aufklappbare Deckel trägt drehbare Ringe & Ketten.",img:"assets/little-jewel.jpg"},
-  {name:"Solana Pflanzer",cat:"Selbstbewässernder Pflanzer",catKey:"pflanze bestseller",price:"32,90",desc:"SOLANA ist ein selbstbewässernder Pflanzer im ikonischen Ring-Design — Wasser im Sockel wird per Docht automatisch zur Pflanze geleitet. Vier Magnete halten alles zusammen.",img:"assets/solana-pflanzer.jpg",badge:"bestseller"},
-  {name:"Spiky Ladehalter",cat:"MagSafe Ladestation",catKey:"gadget",price:"19,90",desc:"SPIKY ist ein Kaktus-Ladehalter für dein iPhone — der Kaktus dreht sich um die optimale Position zu finden. Nutzt dein originales Apple MagSafe Charger.",img:"assets/spiky-ladehalter.jpg"},
-  {name:"Spiky Mini",cat:"Apple Watch Ladestation",catKey:"gadget",price:"14,90",desc:"SPIKY MINI ist die kleinere Version für deine Apple Watch — originales Apple Watch Charger wird eingesetzt, Kabel sauber durch den Kaktus-Topf geführt.",img:"assets/spiky-mini.jpg"},
-  {name:"Aloe Gießkanne",cat:"Gießkanne mit Wechsel-Aufsatz",catKey:"pflanze",price:"26,90",desc:"ALOE ist eine Gießkanne mit organischer Tropfen-Form, inspiriert von einem Blatt. Inklusive austauschbarem Aufsatz — normale Gießtille oder eingebauter Brausekopf für Setzlinge und empfindliche Pflanzen.",img:"assets/aloe-vase.jpg",badge:"new"},
-  {name:"Eclipse Lampe",cat:"Tischlampe mit Lampenschirm",catKey:"lampe bestseller",price:"39,90",desc:"ECLIPSE ist eine Tischlampe mit zylindrischem Sockel und runder Lampenschirm-Scheibe dahinter — wie eine Sonnenfinsternis. Minimalistisch, zeitlos, eine ruhige Präsenz auf jedem Schreibtisch oder Sideboard.",img:"assets/eclipse-lampe.jpg",badge:"bestseller"},
-  {name:"Gelato Ladestation",cat:"iPhone & Apple Watch Charger",catKey:"gadget",price:"29,90",desc:"GELATO ist eine kombinierte Ladestation für iPhone (MagSafe) und Apple Watch — die Eistüte oben hält deine Watch im perfekten Blickwinkel, die Kugel unten lädt dein Phone. Verspielt, smart, ein Hingucker auf dem Nachttisch.",img:"assets/gelato-charger.jpg"}
+  {
+    "name": "Bucket Lampe",
+    "cat": "Tischlampe & Ablage",
+    "catKey": "lampe",
+    "price": "27,90",
+    "desc": "BUCKET ist eine Schreibtischlampe mit integriertem Ablage-Tray — portabel, minimalistisch, ein echter Hingucker. Kann auch an die Wand oder ans Pegboard gehängt werden.",
+    "img": "assets/bucket-lampe.jpg"
+  },
+  {
+    "name": "Bonsai Spiel",
+    "cat": "Tischspiel & Deko",
+    "catKey": "spiel",
+    "price": "24,90",
+    "desc": "BONSAI ist ein Balancier-Tischspiel und Dekorationsstück in einem — wer lässt die Blüten fallen? Die Blumen stecken in die Waben-Baumkrone, Spielsteine werden im Topf aufbewahrt.",
+    "img": "assets/bonsai-spiel.jpg"
+  },
+  {
+    "name": "Budsy Pillenbaum",
+    "cat": "Wöchentlicher Pillenspender",
+    "catKey": "aufbewahrung",
+    "price": "22,90",
+    "desc": "BUDSY ist ein wöchentlicher Pillenspender der wie ein blühender Baum aussieht — Mo bis So beschriftet, jede Knospe ein Tag. Der Topf dient als Aufbewahrungsbox.",
+    "img": "assets/budsy-pillenbaum.jpg"
+  },
+  {
+    "name": "Eve Vase",
+    "cat": "Selbstbewässernde Vase",
+    "catKey": "pflanze",
+    "price": "18,90",
+    "desc": "EVE ist eine selbstbewässernde Vase mit elegantem S-Profil — Wasser wird langsam über den Aufsatz abgegeben. Kein Bohren, keine Stützen beim Druck nötig.",
+    "img": "assets/eve-vase.jpg"
+  },
+  {
+    "name": "Flora Chess",
+    "cat": "Blumen-Schachset",
+    "catKey": "spiel",
+    "price": "69,90",
+    "desc": "FLORA CHESS ist ein vollständiges Schachset bei dem jede Figur eine andere Blume ist — Tulpe, Narzisse, Gänseblümchen und mehr. Mit Trennwand-Box.",
+    "img": "assets/flora-chess.jpg",
+    "badge": "new"
+  },
+  {
+    "name": "Little Jewel",
+    "cat": "Schmuckkästchen",
+    "catKey": "aufbewahrung",
+    "price": "28,90",
+    "desc": "LITTLE JEWEL ist ein Schmuckkästchen das wie eine Pflanze aussieht — der Topf ist die Box, der aufklappbare Deckel trägt drehbare Ringe & Ketten.",
+    "img": "assets/little-jewel.jpg"
+  },
+  {
+    "name": "Solana Pflanzer",
+    "cat": "Selbstbewässernder Pflanzer",
+    "catKey": "pflanze bestseller",
+    "price": "32,90",
+    "desc": "SOLANA ist ein selbstbewässernder Pflanzer im ikonischen Ring-Design — Wasser im Sockel wird per Docht automatisch zur Pflanze geleitet. Vier Magnete halten alles zusammen.",
+    "img": "assets/solana-pflanzer.jpg",
+    "badge": "bestseller"
+  },
+  {
+    "name": "Spiky Ladehalter",
+    "cat": "MagSafe Ladestation",
+    "catKey": "gadget",
+    "price": "19,90",
+    "desc": "SPIKY ist ein Kaktus-Ladehalter für dein iPhone — der Kaktus dreht sich um die optimale Position zu finden. Nutzt dein originales Apple MagSafe Charger.",
+    "img": "assets/spiky-ladehalter.jpg"
+  },
+  {
+    "name": "Spiky Mini",
+    "cat": "Apple Watch Ladestation",
+    "catKey": "gadget",
+    "price": "14,90",
+    "desc": "SPIKY MINI ist die kleinere Version für deine Apple Watch — originales Apple Watch Charger wird eingesetzt, Kabel sauber durch den Kaktus-Topf geführt.",
+    "img": "assets/spiky-mini.jpg"
+  },
+  {
+    "name": "Aloe Gießkanne",
+    "cat": "Gießkanne mit Wechsel-Aufsatz",
+    "catKey": "pflanze",
+    "price": "26,90",
+    "desc": "ALOE ist eine Gießkanne mit organischer Tropfen-Form, inspiriert von einem Blatt. Inklusive austauschbarem Aufsatz — normale Gießtille oder eingebauter Brausekopf für Setzlinge und empfindliche Pflanzen.",
+    "img": "assets/aloe-vase.jpg",
+    "badge": "new"
+  },
+  {
+    "name": "Eclipse Lampe",
+    "cat": "Tischlampe mit Lampenschirm",
+    "catKey": "lampe bestseller",
+    "price": "39,90",
+    "desc": "ECLIPSE ist eine Tischlampe mit zylindrischem Sockel und runder Lampenschirm-Scheibe dahinter — wie eine Sonnenfinsternis. Minimalistisch, zeitlos, eine ruhige Präsenz auf jedem Schreibtisch oder Sideboard.",
+    "img": "assets/eclipse-lampe.jpg",
+    "images": [
+      "assets/eclipse-lampe.jpg"
+    ],
+    "badge": "bestseller"
+  },
+  {
+    "name": "Gelato Ladestation",
+    "cat": "iPhone & Apple Watch Charger",
+    "catKey": "gadget",
+    "price": "29,90",
+    "desc": "GELATO ist eine kombinierte Ladestation für iPhone (MagSafe) und Apple Watch — die Eistüte oben hält deine Watch im perfekten Blickwinkel, die Kugel unten lädt dein Phone. Verspielt, smart, ein Hingucker auf dem Nachttisch.",
+    "img": "assets/gelato-charger.jpg"
+  }
 ];
 
 // ============================================================
@@ -2627,18 +2792,91 @@ const PRODUCTS = [
 
 // Wax Melts — Farbsystem, keine Emojis
 const SCENTS = [
-  {no:"01",season:"Frühling",name:"Kirschblüte & Vanille",notes:"Pfingstrose · Jasmin · Vanille",grad:"linear-gradient(155deg,#f4c8c0 0%,#e8a8a0 60%,#a86864 100%)"},
-  {no:"02",season:"Sommer",name:"Sandelholz & Mango",notes:"Mango · Jasmin · Sandelholz",grad:"linear-gradient(155deg,#f4d8a0 0%,#d8a060 60%,#7a4818 100%)"},
-  {no:"03",season:"Herbst",name:"Zimt & Amber",notes:"Zimt · Nelke · Amber",grad:"linear-gradient(155deg,#d88858 0%,#a04828 60%,#4a1808 100%)"},
-  {no:"04",season:"Winter",name:"Zeder & Moschus",notes:"Bergkiefer · Moschus · Vetiver",grad:"linear-gradient(155deg,#b8c8e0 0%,#5878a8 60%,#1a2a48 100%)"},
-  {no:"05",season:"Nacht",name:"Tabak & Bourbon",notes:"Bourbon · Tabak · Eichenholz",grad:"linear-gradient(155deg,#5848a0 0%,#2a1c50 60%,#0c0820 100%)"},
-  {no:"06",season:"Ganzjährig",name:"Rose & Pfingstrose",notes:"Rose · Pfingstrose · Moschus",grad:"linear-gradient(155deg,#f0a8a0 0%,#c04830 60%,#5a1810 100%)",bs:true},
-  {no:"07",season:"Sommer",name:"Salbei & Salzwasser",notes:"Salbei · Salz · Meeresluft",grad:"linear-gradient(155deg,#a8d0c8 0%,#588878 60%,#1a3830 100%)"},
-  {no:"08",season:"Sommer",name:"Hibiskus & Kokos",notes:"Hibiskus · Kokos · Pfirsich",grad:"linear-gradient(155deg,#f0b0a0 0%,#d88060 60%,#7a3818 100%)"},
-  {no:"09",season:"Herbst",name:"Karamell & Whisky",notes:"Karamell · Whisky · Vanille",grad:"linear-gradient(155deg,#d8a868 0%,#8a5828 60%,#3a1808 100%)"},
-  {no:"10",season:"Frühling",name:"Bambus & Limette",notes:"Limette · Bambus · Minze",grad:"linear-gradient(155deg,#c0d8a0 0%,#688838 60%,#1a3010 100%)"},
-  {no:"11",season:"Ganzjährig",name:"Leder & Espresso",notes:"Espresso · Leder · Tonkabohne",grad:"linear-gradient(155deg,#8a6848 0%,#3a2818 60%,#0c0808 100%)"},
-  {no:"12",season:"Winter",name:"Sternanis & Honig",notes:"Sternanis · Honig · Vanille",grad:"linear-gradient(155deg,#e8c890 0%,#a07838 60%,#3a2008 100%)"}
+  {
+    "no": "01",
+    "season": "Frühling",
+    "name": "Kirschblüte & Vanille",
+    "notes": "Pfingstrose · Jasmin · Vanille",
+    "grad": "linear-gradient(155deg,#f4c8c0 0%,#e8a8a0 60%,#a86864 100%)"
+  },
+  {
+    "no": "02",
+    "season": "Sommer",
+    "name": "Sandelholz & Mango",
+    "notes": "Mango · Jasmin · Sandelholz",
+    "grad": "linear-gradient(155deg,#f4d8a0 0%,#d8a060 60%,#7a4818 100%)"
+  },
+  {
+    "no": "03",
+    "season": "Herbst",
+    "name": "Zimt & Amber",
+    "notes": "Zimt · Nelke · Amber",
+    "grad": "linear-gradient(155deg,#d88858 0%,#a04828 60%,#4a1808 100%)"
+  },
+  {
+    "no": "04",
+    "season": "Winter",
+    "name": "Zeder & Moschus",
+    "notes": "Bergkiefer · Moschus · Vetiver",
+    "grad": "linear-gradient(155deg,#b8c8e0 0%,#5878a8 60%,#1a2a48 100%)"
+  },
+  {
+    "no": "05",
+    "season": "Nacht",
+    "name": "Tabak & Bourbon",
+    "notes": "Bourbon · Tabak · Eichenholz",
+    "grad": "linear-gradient(155deg,#5848a0 0%,#2a1c50 60%,#0c0820 100%)"
+  },
+  {
+    "no": "06",
+    "season": "Ganzjährig",
+    "name": "Rose & Pfingstrose",
+    "notes": "Rose · Pfingstrose · Moschus",
+    "grad": "linear-gradient(155deg,#f0a8a0 0%,#c04830 60%,#5a1810 100%)",
+    "bs": true
+  },
+  {
+    "no": "07",
+    "season": "Sommer",
+    "name": "Salbei & Salzwasser",
+    "notes": "Salbei · Salz · Meeresluft",
+    "grad": "linear-gradient(155deg,#a8d0c8 0%,#588878 60%,#1a3830 100%)"
+  },
+  {
+    "no": "08",
+    "season": "Sommer",
+    "name": "Hibiskus & Kokos",
+    "notes": "Hibiskus · Kokos · Pfirsich",
+    "grad": "linear-gradient(155deg,#f0b0a0 0%,#d88060 60%,#7a3818 100%)"
+  },
+  {
+    "no": "09",
+    "season": "Herbst",
+    "name": "Karamell & Whisky",
+    "notes": "Karamell · Whisky · Vanille",
+    "grad": "linear-gradient(155deg,#d8a868 0%,#8a5828 60%,#3a1808 100%)"
+  },
+  {
+    "no": "10",
+    "season": "Frühling",
+    "name": "Bambus & Limette",
+    "notes": "Limette · Bambus · Minze",
+    "grad": "linear-gradient(155deg,#c0d8a0 0%,#688838 60%,#1a3010 100%)"
+  },
+  {
+    "no": "11",
+    "season": "Ganzjährig",
+    "name": "Leder & Espresso",
+    "notes": "Espresso · Leder · Tonkabohne",
+    "grad": "linear-gradient(155deg,#8a6848 0%,#3a2818 60%,#0c0808 100%)"
+  },
+  {
+    "no": "12",
+    "season": "Winter",
+    "name": "Sternanis & Honig",
+    "notes": "Sternanis · Honig · Vanille",
+    "grad": "linear-gradient(155deg,#e8c890 0%,#a07838 60%,#3a2008 100%)"
+  }
 ];
 
 // ============================================================
@@ -2718,28 +2956,112 @@ function setupFilters(){
 // ============================================================
 // MODAL
 // ============================================================
-function openProduct(idx){
-  const p=PRODUCTS[idx];
-  document.getElementById('mCat').textContent=p.cat;
-  document.getElementById('mName').textContent=p.name;
-  document.getElementById('mPrice').textContent=p.price+' €';
-  document.getElementById('mDesc').textContent=p.desc;
-  document.getElementById('mBtn').href='mailto:fenyesdesign@outlook.com?subject=Anfrage: '+p.name;
-  const img=document.getElementById('mImg');
-  img.innerHTML=p.img?`<img src="${p.img}" alt="${p.name}">`:
-    `<div class="ph-img"><span class="ph-txt"><b>Produktfoto</b>${p.name}<br>Hauptansicht</span></div>`;
-  document.getElementById('modal').classList.add('open');
-  document.body.style.overflow='hidden';
+// ── Modal Gallery State ───────────────────────────────────────
+let _mImages = [];
+let _mCurrent = 0;
+
+function mGalleryShow(idx){
+  _mCurrent = (idx + _mImages.length) % _mImages.length;
+  const src  = _mImages[_mCurrent];
+  const main = document.getElementById('mImgMain');
+  const count = document.getElementById('mImgCount');
+  // Fade swap
+  main.style.opacity = '0';
+  setTimeout(() => {
+    main.innerHTML = src
+      ? `<img src="${src}" alt="Produktbild ${_mCurrent+1}">`
+      : `<div class="ph-img"><span class="ph-txt"><b>Produktfoto</b></span></div>`;
+    main.style.opacity = '1';
+  }, 180);
+  // Counter
+  if(_mImages.length > 1){
+    count.textContent = (_mCurrent+1) + ' / ' + _mImages.length;
+    count.style.display = '';
+  } else {
+    count.style.display = 'none';
+  }
+  // Thumbs highlight
+  document.querySelectorAll('#mThumbs .modal-thumb').forEach((t,i)=>{
+    t.classList.toggle('active', i === _mCurrent);
+  });
+  // Scroll active thumb into view
+  const activeThumb = document.querySelector('#mThumbs .modal-thumb.active');
+  if(activeThumb) activeThumb.scrollIntoView({inline:'nearest',block:'nearest'});
 }
+
+function openProduct(idx){
+  const p = PRODUCTS[idx];
+  document.getElementById('mCat').textContent   = p.cat;
+  document.getElementById('mName').textContent  = p.name;
+  document.getElementById('mPrice').textContent = p.price + ' €';
+  document.getElementById('mDesc').textContent  = p.desc;
+  document.getElementById('mBtn').href = 'mailto:fenyesdesign@outlook.com?subject=Anfrage: ' + p.name;
+
+  // Build image list: prefer p.images[], fallback to p.img
+  _mImages  = Array.isArray(p.images) && p.images.length ? p.images : (p.img ? [p.img] : []);
+  _mCurrent = 0;
+
+  // Nav arrows
+  const hasMulti = _mImages.length > 1;
+  document.getElementById('mNavPrev').classList.toggle('hidden', !hasMulti);
+  document.getElementById('mNavNext').classList.toggle('hidden', !hasMulti);
+
+  // Thumbnails
+  const thumbsEl = document.getElementById('mThumbs');
+  if(hasMulti){
+    thumbsEl.classList.remove('hidden');
+    thumbsEl.innerHTML = _mImages.map((src, i) =>
+      `<div class="modal-thumb${i===0?' active':''}" onclick="mGalleryShow(${i})">
+        <img src="${src}" alt="Bild ${i+1}" loading="lazy">
+      </div>`
+    ).join('');
+  } else {
+    thumbsEl.classList.add('hidden');
+    thumbsEl.innerHTML = '';
+  }
+
+  // Show first image
+  const main = document.getElementById('mImgMain');
+  main.style.opacity = '1';
+  main.innerHTML = _mImages[0]
+    ? `<img src="${_mImages[0]}" alt="${p.name}">`
+    : `<div class="ph-img"><span class="ph-txt"><b>Produktfoto</b>${p.name}<br>Hauptansicht</span></div>`;
+
+  const count = document.getElementById('mImgCount');
+  if(hasMulti){
+    count.textContent = '1 / ' + _mImages.length;
+    count.style.display = '';
+  } else {
+    count.style.display = 'none';
+  }
+
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
 function closeProduct(){
   document.getElementById('modal').classList.remove('open');
-  document.body.style.overflow='';
+  document.body.style.overflow = '';
 }
 function closeProductBg(e){
-  if(e.target.id==='modal')closeProduct();
+  if(e.target.id === 'modal') closeProduct();
 }
-document.addEventListener('keydown',e=>{
-  if(e.key==='Escape')closeProduct();
+
+// Nav buttons
+document.getElementById('mNavPrev').addEventListener('click', e => {
+  e.stopPropagation(); mGalleryShow(_mCurrent - 1);
+});
+document.getElementById('mNavNext').addEventListener('click', e => {
+  e.stopPropagation(); mGalleryShow(_mCurrent + 1);
+});
+
+document.addEventListener('keydown', e => {
+  const open = document.getElementById('modal').classList.contains('open');
+  if(e.key === 'Escape') closeProduct();
+  if(open && _mImages.length > 1){
+    if(e.key === 'ArrowLeft')  mGalleryShow(_mCurrent - 1);
+    if(e.key === 'ArrowRight') mGalleryShow(_mCurrent + 1);
+  }
 });
 
 // ============================================================

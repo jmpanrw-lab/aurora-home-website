@@ -89,6 +89,9 @@
     "price": "39,90",
     "desc": "ECLIPSE ist eine Tischlampe mit zylindrischem Sockel und runder Lampenschirm-Scheibe dahinter — wie eine Sonnenfinsternis. Minimalistisch, zeitlos, eine ruhige Präsenz auf jedem Schreibtisch oder Sideboard.",
     "img": "assets/eclipse-lampe.jpg",
+    "images": [
+      "assets/eclipse-lampe.jpg"
+    ],
     "badge": "bestseller"
   },
   {
