@@ -5,7 +5,13 @@
     "catKey": "lampe",
     "price": "27,90",
     "desc": "BUCKET ist eine Schreibtischlampe mit integriertem Ablage-Tray — portabel, minimalistisch, ein echter Hingucker. Kann auch an die Wand oder ans Pegboard gehängt werden.",
-    "img": "assets/bucket-lampe.jpg"
+    "img": "assets/bucket-1.jpg",
+    "images": [
+      "assets/bucket-1.jpg",
+      "assets/bucket-2.jpg",
+      "assets/bucket-3.jpg",
+      "assets/bucket-4.jpg"
+    ]
   },
   {
     "name": "Bonsai Spiel",
@@ -13,7 +19,13 @@
     "catKey": "spiel",
     "price": "24,90",
     "desc": "BONSAI ist ein Balancier-Tischspiel und Dekorationsstück in einem — wer lässt die Blüten fallen? Die Blumen stecken in die Waben-Baumkrone, Spielsteine werden im Topf aufbewahrt.",
-    "img": "assets/bonsai-spiel.jpg"
+    "img": "assets/bonsai-1.jpg",
+    "images": [
+      "assets/bonsai-1.jpg",
+      "assets/bonsai-2.jpg",
+      "assets/bonsai-3.jpg",
+      "assets/bonsai-4.jpg"
+    ]
   },
   {
     "name": "Budsy Pillenbaum",
@@ -21,7 +33,13 @@
     "catKey": "aufbewahrung",
     "price": "22,90",
     "desc": "BUDSY ist ein wöchentlicher Pillenspender der wie ein blühender Baum aussieht — Mo bis So beschriftet, jede Knospe ein Tag. Der Topf dient als Aufbewahrungsbox.",
-    "img": "assets/budsy-pillenbaum.jpg"
+    "img": "assets/budsy-1.jpg",
+    "images": [
+      "assets/budsy-1.jpg",
+      "assets/budsy-2.jpg",
+      "assets/budsy-3.jpg",
+      "assets/budsy-4.jpg"
+    ]
   },
   {
     "name": "Eve Vase",
@@ -29,7 +47,14 @@
     "catKey": "pflanze",
     "price": "18,90",
     "desc": "EVE ist eine selbstbewässernde Vase mit elegantem S-Profil — Wasser wird langsam über den Aufsatz abgegeben. Kein Bohren, keine Stützen beim Druck nötig.",
-    "img": "assets/eve-vase.jpg"
+    "img": "assets/eve-1.jpg",
+    "images": [
+      "assets/eve-1.jpg",
+      "assets/eve-2.jpg",
+      "assets/eve-3.jpg",
+      "assets/eve-4.jpg",
+      "assets/eve-5.jpg"
+    ]
   },
   {
     "name": "Flora Chess",
@@ -37,7 +62,14 @@
     "catKey": "spiel",
     "price": "69,90",
     "desc": "FLORA CHESS ist ein vollständiges Schachset bei dem jede Figur eine andere Blume ist — Tulpe, Narzisse, Gänseblümchen und mehr. Mit Trennwand-Box.",
-    "img": "assets/flora-chess.jpg",
+    "img": "assets/flora-1.jpg",
+    "images": [
+      "assets/flora-1.jpg",
+      "assets/flora-2.jpg",
+      "assets/flora-3.jpg",
+      "assets/flora-4.jpg",
+      "assets/flora-5.jpg"
+    ],
     "badge": "new"
   },
   {
@@ -46,7 +78,15 @@
     "catKey": "aufbewahrung",
     "price": "28,90",
     "desc": "LITTLE JEWEL ist ein Schmuckkästchen das wie eine Pflanze aussieht — der Topf ist die Box, der aufklappbare Deckel trägt drehbare Ringe & Ketten.",
-    "img": "assets/little-jewel.jpg"
+    "img": "assets/jewel-1.jpg",
+    "images": [
+      "assets/jewel-1.jpg",
+      "assets/jewel-2.jpg",
+      "assets/jewel-3.jpg",
+      "assets/jewel-4.jpg",
+      "assets/jewel-5.jpg",
+      "assets/jewel-6.jpg"
+    ]
   },
   {
     "name": "Solana Pflanzer",
@@ -54,7 +94,13 @@
     "catKey": "pflanze bestseller",
     "price": "32,90",
     "desc": "SOLANA ist ein selbstbewässernder Pflanzer im ikonischen Ring-Design — Wasser im Sockel wird per Docht automatisch zur Pflanze geleitet. Vier Magnete halten alles zusammen.",
-    "img": "assets/solana-pflanzer.jpg",
+    "img": "assets/solana-1.jpg",
+    "images": [
+      "assets/solana-1.jpg",
+      "assets/solana-2.jpg",
+      "assets/solana-3.jpg",
+      "assets/solana-4.jpg"
+    ],
     "badge": "bestseller"
   },
   {
@@ -63,7 +109,13 @@
     "catKey": "gadget",
     "price": "19,90",
     "desc": "SPIKY ist ein Kaktus-Ladehalter für dein iPhone — der Kaktus dreht sich um die optimale Position zu finden. Nutzt dein originales Apple MagSafe Charger.",
-    "img": "assets/spiky-ladehalter.jpg"
+    "img": "assets/spiky-1.jpg",
+    "images": [
+      "assets/spiky-1.jpg",
+      "assets/spiky-2.jpg",
+      "assets/spiky-3.jpg",
+      "assets/spiky-4.jpg"
+    ]
   },
   {
     "name": "Spiky Mini",
@@ -71,7 +123,13 @@
     "catKey": "gadget",
     "price": "14,90",
     "desc": "SPIKY MINI ist die kleinere Version für deine Apple Watch — originales Apple Watch Charger wird eingesetzt, Kabel sauber durch den Kaktus-Topf geführt.",
-    "img": "assets/spiky-mini.jpg"
+    "img": "assets/spiky-mini-1.jpg",
+    "images": [
+      "assets/spiky-mini-1.jpg",
+      "assets/spiky-mini-2.jpg",
+      "assets/spiky-mini-3.jpg",
+      "assets/spiky-mini-4.jpg"
+    ]
   },
   {
     "name": "Aloe Gießkanne",
@@ -79,7 +137,15 @@
     "catKey": "pflanze",
     "price": "26,90",
     "desc": "ALOE ist eine Gießkanne mit organischer Tropfen-Form, inspiriert von einem Blatt. Inklusive austauschbarem Aufsatz — normale Gießtille oder eingebauter Brausekopf für Setzlinge und empfindliche Pflanzen.",
-    "img": "assets/aloe-vase.jpg",
+    "img": "assets/aloe-1.jpg",
+    "images": [
+      "assets/aloe-1.jpg",
+      "assets/aloe-2.jpg",
+      "assets/aloe-3.jpg",
+      "assets/aloe-4.jpg",
+      "assets/aloe-5.jpg",
+      "assets/aloe-6.jpg"
+    ],
     "badge": "new"
   },
   {
@@ -88,9 +154,13 @@
     "catKey": "lampe bestseller",
     "price": "39,90",
     "desc": "ECLIPSE ist eine Tischlampe mit zylindrischem Sockel und runder Lampenschirm-Scheibe dahinter — wie eine Sonnenfinsternis. Minimalistisch, zeitlos, eine ruhige Präsenz auf jedem Schreibtisch oder Sideboard.",
-    "img": "assets/eclipse-lampe.jpg",
+    "img": "assets/eclipse-1.jpg",
     "images": [
-      "assets/eclipse-lampe.jpg"
+      "assets/eclipse-1.jpg",
+      "assets/eclipse-2.jpg",
+      "assets/eclipse-3.jpg",
+      "assets/eclipse-4.jpg",
+      "assets/eclipse-5.jpg"
     ],
     "badge": "bestseller"
   },
@@ -100,6 +170,14 @@
     "catKey": "gadget",
     "price": "29,90",
     "desc": "GELATO ist eine kombinierte Ladestation für iPhone (MagSafe) und Apple Watch — die Eistüte oben hält deine Watch im perfekten Blickwinkel, die Kugel unten lädt dein Phone. Verspielt, smart, ein Hingucker auf dem Nachttisch.",
-    "img": "assets/gelato-charger.jpg"
+    "img": "assets/gelato-1.jpg",
+    "images": [
+      "assets/gelato-1.jpg",
+      "assets/gelato-2.jpg",
+      "assets/gelato-3.jpg",
+      "assets/gelato-4.jpg",
+      "assets/gelato-5.jpg",
+      "assets/gelato-6.jpg"
+    ]
   }
 ]
