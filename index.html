@@ -1968,6 +1968,37 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:80px 64px 3
 .form-check-label{font-size:13px;color:var(--text);line-height:1.5;}
 .form-check-label a{color:var(--gold);}
 
+/* Payment method selector */
+.payment-options{display:flex;flex-direction:column;gap:10px;}
+.payment-option{
+  display:flex;align-items:center;gap:16px;
+  padding:16px 18px;border:1px solid var(--line-strong);
+  cursor:pointer;transition:border-color .2s,background .2s;
+}
+.payment-option:hover{border-color:rgba(200,144,106,.4);}
+.payment-option.selected{border-color:var(--gold);background:rgba(200,144,106,.04);}
+.payment-option input[type=radio]{accent-color:var(--gold);width:16px;height:16px;flex-shrink:0;cursor:pointer;}
+.payment-option-icon{width:48px;height:30px;border-radius:4px;display:grid;place-items:center;flex-shrink:0;overflow:hidden;}
+.payment-option-icon.pp{background:#003087;}
+.payment-option-icon.bank{background:rgba(244,240,255,.05);border:1px solid var(--line-strong);}
+.payment-option-info{flex:1;}
+.payment-option-name{font-size:14px;color:var(--ink);font-weight:500;margin-bottom:2px;}
+.payment-option-desc{font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--muted);}
+.payment-option-badge{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:3px 7px;background:rgba(74,222,128,.08);color:rgba(74,222,128,.85);border:1px solid rgba(74,222,128,.2);}
+.co-payment-icons{margin-top:20px;padding-top:16px;border-top:1px solid var(--line);}
+.co-payment-title{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:10px;display:block;}
+.pay-icon-row{display:flex;gap:7px;flex-wrap:wrap;}
+.pay-icon{height:26px;padding:0 9px;border-radius:4px;display:flex;align-items:center;font-family:var(--mono);font-size:9px;letter-spacing:.06em;border:1px solid var(--line-strong);color:var(--muted);white-space:nowrap;}
+.pay-icon.pp{background:#003087;color:#7ec8e3;border-color:#003087;}
+.pay-icon.sepa{background:rgba(0,60,180,.12);color:#8ab4f8;border-color:rgba(0,60,180,.3);}
+.pay-icon.ssl{background:rgba(74,222,128,.05);color:rgba(74,222,128,.75);border-color:rgba(74,222,128,.2);}
+.success-pay-box{margin-top:20px;padding:20px 24px;border:1px solid var(--line-strong);background:var(--bg-2);text-align:left;max-width:420px;width:100%;}
+.success-pay-box h4{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.success-pay-box p{font-size:14px;color:var(--text);line-height:1.6;margin-bottom:8px;}
+.success-pay-box p:last-child{margin-bottom:0;}
+.success-pay-box a{color:var(--gold);}
+.success-pay-box strong{color:var(--ink);}
+
 .checkout-submit{
   display:flex;align-items:center;justify-content:center;gap:10px;
   width:100%;padding:18px;
@@ -2707,6 +2738,34 @@ section:not(.hero){
         </div>
 
         <div class="form-section">
+          <div class="form-section-title">Zahlungsart</div>
+          <input type="hidden" name="zahlungsart" id="co-payment-val" value="PayPal">
+          <div class="payment-options" id="paymentOptions">
+            <label class="payment-option selected" id="po-paypal">
+              <input type="radio" name="_zahlungsart" value="PayPal" checked onchange="selectPayment('PayPal')">
+              <div class="payment-option-icon pp">
+                <svg width="30" height="20" viewBox="0 0 87 24" fill="none"><path d="M13.3 2H4.8L0 22h5.8l1.2-7h4.2c5.1 0 8.5-2.8 9.4-7.5.8-4.1-1.4-5.5-7.3-5.5zm.7 5.7c-.5 2.3-2.2 3.5-5 3.5H7l1.1-6h2c2.8 0 4.3.6 3.9 2.5zM31 2h-8.5L18 22h5.8l1.5-8.5h4.4c5 0 8.4-2.8 9.3-7.4C40 2 36.6 2 31 2zm.7 5.5c-.5 2.3-2.2 3.4-5 3.4h-2l1.1-5.9h2c2.9 0 4.3.6 3.9 2.5z" fill="#009cde"/><path d="M49 2h-8.5L36 22h5.8l1.5-8.5h4.4c5 0 8.4-2.8 9.3-7.4.5-2.3-.3-4-2-5" fill="#012169"/></svg>
+              </div>
+              <div class="payment-option-info">
+                <div class="payment-option-name">PayPal</div>
+                <div class="payment-option-desc">Käuferschutz inklusive · sicher &amp; schnell</div>
+              </div>
+              <span class="payment-option-badge">Empfohlen</span>
+            </label>
+            <label class="payment-option" id="po-bank">
+              <input type="radio" name="_zahlungsart" value="Banküberweisung" onchange="selectPayment('Banküberweisung')">
+              <div class="payment-option-icon bank">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(244,240,255,.5)" stroke-width="1.5"><rect x="3" y="10" width="18" height="11" rx="1"/><path d="M12 3L3 10h18L12 3z"/><path d="M8 15v3M12 15v3M16 15v3"/></svg>
+              </div>
+              <div class="payment-option-info">
+                <div class="payment-option-name">Banküberweisung (SEPA)</div>
+                <div class="payment-option-desc">Ildiko sendet Bankdaten nach Bestätigung</div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-section">
           <label class="form-check">
             <input type="checkbox" name="datenschutz" required id="co-dsgvo">
             <span class="form-check-label">Ich habe die <a href="rechtliches.html#datenschutz" target="_blank">Datenschutzerklärung</a> gelesen und akzeptiere die <a href="rechtliches.html#agb" target="_blank">AGB</a>. *</span>
@@ -2745,7 +2804,12 @@ section:not(.hero){
     <p>Deine Bestellanfrage ist bei Ildiko eingegangen. Du bekommst innerhalb von <strong>48 Stunden</strong> eine Bestätigung per E-Mail mit allen Details und einem Zahlungslink.</p>
     <p style="color:var(--muted);font-size:14px;">Schau auch in deinen Spam-Ordner.</p>
     <div class="order-ref" id="orderRef"></div>
-    <button onclick="finishCheckout()" class="btn btn-primary">Weiter einkaufen <span class="arr">→</span></button>
+    <div class="success-pay-box" id="successPayBox">
+      <h4>Nächster Schritt — Zahlung</h4>
+      <p id="successPayText">Ildiko sendet dir nach der Bestätigung einen <strong>PayPal-Zahlungslink</strong> per E-Mail.</p>
+      <p>Bei Fragen: <a href="mailto:fenyesdesign@outlook.com">fenyesdesign@outlook.com</a></p>
+    </div>
+    <button onclick="finishCheckout()" class="btn btn-primary" style="margin-top:8px">Weiter einkaufen <span class="arr">→</span></button>
   </div>
 </div>
 
@@ -2904,6 +2968,10 @@ section:not(.hero){
     <div class="trust-item">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
       Versand 4,90 € · gratis ab 60 €
+    </div>
+    <div class="trust-item" style="gap:8px;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+      PayPal · SEPA · SSL
     </div>
   </div>
 </div>
@@ -5004,6 +5072,13 @@ window.modalAddToCart = function(){
     if(note) note.textContent = ship === 0 ? '🎉 Kostenloser Versand inklusive!' : '';
   }
 
+  // ── Payment Selection ────────────────────────────────────────
+  window.selectPayment = function(method){
+    document.getElementById('co-payment-val').value = method;
+    document.getElementById('po-paypal')?.classList.toggle('selected', method === 'PayPal');
+    document.getElementById('po-bank')?.classList.toggle('selected', method === 'Banküberweisung');
+  };
+
   // ── Form Submission ───────────────────────────────────────
   document.getElementById('orderForm')?.addEventListener('submit', async function(e){
     e.preventDefault();
@@ -5019,7 +5094,8 @@ window.modalAddToCart = function(){
       const p = getProduct(item.idx);
       return `${p.name} × ${item.qty} = ${fmt(parseFloat(p.price.replace(',','.')) * item.qty)}`;
     }).join('\n');
-    const orderText = `${lines}\n\nZwischensumme: ${fmt(sub)}\nVersand: ${fmt(ship)}\nGesamt: ${fmt(sub+ship)}`;
+    const paymentMethod = document.getElementById('co-payment-val')?.value || 'PayPal';
+    const orderText = `${lines}\n\nZwischensumme: ${fmt(sub)}\nVersand: ${fmt(ship)}\nGesamt: ${fmt(sub+ship)}\nZahlungsart: ${paymentMethod}`;
     document.getElementById('orderDetails').value = orderText;
 
     // Generate order ref
@@ -5033,6 +5109,14 @@ window.modalAddToCart = function(){
         cart = []; saveCart(); updateBadge();
         document.getElementById('checkoutForm').style.display = 'none';
         document.getElementById('orderRef').textContent = 'Bestellnr.: ' + ref;
+        // Update payment info text
+        const payMethod = document.getElementById('co-payment-val')?.value || 'PayPal';
+        const payText = document.getElementById('successPayText');
+        if(payText){
+          payText.innerHTML = payMethod === 'PayPal'
+            ? 'Ildiko sendet dir nach der Bestätigung einen <strong>PayPal-Zahlungslink</strong> per E-Mail.'
+            : 'Ildiko sendet dir nach der Bestätigung die <strong>Bankdaten (SEPA)</strong> per E-Mail. Überweisung erst nach Auftragsbestätigung.';
+        }
         document.getElementById('checkoutSuccess').classList.add('show');
       } else {
         throw new Error('Netlify response: ' + res.status);
