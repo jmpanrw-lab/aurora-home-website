@@ -3340,65 +3340,199 @@ else {
 <script type="module">
 import { animate, inView, scroll, stagger } from "motion";
 
-/* ─── 1. Scroll-triggered section reveals ──────────────────────────────── */
-inView('.reveal', ({ target }) => {
+/* ══════════════════════════════════════════════════════════════════
+   AURORA HOME · Cinematic Motion Layer  ·  Motion v12
+   ══════════════════════════════════════════════════════════════════ */
+
+/* ─── Injected styles ─────────────────────────────────────────────────────── */
+document.head.insertAdjacentHTML('beforeend', `<style>
+/* Custom cursor */
+.m-dot{
+  position:fixed;top:0;left:0;z-index:99999;
+  width:8px;height:8px;border-radius:50%;
+  background:var(--gold,#c8906a);
+  pointer-events:none;opacity:0;
+  will-change:transform;
+}
+.m-ring{
+  position:fixed;top:0;left:0;z-index:99998;
+  width:34px;height:34px;border-radius:50%;
+  border:1px solid rgba(200,144,106,.55);
+  pointer-events:none;opacity:0;
+  will-change:transform;
+}
+/* Intro curtain panels */
+.m-curtain{
+  position:fixed;left:0;right:0;z-index:99990;
+  background:#0a0914;pointer-events:none;
+}
+/* Respect user preference */
+@media(prefers-reduced-motion:reduce){
+  .m-dot,.m-ring,.m-curtain{display:none!important;}
+}
+</style>`);
+
+/* ─── 1. Cinematic intro curtain ──────────────────────────────────────────── */
+(function curtain() {
+  const top = Object.assign(document.createElement('div'), { className: 'm-curtain' });
+  const bot = Object.assign(document.createElement('div'), { className: 'm-curtain' });
+  Object.assign(top.style, { top: '0', height: '50vh' });
+  Object.assign(bot.style, { bottom: '0', height: '50vh' });
+  document.body.append(top, bot);
+  const ease = [0.76, 0, 0.24, 1];
+  animate(top, { y: '-100%' }, { duration: 1.15, ease, delay: 0.15 });
+  animate(bot, { y: '100%' },  { duration: 1.15, ease, delay: 0.15 })
+    .then(() => { top.remove(); bot.remove(); });
+})();
+
+/* ─── 2. Custom spring cursor ─────────────────────────────────────────────── */
+(function cursor() {
+  const dot  = Object.assign(document.createElement('div'), { className: 'm-dot' });
+  const ring = Object.assign(document.createElement('div'), { className: 'm-ring' });
+  document.body.append(dot, ring);
+
+  let active = false;
+  document.addEventListener('mousemove', e => {
+    if (!active) {
+      active = true;
+      animate(dot,  { opacity: 1 }, { duration: 0.3 });
+      animate(ring, { opacity: 1 }, { duration: 0.3 });
+    }
+    // Dot follows instantly via CSS; ring lags with spring
+    dot.style.transform  = `translate(${e.clientX - 4}px, ${e.clientY - 4}px)`;
+    animate(ring, { x: e.clientX - 17, y: e.clientY - 17 },
+      { duration: 0.55, ease: [0.23, 1, 0.32, 1] });
+  });
+
+  // Expand on interactive hover
+  const sel = 'a,button,.btn,.btn-outline,.prod,.bs-card,.scent,.chip,.nav-cta,.atelier-card';
+  document.querySelectorAll(sel).forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      animate(dot,  { scale: 4, opacity: 0.4 }, { duration: 0.25 });
+      animate(ring, { scale: 1.6, opacity: 0 }, { duration: 0.25 });
+    });
+    el.addEventListener('mouseleave', () => {
+      animate(dot,  { scale: 1, opacity: 1 }, { duration: 0.3 });
+      animate(ring, { scale: 1, opacity: 1 }, { duration: 0.3 });
+    });
+  });
+})();
+
+/* ─── 3. Hero cinematic entrance ──────────────────────────────────────────── */
+(function heroEntrance() {
+  const items = [
+    '.hero-content .kicker',
+    '.hero-h1',
+    '.hero-tag',
+    '.hero-sub',
+    '.hero-actions',
+    '.hero-status',
+  ].map(s => document.querySelector(s)).filter(Boolean);
+
+  items.forEach(el => { el.style.opacity = '0'; });
+
   animate(
-    target,
-    { opacity: [0, 1], y: [28, 0] },
-    { duration: 0.75, ease: [0.23, 1, 0.32, 1] }
+    items,
+    { opacity: [0, 1], y: [40, 0], filter: ['blur(6px)', 'blur(0px)'] },
+    { duration: 1.1, ease: [0.22, 1, 0.36, 1], delay: stagger(0.11, { start: 0.7 }) }
   );
+})();
+
+/* ─── 4. Clip-path image reveals (cinematische Enthüllung) ────────────────── */
+document.querySelectorAll('.bs-img, .prod-img').forEach(wrap => {
+  const img = wrap.querySelector('img');
+  if (!img) return;
+  img.style.clipPath = 'inset(0 0 100% 0)';
+  inView(wrap, () => {
+    animate(img,
+      { clipPath: ['inset(0 0 100% 0)', 'inset(0 0 0% 0)'] },
+      { duration: 1.05, ease: [0.76, 0, 0.24, 1] }
+    );
+  }, { amount: 0.12 });
+});
+
+/* ─── 5. Section kicker slide-in ─────────────────────────────────────────── */
+document.querySelectorAll('.sec-head .kicker').forEach(el => {
+  el.style.opacity = '0';
+  inView(el, () => {
+    animate(el, { opacity: [0, 1], x: [-20, 0] }, { duration: 0.75, ease: [0.22, 1, 0.36, 1] });
+  }, { amount: 0.5 });
+});
+
+/* ─── 6. Magnetic CTA buttons ────────────────────────────────────────────── */
+document.querySelectorAll('.hero-actions .btn, .hero-actions .btn-outline').forEach(btn => {
+  btn.style.display = 'inline-block';
+  btn.addEventListener('mousemove', e => {
+    const r  = btn.getBoundingClientRect();
+    const dx = (e.clientX - r.left  - r.width  / 2) * 0.3;
+    const dy = (e.clientY - r.top   - r.height / 2) * 0.3;
+    animate(btn, { x: dx, y: dy }, { duration: 0.3, ease: [0.23, 1, 0.32, 1] });
+  });
+  btn.addEventListener('mouseleave', () => {
+    animate(btn, { x: 0, y: 0 }, { duration: 0.55, ease: [0.23, 1, 0.32, 1] });
+  });
+});
+
+/* ─── 7. Product / bestseller card hover spring ──────────────────────────── */
+document.querySelectorAll('.prod, .bs-card').forEach(card => {
+  card.addEventListener('mouseenter', () =>
+    animate(card, { scale: 1.025, y: -5 }, { duration: 0.35, ease: [0.34, 1.56, 0.64, 1] }));
+  card.addEventListener('mouseleave', () =>
+    animate(card, { scale: 1, y: 0 }, { duration: 0.45, ease: [0.23, 1, 0.32, 1] }));
+});
+
+/* ─── 8. Wax / scent cards cascade on scroll ─────────────────────────────── */
+(function waxReveal() {
+  const grid = document.querySelector('.wax-grid');
+  if (!grid) return;
+  const cards = grid.querySelectorAll('.scent');
+  cards.forEach(c => { c.style.opacity = '0'; c.style.transform = 'translateY(20px) scale(.96)'; });
+  inView(grid, () => {
+    animate(cards,
+      { opacity: [0, 1], y: [20, 0], scale: [0.96, 1] },
+      { duration: 0.7, ease: [0.23, 1, 0.32, 1], delay: stagger(0.065) }
+    );
+  }, { amount: 0.08 });
+})();
+
+/* ─── 9. Atelier gallery cards cascade ───────────────────────────────────── */
+(function atelierReveal() {
+  const strip = document.getElementById('atelierStrip');
+  if (!strip) return;
+  const cards = strip.querySelectorAll('.atelier-card');
+  cards.forEach(c => { c.style.opacity = '0'; });
+  inView(strip, () => {
+    animate(cards,
+      { opacity: [0, 1], y: [30, 0] },
+      { duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: stagger(0.09) }
+    );
+  }, { amount: 0.05 });
+})();
+
+/* ─── 10. Scroll-triggered section reveals ───────────────────────────────── */
+inView('.reveal', ({ target }) => {
+  animate(target, { opacity: [0, 1], y: [28, 0] },
+    { duration: 0.75, ease: [0.23, 1, 0.32, 1] });
   target.classList.add('in');
 }, { margin: '0px 0px -60px 0px', amount: 0.08 });
 
 inView('.reveal-stagger', ({ target }) => {
-  animate(
-    target.children,
-    { opacity: [0, 1], y: [22, 0] },
-    { duration: 0.65, ease: [0.23, 1, 0.32, 1], delay: stagger(0.08) }
-  );
+  animate(target.children, { opacity: [0, 1], y: [22, 0] },
+    { duration: 0.65, ease: [0.23, 1, 0.32, 1], delay: stagger(0.08) });
   target.classList.add('in');
 }, { margin: '0px 0px -60px 0px', amount: 0.08 });
 
-/* ─── 2. Hero entrance (kicker + h1 + sub + actions) ────────────────────── */
-(function heroEntrance() {
-  const kicker = document.querySelector('.hero-content .kicker');
-  const h1     = document.querySelector('.hero-h1');
-  const sub    = document.querySelector('.hero-sub');
-  const actions = document.querySelector('.hero-actions');
-  const status  = document.querySelector('.hero-status');
-  const targets = [kicker, h1, sub, actions, status].filter(Boolean);
-  if (!targets.length) return;
-  targets.forEach(el => { el.style.opacity = '0'; });
-  animate(
-    targets,
-    { opacity: [0, 1], y: [18, 0] },
-    { duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: stagger(0.12, { start: 0.15 }) }
-  );
-})();
-
-/* ─── 3. Product / bestseller card hover spring ─────────────────────────── */
-document.querySelectorAll('.prod, .bs-card').forEach(card => {
-  card.addEventListener('mouseenter', () => {
-    animate(card, { scale: 1.025, y: -4 }, { duration: 0.35, ease: [0.34, 1.56, 0.64, 1] });
-  });
-  card.addEventListener('mouseleave', () => {
-    animate(card, { scale: 1, y: 0 }, { duration: 0.4, ease: [0.23, 1, 0.32, 1] });
-  });
-});
-
-/* ─── 4. Scroll progress bar ────────────────────────────────────────────── */
-(function scrollProgress() {
+/* ─── 11. Scroll progress bar ────────────────────────────────────────────── */
+(function progressBar() {
   const bar = document.createElement('div');
-  bar.style.cssText = [
-    'position:fixed', 'top:0', 'left:0', 'z-index:9999',
-    'height:2px', 'width:0%',
-    'background:linear-gradient(90deg,var(--lilac,#9b7fd4),var(--gold,#c8906a))',
-    'transform-origin:left', 'pointer-events:none', 'border-radius:0 2px 2px 0'
-  ].join(';');
-  document.body.appendChild(bar);
-  scroll(progress => {
-    bar.style.width = (progress * 100) + '%';
+  Object.assign(bar.style, {
+    position: 'fixed', top: '0', left: '0', zIndex: '9999',
+    height: '2px', width: '0%', pointerEvents: 'none', willChange: 'width',
+    background: 'linear-gradient(90deg,var(--lilac,#9b7fd4),var(--gold,#c8906a))',
+    borderRadius: '0 2px 2px 0',
   });
+  document.body.appendChild(bar);
+  scroll(p => { bar.style.width = (p * 100) + '%'; });
 })();
 </script>
 
