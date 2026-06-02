@@ -10,7 +10,10 @@
     "agent:sync": "node scripts/agent.js sync",
     "agent:tasks": "node scripts/agent.js tasks",
     "db:seed": "node scripts/db-seed.js",
-    "sync": "node scripts/sync.js"
+    "sync": "node scripts/sync.js",
+    "etsy:auth": "node scripts/etsy-auth.js",
+    "etsy:publish": "node scripts/etsy-publish.js",
+    "etsy:dry-run": "node scripts/etsy-publish.js --dry-run"
   },
   "repository": {
     "type": "git",
@@ -24,6 +27,8 @@
   },
   "homepage": "https://github.com/jmpanrw-lab/aurora-home-website#readme",
   "dependencies": {
-    "better-sqlite3": "^12.10.0"
+    "better-sqlite3": "^12.10.0",
+    "node-fetch": "^3.3.2",
+    "open": "^11.0.0"
   }
 }

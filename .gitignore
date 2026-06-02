@@ -5,3 +5,6 @@ package-lock.json
 # Local Netlify folder
 .netlify
 .netlify/
+etsy-token.json
+etsy-listings.json
+etsy-config.json
