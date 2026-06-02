@@ -2218,9 +2218,219 @@ section:not(.hero){
   box-shadow:0 16px 40px -8px rgba(0,0,0,.4);
 }
 
+/* ============================================================
+   MOBILE OPTIMIERUNG + CONVERSION RATE
+   ============================================================ */
+
+/* ── Touch targets ───────────────────────────────── */
+@media(max-width:880px){
+  /* Größere Touch-Targets überall */
+  .chip{padding:11px 16px;font-size:12px;}
+  .btn{padding:16px 28px;font-size:13px;}
+  .btn-primary{
+    box-shadow:0 4px 20px rgba(200,144,106,.2);
+  }
+
+  /* Hero Mobile — CRO: CTA sofort sichtbar */
+  .hero{padding:100px 20px 60px;}
+  .hero-actions{flex-direction:column;gap:12px;}
+  .hero-actions .btn{width:100%;justify-content:center;padding:18px 24px;font-size:13px;}
+  .hero-actions .btn-primary{
+    order:-1;
+    box-shadow:0 8px 32px rgba(200,144,106,.3);
+  }
+  .hero-sub{font-size:15px;margin-bottom:28px;}
+  .hero-h1{font-size:clamp(44px,12vw,64px);margin-bottom:20px;}
+  .hero-tag{font-size:16px;}
+
+  /* Trust strip — kompakter auf Mobile */
+  .trust-inner{
+    display:flex;overflow-x:auto;gap:0;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none;
+    padding:0 16px;
+  }
+  .trust-inner::-webkit-scrollbar{display:none;}
+  .trust-item{
+    flex-shrink:0;border-right:1px solid var(--line);border-bottom:none;
+    padding:12px 18px;white-space:nowrap;font-size:11px;
+  }
+
+  /* Warenkorb Nav — prominenter auf Mobile */
+  .nav-cart{
+    padding:10px 14px;
+    border-color:rgba(200,144,106,.3);
+    color:var(--gold);
+  }
+
+  /* Produkt-Grid — 2 Spalten auf Mobile */
+  .prod-grid{grid-template-columns:repeat(2,1fr);}
+  .prod-add{padding:13px 0;font-size:11px;min-height:44px;}
+
+  /* Scent-Karten — 2 Spalten auf Mobile */
+  .wax-grid{grid-template-columns:repeat(2,1fr);}
+
+  /* Footer kompakter */
+  .foot-grid{grid-template-columns:1fr;gap:28px;}
+
+  /* Cart Drawer — volle Breite auf kleinen Screens */
+  .cart-drawer-head h3{font-size:20px;}
+  .cart-checkout-btn{padding:18px;font-size:13px;min-height:56px;}
+
+  /* Checkout — einzelne Spalte */
+  .checkout-inner{padding:80px 20px 40px;gap:24px;}
+  .form-input,.form-select,.form-textarea{padding:14px 16px;font-size:16px;} /* 16px verhindert iOS-Zoom */
+}
+
+/* ── Sticky CTA Bar auf Mobile ───────────────────── */
+.mobile-cta-bar{
+  display:none;
+  position:fixed;bottom:0;left:0;right:0;z-index:98;
+  padding:12px 16px;padding-bottom:calc(12px + env(safe-area-inset-bottom));
+  background:rgba(10,9,20,.95);backdrop-filter:blur(20px);
+  border-top:1px solid var(--line-strong);
+  gap:10px;align-items:center;
+}
+@media(max-width:880px){
+  .mobile-cta-bar{display:flex;}
+  /* Platz für sticky bar schaffen */
+  body{padding-bottom:80px;}
+  .aa-fab{bottom:calc(80px + env(safe-area-inset-bottom) + 12px);}
+}
+.mobile-cta-cart{
+  position:relative;
+  width:48px;height:48px;flex-shrink:0;
+  border:1px solid var(--line-strong);
+  display:grid;place-items:center;
+  color:var(--ink);cursor:pointer;background:none;
+  transition:border-color .2s,color .2s;
+}
+.mobile-cta-cart:hover{border-color:var(--gold);color:var(--gold);}
+.mobile-cta-cart svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;}
+.mobile-cta-cart .m-badge{
+  position:absolute;top:-6px;right:-6px;
+  min-width:18px;height:18px;border-radius:999px;
+  background:var(--gold);color:var(--bg);
+  font-size:10px;font-weight:700;font-family:var(--mono);
+  display:none;place-items:center;padding:0 4px;
+}
+.mobile-cta-cart .m-badge.visible{display:grid;}
+.mobile-cta-main{
+  flex:1;height:48px;
+  background:var(--gold);color:var(--bg);
+  font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+  border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;
+  transition:background .2s;
+}
+.mobile-cta-main:hover{background:var(--gold-bright);}
+.mobile-cta-main svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;}
+
+/* ── CRO: Produktkarten — "In den Warenkorb" prominenter ── */
+.prod-add{
+  font-size:11px;letter-spacing:.12em;
+  border-top:1px solid var(--line);
+  min-height:44px;
+}
+/* Hover-Effekt stärker */
+.prod:hover .prod-add{
+  color:var(--gold);
+  border-top-color:rgba(200,144,106,.2);
+}
+
+/* ── CRO: Hero Status Badge ─────────────────────── */
+.hero-status{
+  animation:statusPulse 3s ease-in-out infinite;
+}
+@keyframes statusPulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(74,222,128,.15);}
+  50%{box-shadow:0 0 0 6px rgba(74,222,128,0);}
+}
+@media(prefers-reduced-motion:reduce){.hero-status{animation:none;}}
+
+/* ── CRO: Bestseller-Row besser sichtbar ─────────── */
+.bestseller-row{
+  border:1px solid rgba(200,144,106,.15);
+  box-shadow:0 0 40px rgba(200,144,106,.06);
+}
+.bs-card .bs-add{
+  background:rgba(200,144,106,.06);
+  color:var(--gold);border-top:1px solid rgba(200,144,106,.2);
+  padding:14px;font-size:11px;letter-spacing:.12em;
+  min-height:48px;width:100%;
+}
+.bs-card .bs-add:hover{background:rgba(200,144,106,.12);}
+
+/* ── CRO: Wax-Melt Karten — hover stärker ───────── */
+.scent:hover{
+  box-shadow:0 20px 48px -8px rgba(0,0,0,.6);
+  transform:translateY(-6px) scale(1.015);
+}
+
+/* ── CRO: Social Proof Reviews ──────────────────── */
+.review-stars{
+  letter-spacing:.05em;
+}
+
+/* ── Scroll-to-top Button ────────────────────────── */
+.scroll-top{
+  position:fixed;right:32px;bottom:120px;z-index:96;
+  width:40px;height:40px;border-radius:50%;
+  background:rgba(10,9,20,.8);border:1px solid var(--line-strong);
+  display:grid;place-items:center;cursor:pointer;
+  color:var(--muted);
+  opacity:0;transform:translateY(8px);
+  transition:opacity .3s,transform .3s,color .2s,border-color .2s;
+  pointer-events:none;
+}
+.scroll-top.visible{opacity:1;transform:translateY(0);pointer-events:all;}
+.scroll-top:hover{border-color:var(--gold);color:var(--gold);}
+.scroll-top svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;}
+@media(max-width:880px){
+  .scroll-top{right:16px;bottom:calc(90px + env(safe-area-inset-bottom));}
+}
+
+/* ── Safe Area (Notch / Home Indicator) ──────────── */
+.nav{padding-top:max(22px, env(safe-area-inset-top));}
+@supports(padding-top: env(safe-area-inset-top)){
+  @media(max-width:880px){
+    .nav{padding-top:max(14px, env(safe-area-inset-top));}
+  }
+}
+
+/* ── Performance: will-change nur wenn nötig ─────── */
+@media(prefers-reduced-motion:reduce){
+  .hero-blob,.grain,.hero-status{animation:none;}
+  .reveal,.reveal-stagger>*{transition:none;opacity:1;transform:none;}
+  .word-inner{transition:none;transform:none;}
+}
+
+/* ── CRO: Newsletter — mobil besser ─────────────── */
+@media(max-width:640px){
+  .nl-form{flex-direction:column;}
+  .nl-input,.nl-btn{width:100%;border:1px solid var(--line-strong);}
+  .nl-input{border-bottom:none;}
+  .nl-btn{padding:16px;font-size:12px;min-height:52px;}
+}
+
 </style>
 </head>
 <body>
+
+<!-- Sticky Mobile CTA Bar -->
+<div class="mobile-cta-bar" id="mobileCta" aria-hidden="true">
+  <button class="mobile-cta-cart" onclick="openCart()" aria-label="Warenkorb">
+    <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+    <span class="m-badge" id="mBadge">0</span>
+  </button>
+  <button class="mobile-cta-main" onclick="document.getElementById('katalog').scrollIntoView({behavior:'smooth'})">
+    <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    Jetzt bestellen
+  </button>
+</div>
+
+<!-- Scroll to Top -->
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Nach oben">
+  <svg viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
 
 <!-- Netlify Forms Registrierung (unsichtbar, nötig für Netlify Build) -->
 <form name="bestellung" netlify netlify-honeypot="bot-trap" style="display:none">
@@ -3085,18 +3295,18 @@ section:not(.hero){
         <h4>Info</h4>
         <a href="mailto:fenyesdesign@outlook.com">Kontakt</a>
         <a href="#ildiko">Über Ildiko</a>
-        <a href="Aurora Home v2 - Rechtliches.html#agb">Versand &amp; Lieferung</a>
-        <a href="Aurora Home v2 - Rechtliches.html#impressum">Impressum</a>
-        <a href="Aurora Home v2 - Rechtliches.html#datenschutz">Datenschutz</a>
-        <a href="Aurora Home v2 - Rechtliches.html#agb">AGB</a>
+        <a href="rechtliches.html#agb">Versand &amp; Lieferung</a>
+        <a href="rechtliches.html#impressum">Impressum</a>
+        <a href="rechtliches.html#datenschutz">Datenschutz</a>
+        <a href="rechtliches.html#agb">AGB</a>
       </div>
     </div>
     <div class="foot-bottom">
       <span class="foot-copy">© 2026 Aurora Home &middot; Ildiko Fenyes &middot; Werkstatt aus Deutschland &middot; Kleingewerbe nach §19 UStG</span>
       <div class="foot-legal">
-        <a href="Aurora Home v2 - Rechtliches.html#impressum">Impressum</a>
-        <a href="Aurora Home v2 - Rechtliches.html#datenschutz">Datenschutz</a>
-        <a href="Aurora Home v2 - Rechtliches.html#agb">AGB</a>
+        <a href="rechtliches.html#impressum">Impressum</a>
+        <a href="rechtliches.html#datenschutz">Datenschutz</a>
+        <a href="rechtliches.html#agb">AGB</a>
       </div>
     </div>
   </div>
@@ -4692,6 +4902,25 @@ window.modalAddToCart = function(){
   // Init
   updateBadge();
 
+  // Sync mobile badge
+  const _origUpdateBadge = updateBadge;
+  function updateBadge(){
+    _origUpdateBadge && _origUpdateBadge();
+    const total = cart.reduce((s,i) => s + i.qty, 0);
+    const mb = document.getElementById('mBadge');
+    if(mb){ mb.textContent = total; mb.classList.toggle('visible', total > 0); }
+  }
+  updateBadge();
+
+  // Mobile CTA: nach Scroll in Katalog ausblenden wenn Cart offen, etc.
+  const mCta = document.getElementById('mobileCta');
+  if(mCta){
+    window.addEventListener('scroll', () => {
+      mCta.style.display = document.getElementById('cartDrawer')?.classList.contains('open') ||
+                            document.getElementById('checkoutModal')?.classList.contains('open') ? 'none' : '';
+    }, {passive:true});
+  }
+
 })();
 
 /* ============================================================
@@ -4890,7 +5119,15 @@ window.modalAddToCart = function(){
     });
   }
 
-  /* ── 9. Section separator lines grow in ─────────────────── */
+  /* ── 9. Scroll-to-top visibility ───────────────────────── */
+  const scrollTopBtn = document.getElementById('scrollTop');
+  if(scrollTopBtn){
+    window.addEventListener('scroll', () => {
+      scrollTopBtn.classList.toggle('visible', window.scrollY > 600);
+    }, {passive:true});
+  }
+
+  /* ── 10. Section separator lines grow in ─────────────────── */
   document.querySelectorAll('.sec-head').forEach(head => {
     const obs = new IntersectionObserver(entries => {
       if(entries[0].isIntersecting){
