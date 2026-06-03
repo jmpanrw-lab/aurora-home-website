@@ -161,8 +161,18 @@ exports.handler = async (event) => {
   const { kundeSubject, kundeHtml, shopSubject, shopHtml } = mailData;
   const shopEmail = process.env.OUTLOOK_EMAIL;
 
+  if (!process.env.OUTLOOK_EMAIL || !process.env.OUTLOOK_PASSWORD) {
+    console.error('Missing env vars: OUTLOOK_EMAIL or OUTLOOK_PASSWORD not set');
+    return {
+      statusCode: 500,
+      headers: CORS,
+      body: JSON.stringify({ error: 'E-Mail nicht konfiguriert — Umgebungsvariablen fehlen' }),
+    };
+  }
+
   try {
     const transport = makeTransport();
+    await transport.verify();
 
     // Kunden-E-Mail
     await transport.sendMail({
