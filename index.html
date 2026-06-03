@@ -37,9 +37,9 @@
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://jmpanrw-lab.github.io/aurora-home-website/#org",
+      "@id": "https://aurora-home.de/#org",
       "name": "Aurora Home",
-      "url": "https://jmpanrw-lab.github.io/aurora-home-website/",
+      "url": "https://aurora-home.de/",
       "description": "Handgefertigte 3D-Deko, Premium Wax Melts und Custom Resin aus Deutschland. Eine Werkstatt nach Feierabend.",
       "founder": { "@type": "Person", "name": "Ildiko Fenyes" },
       "email": "fenyesdesign@outlook.com",
@@ -51,15 +51,16 @@
     },
     {
       "@type": "WebSite",
-      "@id": "https://jmpanrw-lab.github.io/aurora-home-website/#website",
-      "url": "https://jmpanrw-lab.github.io/aurora-home-website/",
+      "@id": "https://aurora-home.de/#website",
+      "url": "https://aurora-home.de/",
       "name": "Aurora Home",
       "inLanguage": "de-DE",
-      "publisher": { "@id": "https://jmpanrw-lab.github.io/aurora-home-website/#org" }
+      "publisher": { "@id": "https://aurora-home.de/#org" }
     }
   ]
 }
 </script>
+<link rel="preconnect" href="https://unpkg.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
@@ -2978,7 +2979,7 @@ section:not(.hero){
     </div>
     <div class="hero-visual">
       <!-- 3D Aurora Logo (Three.js procedural; loads assets/aurora-logo.glb if present) -->
-      <div class="hero-3d-wrap" id="hero3d">
+      <div class="hero-3d-wrap" id="hero3d" fetchpriority="high">
         <canvas id="heroCanvas" role="img" aria-label="Aurora Home 3D-Logo — animiertes Markenzeichen"></canvas>
         <svg class="hero-3d-fallback" id="hero3dFallback" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <defs>
@@ -3299,7 +3300,7 @@ section:not(.hero){
       <article class="bs-card" data-cat="lampe bestseller" data-idx="10" onclick="openProduct(10)">
         <div class="bs-img">
           <span class="bs-badge">Bestseller</span>
-          <img src="assets/eclipse-1.jpg" alt="Eclipse Lampe" loading="lazy">
+          <img src="assets/eclipse-1.jpg" alt="Eclipse Tischlampe mit rundem Lampenschirm — mattschwarz lackiertes PLA, Quiet Luxury Schreibtisch-Statement" loading="lazy">
         </div>
         <div class="bs-info">
           <div>
@@ -3316,7 +3317,7 @@ section:not(.hero){
       <article class="bs-card" data-cat="pflanze bestseller" data-idx="6" onclick="openProduct(6)">
         <div class="bs-img">
           <span class="bs-badge">Bestseller</span>
-          <img src="assets/solana-pflanzer.jpg" alt="Solana Pflanzer" loading="lazy">
+          <img src="assets/solana-pflanzer.jpg" alt="Solana selbstbewässernder Pflanzer im Ring-Design — cremeweiß matt, biophiles Quiet Luxury Wohnzimmer-Accessoire" loading="lazy">
         </div>
         <div class="bs-info">
           <div>
@@ -4061,7 +4062,7 @@ const PRODUCTS = [
 // SCHEMA.ORG · Product-Markup wird aus PRODUCTS generiert
 // ============================================================
 (function injectProductSchema(){
-  const SITE = "https://jmpanrw-lab.github.io/aurora-home-website/";
+  const SITE = "https://aurora-home.de/";
   const slug = s => s.toLowerCase()
     .replace(/ä/g,"ae").replace(/ö/g,"oe").replace(/ü/g,"ue").replace(/ß/g,"ss")
     .replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
@@ -4206,7 +4207,7 @@ function renderProducts(){
                 : p.badge==='viral'      ? '<span class="prod-badge b-viral">Viral</span>'
                 : p.badge==='new'        ? '<span class="prod-badge b-new">Neu</span>'
                 : stockBadge;
-    const img=p.img?`<img src="${p.img}" alt="${p.name}" loading="lazy">`:
+    const img=p.img?`<img src="${p.img}" alt="${p.altText||p.name}" loading="lazy">`:
               `<div class="ph-img"><span class="ph-txt"><b>Produktfoto</b>${p.name}<br>1:1 · Hauptansicht</span></div>`;
     const cartBtn = soldOut
       ? `<button class="prod-add" disabled style="opacity:.45;cursor:not-allowed" onclick="event.stopPropagation()">Ausverkauft</button>`
@@ -4925,7 +4926,7 @@ document.getElementById('resinForm')?.addEventListener('submit', async function(
 <!-- ============================================================
      HERO 3D — Three.js procedural Aurora logo + parallax
      ============================================================ -->
-<script type="module">
+<script type="module" defer>
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
