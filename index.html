@@ -3525,6 +3525,46 @@ section:not(.hero){
 <!-- ============================================================
      FOOTER
      ============================================================ -->
+<!-- WIDERRUFS-MODAL -->
+<div class="wr-modal" id="wrModal" role="dialog" aria-modal="true" aria-labelledby="wrTitle">
+  <div class="wr-card">
+    <button class="wr-close" onclick="closeWiderruf()" aria-label="Schliessen">
+      <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div id="wrFormWrap">
+      <span class="wr-kicker">Gesetzliches Widerrufsrecht &middot; &sect;355 BGB</span>
+      <h2 class="wr-title" id="wrTitle">Vertrag hier <em style="font-style:italic;color:var(--gold)">widerrufen</em></h2>
+      <p class="wr-sub">Fuelle das Formular aus und klicke auf Jetzt Widerruf absenden. Du erhaeltst sofort eine Bestaetigungs-E-Mail mit Zeitstempel.</p>
+      <div class="wr-legal">
+        Du hast das Recht, diesen Vertrag binnen 14 Tagen ohne Angabe von Gruenden zu widerrufen (&sect;355 BGB). Fuer individuell gefertigte Produkte (Custom Resin, 3D-Druck) entfaellt das Widerrufsrecht nach Produktionsbeginn gem. &sect;312g Abs. 2 Nr. 1 BGB.
+      </div>
+      <form class="wr-form" id="wrForm" novalidate>
+        <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+        <div class="form-row">
+          <input class="form-input" id="wr-vorname" name="vorname" type="text" required placeholder="Vorname *" autocomplete="given-name">
+          <input class="form-input" id="wr-nachname" name="nachname" type="text" required placeholder="Nachname *" autocomplete="family-name">
+        </div>
+        <input class="form-input" id="wr-email" name="email" type="email" required placeholder="E-Mail-Adresse *" autocomplete="email">
+        <input class="form-input" id="wr-bestellnr" name="bestellnr" type="text" required placeholder="Bestellnummer (z. B. AH-1ABC2DEF) *">
+        <input class="form-input" id="wr-bestelldatum" name="bestelldatum" type="date">
+        <textarea class="form-textarea" id="wr-begruendung" name="begruendung" placeholder="Begruendung (optional)"></textarea>
+        <button class="wr-submit" id="wrSubmitBtn" type="submit">
+          <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+          Jetzt Widerruf absenden
+        </button>
+      </form>
+      <p class="wr-fine">Deine Daten werden ausschliesslich zur Bearbeitung des Widerrufs verwendet. &middot; <a href="rechtliches.html#datenschutz" style="color:inherit">Datenschutz</a></p>
+    </div>
+    <div class="wr-success" id="wrSuccess">
+      <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+      <h3>Widerruf <em style="font-style:italic;color:var(--gold)">eingegangen</em></h3>
+      <p>Dein Widerruf wurde erfolgreich uebermittelt. Du erhaeltst in Kuerze eine Bestaetigungs-E-Mail mit dem genauen Zeitstempel als Nachweis.</p>
+      <div class="wr-timestamp" id="wrTimestamp"></div>
+      <button class="wr-footer-btn" onclick="closeWiderruf()" style="margin-top:8px">Schliessen</button>
+    </div>
+  </div>
+</div>
+
 <footer>
   <div class="foot-inner">
     <div class="foot-grid">
@@ -3588,7 +3628,7 @@ section:not(.hero){
     </div>
     <div class="foot-bottom">
       <span class="foot-copy">© 2026 Aurora Home &middot; Ildiko Fenyes &middot; Werkstatt aus Deutschland &middot; Kleingewerbe nach §19 UStG</span>
-      <div class="foot-legal">
+      <div class="foot-legal"><button class="wr-footer-btn" onclick="openWiderruf()" style="margin-right:8px"><svg viewBox="0 0 24 24"><path d="M9 14l-4-4 4-4"/><path d="M5 10h11a4 4 0 010 8h-1"/></svg> Vertrag hier widerrufen</button>
         <a href="rechtliches.html#impressum">Impressum</a>
         <a href="rechtliches.html#datenschutz">Datenschutz</a>
         <a href="rechtliches.html#agb">AGB</a>
