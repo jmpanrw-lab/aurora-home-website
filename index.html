@@ -5821,5 +5821,69 @@ window.modalAddToCart = function(){
 })();
 </script>
 
+<script>
+// ── Widerrufs-Modal ──────────────────────────────────────
+window.openWiderruf = function(){
+  document.getElementById('wrModal').classList.add('open');
+  document.getElementById('wrFormWrap').style.display = '';
+  document.getElementById('wrSuccess').classList.remove('show');
+  document.getElementById('wrForm').reset();
+  document.getElementById('wrSubmitBtn').disabled = false;
+  document.getElementById('wrSubmitBtn').innerHTML = '<svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2"><path d="M20 6L9 17l-5-5"/></svg> Jetzt Widerruf absenden';
+  document.body.style.overflow = 'hidden';
+};
+window.closeWiderruf = function(){
+  document.getElementById('wrModal').classList.remove('open');
+  document.body.style.overflow = '';
+};
+document.getElementById('wrModal')?.addEventListener('click', function(e){
+  if(e.target === this) closeWiderruf();
+});
+document.getElementById('wrForm')?.addEventListener('submit', async function(e){
+  e.preventDefault();
+  const btn = document.getElementById('wrSubmitBtn');
+  // HTML5-Validierung
+  const vorname   = document.getElementById('wr-vorname').value.trim();
+  const nachname  = document.getElementById('wr-nachname').value.trim();
+  const email     = document.getElementById('wr-email').value.trim();
+  const bestellnr = document.getElementById('wr-bestellnr').value.trim();
+  if(!vorname || !nachname || !email || !bestellnr){
+    alert('Bitte alle Pflichtfelder (*) ausfuellen.');
+    return;
+  }
+  if(!/^[^s@]+@[^s@]+.[^s@]+$/.test(email)){
+    alert('Bitte eine gueltige E-Mail-Adresse eingeben.');
+    return;
+  }
+  btn.disabled = true;
+  btn.innerHTML = 'Wird gesendet …';
+  try {
+    const res = await fetch('/.netlify/functions/widerruf', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        vorname,
+        nachname,
+        email,
+        bestellnr,
+        bestelldatum: document.getElementById('wr-bestelldatum').value || '',
+        begruendung:  document.getElementById('wr-begruendung').value.trim() || '',
+        website:      '', // honeypot always empty from real users
+      }),
+    });
+    if(!res.ok) throw new Error('status ' + res.status);
+    const json = await res.json();
+    const tsEl = document.getElementById('wrTimestamp');
+    if(tsEl && json.timestamp) tsEl.textContent = 'Eingegangen: ' + json.timestamp;
+    document.getElementById('wrFormWrap').style.display = 'none';
+    document.getElementById('wrSuccess').classList.add('show');
+  } catch(err){
+    btn.disabled = false;
+    btn.innerHTML = 'Jetzt Widerruf absenden';
+    alert('Fehler beim Senden. Bitte erneut versuchen oder direkt an fenyesdesign@outlook.com schreiben.');
+  }
+});
+</script>
+
 </body>
 </html>
