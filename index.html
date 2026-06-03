@@ -84,8 +84,8 @@
   --bg-4:#22203a;
   --ink:#f4f0ff;
   --text:rgba(244,240,255,.72);
-  --muted:rgba(244,240,255,.5);
-  --faint:rgba(244,240,255,.28);
+  --muted:rgba(244,240,255,.72);
+  --faint:rgba(244,240,255,.48);
   --line:rgba(244,240,255,.08);
   --line-strong:rgba(244,240,255,.16);
   --gold:#c8906a;
@@ -97,6 +97,15 @@
   --maxw:1240px;
   --pad:64px;
 }
+
+/* BFSG: Sichtbarer Fokus-Ring für Tastatur-Navigation (WCAG 2.2 AA) */
+:focus-visible{
+  outline:2px solid var(--gold);
+  outline-offset:3px;
+  border-radius:2px;
+}
+:focus:not(:focus-visible){outline:none;}
+
 *{box-sizing:border-box;margin:0;padding:0;}
 html{background:var(--bg);scroll-behavior:smooth;}
 body{
@@ -595,7 +604,7 @@ section.dark{background:var(--bg-2);}
 .prod-info{padding:18px 18px 22px;flex:1;display:flex;flex-direction:column;}
 .prod-cat{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
 .prod-name{font-family:var(--serif);font-size:18px;font-weight:300;line-height:1.15;color:var(--ink);margin-bottom:auto;}
-.prod-price{font-family:var(--serif);font-size:20px;color:var(--gold-bright);margin-top:14px;}
+.prod-price{font-family:var(--serif);font-size:20px;color:var(--gold-bright);margin-top:14px;}.prod-price-note{font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:var(--muted);margin-top:3px;}
 
 /* SVG placeholder */
 .ph-img{
@@ -3629,7 +3638,8 @@ section:not(.hero){
       </div>
     </div>
     <div class="foot-bottom">
-      <span class="foot-copy">© 2026 Aurora Home &middot; Ildiko Fenyes &middot; Werkstatt aus Deutschland &middot; Kleingewerbe nach §19 UStG</span>
+      <div style="font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:var(--faint);max-width:1200px;margin:0 auto;padding:0 64px 12px;line-height:1.6;">* Als Kleinunternehmen gem. §19 UStG wird keine Umsatzsteuer ausgewiesen und daher auch nicht berechnet.</div>
+  <span class="foot-copy">© 2026 Aurora Home &middot; Ildiko Fenyes &middot; Werkstatt aus Deutschland &middot; Kleingewerbe nach §19 UStG</span>
       <div class="foot-legal"><button class="wr-footer-btn" onclick="openWiderruf()" style="margin-right:8px"><svg viewBox="0 0 24 24"><path d="M9 14l-4-4 4-4"/><path d="M5 10h11a4 4 0 010 8h-1"/></svg> Vertrag hier widerrufen</button>
         <a href="rechtliches.html#impressum">Impressum</a>
         <a href="rechtliches.html#datenschutz">Datenschutz</a>
@@ -4104,6 +4114,33 @@ const PRODUCTS = [
     }))
   };
 
+
+  // MerchantReturnPolicy für Google Shopping / SGE-Agents
+  const returnSchema = {
+    "@context": "https://schema.org",
+    "@type": "MerchantReturnPolicy",
+    "@id": "https://aurora-home.de/#returnpolicy",
+    "name": "Aurora Home Rückgaberichtlinie",
+    "url": "https://aurora-home.de/rechtliches.html#agb",
+    "applicableCountry": "DE",
+    "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+    "merchantReturnDays": 14,
+    "returnMethod": "https://schema.org/ReturnByMail",
+    "returnFees": "https://schema.org/FreeReturn",
+    "refundType": "https://schema.org/FullRefund",
+    "returnPolicySeasonalOverride": {
+      "@type": "MerchantReturnPolicySeasonalOverride",
+      "startDate": "2026-01-01",
+      "endDate": "2026-12-31",
+      "merchantReturnDays": 14,
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow"
+    }
+  };
+  const retTag = document.createElement("script");
+  retTag.type = "application/ld+json";
+  retTag.textContent = JSON.stringify(returnSchema);
+  document.head.appendChild(retTag);
+
   // FAQPage-Schema
   const allFaqs = PRODUCTS.flatMap(p => p.faq || []);
   if(allFaqs.length){
@@ -4236,6 +4273,7 @@ function renderProducts(){
         <div class="prod-cat">${p.cat}</div>
         <h3 class="prod-name">${p.name}</h3>
         <div class="prod-price">${p.price}&nbsp;€</div>
+        <div class="prod-price-note">Preis inkl. MwSt.* · zzgl. Versand</div>
       </div>
       ${cartBtn}
     </article>`;
