@@ -2849,7 +2849,7 @@ section:not(.hero){
         </div>
 
         <button type="submit" class="checkout-submit" id="coSubmitBtn">
-          Bestellung abschicken
+          Kostenpflichtig bestellen
           <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </button>
         <p style="font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--faint);text-align:center;margin-top:12px;">
@@ -2979,7 +2979,7 @@ section:not(.hero){
     <div class="hero-visual">
       <!-- 3D Aurora Logo (Three.js procedural; loads assets/aurora-logo.glb if present) -->
       <div class="hero-3d-wrap" id="hero3d">
-        <canvas id="heroCanvas"></canvas>
+        <canvas id="heroCanvas" role="img" aria-label="Aurora Home 3D-Logo — animiertes Markenzeichen"></canvas>
         <svg class="hero-3d-fallback" id="hero3dFallback" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <defs>
             <linearGradient id="fbRay" x1="0%" y1="100%" x2="100%" y2="0%">
@@ -3532,11 +3532,11 @@ section:not(.hero){
       <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
     <div id="wrFormWrap">
-      <span class="wr-kicker">Gesetzliches Widerrufsrecht &middot; &sect;355 BGB</span>
+      <span class="wr-kicker">Gesetzliches Widerrufsrecht &middot; &sect;356a BGB</span>
       <h2 class="wr-title" id="wrTitle">Vertrag hier <em style="font-style:italic;color:var(--gold)">widerrufen</em></h2>
       <p class="wr-sub">Fuelle das Formular aus und klicke auf Jetzt Widerruf absenden. Du erhaeltst sofort eine Bestaetigungs-E-Mail mit Zeitstempel.</p>
       <div class="wr-legal">
-        Du hast das Recht, diesen Vertrag binnen 14 Tagen ohne Angabe von Gruenden zu widerrufen (&sect;355 BGB). Fuer individuell gefertigte Produkte (Custom Resin, 3D-Druck) entfaellt das Widerrufsrecht nach Produktionsbeginn gem. &sect;312g Abs. 2 Nr. 1 BGB.
+        Du hast das Recht, diesen Vertrag binnen 14 Tagen ohne Angabe von Gruenden zu widerrufen (&sect;355 BGB). Fuer individuell gefertigte Produkte (Custom Resin, 3D-Druck) entfaellt das Widerrufsrecht nach Produktionsbeginn gem. &sect;312g Abs. 2 Nr. 1 BGB i.V.m. &sect;356a BGB.
       </div>
       <form class="wr-form" id="wrForm" novalidate>
         <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
