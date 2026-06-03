@@ -2740,8 +2740,8 @@ section:not(.hero){
         <svg viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
         Zurück zum Warenkorb
       </button>
-      <h2>Deine <em>Bestellung</em></h2>
-      <p class="checkout-subtitle">Auf Lager · Versand in 1–3 Werktagen</p>
+      <h2 id="coHeading">Deine <em>Bestellung</em></h2>
+      <p class="checkout-subtitle" id="coSubtitle">Sichere Zahlung · Versand in 4–6 Werktagen · Made in Germany</p>
 
       <form name="bestellung" id="orderForm" netlify netlify-honeypot="bot-trap">
         <input type="hidden" name="form-name" value="bestellung">
@@ -2859,11 +2859,11 @@ section:not(.hero){
         </div>
 
         <button type="submit" class="checkout-submit" id="coSubmitBtn">
-          Jetzt bestellen
+          <span id="coSubmitLabel">Jetzt bestellen</span>
           <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </button>
-        <p style="font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--faint);text-align:center;margin-top:12px;">
-          Auf Lager · Versand innerhalb von 3 Werktagen
+        <p id="coFinePrint" style="font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--faint);text-align:center;margin-top:12px;">
+          Sichere Zahlung · Versand in 4–6 Werktagen · DHL Tracking inklusive
         </p>
       </form>
     </div>
@@ -2887,7 +2887,7 @@ section:not(.hero){
       <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
     </div>
     <h2>Vielen <em>Dank!</em></h2>
-    <p>Deine Bestellung ist eingegangen! Du bekommst sofort eine Bestätigungs-E-Mail. Versand in 1–3 Werktagen.</p>
+    <p id="successIntro">Deine Bestellung ist bei Ildiko eingegangen. Du bekommst in Kürze eine Bestätigung per E-Mail mit allen Details. Versand erfolgt in 4–6 Werktagen inkl. DHL-Tracking.</p>
     <p style="color:var(--muted);font-size:14px;">Schau auch in deinen Spam-Ordner.</p>
     <div class="order-ref" id="orderRef"></div>
     <div class="success-pay-box" id="successPayBox">
@@ -5641,9 +5641,43 @@ window.modalAddToCart = function(){
   };
 
   // ── Checkout ──────────────────────────────────────────────
+  // ── Produkttyp-Erkennung: Typ B = Custom Resin (nur auf Anfrage) ──
+  // Lagerprodukte (FDM + Wax Melts) = Typ A → echte Bestellung mit Zahlung.
+  // Custom Resin (resin:true oder catKey enthält "resin") = Typ B → unverbindliche Anfrage.
+  function isResinProduct(p){
+    return !!(p && (p.resin === true || /resin/i.test(p.catKey || '')));
+  }
+  function cartHasResin(){
+    return cart.some(item => isResinProduct(getProduct(item.idx)));
+  }
+
+  // ── Checkout-Texte je nach Warenkorb-Inhalt setzen ──
+  function applyCheckoutMode(){
+    const resin = cartHasResin();
+    const set = (id, html) => { const el = document.getElementById(id); if(el) el.innerHTML = html; };
+    if(resin){
+      // Typ B — Custom Resin: Anfrage, kein sofortiger Kauf
+      set('coHeading',     'Deine <em>Anfrage</em>');
+      set('coSubtitle',    'Unverbindliche Anfrage · Antwort in 48 h · Einzelauftrag');
+      set('coSubmitLabel', 'Anfrage senden');
+      set('coFinePrint',   'Unverbindliche Anfrage · Ildiko meldet sich innerhalb 48&nbsp;h · Anzahlung 50&nbsp;%');
+      set('successIntro',  'Deine Anfrage ist bei Ildiko eingegangen. Du bekommst innerhalb von <strong>48 Stunden</strong> eine persönliche Rückmeldung mit Angebot und Details. Erst nach deiner Bestätigung wird eine Anzahlung (50&nbsp;%) fällig.');
+    } else {
+      // Typ A — Lagerprodukte (FDM + Wax Melts): echte Bestellung
+      set('coHeading',     'Deine <em>Bestellung</em>');
+      set('coSubtitle',    'Sichere Zahlung · Versand in 4–6 Werktagen · Made in Germany');
+      set('coSubmitLabel', 'Jetzt bestellen');
+      set('coFinePrint',   'Sichere Zahlung · Versand in 4–6 Werktagen · DHL Tracking inklusive');
+      set('successIntro',  'Deine Bestellung ist bei Ildiko eingegangen. Du bekommst in Kürze eine Bestätigung per E-Mail mit allen Details. Versand erfolgt in 4–6 Werktagen inkl. DHL-Tracking.');
+    }
+    return resin;
+  }
+  window.applyCheckoutMode = applyCheckoutMode;
+
   window.openCheckout = function(){
     closeCart();
     renderCheckoutSummary('DE');
+    applyCheckoutMode();
     document.getElementById('checkoutModal').classList.add('open');
     document.getElementById('checkoutForm').style.display = '';
     document.getElementById('checkoutSuccess').classList.remove('show');
@@ -5692,6 +5726,9 @@ window.modalAddToCart = function(){
   document.getElementById('orderForm')?.addEventListener('submit', async function(e){
     e.preventDefault();
     const btn = document.getElementById('coSubmitBtn');
+    const resinMode = (typeof applyCheckoutMode === 'function') ? applyCheckoutMode() : false;
+    const submitLabel = resinMode ? 'Anfrage senden' : 'Jetzt bestellen';
+    const arrowSvg = '<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
     btn.disabled = true;
     btn.innerHTML = 'Wird gesendet …';
 
@@ -5753,12 +5790,17 @@ window.modalAddToCart = function(){
         }
         document.getElementById('checkoutSuccess').classList.add('show');
       } else {
-        throw new Error('Fehler: ' + res.status);
+        // Server-Fehlermeldung auslesen (für aussagekräftige Diagnose)
+        let serverMsg = '';
+        try { const data = await res.json(); serverMsg = data && data.error ? data.error : ''; }
+        catch { serverMsg = ''; }
+        throw new Error(serverMsg || ('HTTP ' + res.status));
       }
     } catch(err){
       btn.disabled = false;
-      btn.innerHTML = 'Jetzt bestellen';
-      alert('Beim Senden ist ein Fehler aufgetreten. Bitte versuche es erneut oder schreibe direkt an fenyesdesign@outlook.com');
+      btn.innerHTML = submitLabel + arrowSvg;
+      const detail = err && err.message ? `\n\n(${err.message})` : '';
+      alert('Beim Senden ist ein Fehler aufgetreten. Bitte versuche es erneut oder schreibe direkt an fenyesdesign@outlook.com' + detail);
     }
   });
 
