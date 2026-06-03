@@ -589,6 +589,7 @@ section.dark{background:var(--bg-2);}
 .b-viral{background:var(--lilac);color:var(--ink);}
 .b-new{background:#4ade80;color:var(--bg);}
 .b-stock{background:rgba(74,222,128,.15);color:#4ade80;border:1px solid rgba(74,222,128,.4);}
+.b-soldout{background:rgba(148,163,184,.1);color:var(--muted);border:1px solid rgba(148,163,184,.25);}
 .b-made{background:rgba(244,240,255,.06);color:var(--muted);}
 .prod-info{padding:18px 18px 22px;flex:1;display:flex;flex-direction:column;}
 .prod-cat{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
@@ -3967,8 +3968,10 @@ function renderProducts(){
   // Standard-Grid: alle außer Solana (idx 6) und Social Battery (idx 10) die schon oben sind
   const shown=PRODUCTS.map((p,i)=>({p,i})).filter(o=>o.i!==6&&o.i!==10);
   grid.innerHTML=shown.map(({p,i})=>{
+    const soldOut = p.stock === 0;
     const stockBadge = p.stock > 0
       ? '<span class="prod-badge b-stock">⚡ Sofort lieferbar</span>'
+      : soldOut ? '<span class="prod-badge b-soldout">Ausverkauft</span>'
       : (p.delivery === 'made-to-order' ? '' : '');
     const badge = p.badge==='bestseller' ? '<span class="prod-badge b-bestseller">Bestseller</span>'
                 : p.badge==='viral'      ? '<span class="prod-badge b-viral">Viral</span>'
@@ -3976,6 +3979,9 @@ function renderProducts(){
                 : stockBadge;
     const img=p.img?`<img src="${p.img}" alt="${p.name}" loading="lazy">`:
               `<div class="ph-img"><span class="ph-txt"><b>Produktfoto</b>${p.name}<br>1:1 · Hauptansicht</span></div>`;
+    const cartBtn = soldOut
+      ? `<button class="prod-add" disabled style="opacity:.45;cursor:not-allowed" onclick="event.stopPropagation()">Ausverkauft</button>`
+      : `<button class="prod-add" onclick="event.stopPropagation();window.addToCart(${i},this)"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg> In den Warenkorb</button>`;
     return `<article class="prod" data-cat="${p.catKey} all" data-idx="${i}" onclick="openProduct(${i})">
       <div class="prod-img">${badge}${img}</div>
       <div class="prod-info">
@@ -3983,6 +3989,7 @@ function renderProducts(){
         <h3 class="prod-name">${p.name}</h3>
         <div class="prod-price">${p.price}&nbsp;€</div>
       </div>
+      ${cartBtn}
     </article>`;
   }).join('');
 }
@@ -4560,12 +4567,28 @@ document.getElementById('waxForm')?.addEventListener('submit', async function(e)
   e.preventDefault();
   const btn = this.querySelector('button[type=submit]');
   btn.disabled = true; btn.textContent = 'Wird gesendet …';
+  const d = Object.fromEntries(new FormData(this));
   try {
-    const res = await fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: new URLSearchParams(new FormData(this)).toString()});
-    if(res.ok || res.redirected) throw new Error('show-success');
-  } catch(e) { /* always show success */ }
-  document.getElementById('waxFormWrap').style.display = 'none';
-  document.getElementById('waxSuccess').classList.add('show');
+    const res = await fetch('/.netlify/functions/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        type: 'wax-anfrage',
+        vorname: d.vorname,
+        nachname: d.nachname,
+        email: d.email,
+        duefte: d.duefte,
+        adresse: d.adresse,
+      }),
+    });
+    if (!res.ok) throw new Error('status ' + res.status);
+    document.getElementById('waxFormWrap').style.display = 'none';
+    document.getElementById('waxSuccess').classList.add('show');
+  } catch(err) {
+    btn.disabled = false;
+    btn.textContent = 'Anfrage senden';
+    alert('Beim Senden ist ein Fehler aufgetreten. Bitte versuche es erneut oder schreibe direkt an fenyesdesign@outlook.com');
+  }
 });
 
 window.openResinForm = function(){
@@ -4584,26 +4607,27 @@ document.getElementById('resinForm')?.addEventListener('submit', async function(
   const btn = document.getElementById('resinSubmitBtn');
   btn.disabled = true;
   btn.textContent = 'Wird gesendet …';
+  const d = Object.fromEntries(new FormData(this));
   try {
-    const data = new FormData(this);
-    const res = await fetch('/', {
-      method:'POST',
-      headers:{'Content-Type':'application/x-www-form-urlencoded'},
-      body: new URLSearchParams(data).toString()
+    const res = await fetch('/.netlify/functions/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        type: 'resin-anfrage',
+        vorname: d.vorname,
+        nachname: d.nachname,
+        email: d.email,
+        stufe: d.stufe,
+        beschreibung: d.beschreibung,
+      }),
     });
-    if(res.ok || res.redirected){
-      document.getElementById('resinFormWrap').style.display = 'none';
-      document.getElementById('resinSuccess').classList.add('show');
-    } else { throw new Error('status '+res.status); }
-  } catch(err){
-    // Fallback: mailto
-    const d = Object.fromEntries(new FormData(this));
-    const body = encodeURIComponent(
-      `Custom Resin Anfrage\n\nName: ${d.vorname} ${d.nachname}\nE-Mail: ${d.email}\nStufe: ${d.stufe}\n\nBeschreibung:\n${d.beschreibung}`
-    );
-    window.location.href = `mailto:fenyesdesign@outlook.com?subject=Custom Resin Anfrage&body=${body}`;
+    if(!res.ok) throw new Error('status ' + res.status);
     document.getElementById('resinFormWrap').style.display = 'none';
     document.getElementById('resinSuccess').classList.add('show');
+  } catch(err){
+    btn.disabled = false;
+    btn.textContent = 'Senden';
+    alert('Beim Senden ist ein Fehler aufgetreten. Bitte versuche es erneut oder schreibe direkt an fenyesdesign@outlook.com');
   }
 });
 </script>
@@ -5243,16 +5267,21 @@ window.modalAddToCart = function(){
     body.innerHTML = cart.map((item, i) => {
       const p = getProduct(item.idx);
       const img = p.images ? p.images[0] : p.img;
+      const atMax = p.stock !== undefined && item.qty >= p.stock;
+      const stockHint = (p.stock !== undefined && p.stock - item.qty <= 1 && p.stock > item.qty)
+        ? `<div style="font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:#f97316;margin-top:4px">Nur noch ${p.stock - item.qty} verfügbar</div>`
+        : (atMax ? `<div style="font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:#f97316;margin-top:4px">Maximaler Bestand erreicht</div>` : '');
       return `<div class="cart-item">
         <div class="cart-item-img"><img src="${img}" alt="${p.name}" loading="lazy"></div>
         <div>
           <div class="cart-item-name">${p.name}</div>
           <div class="cart-item-price">${p.price}&nbsp;€</div>
+          ${stockHint}
         </div>
         <div class="cart-item-qty">
           <button onclick="cartQty(${i},-1)" aria-label="Weniger">−</button>
           <span>${item.qty}</span>
-          <button onclick="cartQty(${i},1)" aria-label="Mehr">+</button>
+          <button onclick="cartQty(${i},1)" aria-label="Mehr" ${atMax ? 'disabled style="opacity:.3;cursor:not-allowed"' : ''}>+</button>
         </div>
         <button class="cart-item-remove" onclick="cartRemove(${i})" aria-label="Entfernen">
           <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
@@ -5274,12 +5303,21 @@ window.modalAddToCart = function(){
 
   // ── Cart Actions ──────────────────────────────────────────
   window.addToCart = function(idx, btnEl){
+    const p = getProduct(idx);
     const existing = cart.find(i => i.idx === idx);
+    const currentQty = existing ? existing.qty : 0;
+    if(p.stock !== undefined && currentQty >= p.stock){
+      if(btnEl){
+        const orig = btnEl.innerHTML;
+        btnEl.innerHTML = 'Maximaler Bestand erreicht';
+        setTimeout(() => { btnEl.innerHTML = orig; }, 1800);
+      }
+      return;
+    }
     if(existing){ existing.qty++; }
     else { cart.push({ idx, qty: 1 }); }
     saveCart();
     renderCart();
-    // Button feedback
     if(btnEl){
       btnEl.classList.add('added');
       const orig = btnEl.innerHTML;
@@ -5289,6 +5327,10 @@ window.modalAddToCart = function(){
   };
 
   window.cartQty = function(i, delta){
+    if(delta > 0){
+      const p = getProduct(cart[i].idx);
+      if(p.stock !== undefined && cart[i].qty >= p.stock) return;
+    }
     cart[i].qty += delta;
     if(cart[i].qty <= 0) cart.splice(i, 1);
     saveCart(); renderCart();
@@ -5383,10 +5425,35 @@ window.modalAddToCart = function(){
     const ref = 'AH-' + Date.now().toString(36).toUpperCase();
 
     try {
-      const data = new FormData(this);
-      const res  = await fetch('/', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: new URLSearchParams(data).toString() });
+      const fname   = document.getElementById('co-fname').value;
+      const lname   = document.getElementById('co-lname').value;
+      const email   = document.getElementById('co-email').value;
+      const street  = document.getElementById('co-street').value;
+      const zip     = document.getElementById('co-zip').value;
+      const city    = document.getElementById('co-city').value;
+      const color   = document.getElementById('co-color')?.value || '';
+      const note    = document.getElementById('co-note')?.value || '';
+      const res  = await fetch('/.netlify/functions/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          type: 'bestellung',
+          bestellnr: ref,
+          vorname: fname,
+          nachname: lname,
+          email,
+          strasse: street,
+          plz: zip,
+          stadt: city,
+          land: country,
+          bestelldetails: orderText,
+          farbe: color,
+          nachricht: note,
+          zahlungsart: paymentMethod,
+        }),
+      });
 
-      if(res.ok || res.status === 200 || res.redirected){
+      if(res.ok){
         cart = []; saveCart(); updateBadge();
         document.getElementById('checkoutForm').style.display = 'none';
         document.getElementById('orderRef').textContent = 'Bestellnr.: ' + ref;
@@ -5400,28 +5467,12 @@ window.modalAddToCart = function(){
         }
         document.getElementById('checkoutSuccess').classList.add('show');
       } else {
-        throw new Error('Netlify response: ' + res.status);
+        throw new Error('Fehler: ' + res.status);
       }
     } catch(err){
-      // Fallback: show success anyway (Netlify ggf. hat doch verarbeitet)
-    // Kein Outlook öffnen
-      const fname   = document.getElementById('co-fname').value;
-      const lname   = document.getElementById('co-lname').value;
-      const email   = document.getElementById('co-email').value;
-      const street  = document.getElementById('co-street').value;
-      const zip     = document.getElementById('co-zip').value;
-      const city    = document.getElementById('co-city').value;
-      const color   = document.getElementById('co-color').value;
-      const note    = document.getElementById('co-note').value;
-      const body    = encodeURIComponent(
-        `Bestellung ${ref}\n\nName: ${fname} ${lname}\nE-Mail: ${email}\nAdresse: ${street}, ${zip} ${city} (${country})\n\n${orderText}${color?'\n\nWunschfarbe: '+color:''}${note?'\n\nNachricht: '+note:''}`
-      );
-      window.location.href = `mailto:fenyesdesign@outlook.com?subject=Bestellung ${ref}&body=${body}`;
-
-      cart = []; saveCart(); updateBadge();
-      document.getElementById('checkoutForm').style.display = 'none';
-      document.getElementById('orderRef').textContent = 'Bestellnr.: ' + ref;
-      document.getElementById('checkoutSuccess').classList.add('show');
+      btn.disabled = false;
+      btn.innerHTML = 'Kostenpflichtig bestellen';
+      alert('Beim Senden ist ein Fehler aufgetreten. Bitte versuche es erneut oder schreibe direkt an fenyesdesign@outlook.com');
     }
   });
 
@@ -5441,27 +5492,27 @@ window.modalAddToCart = function(){
     }
   });
 
-  // ── Patch renderProducts to add "In den Warenkorb" ────────
+  // ── Patch renderProducts: Bestseller-Cards bekommen Button ──
   const _origRender = window.renderProducts;
   window.renderProducts = function(){
     _origRender();
-    document.querySelectorAll('#prodGrid .prod').forEach(card => {
-      const idx = parseInt(card.dataset.idx);
-      const btn = document.createElement('button');
-      btn.className = 'prod-add';
-      btn.innerHTML = `<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg> In den Warenkorb`;
-      btn.onclick = (e) => { e.stopPropagation(); window.addToCart(idx, btn); };
-      card.appendChild(btn);
-    });
-    // Bestseller cards
+    // prodGrid-Buttons werden direkt in renderProducts generiert — nur Bestseller-Cards hier
     document.querySelectorAll('#bsRow .bs-card').forEach(card => {
+      if(card.querySelector('.bs-add')) return; // verhindert doppelte Buttons
       const idx = parseInt(card.dataset.idx);
+      const p = getProduct(idx);
       const foot = card.querySelector('.bs-foot');
       if(!foot) return;
       const btn = document.createElement('button');
       btn.className = 'bs-add';
-      btn.innerHTML = `<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg> In den Warenkorb`;
-      btn.onclick = (e) => { e.stopPropagation(); window.addToCart(idx, btn); };
+      if(p.stock === 0){
+        btn.innerHTML = 'Ausverkauft';
+        btn.disabled = true;
+        btn.style.cssText = 'opacity:.45;cursor:not-allowed';
+      } else {
+        btn.innerHTML = `<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg> In den Warenkorb`;
+        btn.onclick = (e) => { e.stopPropagation(); window.addToCart(idx, btn); };
+      }
       foot.after(btn);
     });
   };
