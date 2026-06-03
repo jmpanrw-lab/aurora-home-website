@@ -11,7 +11,10 @@
 //   ALLOWED_ORIGINS  (optional)  – kommagetrennte Liste erlaubter Origins (CSRF-Schutz)
 
 const RESEND_API_KEY  = process.env.RESEND_API_KEY;
-const FROM_EMAIL      = process.env.RESEND_FROM || 'Aurora Home <noreply@aurora-home.store>';
+// TEMPORÄR: onboarding@resend.dev funktioniert ohne Domain-Verifizierung,
+// liefert aber nur an die Resend-Account-Inhaber-Adresse. Sobald
+// aurora-home.store (DKIM) verifiziert ist → zurück auf noreply@aurora-home.store.
+const FROM_EMAIL      = process.env.RESEND_FROM || 'Aurora Home <onboarding@resend.dev>';
 const ADMIN_EMAIL     = process.env.ADMIN_EMAIL || 'fenyesdesign@outlook.com';
 const ALLOWED_ORIGINS = (process.env.ALLOWED_ORIGINS
   || 'https://aurora-home.store,https://www.aurora-home.store,https://aurora-home.netlify.app'
