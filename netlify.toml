@@ -3,7 +3,7 @@
   functions = "netlify/functions"
 
 [functions]
-  node_bundler = "nft"
+  node_bundler = "esbuild"
 
 [[redirects]]
   from = "/.netlify/functions/*"
@@ -14,3 +14,20 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+# ── Sicherheits-Header (alle Seiten) ─────────────────────────
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Verhindert Clickjacking (deine Seite wird nicht in iframes eingebettet)
+    X-Frame-Options = "DENY"
+    # Browser errät keinen Content-Type — verhindert MIME-Sniffing-Angriffe
+    X-Content-Type-Options = "nosniff"
+    # Sendet keine Referrer-Infos an externe Seiten
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    # Erzwingt HTTPS für 1 Jahr
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    # Erlaubt nur Ressourcen von deiner eigenen Domain + CDNs die du nutzt
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://d8j0ntlcm91z4.cloudfront.net; connect-src 'self' https://api.anthropic.com https://api.resend.com https://unpkg.com; worker-src 'none'; form-action 'self'; frame-ancestors 'none';"
+    # Deaktiviert Browser-Features die du nicht brauchst
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
