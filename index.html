@@ -715,7 +715,7 @@ section.dark{background:var(--bg-2);}
 }
 .wax-maker{
   margin-bottom:30px;
-  display:grid;grid-template-columns:minmax(0,1.1fr) minmax(260px,.9fr);
+  display:grid;grid-template-columns:minmax(0,.92fr) minmax(320px,1.08fr);
   gap:1px;background:var(--line);border:1px solid var(--line);
 }
 .wax-maker-copy,.wax-maker-visual{background:var(--bg);min-width:0;}
@@ -732,14 +732,32 @@ section.dark{background:var(--bg-2);}
   font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);
 }
 .wax-maker-visual{
-  position:relative;min-height:360px;overflow:hidden;
-  display:grid;grid-template-rows:1fr auto;
+  position:relative;min-height:420px;overflow:hidden;padding:14px;
+  display:grid;grid-template-columns:1.1fr .9fr;grid-template-rows:1fr 1fr;gap:10px;
 }
-.wax-maker-visual img{width:100%;height:100%;object-fit:cover;filter:saturate(.94) contrast(1.03);}
+.wax-maker-visual::before{
+  content:"Aurora + Mary";position:absolute;z-index:2;left:28px;top:28px;
+  padding:10px 12px;background:rgba(10,9,20,.78);border:1px solid var(--line-strong);
+  color:var(--ink);font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;
+}
+.wax-maker-visual img{width:100%;height:100%;object-fit:cover;filter:saturate(.96) contrast(1.02);}
+.wax-maker-visual .wax-maker-main{grid-row:1/-1;}
 .wax-maker-visual figcaption{
-  position:absolute;left:18px;right:18px;bottom:18px;
-  padding:12px 14px;background:rgba(10,9,20,.76);border:1px solid var(--line-strong);
-  color:var(--ink);font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;
+  grid-column:1/-1;margin-top:2px;padding:12px 14px;background:rgba(255,255,255,.025);
+  border:1px solid var(--line);color:var(--muted);font-family:var(--mono);
+  font-size:9px;letter-spacing:.12em;text-transform:uppercase;
+}
+.wax-trust{
+  margin-top:22px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:var(--line);border:1px solid var(--line);
+}
+.wax-trust span{
+  background:rgba(255,255,255,.018);padding:14px 12px;
+  font-family:var(--mono);font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);
+}
+.wax-trust strong{
+  display:block;margin-bottom:5px;font-family:var(--serif);font-size:22px;line-height:1;
+  color:var(--gold-bright);font-weight:300;letter-spacing:0;text-transform:none;
 }
 .wax-case{
   margin-bottom:28px;
@@ -775,6 +793,9 @@ section.dark{background:var(--bg-2);}
 }
 .wax-case-copy h4 em{color:var(--gold-bright);}
 .wax-case-copy p{color:var(--muted);line-height:1.7;margin:0;}
+.wax-proof-list{display:grid;gap:12px;margin:0;padding:0;list-style:none;}
+.wax-proof-list li{padding-left:18px;position:relative;color:var(--muted);line-height:1.6;}
+.wax-proof-list li::before{content:"";position:absolute;left:0;top:.72em;width:6px;height:6px;border-radius:50%;background:var(--gold);}
 .wax-case-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
 .wax-case-facts span{background:var(--bg);padding:16px 12px;font-family:var(--mono);font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);}
 .wax-case-facts strong{display:block;margin-bottom:5px;font-family:var(--serif);font-size:24px;line-height:1;color:var(--gold-bright);font-weight:300;letter-spacing:0;text-transform:none;}
@@ -1102,6 +1123,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:80px 64px 3
   .prod-grid{grid-template-columns:repeat(4,1fr);}
   .wax-grid{grid-template-columns:repeat(3,1fr);}
   .wax-maker{grid-template-columns:1fr;}
+  .wax-maker-visual{min-height:440px;}
   .wax-case{grid-template-columns:1fr;}
   .wax-case-shot:first-child{min-height:520px;}
   .wax-event-grid{grid-template-columns:repeat(2,1fr);}
@@ -1134,6 +1156,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:80px 64px 3
   .wax-event{padding:28px 22px;}
   .wax-maker-copy{padding:24px;}
   .wax-maker-visual{min-height:320px;}
+  .wax-trust{grid-template-columns:1fr;}
   .wax-case-copy{padding:24px;}
   .wax-case-facts{grid-template-columns:1fr;}
   .wax-case-gallery{grid-template-columns:1fr 1fr;}
@@ -1824,8 +1847,10 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:80px 64px 3
   .wax-event{padding:22px 16px;}
   .wax-maker-copy{padding:22px 18px;}
   .wax-maker-copy h3{font-size:38px;}
-  .wax-maker-visual{min-height:260px;}
-  .wax-maker-visual figcaption{left:12px;right:12px;bottom:12px;}
+  .wax-maker-visual{min-height:0;grid-template-columns:1fr 1fr;grid-template-rows:260px 180px auto;padding:10px;}
+  .wax-maker-visual .wax-maker-main{grid-column:1/-1;grid-row:auto;}
+  .wax-maker-visual::before{left:20px;top:20px;}
+  .wax-maker-visual figcaption{grid-column:1/-1;font-size:8px;}
   .wax-case{gap:14px;}
   .wax-case-gallery{grid-template-columns:1fr;padding:10px;}
   .wax-case-shot:first-child{grid-row:auto;min-height:380px;}
@@ -3549,25 +3574,32 @@ section:not(.hero){
     <div class="wax-event reveal">
       <div class="wax-maker">
         <div class="wax-maker-copy">
-          <span class="kicker">Maryjo · Waxmelts Mutti</span>
-          <h3>Die Hand hinter den <em>Duftgeschenken.</em></h3>
-          <p>Maryjo gießt und verpackt die Wax-Melts-Geschenke in kleinen Chargen: Duft auswählen, Farbe abstimmen, Etikett gestalten und jedes Stück als kleines Gastgeschenk fertig machen. So wird aus einem Hochzeitsauftrag ein Beispiel dafür, was für weitere Feiern möglich ist.</p>
-          <div class="wax-maker-note">Referenzauftrag für Hochzeiten · Anfrage nur per E-Mail</div>
+          <span class="kicker">Aurora &amp; Mary · Hochzeitsdeko aus Wachs</span>
+          <h3>Eingeladen, eine Hochzeit <em>mitzugestalten.</em></h3>
+          <p>Aurora und Mary wurden angefragt, Dekoration und duftende Gastgeschenke für Hochzeiten zu gestalten. Mary, unsere Waxmelts Mutti, gießt die Stücke in kleinen Chargen, stimmt Farben und Duft ab und verpackt jedes Detail passend zur Tafel, Papeterie und Feier.</p>
+          <div class="wax-trust" aria-label="Vertrauenssignale für Hochzeitskunden">
+            <span><strong>Real</strong> umgesetzter Auftrag</span>
+            <span><strong>Mary</strong> direkte Handarbeit</span>
+            <span><strong>E-Mail</strong> klare Abstimmung</span>
+          </div>
+          <div class="wax-maker-note">Referenz für Hochzeitspaare · keine Telefonabstimmung</div>
         </div>
         <figure class="wax-maker-visual">
-          <img src="assets/workshop/01-melts-assembly.jpg" alt="Handgegossene Wax Melts in der Werkstatt von Maryjo" loading="lazy" decoding="async" width="1080" height="1920">
-          <figcaption>Waxmelts Mutti · gegossen, sortiert und veredelt von Hand</figcaption>
+          <img class="wax-maker-main" src="assets/wax-wedding/images/alomi-wax-13.jpg" alt="Rosa verpackte Hochzeitsgastgeschenke aus Wachs mit Schleifen" loading="lazy" decoding="async" width="720" height="617">
+          <img src="assets/wax-wedding/images/alomi-wax-04.jpg" alt="Florale Wachsdeko als Gastgeschenk auf einer Hochzeitstafel" loading="lazy" decoding="async" width="941" height="1672">
+          <img src="assets/wax-wedding/images/alomi-wax-10.jpg" alt="Personalisierte Hochzeitsdeko mit Wachsblume und Namensanhänger" loading="lazy" decoding="async" width="1011" height="1263">
+          <figcaption>Aus der Referenz-PDF: Verpackung, Blüten, Tags und Tischwirkung statt Personenfoto</figcaption>
         </figure>
       </div>
 
       <div class="wax-case">
         <div class="wax-case-gallery" aria-label="Bilder aus dem Hochzeitsauftrag Alomi Wax">
           <figure class="wax-case-shot">
-            <img src="assets/wax-wedding/images/alomi-wax-03.jpg" alt="Personalisierte Alomi-Wax-Gastgeschenke fuer eine Hochzeit" loading="lazy" decoding="async" width="972" height="1333">
+            <img src="assets/wax-wedding/images/alomi-wax-03.jpg" alt="Personalisierte Alomi-Wax-Gastgeschenke für eine Hochzeit" loading="lazy" decoding="async" width="972" height="1333">
             <span>Hochzeitsauftrag · Referenz</span>
           </figure>
           <figure class="wax-case-shot">
-            <img src="assets/wax-wedding/images/alomi-wax-06.jpg" alt="Handgegossene Wachsgeschenke mit Verpackung fuer eine Feier" loading="lazy" decoding="async" width="972" height="1333">
+            <img src="assets/wax-wedding/images/alomi-wax-06.jpg" alt="Handgegossene Wachsgeschenke mit Verpackung für eine Feier" loading="lazy" decoding="async" width="972" height="1333">
             <span>Duft & Verpackung</span>
           </figure>
           <figure class="wax-case-shot">
@@ -3583,23 +3615,27 @@ section:not(.hero){
         </div>
         <div class="wax-case-copy">
           <div>
-            <span class="kicker">Auftrag · Hochzeit</span>
-            <h4>Alomi Wax als <em>Werbebeispiel.</em></h4>
-            <p>Dieser bereits umgesetzte Hochzeitsauftrag zeigt direkt auf der Website, wie Maryjo Duftgeschenke aus Wachs als personalisierte Gastgeschenke vorbereitet. Die Bilder dienen als konkrete Referenz für Paare, Trauzeug:innen und Eventplaner:innen, die etwas Vergleichbares anfragen möchten.</p>
+            <span class="kicker">Referenz · Hochzeit</span>
+            <h4>So kann eure <em>Hochzeitsdeko</em> aussehen.</h4>
+            <p>Die Bilder stammen aus einem echten Auftrag und zeigen, wie aus Duftwachs, Schleifen, Namensanhängern und Farben ein stimmiges Gäste-Geschenk wird. Genau diese sichtbare Referenz soll Vertrauen schaffen: Paare sehen vor der Anfrage, welche Qualität und Wirkung möglich ist.</p>
           </div>
           <div class="wax-case-facts" aria-label="Leistungen im Hochzeitsauftrag">
-            <span><strong>16</strong> Bilder</span>
-            <span><strong>1:1</strong> Auftrag</span>
-            <span><strong>E-Mail</strong> Anfrage</span>
+            <span><strong>16</strong> PDF-Motive</span>
+            <span><strong>1:1</strong> echte Referenz</span>
+            <span><strong>ohne</strong> Telefonkontakt</span>
           </div>
-          <p>Farben, Duftnoten, Anhänger, Schleifen, Boxen und Stückzahlen werden passend zur Hochzeit abgestimmt. Keine telefonische Abstimmung: Anfragen laufen gesammelt per E-Mail an <a href="mailto:fenyesdesign@outlook.com">fenyesdesign@outlook.com</a>.</p>
+          <ul class="wax-proof-list">
+            <li>Mary stimmt Duft, Farbe, Form und Verpackung passend zum Hochzeitskonzept ab.</li>
+            <li>Aurora zeigt den Auftrag als Beispiel für weitere Paare, Trauzeug:innen und Eventplaner:innen.</li>
+            <li>Anfragen laufen gesammelt per E-Mail an <a href="mailto:fenyesdesign@outlook.com">fenyesdesign@outlook.com</a>, damit alle Wünsche schriftlich festgehalten sind.</li>
+          </ul>
           <a href="assets/wax-wedding/alomi-wax-hochzeit.pdf" class="btn btn-ghost">Komplette Referenz als PDF <span class="arr">→</span></a>
         </div>
       </div>
 
       <div class="wax-event-head">
-        <h3>Gastgeschenke,<br><em>die man riechen kann.</em></h3>
-        <p>Handgegossene Duftkerzen, Wax Melts und kleine Wachskunstwerke für Hochzeiten, Feiern und besondere Tafeln. Maryjo fertigt jedes Stück aus Sojawachs, personalisiert es auf Wunsch und verpackt es passend zum Farb- und Dekorationskonzept.</p>
+        <h3>Deko für Hochzeiten,<br><em>die bleibt.</em></h3>
+        <p>Handgegossene Duftkerzen, Wax Melts und kleine Wachskunstwerke für Hochzeiten, Feiern und besondere Tafeln. Mary fertigt jedes Stück aus Sojawachs, personalisiert es auf Wunsch und verpackt es passend zum Farb- und Dekorationskonzept.</p>
       </div>
 
       <div class="wax-event-grid">
@@ -4798,7 +4834,7 @@ KOLLEKTION (alle auf Lager, Versand 4–6 Werktage):
 INDIVIDUELL: Farbwünsche bei allen 3D-Druck-Produkten möglich — nach Anfrage.
 
 WAX MELTS — 12 Düfte, 7,90€ pro Tüte (6 Stück), 100% Sojawachs, echtes Parfümöl. Probier-Set: 3 freie Düfte 19,90€.
-GASTGESCHENKE AUS WACHS — Maryjo ("Waxmelts Mutti") gießt Duftkerzen, Wax Melts und kleine Wachskunstwerke für Hochzeiten und Feiern. Auf der Website ist der Alomi-Wax-Hochzeitsauftrag als sichtbare Bildreferenz mit ergänzendem PDF-Link eingebunden, damit Paare und Eventkund:innen konkrete Beispiele sehen. Beispiele: herzförmige Kerze mit Duft ab 3,20€, herzförmige Wax-Melts am Spieß ab 4,20€, Gänseblume mit Duft ab 3,20€, Soja Wax Kerze mit Rose ab 8,00€. Personalisierung per Namen, Datum, Etiketten, Schleifen, Geschenkboxen, Farben wie Rosé, Salbei, Elfenbein und Wunschfarben. Premium-Duftnoten: One in Million, Baccaret Red, Flower Bomb, Cherry Blossom, Nummer Five, Vanilla, Midnight Phantom. Anfragen und Abstimmung ausschließlich per E-Mail.
+GASTGESCHENKE AUS WACHS — Aurora und Mary wurden eingeladen, Dekoration und duftende Gastgeschenke für Hochzeiten zu gestalten. Mary ("Waxmelts Mutti") gießt Duftkerzen, Wax Melts und kleine Wachskunstwerke in kleinen Chargen. Auf der Website ist ein echter Hochzeitsauftrag als sichtbare Bildreferenz aus der PDF eingebunden, ohne Personenfoto, mit Verpackung, Blüten, Tags und Tischwirkung. Beispiele: herzförmige Kerze mit Duft ab 3,20€, herzförmige Wax-Melts am Spieß ab 4,20€, Gänseblume mit Duft ab 3,20€, Soja Wax Kerze mit Rose ab 8,00€. Personalisierung per Namen, Datum, Etiketten, Schleifen, Geschenkboxen, Farben wie Rosé, Salbei, Elfenbein und Wunschfarben. Premium-Duftnoten: One in Million, Baccaret Red, Flower Bomb, Cherry Blossom, Nummer Five, Vanilla, Midnight Phantom. Anfragen und Abstimmung ausschließlich per E-Mail.
 Düfte: N°01 Kirschblüte&Vanille, N°02 Sandelholz&Mango, N°03 Zimt&Amber, N°04 Zeder&Moschus, N°05 Tabak&Bourbon, N°06 Rose&Pfingstrose (BESTSELLER), N°07 Salbei&Salzwasser, N°08 Hibiskus&Kokos, N°09 Karamell&Whisky, N°10 Bambus&Limette, N°11 Leder&Espresso, N°12 Sternanis&Honig.
 
 CUSTOM RESIN — Einzelanfertigung, vier Stufen:
