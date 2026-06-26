@@ -45,6 +45,7 @@ KOLLEKTION (handgefertigt in Deutschland, Lieferzeit 4–6 Werktage):
 • Nori Katzenhaus 89,90 € — Katzenhaus + Couchtisch in einem
 
 WAX MELTS: 12 Düfte, 7,90 € / Tüte (6 Stück), 100% Sojawachs. Probier-Set: 3 Düfte 19,90 €.
+GASTGESCHENKE AUS WACHS: Aurora und Mary wurden eingeladen, Dekoration und duftende Gastgeschenke für Hochzeiten zu gestalten. Mary ("Waxmelts Mutti") gießt Duftkerzen, Wax Melts und kleine Wachskunstwerke in kleinen Chargen. Auf der Website ist ein echter Hochzeitsauftrag als sichtbare Bildreferenz aus der PDF eingebunden, ohne Personenfoto, mit Verpackung, Blüten, Tags und Tischwirkung. Beispiele: herzförmige Kerze mit Duft ab 3,20 €, herzförmige Wax-Melts am Spieß ab 4,20 €, Gänseblume mit Duft ab 3,20 €, Soja Wax Kerze mit Rose ab 8,00 €. Personalisierung mit Namen, Datum, Etiketten, Schleifen, Geschenkboxen und Farben wie Rosé, Salbei, Elfenbein oder Wunschfarben. Premium-Duftnoten: One in Million, Baccaret Red, Flower Bomb, Cherry Blossom, Nummer Five, Vanilla, Midnight Phantom. Anfragen und Abstimmung ausschließlich per E-Mail.
 
 CUSTOM RESIN: Stufe 01 ab 150 €, Stufe 02 ab 300 €, Stufe 03 ab 700 €, Stufe 04 ab 1.500 €. 50% Anzahlung vorab.
 
